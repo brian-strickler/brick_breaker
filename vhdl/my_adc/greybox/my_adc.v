@@ -17,7 +17,7 @@
 // PROGRAM "Quartus Prime"
 // VERSION "Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition"
 
-// DATE "11/17/2020 15:32:00"
+// DATE "11/19/2020 20:09:54"
 
 // 
 // Device: Altera 10M50DAF484C7G Package FBGA484
@@ -660,7 +660,7 @@ wire \ADC_CTRL|reading5[11]~q ;
 wire \go~q ;
 wire \go~0_combout ;
 wire \CH0~0_combout ;
-wire \CH2[1]~0_combout ;
+wire \CH2[2]~0_combout ;
 wire \CH0~1_combout ;
 wire \CH0~2_combout ;
 wire \CH0~3_combout ;
@@ -828,7 +828,7 @@ defparam go.is_wysiwyg = "true";
 defparam go.power_up = "low";
 
 fiftyfivenm_lcell_comb \go~0 (
-	.dataa(\CH2[1]~0_combout ),
+	.dataa(\CH2[2]~0_combout ),
 	.datab(gnd),
 	.datac(gnd),
 	.datad(gnd),
@@ -846,7 +846,7 @@ dffeas \CH0[0] (
 	.aload(gnd),
 	.sclr(gnd),
 	.sload(gnd),
-	.ena(\CH2[1]~0_combout ),
+	.ena(\CH2[2]~0_combout ),
 	.q(CH0_0),
 	.prn(vcc));
 defparam \CH0[0] .is_wysiwyg = "true";
@@ -860,7 +860,7 @@ dffeas \CH0[1] (
 	.aload(gnd),
 	.sclr(gnd),
 	.sload(gnd),
-	.ena(\CH2[1]~0_combout ),
+	.ena(\CH2[2]~0_combout ),
 	.q(CH0_1),
 	.prn(vcc));
 defparam \CH0[1] .is_wysiwyg = "true";
@@ -874,7 +874,7 @@ dffeas \CH0[2] (
 	.aload(gnd),
 	.sclr(gnd),
 	.sload(gnd),
-	.ena(\CH2[1]~0_combout ),
+	.ena(\CH2[2]~0_combout ),
 	.q(CH0_2),
 	.prn(vcc));
 defparam \CH0[2] .is_wysiwyg = "true";
@@ -888,7 +888,7 @@ dffeas \CH0[3] (
 	.aload(gnd),
 	.sclr(gnd),
 	.sload(gnd),
-	.ena(\CH2[1]~0_combout ),
+	.ena(\CH2[2]~0_combout ),
 	.q(CH0_3),
 	.prn(vcc));
 defparam \CH0[3] .is_wysiwyg = "true";
@@ -902,7 +902,7 @@ dffeas \CH0[4] (
 	.aload(gnd),
 	.sclr(gnd),
 	.sload(gnd),
-	.ena(\CH2[1]~0_combout ),
+	.ena(\CH2[2]~0_combout ),
 	.q(CH0_4),
 	.prn(vcc));
 defparam \CH0[4] .is_wysiwyg = "true";
@@ -916,7 +916,7 @@ dffeas \CH0[5] (
 	.aload(gnd),
 	.sclr(gnd),
 	.sload(gnd),
-	.ena(\CH2[1]~0_combout ),
+	.ena(\CH2[2]~0_combout ),
 	.q(CH0_5),
 	.prn(vcc));
 defparam \CH0[5] .is_wysiwyg = "true";
@@ -930,7 +930,7 @@ dffeas \CH0[6] (
 	.aload(gnd),
 	.sclr(gnd),
 	.sload(gnd),
-	.ena(\CH2[1]~0_combout ),
+	.ena(\CH2[2]~0_combout ),
 	.q(CH0_6),
 	.prn(vcc));
 defparam \CH0[6] .is_wysiwyg = "true";
@@ -944,7 +944,7 @@ dffeas \CH0[7] (
 	.aload(gnd),
 	.sclr(gnd),
 	.sload(gnd),
-	.ena(\CH2[1]~0_combout ),
+	.ena(\CH2[2]~0_combout ),
 	.q(CH0_7),
 	.prn(vcc));
 defparam \CH0[7] .is_wysiwyg = "true";
@@ -958,7 +958,7 @@ dffeas \CH0[8] (
 	.aload(gnd),
 	.sclr(gnd),
 	.sload(gnd),
-	.ena(\CH2[1]~0_combout ),
+	.ena(\CH2[2]~0_combout ),
 	.q(CH0_8),
 	.prn(vcc));
 defparam \CH0[8] .is_wysiwyg = "true";
@@ -972,7 +972,7 @@ dffeas \CH0[9] (
 	.aload(gnd),
 	.sclr(gnd),
 	.sload(gnd),
-	.ena(\CH2[1]~0_combout ),
+	.ena(\CH2[2]~0_combout ),
 	.q(CH0_9),
 	.prn(vcc));
 defparam \CH0[9] .is_wysiwyg = "true";
@@ -986,7 +986,7 @@ dffeas \CH0[10] (
 	.aload(gnd),
 	.sclr(gnd),
 	.sload(gnd),
-	.ena(\CH2[1]~0_combout ),
+	.ena(\CH2[2]~0_combout ),
 	.q(CH0_10),
 	.prn(vcc));
 defparam \CH0[10] .is_wysiwyg = "true";
@@ -1000,7 +1000,7 @@ dffeas \CH0[11] (
 	.aload(gnd),
 	.sclr(gnd),
 	.sload(gnd),
-	.ena(\CH2[1]~0_combout ),
+	.ena(\CH2[2]~0_combout ),
 	.q(CH0_11),
 	.prn(vcc));
 defparam \CH0[11] .is_wysiwyg = "true";
@@ -1014,7 +1014,7 @@ dffeas \CH1[0] (
 	.aload(gnd),
 	.sclr(gnd),
 	.sload(gnd),
-	.ena(\CH2[1]~0_combout ),
+	.ena(\CH2[2]~0_combout ),
 	.q(CH1_0),
 	.prn(vcc));
 defparam \CH1[0] .is_wysiwyg = "true";
@@ -1028,7 +1028,7 @@ dffeas \CH1[1] (
 	.aload(gnd),
 	.sclr(gnd),
 	.sload(gnd),
-	.ena(\CH2[1]~0_combout ),
+	.ena(\CH2[2]~0_combout ),
 	.q(CH1_1),
 	.prn(vcc));
 defparam \CH1[1] .is_wysiwyg = "true";
@@ -1042,7 +1042,7 @@ dffeas \CH1[2] (
 	.aload(gnd),
 	.sclr(gnd),
 	.sload(gnd),
-	.ena(\CH2[1]~0_combout ),
+	.ena(\CH2[2]~0_combout ),
 	.q(CH1_2),
 	.prn(vcc));
 defparam \CH1[2] .is_wysiwyg = "true";
@@ -1056,7 +1056,7 @@ dffeas \CH1[3] (
 	.aload(gnd),
 	.sclr(gnd),
 	.sload(gnd),
-	.ena(\CH2[1]~0_combout ),
+	.ena(\CH2[2]~0_combout ),
 	.q(CH1_3),
 	.prn(vcc));
 defparam \CH1[3] .is_wysiwyg = "true";
@@ -1070,7 +1070,7 @@ dffeas \CH1[4] (
 	.aload(gnd),
 	.sclr(gnd),
 	.sload(gnd),
-	.ena(\CH2[1]~0_combout ),
+	.ena(\CH2[2]~0_combout ),
 	.q(CH1_4),
 	.prn(vcc));
 defparam \CH1[4] .is_wysiwyg = "true";
@@ -1084,7 +1084,7 @@ dffeas \CH1[5] (
 	.aload(gnd),
 	.sclr(gnd),
 	.sload(gnd),
-	.ena(\CH2[1]~0_combout ),
+	.ena(\CH2[2]~0_combout ),
 	.q(CH1_5),
 	.prn(vcc));
 defparam \CH1[5] .is_wysiwyg = "true";
@@ -1098,7 +1098,7 @@ dffeas \CH1[6] (
 	.aload(gnd),
 	.sclr(gnd),
 	.sload(gnd),
-	.ena(\CH2[1]~0_combout ),
+	.ena(\CH2[2]~0_combout ),
 	.q(CH1_6),
 	.prn(vcc));
 defparam \CH1[6] .is_wysiwyg = "true";
@@ -1112,7 +1112,7 @@ dffeas \CH1[7] (
 	.aload(gnd),
 	.sclr(gnd),
 	.sload(gnd),
-	.ena(\CH2[1]~0_combout ),
+	.ena(\CH2[2]~0_combout ),
 	.q(CH1_7),
 	.prn(vcc));
 defparam \CH1[7] .is_wysiwyg = "true";
@@ -1126,7 +1126,7 @@ dffeas \CH1[8] (
 	.aload(gnd),
 	.sclr(gnd),
 	.sload(gnd),
-	.ena(\CH2[1]~0_combout ),
+	.ena(\CH2[2]~0_combout ),
 	.q(CH1_8),
 	.prn(vcc));
 defparam \CH1[8] .is_wysiwyg = "true";
@@ -1140,7 +1140,7 @@ dffeas \CH1[9] (
 	.aload(gnd),
 	.sclr(gnd),
 	.sload(gnd),
-	.ena(\CH2[1]~0_combout ),
+	.ena(\CH2[2]~0_combout ),
 	.q(CH1_9),
 	.prn(vcc));
 defparam \CH1[9] .is_wysiwyg = "true";
@@ -1154,7 +1154,7 @@ dffeas \CH1[10] (
 	.aload(gnd),
 	.sclr(gnd),
 	.sload(gnd),
-	.ena(\CH2[1]~0_combout ),
+	.ena(\CH2[2]~0_combout ),
 	.q(CH1_10),
 	.prn(vcc));
 defparam \CH1[10] .is_wysiwyg = "true";
@@ -1168,7 +1168,7 @@ dffeas \CH1[11] (
 	.aload(gnd),
 	.sclr(gnd),
 	.sload(gnd),
-	.ena(\CH2[1]~0_combout ),
+	.ena(\CH2[2]~0_combout ),
 	.q(CH1_11),
 	.prn(vcc));
 defparam \CH1[11] .is_wysiwyg = "true";
@@ -1182,7 +1182,7 @@ dffeas \CH2[0] (
 	.aload(gnd),
 	.sclr(gnd),
 	.sload(gnd),
-	.ena(\CH2[1]~0_combout ),
+	.ena(\CH2[2]~0_combout ),
 	.q(CH2_0),
 	.prn(vcc));
 defparam \CH2[0] .is_wysiwyg = "true";
@@ -1196,7 +1196,7 @@ dffeas \CH2[1] (
 	.aload(gnd),
 	.sclr(gnd),
 	.sload(gnd),
-	.ena(\CH2[1]~0_combout ),
+	.ena(\CH2[2]~0_combout ),
 	.q(CH2_1),
 	.prn(vcc));
 defparam \CH2[1] .is_wysiwyg = "true";
@@ -1210,7 +1210,7 @@ dffeas \CH2[2] (
 	.aload(gnd),
 	.sclr(gnd),
 	.sload(gnd),
-	.ena(\CH2[1]~0_combout ),
+	.ena(\CH2[2]~0_combout ),
 	.q(CH2_2),
 	.prn(vcc));
 defparam \CH2[2] .is_wysiwyg = "true";
@@ -1224,7 +1224,7 @@ dffeas \CH2[3] (
 	.aload(gnd),
 	.sclr(gnd),
 	.sload(gnd),
-	.ena(\CH2[1]~0_combout ),
+	.ena(\CH2[2]~0_combout ),
 	.q(CH2_3),
 	.prn(vcc));
 defparam \CH2[3] .is_wysiwyg = "true";
@@ -1238,7 +1238,7 @@ dffeas \CH2[4] (
 	.aload(gnd),
 	.sclr(gnd),
 	.sload(gnd),
-	.ena(\CH2[1]~0_combout ),
+	.ena(\CH2[2]~0_combout ),
 	.q(CH2_4),
 	.prn(vcc));
 defparam \CH2[4] .is_wysiwyg = "true";
@@ -1252,7 +1252,7 @@ dffeas \CH2[5] (
 	.aload(gnd),
 	.sclr(gnd),
 	.sload(gnd),
-	.ena(\CH2[1]~0_combout ),
+	.ena(\CH2[2]~0_combout ),
 	.q(CH2_5),
 	.prn(vcc));
 defparam \CH2[5] .is_wysiwyg = "true";
@@ -1266,7 +1266,7 @@ dffeas \CH2[6] (
 	.aload(gnd),
 	.sclr(gnd),
 	.sload(gnd),
-	.ena(\CH2[1]~0_combout ),
+	.ena(\CH2[2]~0_combout ),
 	.q(CH2_6),
 	.prn(vcc));
 defparam \CH2[6] .is_wysiwyg = "true";
@@ -1280,7 +1280,7 @@ dffeas \CH2[7] (
 	.aload(gnd),
 	.sclr(gnd),
 	.sload(gnd),
-	.ena(\CH2[1]~0_combout ),
+	.ena(\CH2[2]~0_combout ),
 	.q(CH2_7),
 	.prn(vcc));
 defparam \CH2[7] .is_wysiwyg = "true";
@@ -1294,7 +1294,7 @@ dffeas \CH2[8] (
 	.aload(gnd),
 	.sclr(gnd),
 	.sload(gnd),
-	.ena(\CH2[1]~0_combout ),
+	.ena(\CH2[2]~0_combout ),
 	.q(CH2_8),
 	.prn(vcc));
 defparam \CH2[8] .is_wysiwyg = "true";
@@ -1308,7 +1308,7 @@ dffeas \CH2[9] (
 	.aload(gnd),
 	.sclr(gnd),
 	.sload(gnd),
-	.ena(\CH2[1]~0_combout ),
+	.ena(\CH2[2]~0_combout ),
 	.q(CH2_9),
 	.prn(vcc));
 defparam \CH2[9] .is_wysiwyg = "true";
@@ -1322,7 +1322,7 @@ dffeas \CH2[10] (
 	.aload(gnd),
 	.sclr(gnd),
 	.sload(gnd),
-	.ena(\CH2[1]~0_combout ),
+	.ena(\CH2[2]~0_combout ),
 	.q(CH2_10),
 	.prn(vcc));
 defparam \CH2[10] .is_wysiwyg = "true";
@@ -1336,7 +1336,7 @@ dffeas \CH2[11] (
 	.aload(gnd),
 	.sclr(gnd),
 	.sload(gnd),
-	.ena(\CH2[1]~0_combout ),
+	.ena(\CH2[2]~0_combout ),
 	.q(CH2_11),
 	.prn(vcc));
 defparam \CH2[11] .is_wysiwyg = "true";
@@ -1350,7 +1350,7 @@ dffeas \CH3[0] (
 	.aload(gnd),
 	.sclr(gnd),
 	.sload(gnd),
-	.ena(\CH2[1]~0_combout ),
+	.ena(\CH2[2]~0_combout ),
 	.q(CH3_0),
 	.prn(vcc));
 defparam \CH3[0] .is_wysiwyg = "true";
@@ -1364,7 +1364,7 @@ dffeas \CH3[1] (
 	.aload(gnd),
 	.sclr(gnd),
 	.sload(gnd),
-	.ena(\CH2[1]~0_combout ),
+	.ena(\CH2[2]~0_combout ),
 	.q(CH3_1),
 	.prn(vcc));
 defparam \CH3[1] .is_wysiwyg = "true";
@@ -1378,7 +1378,7 @@ dffeas \CH3[2] (
 	.aload(gnd),
 	.sclr(gnd),
 	.sload(gnd),
-	.ena(\CH2[1]~0_combout ),
+	.ena(\CH2[2]~0_combout ),
 	.q(CH3_2),
 	.prn(vcc));
 defparam \CH3[2] .is_wysiwyg = "true";
@@ -1392,7 +1392,7 @@ dffeas \CH3[3] (
 	.aload(gnd),
 	.sclr(gnd),
 	.sload(gnd),
-	.ena(\CH2[1]~0_combout ),
+	.ena(\CH2[2]~0_combout ),
 	.q(CH3_3),
 	.prn(vcc));
 defparam \CH3[3] .is_wysiwyg = "true";
@@ -1406,7 +1406,7 @@ dffeas \CH3[4] (
 	.aload(gnd),
 	.sclr(gnd),
 	.sload(gnd),
-	.ena(\CH2[1]~0_combout ),
+	.ena(\CH2[2]~0_combout ),
 	.q(CH3_4),
 	.prn(vcc));
 defparam \CH3[4] .is_wysiwyg = "true";
@@ -1420,7 +1420,7 @@ dffeas \CH3[5] (
 	.aload(gnd),
 	.sclr(gnd),
 	.sload(gnd),
-	.ena(\CH2[1]~0_combout ),
+	.ena(\CH2[2]~0_combout ),
 	.q(CH3_5),
 	.prn(vcc));
 defparam \CH3[5] .is_wysiwyg = "true";
@@ -1434,7 +1434,7 @@ dffeas \CH3[6] (
 	.aload(gnd),
 	.sclr(gnd),
 	.sload(gnd),
-	.ena(\CH2[1]~0_combout ),
+	.ena(\CH2[2]~0_combout ),
 	.q(CH3_6),
 	.prn(vcc));
 defparam \CH3[6] .is_wysiwyg = "true";
@@ -1448,7 +1448,7 @@ dffeas \CH3[7] (
 	.aload(gnd),
 	.sclr(gnd),
 	.sload(gnd),
-	.ena(\CH2[1]~0_combout ),
+	.ena(\CH2[2]~0_combout ),
 	.q(CH3_7),
 	.prn(vcc));
 defparam \CH3[7] .is_wysiwyg = "true";
@@ -1462,7 +1462,7 @@ dffeas \CH3[8] (
 	.aload(gnd),
 	.sclr(gnd),
 	.sload(gnd),
-	.ena(\CH2[1]~0_combout ),
+	.ena(\CH2[2]~0_combout ),
 	.q(CH3_8),
 	.prn(vcc));
 defparam \CH3[8] .is_wysiwyg = "true";
@@ -1476,7 +1476,7 @@ dffeas \CH3[9] (
 	.aload(gnd),
 	.sclr(gnd),
 	.sload(gnd),
-	.ena(\CH2[1]~0_combout ),
+	.ena(\CH2[2]~0_combout ),
 	.q(CH3_9),
 	.prn(vcc));
 defparam \CH3[9] .is_wysiwyg = "true";
@@ -1490,7 +1490,7 @@ dffeas \CH3[10] (
 	.aload(gnd),
 	.sclr(gnd),
 	.sload(gnd),
-	.ena(\CH2[1]~0_combout ),
+	.ena(\CH2[2]~0_combout ),
 	.q(CH3_10),
 	.prn(vcc));
 defparam \CH3[10] .is_wysiwyg = "true";
@@ -1504,7 +1504,7 @@ dffeas \CH3[11] (
 	.aload(gnd),
 	.sclr(gnd),
 	.sload(gnd),
-	.ena(\CH2[1]~0_combout ),
+	.ena(\CH2[2]~0_combout ),
 	.q(CH3_11),
 	.prn(vcc));
 defparam \CH3[11] .is_wysiwyg = "true";
@@ -1518,7 +1518,7 @@ dffeas \CH4[0] (
 	.aload(gnd),
 	.sclr(gnd),
 	.sload(gnd),
-	.ena(\CH2[1]~0_combout ),
+	.ena(\CH2[2]~0_combout ),
 	.q(CH4_0),
 	.prn(vcc));
 defparam \CH4[0] .is_wysiwyg = "true";
@@ -1532,7 +1532,7 @@ dffeas \CH4[1] (
 	.aload(gnd),
 	.sclr(gnd),
 	.sload(gnd),
-	.ena(\CH2[1]~0_combout ),
+	.ena(\CH2[2]~0_combout ),
 	.q(CH4_1),
 	.prn(vcc));
 defparam \CH4[1] .is_wysiwyg = "true";
@@ -1546,7 +1546,7 @@ dffeas \CH4[2] (
 	.aload(gnd),
 	.sclr(gnd),
 	.sload(gnd),
-	.ena(\CH2[1]~0_combout ),
+	.ena(\CH2[2]~0_combout ),
 	.q(CH4_2),
 	.prn(vcc));
 defparam \CH4[2] .is_wysiwyg = "true";
@@ -1560,7 +1560,7 @@ dffeas \CH4[3] (
 	.aload(gnd),
 	.sclr(gnd),
 	.sload(gnd),
-	.ena(\CH2[1]~0_combout ),
+	.ena(\CH2[2]~0_combout ),
 	.q(CH4_3),
 	.prn(vcc));
 defparam \CH4[3] .is_wysiwyg = "true";
@@ -1574,7 +1574,7 @@ dffeas \CH4[4] (
 	.aload(gnd),
 	.sclr(gnd),
 	.sload(gnd),
-	.ena(\CH2[1]~0_combout ),
+	.ena(\CH2[2]~0_combout ),
 	.q(CH4_4),
 	.prn(vcc));
 defparam \CH4[4] .is_wysiwyg = "true";
@@ -1588,7 +1588,7 @@ dffeas \CH4[5] (
 	.aload(gnd),
 	.sclr(gnd),
 	.sload(gnd),
-	.ena(\CH2[1]~0_combout ),
+	.ena(\CH2[2]~0_combout ),
 	.q(CH4_5),
 	.prn(vcc));
 defparam \CH4[5] .is_wysiwyg = "true";
@@ -1602,7 +1602,7 @@ dffeas \CH4[6] (
 	.aload(gnd),
 	.sclr(gnd),
 	.sload(gnd),
-	.ena(\CH2[1]~0_combout ),
+	.ena(\CH2[2]~0_combout ),
 	.q(CH4_6),
 	.prn(vcc));
 defparam \CH4[6] .is_wysiwyg = "true";
@@ -1616,7 +1616,7 @@ dffeas \CH4[7] (
 	.aload(gnd),
 	.sclr(gnd),
 	.sload(gnd),
-	.ena(\CH2[1]~0_combout ),
+	.ena(\CH2[2]~0_combout ),
 	.q(CH4_7),
 	.prn(vcc));
 defparam \CH4[7] .is_wysiwyg = "true";
@@ -1630,7 +1630,7 @@ dffeas \CH4[8] (
 	.aload(gnd),
 	.sclr(gnd),
 	.sload(gnd),
-	.ena(\CH2[1]~0_combout ),
+	.ena(\CH2[2]~0_combout ),
 	.q(CH4_8),
 	.prn(vcc));
 defparam \CH4[8] .is_wysiwyg = "true";
@@ -1644,7 +1644,7 @@ dffeas \CH4[9] (
 	.aload(gnd),
 	.sclr(gnd),
 	.sload(gnd),
-	.ena(\CH2[1]~0_combout ),
+	.ena(\CH2[2]~0_combout ),
 	.q(CH4_9),
 	.prn(vcc));
 defparam \CH4[9] .is_wysiwyg = "true";
@@ -1658,7 +1658,7 @@ dffeas \CH4[10] (
 	.aload(gnd),
 	.sclr(gnd),
 	.sload(gnd),
-	.ena(\CH2[1]~0_combout ),
+	.ena(\CH2[2]~0_combout ),
 	.q(CH4_10),
 	.prn(vcc));
 defparam \CH4[10] .is_wysiwyg = "true";
@@ -1672,7 +1672,7 @@ dffeas \CH4[11] (
 	.aload(gnd),
 	.sclr(gnd),
 	.sload(gnd),
-	.ena(\CH2[1]~0_combout ),
+	.ena(\CH2[2]~0_combout ),
 	.q(CH4_11),
 	.prn(vcc));
 defparam \CH4[11] .is_wysiwyg = "true";
@@ -1686,7 +1686,7 @@ dffeas \CH5[0] (
 	.aload(gnd),
 	.sclr(gnd),
 	.sload(gnd),
-	.ena(\CH2[1]~0_combout ),
+	.ena(\CH2[2]~0_combout ),
 	.q(CH5_0),
 	.prn(vcc));
 defparam \CH5[0] .is_wysiwyg = "true";
@@ -1700,7 +1700,7 @@ dffeas \CH5[1] (
 	.aload(gnd),
 	.sclr(gnd),
 	.sload(gnd),
-	.ena(\CH2[1]~0_combout ),
+	.ena(\CH2[2]~0_combout ),
 	.q(CH5_1),
 	.prn(vcc));
 defparam \CH5[1] .is_wysiwyg = "true";
@@ -1714,7 +1714,7 @@ dffeas \CH5[2] (
 	.aload(gnd),
 	.sclr(gnd),
 	.sload(gnd),
-	.ena(\CH2[1]~0_combout ),
+	.ena(\CH2[2]~0_combout ),
 	.q(CH5_2),
 	.prn(vcc));
 defparam \CH5[2] .is_wysiwyg = "true";
@@ -1728,7 +1728,7 @@ dffeas \CH5[3] (
 	.aload(gnd),
 	.sclr(gnd),
 	.sload(gnd),
-	.ena(\CH2[1]~0_combout ),
+	.ena(\CH2[2]~0_combout ),
 	.q(CH5_3),
 	.prn(vcc));
 defparam \CH5[3] .is_wysiwyg = "true";
@@ -1742,7 +1742,7 @@ dffeas \CH5[4] (
 	.aload(gnd),
 	.sclr(gnd),
 	.sload(gnd),
-	.ena(\CH2[1]~0_combout ),
+	.ena(\CH2[2]~0_combout ),
 	.q(CH5_4),
 	.prn(vcc));
 defparam \CH5[4] .is_wysiwyg = "true";
@@ -1756,7 +1756,7 @@ dffeas \CH5[5] (
 	.aload(gnd),
 	.sclr(gnd),
 	.sload(gnd),
-	.ena(\CH2[1]~0_combout ),
+	.ena(\CH2[2]~0_combout ),
 	.q(CH5_5),
 	.prn(vcc));
 defparam \CH5[5] .is_wysiwyg = "true";
@@ -1770,7 +1770,7 @@ dffeas \CH5[6] (
 	.aload(gnd),
 	.sclr(gnd),
 	.sload(gnd),
-	.ena(\CH2[1]~0_combout ),
+	.ena(\CH2[2]~0_combout ),
 	.q(CH5_6),
 	.prn(vcc));
 defparam \CH5[6] .is_wysiwyg = "true";
@@ -1784,7 +1784,7 @@ dffeas \CH5[7] (
 	.aload(gnd),
 	.sclr(gnd),
 	.sload(gnd),
-	.ena(\CH2[1]~0_combout ),
+	.ena(\CH2[2]~0_combout ),
 	.q(CH5_7),
 	.prn(vcc));
 defparam \CH5[7] .is_wysiwyg = "true";
@@ -1798,7 +1798,7 @@ dffeas \CH5[8] (
 	.aload(gnd),
 	.sclr(gnd),
 	.sload(gnd),
-	.ena(\CH2[1]~0_combout ),
+	.ena(\CH2[2]~0_combout ),
 	.q(CH5_8),
 	.prn(vcc));
 defparam \CH5[8] .is_wysiwyg = "true";
@@ -1812,7 +1812,7 @@ dffeas \CH5[9] (
 	.aload(gnd),
 	.sclr(gnd),
 	.sload(gnd),
-	.ena(\CH2[1]~0_combout ),
+	.ena(\CH2[2]~0_combout ),
 	.q(CH5_9),
 	.prn(vcc));
 defparam \CH5[9] .is_wysiwyg = "true";
@@ -1826,7 +1826,7 @@ dffeas \CH5[10] (
 	.aload(gnd),
 	.sclr(gnd),
 	.sload(gnd),
-	.ena(\CH2[1]~0_combout ),
+	.ena(\CH2[2]~0_combout ),
 	.q(CH5_10),
 	.prn(vcc));
 defparam \CH5[10] .is_wysiwyg = "true";
@@ -1840,7 +1840,7 @@ dffeas \CH5[11] (
 	.aload(gnd),
 	.sclr(gnd),
 	.sload(gnd),
-	.ena(\CH2[1]~0_combout ),
+	.ena(\CH2[2]~0_combout ),
 	.q(CH5_11),
 	.prn(vcc));
 defparam \CH5[11] .is_wysiwyg = "true";
@@ -1857,16 +1857,16 @@ fiftyfivenm_lcell_comb \CH0~0 (
 defparam \CH0~0 .lut_mask = 16'h00AA;
 defparam \CH0~0 .sum_lutc_input = "datac";
 
-fiftyfivenm_lcell_comb \CH2[1]~0 (
+fiftyfivenm_lcell_comb \CH2[2]~0 (
 	.dataa(RESET),
 	.datab(\ADC_CTRL|currState.doneConversionState~q ),
 	.datac(gnd),
 	.datad(gnd),
 	.cin(gnd),
-	.combout(\CH2[1]~0_combout ),
+	.combout(\CH2[2]~0_combout ),
 	.cout());
-defparam \CH2[1]~0 .lut_mask = 16'hEEEE;
-defparam \CH2[1]~0 .sum_lutc_input = "datac";
+defparam \CH2[2]~0 .lut_mask = 16'hEEEE;
+defparam \CH2[2]~0 .sum_lutc_input = "datac";
 
 fiftyfivenm_lcell_comb \CH0~1 (
 	.dataa(\ADC_CTRL|reading0[1]~q ),
@@ -2839,7 +2839,7 @@ wire \currState.resetState~0_combout ;
 wire \currState.resetState~q ;
 wire \Selector0~0_combout ;
 wire \currState.idleState~q ;
-wire \channel~5_combout ;
+wire \channel~4_combout ;
 wire \sequencer_on~0_combout ;
 wire \sequencer_on~q ;
 wire \nextState.turnOnSequencerState~0_combout ;
@@ -2847,18 +2847,18 @@ wire \currState.turnOnSequencerState~q ;
 wire \Selector1~0_combout ;
 wire \Selector1~1_combout ;
 wire \currState.pendingConversionState~q ;
-wire \channel~4_combout ;
-wire \channel~6_combout ;
+wire \Add0~1_combout ;
+wire \channel~3_combout ;
 wire \channel[2]~q ;
 wire \Add0~0_combout ;
-wire \channel~7_combout ;
-wire \channel[3]~q ;
-wire \LessThan0~0_combout ;
-wire \Selector2~0_combout ;
-wire \currState.readConversionState~q ;
-wire \channel[0]~3_combout ;
-wire \channel[0]~q ;
 wire \channel~2_combout ;
+wire \channel[3]~q ;
+wire \Selector2~0_combout ;
+wire \Selector2~1_combout ;
+wire \currState.readConversionState~q ;
+wire \channel[0]~1_combout ;
+wire \channel[0]~q ;
+wire \channel~0_combout ;
 wire \channel[1]~q ;
 wire \Decoder0~0_combout ;
 wire \Decoder0~1_combout ;
@@ -2925,8 +2925,8 @@ defparam \sample_store_address[1]~1 .lut_mask = 16'h8888;
 defparam \sample_store_address[1]~1 .sum_lutc_input = "datac";
 
 fiftyfivenm_lcell_comb \sample_store_address[2]~2 (
-	.dataa(\currState.readConversionState~q ),
-	.datab(\channel[2]~q ),
+	.dataa(\channel[2]~q ),
+	.datab(\currState.readConversionState~q ),
 	.datac(gnd),
 	.datad(gnd),
 	.cin(gnd),
@@ -4018,16 +4018,16 @@ dffeas \currState.idleState (
 defparam \currState.idleState .is_wysiwyg = "true";
 defparam \currState.idleState .power_up = "low";
 
-fiftyfivenm_lcell_comb \channel~5 (
+fiftyfivenm_lcell_comb \channel~4 (
 	.dataa(\channel[0]~q ),
 	.datab(\currState.idleState~q ),
 	.datac(gnd),
 	.datad(\currState.resetState~q ),
 	.cin(gnd),
-	.combout(\channel~5_combout ),
+	.combout(\channel~4_combout ),
 	.cout());
-defparam \channel~5 .lut_mask = 16'h1100;
-defparam \channel~5 .sum_lutc_input = "datac";
+defparam \channel~4 .lut_mask = 16'h1100;
+defparam \channel~4 .sum_lutc_input = "datac";
 
 fiftyfivenm_lcell_comb \sequencer_on~0 (
 	.dataa(\currState.turnOnSequencerState~q ),
@@ -4115,37 +4115,37 @@ dffeas \currState.pendingConversionState (
 defparam \currState.pendingConversionState .is_wysiwyg = "true";
 defparam \currState.pendingConversionState .power_up = "low";
 
-fiftyfivenm_lcell_comb \channel~4 (
-	.dataa(\currState.resetState~q ),
-	.datab(gnd),
+fiftyfivenm_lcell_comb \Add0~1 (
+	.dataa(gnd),
+	.datab(\channel[2]~q ),
+	.datac(\channel[0]~q ),
+	.datad(\channel[1]~q ),
+	.cin(gnd),
+	.combout(\Add0~1_combout ),
+	.cout());
+defparam \Add0~1 .lut_mask = 16'h3CCC;
+defparam \Add0~1 .sum_lutc_input = "datac";
+
+fiftyfivenm_lcell_comb \channel~3 (
+	.dataa(\Add0~1_combout ),
+	.datab(\currState.resetState~q ),
 	.datac(gnd),
 	.datad(\currState.idleState~q ),
 	.cin(gnd),
-	.combout(\channel~4_combout ),
+	.combout(\channel~3_combout ),
 	.cout());
-defparam \channel~4 .lut_mask = 16'h00AA;
-defparam \channel~4 .sum_lutc_input = "datac";
-
-fiftyfivenm_lcell_comb \channel~6 (
-	.dataa(\channel~4_combout ),
-	.datab(\channel[2]~q ),
-	.datac(\channel[1]~q ),
-	.datad(\channel[0]~q ),
-	.cin(gnd),
-	.combout(\channel~6_combout ),
-	.cout());
-defparam \channel~6 .lut_mask = 16'h2888;
-defparam \channel~6 .sum_lutc_input = "datac";
+defparam \channel~3 .lut_mask = 16'h0088;
+defparam \channel~3 .sum_lutc_input = "datac";
 
 dffeas \channel[2] (
 	.clk(CLOCK),
-	.d(\channel~6_combout ),
+	.d(\channel~3_combout ),
 	.asdata(vcc),
 	.clrn(vcc),
 	.aload(gnd),
 	.sclr(gnd),
 	.sload(gnd),
-	.ena(\channel[0]~3_combout ),
+	.ena(\channel[0]~1_combout ),
 	.q(\channel[2]~q ),
 	.prn(vcc));
 defparam \channel[2] .is_wysiwyg = "true";
@@ -4153,65 +4153,65 @@ defparam \channel[2] .power_up = "low";
 
 fiftyfivenm_lcell_comb \Add0~0 (
 	.dataa(\channel[3]~q ),
-	.datab(\channel[1]~q ),
+	.datab(\channel[2]~q ),
 	.datac(\channel[0]~q ),
-	.datad(\channel[2]~q ),
+	.datad(\channel[1]~q ),
 	.cin(gnd),
 	.combout(\Add0~0_combout ),
 	.cout());
 defparam \Add0~0 .lut_mask = 16'h6AAA;
 defparam \Add0~0 .sum_lutc_input = "datac";
 
-fiftyfivenm_lcell_comb \channel~7 (
+fiftyfivenm_lcell_comb \channel~2 (
 	.dataa(\currState.resetState~q ),
-	.datab(\currState.idleState~q ),
-	.datac(\Add0~0_combout ),
-	.datad(gnd),
+	.datab(\Add0~0_combout ),
+	.datac(gnd),
+	.datad(\currState.idleState~q ),
 	.cin(gnd),
-	.combout(\channel~7_combout ),
+	.combout(\channel~2_combout ),
 	.cout());
-defparam \channel~7 .lut_mask = 16'h2020;
-defparam \channel~7 .sum_lutc_input = "datac";
+defparam \channel~2 .lut_mask = 16'h0088;
+defparam \channel~2 .sum_lutc_input = "datac";
 
 dffeas \channel[3] (
 	.clk(CLOCK),
-	.d(\channel~7_combout ),
+	.d(\channel~2_combout ),
 	.asdata(vcc),
 	.clrn(vcc),
 	.aload(gnd),
 	.sclr(gnd),
 	.sload(gnd),
-	.ena(\channel[0]~3_combout ),
+	.ena(\channel[0]~1_combout ),
 	.q(\channel[3]~q ),
 	.prn(vcc));
 defparam \channel[3] .is_wysiwyg = "true";
 defparam \channel[3] .power_up = "low";
 
-fiftyfivenm_lcell_comb \LessThan0~0 (
-	.dataa(\channel[1]~q ),
-	.datab(\channel[3]~q ),
-	.datac(\channel[0]~q ),
-	.datad(\channel[2]~q ),
-	.cin(gnd),
-	.combout(\LessThan0~0_combout ),
-	.cout());
-defparam \LessThan0~0 .lut_mask = 16'hFFFE;
-defparam \LessThan0~0 .sum_lutc_input = "datac";
-
 fiftyfivenm_lcell_comb \Selector2~0 (
-	.dataa(\max10_adc_core|sample_store_internal|irq~q ),
-	.datab(\currState.pendingConversionState~q ),
-	.datac(\currState.readConversionState~q ),
-	.datad(\LessThan0~0_combout ),
+	.dataa(gnd),
+	.datab(\channel[2]~q ),
+	.datac(\channel[1]~q ),
+	.datad(\channel[3]~q ),
 	.cin(gnd),
 	.combout(\Selector2~0_combout ),
 	.cout());
-defparam \Selector2~0 .lut_mask = 16'h88F8;
+defparam \Selector2~0 .lut_mask = 16'h0003;
 defparam \Selector2~0 .sum_lutc_input = "datac";
+
+fiftyfivenm_lcell_comb \Selector2~1 (
+	.dataa(\currState.readConversionState~q ),
+	.datab(\max10_adc_core|sample_store_internal|irq~q ),
+	.datac(\currState.pendingConversionState~q ),
+	.datad(\Selector2~0_combout ),
+	.cin(gnd),
+	.combout(\Selector2~1_combout ),
+	.cout());
+defparam \Selector2~1 .lut_mask = 16'hEAC0;
+defparam \Selector2~1 .sum_lutc_input = "datac";
 
 dffeas \currState.readConversionState (
 	.clk(CLOCK),
-	.d(\Selector2~0_combout ),
+	.d(\Selector2~1_combout ),
 	.asdata(vcc),
 	.clrn(vcc),
 	.aload(gnd),
@@ -4223,51 +4223,51 @@ dffeas \currState.readConversionState (
 defparam \currState.readConversionState .is_wysiwyg = "true";
 defparam \currState.readConversionState .power_up = "low";
 
-fiftyfivenm_lcell_comb \channel[0]~3 (
+fiftyfivenm_lcell_comb \channel[0]~1 (
 	.dataa(\currState.readConversionState~q ),
 	.datab(\currState.idleState~q ),
 	.datac(gnd),
 	.datad(\currState.resetState~q ),
 	.cin(gnd),
-	.combout(\channel[0]~3_combout ),
+	.combout(\channel[0]~1_combout ),
 	.cout());
-defparam \channel[0]~3 .lut_mask = 16'hEEFF;
-defparam \channel[0]~3 .sum_lutc_input = "datac";
+defparam \channel[0]~1 .lut_mask = 16'hEEFF;
+defparam \channel[0]~1 .sum_lutc_input = "datac";
 
 dffeas \channel[0] (
 	.clk(CLOCK),
-	.d(\channel~5_combout ),
+	.d(\channel~4_combout ),
 	.asdata(vcc),
 	.clrn(vcc),
 	.aload(gnd),
 	.sclr(gnd),
 	.sload(gnd),
-	.ena(\channel[0]~3_combout ),
+	.ena(\channel[0]~1_combout ),
 	.q(\channel[0]~q ),
 	.prn(vcc));
 defparam \channel[0] .is_wysiwyg = "true";
 defparam \channel[0] .power_up = "low";
 
-fiftyfivenm_lcell_comb \channel~2 (
+fiftyfivenm_lcell_comb \channel~0 (
 	.dataa(\currState.resetState~q ),
-	.datab(\channel[1]~q ),
-	.datac(\channel[0]~q ),
+	.datab(\channel[0]~q ),
+	.datac(\channel[1]~q ),
 	.datad(\currState.idleState~q ),
 	.cin(gnd),
-	.combout(\channel~2_combout ),
+	.combout(\channel~0_combout ),
 	.cout());
-defparam \channel~2 .lut_mask = 16'h0028;
-defparam \channel~2 .sum_lutc_input = "datac";
+defparam \channel~0 .lut_mask = 16'h0028;
+defparam \channel~0 .sum_lutc_input = "datac";
 
 dffeas \channel[1] (
 	.clk(CLOCK),
-	.d(\channel~2_combout ),
+	.d(\channel~0_combout ),
 	.asdata(vcc),
 	.clrn(vcc),
 	.aload(gnd),
 	.sclr(gnd),
 	.sload(gnd),
-	.ena(\channel[0]~3_combout ),
+	.ena(\channel[0]~1_combout ),
 	.q(\channel[1]~q ),
 	.prn(vcc));
 defparam \channel[1] .is_wysiwyg = "true";
@@ -4287,8 +4287,8 @@ defparam \Decoder0~0 .sum_lutc_input = "datac";
 fiftyfivenm_lcell_comb \Decoder0~1 (
 	.dataa(\channel[1]~q ),
 	.datab(\Decoder0~0_combout ),
-	.datac(\channel[0]~q ),
-	.datad(\channel[2]~q ),
+	.datac(\channel[2]~q ),
+	.datad(\channel[0]~q ),
 	.cin(gnd),
 	.combout(\Decoder0~1_combout ),
 	.cout());
@@ -4297,19 +4297,19 @@ defparam \Decoder0~1 .sum_lutc_input = "datac";
 
 fiftyfivenm_lcell_comb \nextState.doneConversionState~0 (
 	.dataa(\currState.readConversionState~q ),
-	.datab(\LessThan0~0_combout ),
-	.datac(gnd),
-	.datad(RESET),
+	.datab(gnd),
+	.datac(RESET),
+	.datad(\Selector2~0_combout ),
 	.cin(gnd),
 	.combout(\nextState.doneConversionState~0_combout ),
 	.cout());
-defparam \nextState.doneConversionState~0 .lut_mask = 16'h0088;
+defparam \nextState.doneConversionState~0 .lut_mask = 16'h000A;
 defparam \nextState.doneConversionState~0 .sum_lutc_input = "datac";
 
 fiftyfivenm_lcell_comb \Decoder0~2 (
-	.dataa(\channel[1]~q ),
-	.datab(\Decoder0~0_combout ),
-	.datac(\channel[0]~q ),
+	.dataa(\channel[0]~q ),
+	.datab(\channel[1]~q ),
+	.datac(\Decoder0~0_combout ),
 	.datad(\channel[2]~q ),
 	.cin(gnd),
 	.combout(\Decoder0~2_combout ),
@@ -4318,10 +4318,10 @@ defparam \Decoder0~2 .lut_mask = 16'h0080;
 defparam \Decoder0~2 .sum_lutc_input = "datac";
 
 fiftyfivenm_lcell_comb \Decoder0~3 (
-	.dataa(\Decoder0~0_combout ),
-	.datab(\channel[2]~q ),
-	.datac(\channel[1]~q ),
-	.datad(\channel[0]~q ),
+	.dataa(\channel[2]~q ),
+	.datab(\Decoder0~0_combout ),
+	.datac(\channel[0]~q ),
+	.datad(\channel[1]~q ),
 	.cin(gnd),
 	.combout(\Decoder0~3_combout ),
 	.cout());
@@ -4329,9 +4329,9 @@ defparam \Decoder0~3 .lut_mask = 16'h0008;
 defparam \Decoder0~3 .sum_lutc_input = "datac";
 
 fiftyfivenm_lcell_comb \Decoder0~4 (
-	.dataa(\Decoder0~0_combout ),
+	.dataa(\channel[2]~q ),
 	.datab(\channel[0]~q ),
-	.datac(\channel[2]~q ),
+	.datac(\Decoder0~0_combout ),
 	.datad(\channel[1]~q ),
 	.cin(gnd),
 	.combout(\Decoder0~4_combout ),
@@ -4340,9 +4340,9 @@ defparam \Decoder0~4 .lut_mask = 16'h0080;
 defparam \Decoder0~4 .sum_lutc_input = "datac";
 
 fiftyfivenm_lcell_comb \Decoder0~5 (
-	.dataa(\channel[1]~q ),
-	.datab(\Decoder0~0_combout ),
-	.datac(\channel[2]~q ),
+	.dataa(\channel[2]~q ),
+	.datab(\channel[1]~q ),
+	.datac(\Decoder0~0_combout ),
 	.datad(\channel[0]~q ),
 	.cin(gnd),
 	.combout(\Decoder0~5_combout ),
@@ -4351,10 +4351,10 @@ defparam \Decoder0~5 .lut_mask = 16'h0080;
 defparam \Decoder0~5 .sum_lutc_input = "datac";
 
 fiftyfivenm_lcell_comb \Decoder0~6 (
-	.dataa(\channel[1]~q ),
-	.datab(\Decoder0~0_combout ),
-	.datac(\channel[0]~q ),
-	.datad(\channel[2]~q ),
+	.dataa(\channel[2]~q ),
+	.datab(\channel[0]~q ),
+	.datac(\channel[1]~q ),
+	.datad(\Decoder0~0_combout ),
 	.cin(gnd),
 	.combout(\Decoder0~6_combout ),
 	.cout());
@@ -4601,32 +4601,11 @@ wire \control_internal|u_control_fsm|rsp_data[9]~q ;
 wire \control_internal|u_control_fsm|rsp_data[10]~q ;
 wire \control_internal|u_control_fsm|rsp_data[11]~q ;
 wire \control_internal|u_control_fsm|rsp_eop~q ;
+wire \sequencer_internal|u_seq_ctrl|cmd_valid~q ;
 wire \sequencer_internal|u_seq_ctrl|cmd_eop~q ;
 wire \control_internal|u_control_fsm|cmd_ready~q ;
+wire \sequencer_internal|u_seq_ctrl|cmd_channel[0]~q ;
 
-
-my_adc_altera_modular_adc_control control_internal(
-	.wire_pll1_locked(wire_pll1_locked),
-	.wire_pll1_clk_0(wire_pll1_clk_0),
-	.rsp_valid(\control_internal|u_control_fsm|rsp_valid~q ),
-	.rsp_data_0(\control_internal|u_control_fsm|rsp_data[0]~q ),
-	.rsp_data_1(\control_internal|u_control_fsm|rsp_data[1]~q ),
-	.rsp_data_2(\control_internal|u_control_fsm|rsp_data[2]~q ),
-	.rsp_data_3(\control_internal|u_control_fsm|rsp_data[3]~q ),
-	.rsp_data_4(\control_internal|u_control_fsm|rsp_data[4]~q ),
-	.rsp_data_5(\control_internal|u_control_fsm|rsp_data[5]~q ),
-	.rsp_data_6(\control_internal|u_control_fsm|rsp_data[6]~q ),
-	.rsp_data_7(\control_internal|u_control_fsm|rsp_data[7]~q ),
-	.rsp_data_8(\control_internal|u_control_fsm|rsp_data[8]~q ),
-	.rsp_data_9(\control_internal|u_control_fsm|rsp_data[9]~q ),
-	.rsp_data_10(\control_internal|u_control_fsm|rsp_data[10]~q ),
-	.rsp_data_11(\control_internal|u_control_fsm|rsp_data[11]~q ),
-	.rsp_eop(\control_internal|u_control_fsm|rsp_eop~q ),
-	.cmd_eop(\sequencer_internal|u_seq_ctrl|cmd_eop~q ),
-	.cmd_ready(\control_internal|u_control_fsm|cmd_ready~q ),
-	.GND_port(GND_port),
-	.RESET(RESET),
-	.CLOCK(CLOCK));
 
 my_adc_altera_modular_adc_sample_store sample_store_internal(
 	.currStatereadConversionState(currStatereadConversionState),
@@ -4668,8 +4647,35 @@ my_adc_altera_modular_adc_sample_store sample_store_internal(
 
 my_adc_altera_modular_adc_sequencer sequencer_internal(
 	.currStateturnOnSequencerState(currStateturnOnSequencerState),
+	.cmd_valid(\sequencer_internal|u_seq_ctrl|cmd_valid~q ),
 	.cmd_eop(\sequencer_internal|u_seq_ctrl|cmd_eop~q ),
 	.cmd_ready(\control_internal|u_control_fsm|cmd_ready~q ),
+	.cmd_channel_0(\sequencer_internal|u_seq_ctrl|cmd_channel[0]~q ),
+	.RESET(RESET),
+	.CLOCK(CLOCK));
+
+my_adc_altera_modular_adc_control control_internal(
+	.wire_pll1_locked(wire_pll1_locked),
+	.wire_pll1_clk_0(wire_pll1_clk_0),
+	.rsp_valid(\control_internal|u_control_fsm|rsp_valid~q ),
+	.rsp_data_0(\control_internal|u_control_fsm|rsp_data[0]~q ),
+	.rsp_data_1(\control_internal|u_control_fsm|rsp_data[1]~q ),
+	.rsp_data_2(\control_internal|u_control_fsm|rsp_data[2]~q ),
+	.rsp_data_3(\control_internal|u_control_fsm|rsp_data[3]~q ),
+	.rsp_data_4(\control_internal|u_control_fsm|rsp_data[4]~q ),
+	.rsp_data_5(\control_internal|u_control_fsm|rsp_data[5]~q ),
+	.rsp_data_6(\control_internal|u_control_fsm|rsp_data[6]~q ),
+	.rsp_data_7(\control_internal|u_control_fsm|rsp_data[7]~q ),
+	.rsp_data_8(\control_internal|u_control_fsm|rsp_data[8]~q ),
+	.rsp_data_9(\control_internal|u_control_fsm|rsp_data[9]~q ),
+	.rsp_data_10(\control_internal|u_control_fsm|rsp_data[10]~q ),
+	.rsp_data_11(\control_internal|u_control_fsm|rsp_data[11]~q ),
+	.rsp_eop(\control_internal|u_control_fsm|rsp_eop~q ),
+	.cmd_valid(\sequencer_internal|u_seq_ctrl|cmd_valid~q ),
+	.cmd_eop(\sequencer_internal|u_seq_ctrl|cmd_eop~q ),
+	.cmd_ready(\control_internal|u_control_fsm|cmd_ready~q ),
+	.cmd_channel_0(\sequencer_internal|u_seq_ctrl|cmd_channel[0]~q ),
+	.GND_port(GND_port),
 	.RESET(RESET),
 	.CLOCK(CLOCK));
 
@@ -4692,8 +4698,10 @@ module my_adc_altera_modular_adc_control (
 	rsp_data_10,
 	rsp_data_11,
 	rsp_eop,
+	cmd_valid,
 	cmd_eop,
 	cmd_ready,
+	cmd_channel_0,
 	GND_port,
 	RESET,
 	CLOCK)/* synthesis synthesis_greybox=0 */;
@@ -4713,8 +4721,10 @@ output 	rsp_data_9;
 output 	rsp_data_10;
 output 	rsp_data_11;
 output 	rsp_eop;
+input 	cmd_valid;
 input 	cmd_eop;
 output 	cmd_ready;
+input 	cmd_channel_0;
 input 	GND_port;
 input 	RESET;
 input 	CLOCK;
@@ -4745,9 +4755,34 @@ wire \adc_inst|adcblock_instance|wire_from_adc_dout[11] ;
 wire \u_control_fsm|soc~q ;
 wire \u_control_fsm|chsel[1]~q ;
 wire \u_control_fsm|chsel[0]~q ;
-wire \u_control_fsm|chsel[1]~_wirecell_combout ;
+wire \u_control_fsm|chsel[2]~q ;
+wire \u_control_fsm|chsel[2]~_wirecell_combout ;
 wire \u_control_fsm|usr_pwd~_wirecell_combout ;
 
+
+my_adc_fiftyfivenm_adcblock_top_wrapper adc_inst(
+	.eoc(\adc_inst|adcblock_instance|eoc ),
+	.clkout_adccore(\adc_inst|adcblock_instance|clkout_adccore ),
+	.wire_from_adc_dout_0(\adc_inst|adcblock_instance|wire_from_adc_dout[0] ),
+	.wire_from_adc_dout_1(\adc_inst|adcblock_instance|wire_from_adc_dout[1] ),
+	.wire_from_adc_dout_2(\adc_inst|adcblock_instance|wire_from_adc_dout[2] ),
+	.wire_from_adc_dout_3(\adc_inst|adcblock_instance|wire_from_adc_dout[3] ),
+	.wire_from_adc_dout_4(\adc_inst|adcblock_instance|wire_from_adc_dout[4] ),
+	.wire_from_adc_dout_5(\adc_inst|adcblock_instance|wire_from_adc_dout[5] ),
+	.wire_from_adc_dout_6(\adc_inst|adcblock_instance|wire_from_adc_dout[6] ),
+	.wire_from_adc_dout_7(\adc_inst|adcblock_instance|wire_from_adc_dout[7] ),
+	.wire_from_adc_dout_8(\adc_inst|adcblock_instance|wire_from_adc_dout[8] ),
+	.wire_from_adc_dout_9(\adc_inst|adcblock_instance|wire_from_adc_dout[9] ),
+	.wire_from_adc_dout_10(\adc_inst|adcblock_instance|wire_from_adc_dout[10] ),
+	.wire_from_adc_dout_11(\adc_inst|adcblock_instance|wire_from_adc_dout[11] ),
+	.wire_pll1_clk_0(wire_pll1_clk_0),
+	.soc(\u_control_fsm|soc~q ),
+	.chsel_1(\u_control_fsm|chsel[1]~q ),
+	.chsel_0(\u_control_fsm|chsel[0]~q ),
+	.chsel_2(\u_control_fsm|chsel[2]~q ),
+	.GND_port(GND_port),
+	.chsel_21(\u_control_fsm|chsel[2]~_wirecell_combout ),
+	.usr_pwd(\u_control_fsm|usr_pwd~_wirecell_combout ));
 
 my_adc_altera_modular_adc_control_fsm u_control_fsm(
 	.eoc(\adc_inst|adcblock_instance|eoc ),
@@ -4782,35 +4817,15 @@ my_adc_altera_modular_adc_control_fsm u_control_fsm(
 	.soc1(\u_control_fsm|soc~q ),
 	.chsel_1(\u_control_fsm|chsel[1]~q ),
 	.chsel_0(\u_control_fsm|chsel[0]~q ),
+	.chsel_2(\u_control_fsm|chsel[2]~q ),
+	.cmd_valid(cmd_valid),
 	.cmd_eop(cmd_eop),
 	.cmd_ready1(cmd_ready),
-	.chsel_11(\u_control_fsm|chsel[1]~_wirecell_combout ),
+	.cmd_channel_0(cmd_channel_0),
+	.chsel_21(\u_control_fsm|chsel[2]~_wirecell_combout ),
 	.usr_pwd1(\u_control_fsm|usr_pwd~_wirecell_combout ),
 	.RESET(RESET),
 	.CLOCK(CLOCK));
-
-my_adc_fiftyfivenm_adcblock_top_wrapper adc_inst(
-	.eoc(\adc_inst|adcblock_instance|eoc ),
-	.clkout_adccore(\adc_inst|adcblock_instance|clkout_adccore ),
-	.wire_from_adc_dout_0(\adc_inst|adcblock_instance|wire_from_adc_dout[0] ),
-	.wire_from_adc_dout_1(\adc_inst|adcblock_instance|wire_from_adc_dout[1] ),
-	.wire_from_adc_dout_2(\adc_inst|adcblock_instance|wire_from_adc_dout[2] ),
-	.wire_from_adc_dout_3(\adc_inst|adcblock_instance|wire_from_adc_dout[3] ),
-	.wire_from_adc_dout_4(\adc_inst|adcblock_instance|wire_from_adc_dout[4] ),
-	.wire_from_adc_dout_5(\adc_inst|adcblock_instance|wire_from_adc_dout[5] ),
-	.wire_from_adc_dout_6(\adc_inst|adcblock_instance|wire_from_adc_dout[6] ),
-	.wire_from_adc_dout_7(\adc_inst|adcblock_instance|wire_from_adc_dout[7] ),
-	.wire_from_adc_dout_8(\adc_inst|adcblock_instance|wire_from_adc_dout[8] ),
-	.wire_from_adc_dout_9(\adc_inst|adcblock_instance|wire_from_adc_dout[9] ),
-	.wire_from_adc_dout_10(\adc_inst|adcblock_instance|wire_from_adc_dout[10] ),
-	.wire_from_adc_dout_11(\adc_inst|adcblock_instance|wire_from_adc_dout[11] ),
-	.wire_pll1_clk_0(wire_pll1_clk_0),
-	.soc(\u_control_fsm|soc~q ),
-	.chsel_1(\u_control_fsm|chsel[1]~q ),
-	.chsel_0(\u_control_fsm|chsel[0]~q ),
-	.GND_port(GND_port),
-	.chsel_11(\u_control_fsm|chsel[1]~_wirecell_combout ),
-	.usr_pwd(\u_control_fsm|usr_pwd~_wirecell_combout ));
 
 endmodule
 
@@ -4847,9 +4862,12 @@ module my_adc_altera_modular_adc_control_fsm (
 	soc1,
 	chsel_1,
 	chsel_0,
+	chsel_2,
+	cmd_valid,
 	cmd_eop,
 	cmd_ready1,
-	chsel_11,
+	cmd_channel_0,
+	chsel_21,
 	usr_pwd1,
 	RESET,
 	CLOCK)/* synthesis synthesis_greybox=0 */;
@@ -4885,9 +4903,12 @@ output 	rsp_eop1;
 output 	soc1;
 output 	chsel_1;
 output 	chsel_0;
+output 	chsel_2;
+input 	cmd_valid;
 input 	cmd_eop;
 output 	cmd_ready1;
-output 	chsel_11;
+input 	cmd_channel_0;
+output 	chsel_21;
 output 	usr_pwd1;
 input 	RESET;
 input 	CLOCK;
@@ -4920,7 +4941,7 @@ wire \ctrl_state.GETCMD_W~q ;
 wire \Selector8~0_combout ;
 wire \ctrl_state.PRE_CONV~q ;
 wire \arc_to_conv~combout ;
-wire \int_timer[6]~24_combout ;
+wire \int_timer[3]~24_combout ;
 wire \int_timer[0]~q ;
 wire \int_timer[0]~9 ;
 wire \int_timer[1]~10_combout ;
@@ -5004,15 +5025,16 @@ wire \WideOr13~1_combout ;
 wire \WideOr13~2_combout ;
 wire \WideOr13~3_combout ;
 wire \WideOr13~4_combout ;
-wire \Selector16~0_combout ;
+wire \Selector15~0_combout ;
 wire \WideOr16~0_combout ;
 wire \Selector17~0_combout ;
-wire \Selector15~0_combout ;
 wire \WideOr13~5_combout ;
-wire \WideOr13~6_combout ;
 wire \Selector15~1_combout ;
+wire \Selector15~2_combout ;
+wire \Selector16~0_combout ;
 wire \Selector16~1_combout ;
-wire \Selector16~2_combout ;
+wire \Selector14~0_combout ;
+wire \Selector14~1_combout ;
 wire \Selector18~0_combout ;
 wire \Selector18~1_combout ;
 wire \usr_pwd~q ;
@@ -5242,7 +5264,7 @@ defparam soc.power_up = "low";
 
 dffeas \chsel[1] (
 	.clk(CLOCK),
-	.d(\Selector15~1_combout ),
+	.d(\Selector15~2_combout ),
 	.asdata(vcc),
 	.clrn(!RESET),
 	.aload(gnd),
@@ -5256,7 +5278,7 @@ defparam \chsel[1] .power_up = "low";
 
 dffeas \chsel[0] (
 	.clk(CLOCK),
-	.d(\Selector16~2_combout ),
+	.d(\Selector16~1_combout ),
 	.asdata(vcc),
 	.clrn(!RESET),
 	.aload(gnd),
@@ -5267,6 +5289,20 @@ dffeas \chsel[0] (
 	.prn(vcc));
 defparam \chsel[0] .is_wysiwyg = "true";
 defparam \chsel[0] .power_up = "low";
+
+dffeas \chsel[2] (
+	.clk(CLOCK),
+	.d(\Selector14~1_combout ),
+	.asdata(vcc),
+	.clrn(!RESET),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.q(chsel_2),
+	.prn(vcc));
+defparam \chsel[2] .is_wysiwyg = "true";
+defparam \chsel[2] .power_up = "low";
 
 dffeas cmd_ready(
 	.clk(CLOCK),
@@ -5282,16 +5318,16 @@ dffeas cmd_ready(
 defparam cmd_ready.is_wysiwyg = "true";
 defparam cmd_ready.power_up = "low";
 
-fiftyfivenm_lcell_comb \chsel[1]~_wirecell (
-	.dataa(chsel_1),
+fiftyfivenm_lcell_comb \chsel[2]~_wirecell (
+	.dataa(chsel_2),
 	.datab(gnd),
 	.datac(gnd),
 	.datad(gnd),
 	.cin(gnd),
-	.combout(chsel_11),
+	.combout(chsel_21),
 	.cout());
-defparam \chsel[1]~_wirecell .lut_mask = 16'h5555;
-defparam \chsel[1]~_wirecell .sum_lutc_input = "datac";
+defparam \chsel[2]~_wirecell .lut_mask = 16'h5555;
+defparam \chsel[2]~_wirecell .sum_lutc_input = "datac";
 
 fiftyfivenm_lcell_comb \usr_pwd~_wirecell (
 	.dataa(\usr_pwd~q ),
@@ -5433,7 +5469,7 @@ fiftyfivenm_lcell_comb \Selector6~2 (
 	.dataa(\Selector6~1_combout ),
 	.datab(gnd),
 	.datac(\Selector6~0_combout ),
-	.datad(cmd_eop),
+	.datad(cmd_valid),
 	.cin(gnd),
 	.combout(\Selector6~2_combout ),
 	.cout());
@@ -5455,7 +5491,7 @@ defparam \ctrl_state.WAIT .is_wysiwyg = "true";
 defparam \ctrl_state.WAIT .power_up = "low";
 
 fiftyfivenm_lcell_comb \ctrl_state_nxt.GETCMD_W~0 (
-	.dataa(cmd_eop),
+	.dataa(cmd_valid),
 	.datab(\ctrl_state.WAIT~q ),
 	.datac(gnd),
 	.datad(gnd),
@@ -5515,16 +5551,16 @@ fiftyfivenm_lcell_comb arc_to_conv(
 defparam arc_to_conv.lut_mask = 16'h00EA;
 defparam arc_to_conv.sum_lutc_input = "datac";
 
-fiftyfivenm_lcell_comb \int_timer[6]~24 (
+fiftyfivenm_lcell_comb \int_timer[3]~24 (
 	.dataa(\ctrl_state.PWRDWN_TSEN~q ),
 	.datab(\ctrl_state.PWRDWN~q ),
 	.datac(\arc_to_conv~combout ),
 	.datad(gnd),
 	.cin(gnd),
-	.combout(\int_timer[6]~24_combout ),
+	.combout(\int_timer[3]~24_combout ),
 	.cout());
-defparam \int_timer[6]~24 .lut_mask = 16'hFEFE;
-defparam \int_timer[6]~24 .sum_lutc_input = "datac";
+defparam \int_timer[3]~24 .lut_mask = 16'hFEFE;
+defparam \int_timer[3]~24 .sum_lutc_input = "datac";
 
 dffeas \int_timer[0] (
 	.clk(CLOCK),
@@ -5534,7 +5570,7 @@ dffeas \int_timer[0] (
 	.aload(gnd),
 	.sclr(\arc_to_conv~combout ),
 	.sload(gnd),
-	.ena(\int_timer[6]~24_combout ),
+	.ena(\int_timer[3]~24_combout ),
 	.q(\int_timer[0]~q ),
 	.prn(vcc));
 defparam \int_timer[0] .is_wysiwyg = "true";
@@ -5559,7 +5595,7 @@ dffeas \int_timer[1] (
 	.aload(gnd),
 	.sclr(\arc_to_conv~combout ),
 	.sload(gnd),
-	.ena(\int_timer[6]~24_combout ),
+	.ena(\int_timer[3]~24_combout ),
 	.q(\int_timer[1]~q ),
 	.prn(vcc));
 defparam \int_timer[1] .is_wysiwyg = "true";
@@ -5584,7 +5620,7 @@ dffeas \int_timer[2] (
 	.aload(gnd),
 	.sclr(\arc_to_conv~combout ),
 	.sload(gnd),
-	.ena(\int_timer[6]~24_combout ),
+	.ena(\int_timer[3]~24_combout ),
 	.q(\int_timer[2]~q ),
 	.prn(vcc));
 defparam \int_timer[2] .is_wysiwyg = "true";
@@ -5609,7 +5645,7 @@ dffeas \int_timer[3] (
 	.aload(gnd),
 	.sclr(\arc_to_conv~combout ),
 	.sload(gnd),
-	.ena(\int_timer[6]~24_combout ),
+	.ena(\int_timer[3]~24_combout ),
 	.q(\int_timer[3]~q ),
 	.prn(vcc));
 defparam \int_timer[3] .is_wysiwyg = "true";
@@ -5634,7 +5670,7 @@ dffeas \int_timer[4] (
 	.aload(gnd),
 	.sclr(\arc_to_conv~combout ),
 	.sload(gnd),
-	.ena(\int_timer[6]~24_combout ),
+	.ena(\int_timer[3]~24_combout ),
 	.q(\int_timer[4]~q ),
 	.prn(vcc));
 defparam \int_timer[4] .is_wysiwyg = "true";
@@ -5659,7 +5695,7 @@ dffeas \int_timer[5] (
 	.aload(gnd),
 	.sclr(\arc_to_conv~combout ),
 	.sload(gnd),
-	.ena(\int_timer[6]~24_combout ),
+	.ena(\int_timer[3]~24_combout ),
 	.q(\int_timer[5]~q ),
 	.prn(vcc));
 defparam \int_timer[5] .is_wysiwyg = "true";
@@ -5684,7 +5720,7 @@ dffeas \int_timer[6] (
 	.aload(gnd),
 	.sclr(\arc_to_conv~combout ),
 	.sload(gnd),
-	.ena(\int_timer[6]~24_combout ),
+	.ena(\int_timer[3]~24_combout ),
 	.q(\int_timer[6]~q ),
 	.prn(vcc));
 defparam \int_timer[6] .is_wysiwyg = "true";
@@ -5734,7 +5770,7 @@ dffeas \int_timer[7] (
 	.aload(gnd),
 	.sclr(\arc_to_conv~combout ),
 	.sload(gnd),
-	.ena(\int_timer[6]~24_combout ),
+	.ena(\int_timer[3]~24_combout ),
 	.q(\int_timer[7]~q ),
 	.prn(vcc));
 defparam \int_timer[7] .is_wysiwyg = "true";
@@ -5874,7 +5910,7 @@ defparam \Selector6~0 .lut_mask = 16'h00BF;
 defparam \Selector6~0 .sum_lutc_input = "datac";
 
 fiftyfivenm_lcell_comb \Selector7~0 (
-	.dataa(cmd_eop),
+	.dataa(cmd_valid),
 	.datab(\ctrl_state.PUTRESP_DLY3~q ),
 	.datac(gnd),
 	.datad(\Selector6~0_combout ),
@@ -5991,7 +6027,7 @@ fiftyfivenm_lcell_comb \Selector11~1 (
 	.dataa(\Selector11~0_combout ),
 	.datab(\pend~q ),
 	.datac(\ctrl_state.PUTRESP_DLY3~q ),
-	.datad(cmd_eop),
+	.datad(cmd_valid),
 	.cin(gnd),
 	.combout(\Selector11~1_combout ),
 	.cout());
@@ -6411,7 +6447,7 @@ defparam \rsp_eop~0 .sum_lutc_input = "datac";
 
 fiftyfivenm_lcell_comb \WideOr13~0 (
 	.dataa(\Selector6~0_combout ),
-	.datab(cmd_eop),
+	.datab(cmd_valid),
 	.datac(\Selector6~1_combout ),
 	.datad(\ctrl_state.PUTRESP_DLY3~q ),
 	.cin(gnd),
@@ -6432,7 +6468,7 @@ defparam \WideOr13~1 .lut_mask = 16'h00BF;
 defparam \WideOr13~1 .sum_lutc_input = "datac";
 
 fiftyfivenm_lcell_comb \WideOr13~2 (
-	.dataa(cmd_eop),
+	.dataa(cmd_valid),
 	.datab(\ctrl_state.WAIT~q ),
 	.datac(\ctrl_state.CONV_DLY1~q ),
 	.datad(cmd_ready1),
@@ -6464,21 +6500,21 @@ fiftyfivenm_lcell_comb \WideOr13~4 (
 defparam \WideOr13~4 .lut_mask = 16'h0080;
 defparam \WideOr13~4 .sum_lutc_input = "datac";
 
-fiftyfivenm_lcell_comb \Selector16~0 (
+fiftyfivenm_lcell_comb \Selector15~0 (
 	.dataa(\eoc_hl~0_combout ),
 	.datab(\ctrl_state.PRE_CONV~q ),
 	.datac(\ctrl_state.CONV~q ),
 	.datad(\ctrl_state.GETCMD~q ),
 	.cin(gnd),
-	.combout(\Selector16~0_combout ),
+	.combout(\Selector15~0_combout ),
 	.cout());
-defparam \Selector16~0 .lut_mask = 16'h0007;
-defparam \Selector16~0 .sum_lutc_input = "datac";
+defparam \Selector15~0 .lut_mask = 16'h0007;
+defparam \Selector15~0 .sum_lutc_input = "datac";
 
 fiftyfivenm_lcell_comb \WideOr16~0 (
 	.dataa(\WideOr13~0_combout ),
 	.datab(\WideOr13~4_combout ),
-	.datac(\Selector16~0_combout ),
+	.datac(\Selector15~0_combout ),
 	.datad(\Selector11~1_combout ),
 	.cin(gnd),
 	.combout(\WideOr16~0_combout ),
@@ -6497,17 +6533,6 @@ fiftyfivenm_lcell_comb \Selector17~0 (
 defparam \Selector17~0 .lut_mask = 16'hEAEE;
 defparam \Selector17~0 .sum_lutc_input = "datac";
 
-fiftyfivenm_lcell_comb \Selector15~0 (
-	.dataa(\Selector11~1_combout ),
-	.datab(\Selector4~0_combout ),
-	.datac(wire_pll1_locked),
-	.datad(\ctrl_state.IDLE~q ),
-	.cin(gnd),
-	.combout(\Selector15~0_combout ),
-	.cout());
-defparam \Selector15~0 .lut_mask = 16'hEEEF;
-defparam \Selector15~0 .sum_lutc_input = "datac";
-
 fiftyfivenm_lcell_comb \WideOr13~5 (
 	.dataa(\Selector5~1_combout ),
 	.datab(\Selector3~1_combout ),
@@ -6519,49 +6544,71 @@ fiftyfivenm_lcell_comb \WideOr13~5 (
 defparam \WideOr13~5 .lut_mask = 16'hFFFE;
 defparam \WideOr13~5 .sum_lutc_input = "datac";
 
-fiftyfivenm_lcell_comb \WideOr13~6 (
-	.dataa(\WideOr13~5_combout ),
-	.datab(gnd),
-	.datac(\WideOr13~0_combout ),
-	.datad(\WideOr13~4_combout ),
-	.cin(gnd),
-	.combout(\WideOr13~6_combout ),
-	.cout());
-defparam \WideOr13~6 .lut_mask = 16'hAFFF;
-defparam \WideOr13~6 .sum_lutc_input = "datac";
-
 fiftyfivenm_lcell_comb \Selector15~1 (
-	.dataa(\Selector15~0_combout ),
-	.datab(\WideOr13~6_combout ),
-	.datac(gnd),
-	.datad(chsel_1),
+	.dataa(cmd_eop),
+	.datab(\Selector15~0_combout ),
+	.datac(chsel_1),
+	.datad(\WideOr13~4_combout ),
 	.cin(gnd),
 	.combout(\Selector15~1_combout ),
 	.cout());
-defparam \Selector15~1 .lut_mask = 16'h5511;
+defparam \Selector15~1 .lut_mask = 16'hEE0E;
 defparam \Selector15~1 .sum_lutc_input = "datac";
+
+fiftyfivenm_lcell_comb \Selector15~2 (
+	.dataa(chsel_1),
+	.datab(\WideOr13~5_combout ),
+	.datac(\WideOr13~0_combout ),
+	.datad(\Selector15~1_combout ),
+	.cin(gnd),
+	.combout(\Selector15~2_combout ),
+	.cout());
+defparam \Selector15~2 .lut_mask = 16'h8AFF;
+defparam \Selector15~2 .sum_lutc_input = "datac";
+
+fiftyfivenm_lcell_comb \Selector16~0 (
+	.dataa(chsel_0),
+	.datab(cmd_channel_0),
+	.datac(\Selector15~0_combout ),
+	.datad(\WideOr13~4_combout ),
+	.cin(gnd),
+	.combout(\Selector16~0_combout ),
+	.cout());
+defparam \Selector16~0 .lut_mask = 16'h0CAE;
+defparam \Selector16~0 .sum_lutc_input = "datac";
 
 fiftyfivenm_lcell_comb \Selector16~1 (
 	.dataa(chsel_0),
-	.datab(cmd_eop),
-	.datac(\Selector16~0_combout ),
-	.datad(\WideOr13~0_combout ),
+	.datab(\WideOr13~5_combout ),
+	.datac(\WideOr13~0_combout ),
+	.datad(\Selector16~0_combout ),
 	.cin(gnd),
 	.combout(\Selector16~1_combout ),
 	.cout());
-defparam \Selector16~1 .lut_mask = 16'h0CAE;
+defparam \Selector16~1 .lut_mask = 16'hFF8A;
 defparam \Selector16~1 .sum_lutc_input = "datac";
 
-fiftyfivenm_lcell_comb \Selector16~2 (
-	.dataa(chsel_0),
-	.datab(\WideOr13~5_combout ),
+fiftyfivenm_lcell_comb \Selector14~0 (
+	.dataa(\WideOr13~5_combout ),
+	.datab(\WideOr13~0_combout ),
 	.datac(\WideOr13~4_combout ),
-	.datad(\Selector16~1_combout ),
+	.datad(chsel_2),
 	.cin(gnd),
-	.combout(\Selector16~2_combout ),
+	.combout(\Selector14~0_combout ),
 	.cout());
-defparam \Selector16~2 .lut_mask = 16'hFF8A;
-defparam \Selector16~2 .sum_lutc_input = "datac";
+defparam \Selector14~0 .lut_mask = 16'h00BF;
+defparam \Selector14~0 .sum_lutc_input = "datac";
+
+fiftyfivenm_lcell_comb \Selector14~1 (
+	.dataa(\Selector11~1_combout ),
+	.datab(\Selector4~0_combout ),
+	.datac(\Selector14~0_combout ),
+	.datad(\Selector0~0_combout ),
+	.cin(gnd),
+	.combout(\Selector14~1_combout ),
+	.cout());
+defparam \Selector14~1 .lut_mask = 16'h0100;
+defparam \Selector14~1 .sum_lutc_input = "datac";
 
 fiftyfivenm_lcell_comb \Selector18~0 (
 	.dataa(\ctrl_state.PWRDWN~q ),
@@ -6724,8 +6771,9 @@ module my_adc_fiftyfivenm_adcblock_top_wrapper (
 	soc,
 	chsel_1,
 	chsel_0,
+	chsel_2,
 	GND_port,
-	chsel_11,
+	chsel_21,
 	usr_pwd)/* synthesis synthesis_greybox=0 */;
 output 	eoc;
 output 	clkout_adccore;
@@ -6745,8 +6793,9 @@ input 	wire_pll1_clk_0;
 input 	soc;
 input 	chsel_1;
 input 	chsel_0;
+input 	chsel_2;
 input 	GND_port;
-input 	chsel_11;
+input 	chsel_21;
 input 	usr_pwd;
 
 wire gnd;
@@ -6758,8 +6807,10 @@ assign vcc = 1'b1;
 // unknown value (1'bx) is not needed for this tool. Default to 1'b0
 assign unknown = 1'b0;
 
+wire \decoder|WideOr4~0_combout ;
 wire \decoder|Decoder0~0_combout ;
-wire \decoder|Decoder0~1_combout ;
+wire \decoder|WideOr2~0_combout ;
+wire \decoder|WideOr1~0_combout ;
 
 
 my_adc_fiftyfivenm_adcblock_primitive_wrapper adcblock_instance(
@@ -6768,27 +6819,36 @@ my_adc_fiftyfivenm_adcblock_primitive_wrapper adcblock_instance(
 	.dout({wire_from_adc_dout_11,wire_from_adc_dout_10,wire_from_adc_dout_9,wire_from_adc_dout_8,wire_from_adc_dout_7,wire_from_adc_dout_6,wire_from_adc_dout_5,wire_from_adc_dout_4,wire_from_adc_dout_3,wire_from_adc_dout_2,wire_from_adc_dout_1,wire_from_adc_dout_0}),
 	.clkin_from_pll_c0(wire_pll1_clk_0),
 	.soc(soc),
-	.chsel({chsel_11,chsel_11,\decoder|Decoder0~1_combout ,\decoder|Decoder0~0_combout ,\decoder|Decoder0~0_combout }),
+	.chsel({chsel_21,\decoder|WideOr1~0_combout ,\decoder|WideOr2~0_combout ,\decoder|Decoder0~0_combout ,\decoder|WideOr4~0_combout }),
 	.tsen(GND_port),
 	.usr_pwd(usr_pwd));
 
 my_adc_chsel_code_converter_sw_to_hw decoder(
 	.chsel_1(chsel_1),
 	.chsel_0(chsel_0),
+	.chsel_2(chsel_2),
+	.WideOr4(\decoder|WideOr4~0_combout ),
 	.Decoder0(\decoder|Decoder0~0_combout ),
-	.Decoder01(\decoder|Decoder0~1_combout ));
+	.WideOr2(\decoder|WideOr2~0_combout ),
+	.WideOr1(\decoder|WideOr1~0_combout ));
 
 endmodule
 
 module my_adc_chsel_code_converter_sw_to_hw (
 	chsel_1,
 	chsel_0,
+	chsel_2,
+	WideOr4,
 	Decoder0,
-	Decoder01)/* synthesis synthesis_greybox=0 */;
+	WideOr2,
+	WideOr1)/* synthesis synthesis_greybox=0 */;
 input 	chsel_1;
 input 	chsel_0;
+input 	chsel_2;
+output 	WideOr4;
 output 	Decoder0;
-output 	Decoder01;
+output 	WideOr2;
+output 	WideOr1;
 
 wire gnd;
 wire vcc;
@@ -6801,27 +6861,49 @@ assign unknown = 1'b0;
 
 
 
-fiftyfivenm_lcell_comb \Decoder0~0 (
+fiftyfivenm_lcell_comb \WideOr4~0 (
 	.dataa(chsel_1),
-	.datab(chsel_0),
-	.datac(gnd),
+	.datab(gnd),
+	.datac(chsel_0),
+	.datad(chsel_2),
+	.cin(gnd),
+	.combout(WideOr4),
+	.cout());
+defparam \WideOr4~0 .lut_mask = 16'h0AFF;
+defparam \WideOr4~0 .sum_lutc_input = "datac";
+
+fiftyfivenm_lcell_comb \Decoder0~0 (
+	.dataa(chsel_2),
+	.datab(chsel_1),
+	.datac(chsel_0),
 	.datad(gnd),
 	.cin(gnd),
 	.combout(Decoder0),
 	.cout());
-defparam \Decoder0~0 .lut_mask = 16'h7777;
+defparam \Decoder0~0 .lut_mask = 16'h7F7F;
 defparam \Decoder0~0 .sum_lutc_input = "datac";
 
-fiftyfivenm_lcell_comb \Decoder0~1 (
+fiftyfivenm_lcell_comb \WideOr2~0 (
+	.dataa(chsel_1),
+	.datab(chsel_0),
+	.datac(gnd),
+	.datad(chsel_2),
+	.cin(gnd),
+	.combout(WideOr2),
+	.cout());
+defparam \WideOr2~0 .lut_mask = 16'h99FF;
+defparam \WideOr2~0 .sum_lutc_input = "datac";
+
+fiftyfivenm_lcell_comb \WideOr1~0 (
 	.dataa(chsel_0),
 	.datab(gnd),
-	.datac(gnd),
-	.datad(chsel_1),
+	.datac(chsel_1),
+	.datad(chsel_2),
 	.cin(gnd),
-	.combout(Decoder01),
+	.combout(WideOr1),
 	.cout());
-defparam \Decoder0~1 .lut_mask = 16'hAAFF;
-defparam \Decoder0~1 .sum_lutc_input = "datac";
+defparam \WideOr1~0 .lut_mask = 16'h0AFF;
+defparam \WideOr1~0 .sum_lutc_input = "datac";
 
 endmodule
 
@@ -6873,7 +6955,7 @@ fiftyfivenm_adcblock primitive_instance(
 	.usr_pwd(usr_pwd),
 	.tsen(tsen),
 	.clkin_from_pll_c0(clkin_from_pll_c0),
-	.chsel({chsel[3],chsel[3],chsel[2],chsel[0],chsel[0]}),
+	.chsel({chsel[4],chsel[3],chsel[2],chsel[1],chsel[0]}),
 	.eoc(eoc),
 	.dout(primitive_instance_DOUT_bus));
 defparam primitive_instance.analog_input_pin_mask = 63;
@@ -8441,13 +8523,17 @@ endmodule
 
 module my_adc_altera_modular_adc_sequencer (
 	currStateturnOnSequencerState,
+	cmd_valid,
 	cmd_eop,
 	cmd_ready,
+	cmd_channel_0,
 	RESET,
 	CLOCK)/* synthesis synthesis_greybox=0 */;
 input 	currStateturnOnSequencerState;
+output 	cmd_valid;
 output 	cmd_eop;
 input 	cmd_ready;
+output 	cmd_channel_0;
 input 	RESET;
 input 	CLOCK;
 
@@ -8464,8 +8550,10 @@ wire \u_seq_csr|run~q ;
 
 
 my_adc_altera_modular_adc_sequencer_ctrl u_seq_ctrl(
+	.cmd_valid1(cmd_valid),
 	.cmd_eop1(cmd_eop),
 	.cmd_ready(cmd_ready),
+	.cmd_channel_0(cmd_channel_0),
 	.run(\u_seq_csr|run~q ),
 	.rst_n(RESET),
 	.clk(CLOCK));
@@ -8528,13 +8616,17 @@ defparam \run~0 .sum_lutc_input = "datac";
 endmodule
 
 module my_adc_altera_modular_adc_sequencer_ctrl (
+	cmd_valid1,
 	cmd_eop1,
 	cmd_ready,
+	cmd_channel_0,
 	run,
 	rst_n,
 	clk)/* synthesis synthesis_greybox=0 */;
+output 	cmd_valid1;
 output 	cmd_eop1;
 input 	cmd_ready;
+output 	cmd_channel_0;
 input 	run;
 input 	rst_n;
 input 	clk;
@@ -8550,8 +8642,27 @@ assign unknown = 1'b0;
 
 wire \seq_state~0_combout ;
 wire \seq_state~q ;
+wire \cmd_valid~0_combout ;
+wire \slot_sel_nxt[0]~0_combout ;
+wire \slot_sel[0]~q ;
 wire \cmd_eop~0_combout ;
+wire \cmd_eop~1_combout ;
+wire \cmd_channel~0_combout ;
 
+
+dffeas cmd_valid(
+	.clk(clk),
+	.d(\cmd_valid~0_combout ),
+	.asdata(vcc),
+	.clrn(!rst_n),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.q(cmd_valid1),
+	.prn(vcc));
+defparam cmd_valid.is_wysiwyg = "true";
+defparam cmd_valid.power_up = "low";
 
 dffeas cmd_eop(
 	.clk(clk),
@@ -8561,11 +8672,25 @@ dffeas cmd_eop(
 	.aload(gnd),
 	.sclr(gnd),
 	.sload(gnd),
-	.ena(vcc),
+	.ena(\cmd_eop~1_combout ),
 	.q(cmd_eop1),
 	.prn(vcc));
 defparam cmd_eop.is_wysiwyg = "true";
 defparam cmd_eop.power_up = "low";
+
+dffeas \cmd_channel[0] (
+	.clk(clk),
+	.d(\cmd_channel~0_combout ),
+	.asdata(vcc),
+	.clrn(!rst_n),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\cmd_eop~1_combout ),
+	.q(cmd_channel_0),
+	.prn(vcc));
+defparam \cmd_channel[0] .is_wysiwyg = "true";
+defparam \cmd_channel[0] .power_up = "low";
 
 fiftyfivenm_lcell_comb \seq_state~0 (
 	.dataa(\seq_state~q ),
@@ -8592,15 +8717,73 @@ dffeas seq_state(
 defparam seq_state.is_wysiwyg = "true";
 defparam seq_state.power_up = "low";
 
-fiftyfivenm_lcell_comb \cmd_eop~0 (
-	.dataa(cmd_eop1),
+fiftyfivenm_lcell_comb \cmd_valid~0 (
+	.dataa(cmd_valid1),
 	.datab(cmd_ready),
 	.datac(run),
 	.datad(\seq_state~q ),
 	.cin(gnd),
+	.combout(\cmd_valid~0_combout ),
+	.cout());
+defparam \cmd_valid~0 .lut_mask = 16'hEEF2;
+defparam \cmd_valid~0 .sum_lutc_input = "datac";
+
+fiftyfivenm_lcell_comb \slot_sel_nxt[0]~0 (
+	.dataa(cmd_ready),
+	.datab(\slot_sel[0]~q ),
+	.datac(gnd),
+	.datad(\seq_state~q ),
+	.cin(gnd),
+	.combout(\slot_sel_nxt[0]~0_combout ),
+	.cout());
+defparam \slot_sel_nxt[0]~0 .lut_mask = 16'h6600;
+defparam \slot_sel_nxt[0]~0 .sum_lutc_input = "datac";
+
+dffeas \slot_sel[0] (
+	.clk(clk),
+	.d(\slot_sel_nxt[0]~0_combout ),
+	.asdata(vcc),
+	.clrn(!rst_n),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.q(\slot_sel[0]~q ),
+	.prn(vcc));
+defparam \slot_sel[0] .is_wysiwyg = "true";
+defparam \slot_sel[0] .power_up = "low";
+
+fiftyfivenm_lcell_comb \cmd_eop~0 (
+	.dataa(\slot_sel[0]~q ),
+	.datab(gnd),
+	.datac(cmd_ready),
+	.datad(\seq_state~q ),
+	.cin(gnd),
 	.combout(\cmd_eop~0_combout ),
 	.cout());
-defparam \cmd_eop~0 .lut_mask = 16'hEEF2;
+defparam \cmd_eop~0 .lut_mask = 16'h5000;
 defparam \cmd_eop~0 .sum_lutc_input = "datac";
+
+fiftyfivenm_lcell_comb \cmd_eop~1 (
+	.dataa(cmd_ready),
+	.datab(run),
+	.datac(gnd),
+	.datad(\seq_state~q ),
+	.cin(gnd),
+	.combout(\cmd_eop~1_combout ),
+	.cout());
+defparam \cmd_eop~1 .lut_mask = 16'hAAEE;
+defparam \cmd_eop~1 .sum_lutc_input = "datac";
+
+fiftyfivenm_lcell_comb \cmd_channel~0 (
+	.dataa(cmd_ready),
+	.datab(\slot_sel[0]~q ),
+	.datac(run),
+	.datad(\seq_state~q ),
+	.cin(gnd),
+	.combout(\cmd_channel~0_combout ),
+	.cout());
+defparam \cmd_channel~0 .lut_mask = 16'h88F0;
+defparam \cmd_channel~0 .sum_lutc_input = "datac";
 
 endmodule

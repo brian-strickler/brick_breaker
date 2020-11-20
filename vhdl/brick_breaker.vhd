@@ -22,10 +22,14 @@ end entity brick_breaker;
 
 architecture behavioral of brick_breaker is
 
-signal paddle_pos : std_logic_vector(11 downto 0) := X"000";
-signal level : std_logic_vector(11 downto 0) := X"000";
-signal rst_l : std_logic;
+signal pot : std_logic_vector(11 downto 0) := X"000";
+signal rst : std_logic := '0';
 signal sound_fx : std_logic_vector(2 downto 0); -- b"000"/no sound, b"001"/ball paddle, b"010"/walls+ceiling, b"011"/dead ball, b"100"/brick break
+
+signal vga_clk : std_logic; -- maps to c0 of myPLL
+signal vga_rst : std_logic := '1';
+signal color : std_logic_vector(11 downto 0) := X"000";
+signal pad : std_logic_vector(11 downto 0) := "100000000000";
 
 	component sound_board is
 		port (
@@ -35,32 +39,73 @@ signal sound_fx : std_logic_vector(2 downto 0); -- b"000"/no sound, b"001"/ball 
 		);
 	end component sound_board;
 	
-	component my_adc is 										-- creates digital value from potentiometer
-		port (
-			CLOCK : in  std_logic                     := 'X'; 	-- clk
-			RESET : in  std_logic                     := 'X'; 	-- reset
-			CH0   : out std_logic_vector(11 downto 0)        	-- CH0
-		);
-	end component my_adc;
+--	component my_adc is 										-- creates digital value from potentiometer
+--		port (
+--			CLOCK : in  std_logic                     := 'X'; 	-- clk
+--			RESET : in  std_logic                     := 'X'; 	-- reset
+--			CH3   : out std_logic_vector(11 downto 0)        	-- CH0
+--		);
+--	end component my_adc;
 
+	component myPLL is
+		port
+		(
+			inclk0	: in std_logic; -- MAX10_CLK1_50
+			c0			: out std_logic -- 25.17 MHz
+		);
+	end component myPLL;	
+	
+	component sync is
+		port (
+			clk 				: in std_logic;
+			reset				: in std_logic;
+			vs_sig 			: out std_logic;
+			hs_sig 			: out std_logic;
+			pixel_data 	: out std_logic_vector(11 downto 0);
+			pot : in std_logic_vector(11 downto 0)
+		);
+	end component sync;
+	
 begin
 	
 	u0 : component sound_board
-	port map (
-		CLK => MAX10_CLK1_50,
-		SOUND_EFFECT => sound_fx,
-		SOUND_OUT => ARDUINO_IO(7)
-	);
+		port map (
+			CLK => MAX10_CLK1_50,
+			SOUND_EFFECT => sound_fx,
+			SOUND_OUT => ARDUINO_IO(7)
+		);
 	
-	u1 : component my_adc
-	port map (
-		CLOCK => MAX10_CLK1_50, --      clk.clk
-		RESET => rst_l, --    reset.reset
-		CH0   => level   --         .CH1
-	);
+--	u1 : component my_adc
+--		port map (
+--			CLOCK => MAX10_CLK1_50, --      clk.clk
+--			RESET => rst, --    reset.reset
+--			CH3   => pot   --         .CH1
+--		);
+	
+	u2 : component myPLL
+		port map
+		(
+			inclk0 => MAX10_CLK1_50,
+			c0 => vga_clk
+		);
+	
+	u3 : sync
+		port map(
+			clk 	=> vga_clk,
+			reset	=> vga_rst,
+			vs_sig => VGA_VS,
+			hs_sig => VGA_HS,
+			pixel_data 	=> color,
+			pot => pad
+		);	
 	
 	process(SW) begin
 		sound_fx <= SW(2 downto 0);
 	end process;
+	
+	VGA_R <= color(11 downto 8);
+	VGA_G <= color(7 downto 4);
+	VGA_B <= color(3 downto 0);
+	LEDR <= pot(9 downto 0);
 	
 end architecture behavioral;

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <EnsembleReport name="my_adc" kind="my_adc" version="1.0" fabric="QSYS">
  <!-- Format version 20.1 711 (Future versions may contain additional information.) -->
- <!-- 2020.11.17.15:31:47 -->
+ <!-- 2020.11.19.21:05:38 -->
  <!-- A collection of modules and connections -->
  <parameter name="AUTO_GENERATION_ID">
   <type>java.lang.Integer</type>
-  <value>1605652307</value>
+  <value>1605845138</value>
   <derived>false</derived>
   <enabled>true</enabled>
   <visible>false</visible>
@@ -136,7 +136,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="numch_">
    <type>int</type>
-   <value>1</value>
+   <value>6</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -144,7 +144,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="numch">
    <type>int</type>
-   <value>0</value>
+   <value>5</value>
    <derived>true</derived>
    <enabled>true</enabled>
    <visible>false</visible>

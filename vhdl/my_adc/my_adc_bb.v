@@ -1,7 +1,6 @@
 
 module my_adc (
 	CLOCK,
-	RESET,
 	CH0,
 	CH1,
 	CH2,
@@ -9,10 +8,10 @@ module my_adc (
 	CH4,
 	CH5,
 	CH6,
-	CH7);	
+	CH7,
+	RESET);	
 
 	input		CLOCK;
-	input		RESET;
 	output	[11:0]	CH0;
 	output	[11:0]	CH1;
 	output	[11:0]	CH2;
@@ -21,4 +20,5 @@ module my_adc (
 	output	[11:0]	CH5;
 	output	[11:0]	CH6;
 	output	[11:0]	CH7;
+	input		RESET;
 endmodule

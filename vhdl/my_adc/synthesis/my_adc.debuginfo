@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <EnsembleReport name="my_adc" kind="system" version="20.1" fabric="QSYS">
  <!-- Format version 20.1 711 (Future versions may contain additional information.) -->
- <!-- 2020.11.17.15:31:49 -->
+ <!-- 2020.11.19.21:05:40 -->
  <!-- A collection of modules and connections -->
  <parameter name="clockCrossingAdapter">
   <type>com.altera.sopcmodel.ensemble.EClockAdapter</type>
@@ -53,7 +53,7 @@
  </parameter>
  <parameter name="generationId">
   <type>int</type>
-  <value>1605652307</value>
+  <value>1605845138</value>
   <derived>false</derived>
   <enabled>true</enabled>
   <visible>true</visible>
@@ -101,7 +101,7 @@
  </parameter>
  <parameter name="projectName">
   <type>java.lang.String</type>
-  <value></value>
+  <value>brick_breaker.qpf</value>
   <derived>false</derived>
   <enabled>true</enabled>
   <visible>false</visible>
@@ -188,7 +188,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="numch_">
    <type>int</type>
-   <value>1</value>
+   <value>6</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -196,7 +196,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="numch">
    <type>int</type>
-   <value>0</value>
+   <value>5</value>
    <derived>true</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -489,5 +489,5 @@ parameters are a RESULT of the module parameters. -->
   <version>20.1</version>
  </plugin>
  <reportVersion>20.1 711</reportVersion>
- <uniqueIdentifier>62F67795FE6B00000175D855DF63</uniqueIdentifier>
+ <uniqueIdentifier>62F67795FE6B00000175E3D43D6C</uniqueIdentifier>
 </EnsembleReport>

@@ -56,7 +56,7 @@ begin
 			board          => "DE10-Lite",
 			board_rev      => "Autodetect",
 			tsclk          => 5,
-			numch          => 0,
+			numch          => 5,
 			max10pllmultby => 1,
 			max10plldivby  => 5
 		)

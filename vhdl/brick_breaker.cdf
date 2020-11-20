@@ -4,7 +4,7 @@ JedecChain;
 	DefaultMfr(6E);
 
 	P ActionCode(Cfg)
-		Device PartName(10M50DAF484) Path("E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/vhdl/") File("brick_breaker.sof") MfrSpec(OpMask(1));
+		Device PartName(10M50DAF484) Path("E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/") File("brick_breaker.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 
