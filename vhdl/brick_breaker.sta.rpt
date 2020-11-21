@@ -1,5 +1,5 @@
 Timing Analyzer report for brick_breaker
-Thu Nov 19 21:27:05 2020
+Fri Nov 20 19:38:47 2020
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -93,13 +93,13 @@ https://fpgasoftware.intel.com/eula.
 ; Number detected on machine ; 8           ;
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
-; Average used               ; 1.81        ;
+; Average used               ; 1.84        ;
 ; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;  28.0%      ;
-;     Processors 3-4         ;  26.4%      ;
+;     Processor 2            ;  29.0%      ;
+;     Processors 3-4         ;  27.4%      ;
 +----------------------------+-------------+
 
 
@@ -108,20 +108,21 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+--------+--------------------------+
 ; SDC File Path     ; Status ; Read at                  ;
 +-------------------+--------+--------------------------+
-; brick_breaker.SDC ; OK     ; Thu Nov 19 21:27:03 2020 ;
+; brick_breaker.SDC ; OK     ; Fri Nov 20 19:38:45 2020 ;
 +-------------------+--------+--------------------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Clocks                                                                                                                                                                                                                                                                                                                ;
-+------------------------------------------------+-----------+---------+-----------+-------+--------+------------+-----------+-------------+-------+--------+-----------+------------+----------+---------------+--------------------------------------------------+----------------------------------------------------+
-; Clock Name                                     ; Type      ; Period  ; Frequency ; Rise  ; Fall   ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master        ; Source                                           ; Targets                                            ;
-+------------------------------------------------+-----------+---------+-----------+-------+--------+------------+-----------+-------------+-------+--------+-----------+------------+----------+---------------+--------------------------------------------------+----------------------------------------------------+
-; ADC_CLK_10                                     ; Base      ; 100.000 ; 10.0 MHz  ; 0.000 ; 50.000 ;            ;           ;             ;       ;        ;           ;            ;          ;               ;                                                  ; { ADC_CLK_10 }                                     ;
-; MAX10_CLK1_50                                  ; Base      ; 20.000  ; 50.0 MHz  ; 0.000 ; 10.000 ;            ;           ;             ;       ;        ;           ;            ;          ;               ;                                                  ; { MAX10_CLK1_50 }                                  ;
-; MAX10_CLK2_50                                  ; Base      ; 20.000  ; 50.0 MHz  ; 0.000 ; 10.000 ;            ;           ;             ;       ;        ;           ;            ;          ;               ;                                                  ; { MAX10_CLK2_50 }                                  ;
-; u2|altpll_component|auto_generated|pll1|clk[0] ; Generated ; 39.729  ; 25.17 MHz ; 0.000 ; 19.864 ; 50.00      ; 147       ; 74          ;       ;        ;           ;            ; false    ; MAX10_CLK1_50 ; u2|altpll_component|auto_generated|pll1|inclk[0] ; { u2|altpll_component|auto_generated|pll1|clk[0] } ;
-+------------------------------------------------+-----------+---------+-----------+-------+--------+------------+-----------+-------------+-------+--------+-----------+------------+----------+---------------+--------------------------------------------------+----------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                                                                                                                                                                                                  ;
++-----------------------------------------------------------+-----------+---------+-----------+-------+---------+------------+-----------+-------------+-------+--------+-----------+------------+----------+---------------+-------------------------------------------------------------+---------------------------------------------------------------+
+; Clock Name                                                ; Type      ; Period  ; Frequency ; Rise  ; Fall    ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master        ; Source                                                      ; Targets                                                       ;
++-----------------------------------------------------------+-----------+---------+-----------+-------+---------+------------+-----------+-------------+-------+--------+-----------+------------+----------+---------------+-------------------------------------------------------------+---------------------------------------------------------------+
+; ADC_CLK_10                                                ; Base      ; 100.000 ; 10.0 MHz  ; 0.000 ; 50.000  ;            ;           ;             ;       ;        ;           ;            ;          ;               ;                                                             ; { ADC_CLK_10 }                                                ;
+; MAX10_CLK1_50                                             ; Base      ; 20.000  ; 50.0 MHz  ; 0.000 ; 10.000  ;            ;           ;             ;       ;        ;           ;            ;          ;               ;                                                             ; { MAX10_CLK1_50 }                                             ;
+; MAX10_CLK2_50                                             ; Base      ; 20.000  ; 50.0 MHz  ; 0.000 ; 10.000  ;            ;           ;             ;       ;        ;           ;            ;          ;               ;                                                             ; { MAX10_CLK2_50 }                                             ;
+; u1|adc_mega_0|ADC_CTRL|adc_pll|auto_generated|pll1|clk[0] ; Generated ; 200.000 ; 5.0 MHz   ; 0.000 ; 100.000 ; 50.00      ; 2         ; 1           ;       ;        ;           ;            ; false    ; ADC_CLK_10    ; u1|adc_mega_0|ADC_CTRL|adc_pll|auto_generated|pll1|inclk[0] ; { u1|adc_mega_0|ADC_CTRL|adc_pll|auto_generated|pll1|clk[0] } ;
+; u2|altpll_component|auto_generated|pll1|clk[0]            ; Generated ; 39.729  ; 25.17 MHz ; 0.000 ; 19.864  ; 50.00      ; 147       ; 74          ;       ;        ;           ;            ; false    ; MAX10_CLK1_50 ; u2|altpll_component|auto_generated|pll1|inclk[0]            ; { u2|altpll_component|auto_generated|pll1|clk[0] }            ;
++-----------------------------------------------------------+-----------+---------+-----------+-------+---------+------------+-----------+-------------+-------+--------+-----------+------------+----------+---------------+-------------------------------------------------------------+---------------------------------------------------------------+
 
 
 +--------------------------------------------------------------------------------------+
@@ -129,30 +130,35 @@ https://fpgasoftware.intel.com/eula.
 +------------+-----------------+------------------------------------------------+------+
 ; Fmax       ; Restricted Fmax ; Clock Name                                     ; Note ;
 +------------+-----------------+------------------------------------------------+------+
-; 8.8 MHz    ; 8.8 MHz         ; u2|altpll_component|auto_generated|pll1|clk[0] ;      ;
-; 109.73 MHz ; 109.73 MHz      ; MAX10_CLK1_50                                  ;      ;
+; 8.75 MHz   ; 8.75 MHz        ; u2|altpll_component|auto_generated|pll1|clk[0] ;      ;
+; 105.31 MHz ; 105.31 MHz      ; MAX10_CLK1_50                                  ;      ;
+; 198.37 MHz ; 198.37 MHz      ; ADC_CLK_10                                     ;      ;
 +------------+-----------------+------------------------------------------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
 
-+--------------------------------------------------------------------------+
-; Slow 1200mV 85C Model Setup Summary                                      ;
-+------------------------------------------------+---------+---------------+
-; Clock                                          ; Slack   ; End Point TNS ;
-+------------------------------------------------+---------+---------------+
-; u2|altpll_component|auto_generated|pll1|clk[0] ; -73.920 ; -4249.209     ;
-; MAX10_CLK1_50                                  ; 10.887  ; 0.000         ;
-+------------------------------------------------+---------+---------------+
++--------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Setup Summary                                                  ;
++-----------------------------------------------------------+----------+---------------+
+; Clock                                                     ; Slack    ; End Point TNS ;
++-----------------------------------------------------------+----------+---------------+
+; ADC_CLK_10                                                ; -802.217 ; -9625.253     ;
+; u2|altpll_component|auto_generated|pll1|clk[0]            ; -74.566  ; -4232.262     ;
+; MAX10_CLK1_50                                             ; 10.504   ; 0.000         ;
+; u1|adc_mega_0|ADC_CTRL|adc_pll|auto_generated|pll1|clk[0] ; 77.852   ; 0.000         ;
++-----------------------------------------------------------+----------+---------------+
 
 
-+------------------------------------------------------------------------+
-; Slow 1200mV 85C Model Hold Summary                                     ;
-+------------------------------------------------+-------+---------------+
-; Clock                                          ; Slack ; End Point TNS ;
-+------------------------------------------------+-------+---------------+
-; MAX10_CLK1_50                                  ; 0.348 ; 0.000         ;
-; u2|altpll_component|auto_generated|pll1|clk[0] ; 0.397 ; 0.000         ;
-+------------------------------------------------+-------+---------------+
++-----------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Hold Summary                                                ;
++-----------------------------------------------------------+-------+---------------+
+; Clock                                                     ; Slack ; End Point TNS ;
++-----------------------------------------------------------+-------+---------------+
+; ADC_CLK_10                                                ; 0.329 ; 0.000         ;
+; MAX10_CLK1_50                                             ; 0.347 ; 0.000         ;
+; u2|altpll_component|auto_generated|pll1|clk[0]            ; 0.402 ; 0.000         ;
+; u1|adc_mega_0|ADC_CTRL|adc_pll|auto_generated|pll1|clk[0] ; 6.227 ; 0.000         ;
++-----------------------------------------------------------+-------+---------------+
 
 
 ------------------------------------------
@@ -167,22 +173,35 @@ No paths to report.
 No paths to report.
 
 
-+-------------------------------------------------------------------------+
-; Slow 1200mV 85C Model Minimum Pulse Width Summary                       ;
-+------------------------------------------------+--------+---------------+
-; Clock                                          ; Slack  ; End Point TNS ;
-+------------------------------------------------+--------+---------------+
-; MAX10_CLK1_50                                  ; 9.638  ; 0.000         ;
-; MAX10_CLK2_50                                  ; 16.000 ; 0.000         ;
-; u2|altpll_component|auto_generated|pll1|clk[0] ; 19.577 ; 0.000         ;
-; ADC_CLK_10                                     ; 96.000 ; 0.000         ;
-+------------------------------------------------+--------+---------------+
++------------------------------------------------------------------------------------+
+; Slow 1200mV 85C Model Minimum Pulse Width Summary                                  ;
++-----------------------------------------------------------+--------+---------------+
+; Clock                                                     ; Slack  ; End Point TNS ;
++-----------------------------------------------------------+--------+---------------+
+; MAX10_CLK1_50                                             ; 9.639  ; 0.000         ;
+; MAX10_CLK2_50                                             ; 16.000 ; 0.000         ;
+; u2|altpll_component|auto_generated|pll1|clk[0]            ; 19.583 ; 0.000         ;
+; ADC_CLK_10                                                ; 49.529 ; 0.000         ;
+; u1|adc_mega_0|ADC_CTRL|adc_pll|auto_generated|pll1|clk[0] ; 94.575 ; 0.000         ;
++-----------------------------------------------------------+--------+---------------+
 
 
 -----------------------------------------------
 ; Slow 1200mV 85C Model Metastability Summary ;
 -----------------------------------------------
-No synchronizer chains to report.
+Worst-Case MTBF of Design is 1e+09 years or 3.15e+16 seconds.
+Typical MTBF of Design is 1e+09 years or 3.15e+16 seconds.
+
+Number of Synchronizer Chains Found: 2
+Shortest Synchronizer Chain: 2 Registers
+Fraction of Chains for which MTBFs Could Not be Calculated: 0.000
+Worst Case Available Settling Time: 195.605 ns
+
+Worst-Case MTBF values are calculated based on the worst-case silicon characteristics, with worst-case operating conditions.
+  - Under worst-case conditions, an increase of 100ps in available settling time will increase MTBF values by a factor of 1.8
+Typical MTBF values are calculated based on the nominal silicon characteristics, at nominal operating conditions.
+  - Under typical conditions, an increase of 100ps in available settling time will increase MTBF values by a factor of 3.7
+
 
 
 +--------------------------------------------------------------------------------------+
@@ -190,30 +209,35 @@ No synchronizer chains to report.
 +------------+-----------------+------------------------------------------------+------+
 ; Fmax       ; Restricted Fmax ; Clock Name                                     ; Note ;
 +------------+-----------------+------------------------------------------------+------+
-; 9.69 MHz   ; 9.69 MHz        ; u2|altpll_component|auto_generated|pll1|clk[0] ;      ;
-; 118.99 MHz ; 118.99 MHz      ; MAX10_CLK1_50                                  ;      ;
+; 9.62 MHz   ; 9.62 MHz        ; u2|altpll_component|auto_generated|pll1|clk[0] ;      ;
+; 113.6 MHz  ; 113.6 MHz       ; MAX10_CLK1_50                                  ;      ;
+; 214.27 MHz ; 214.27 MHz      ; ADC_CLK_10                                     ;      ;
 +------------+-----------------+------------------------------------------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
 
-+--------------------------------------------------------------------------+
-; Slow 1200mV 0C Model Setup Summary                                       ;
-+------------------------------------------------+---------+---------------+
-; Clock                                          ; Slack   ; End Point TNS ;
-+------------------------------------------------+---------+---------------+
-; u2|altpll_component|auto_generated|pll1|clk[0] ; -63.519 ; -3606.059     ;
-; MAX10_CLK1_50                                  ; 11.596  ; 0.000         ;
-+------------------------------------------------+---------+---------------+
++--------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Setup Summary                                                   ;
++-----------------------------------------------------------+----------+---------------+
+; Clock                                                     ; Slack    ; End Point TNS ;
++-----------------------------------------------------------+----------+---------------+
+; ADC_CLK_10                                                ; -794.130 ; -9528.319     ;
+; u2|altpll_component|auto_generated|pll1|clk[0]            ; -64.270  ; -3591.119     ;
+; MAX10_CLK1_50                                             ; 11.197   ; 0.000         ;
+; u1|adc_mega_0|ADC_CTRL|adc_pll|auto_generated|pll1|clk[0] ; 79.295   ; 0.000         ;
++-----------------------------------------------------------+----------+---------------+
 
 
-+------------------------------------------------------------------------+
-; Slow 1200mV 0C Model Hold Summary                                      ;
-+------------------------------------------------+-------+---------------+
-; Clock                                          ; Slack ; End Point TNS ;
-+------------------------------------------------+-------+---------------+
-; MAX10_CLK1_50                                  ; 0.312 ; 0.000         ;
-; u2|altpll_component|auto_generated|pll1|clk[0] ; 0.319 ; 0.000         ;
-+------------------------------------------------+-------+---------------+
++-----------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Hold Summary                                                 ;
++-----------------------------------------------------------+-------+---------------+
+; Clock                                                     ; Slack ; End Point TNS ;
++-----------------------------------------------------------+-------+---------------+
+; ADC_CLK_10                                                ; 0.295 ; 0.000         ;
+; MAX10_CLK1_50                                             ; 0.311 ; 0.000         ;
+; u2|altpll_component|auto_generated|pll1|clk[0]            ; 0.323 ; 0.000         ;
+; u1|adc_mega_0|ADC_CTRL|adc_pll|auto_generated|pll1|clk[0] ; 4.933 ; 0.000         ;
++-----------------------------------------------------------+-------+---------------+
 
 
 -----------------------------------------
@@ -228,42 +252,59 @@ No paths to report.
 No paths to report.
 
 
-+-------------------------------------------------------------------------+
-; Slow 1200mV 0C Model Minimum Pulse Width Summary                        ;
-+------------------------------------------------+--------+---------------+
-; Clock                                          ; Slack  ; End Point TNS ;
-+------------------------------------------------+--------+---------------+
-; MAX10_CLK1_50                                  ; 9.648  ; 0.000         ;
-; MAX10_CLK2_50                                  ; 16.000 ; 0.000         ;
-; u2|altpll_component|auto_generated|pll1|clk[0] ; 19.552 ; 0.000         ;
-; ADC_CLK_10                                     ; 96.000 ; 0.000         ;
-+------------------------------------------------+--------+---------------+
++------------------------------------------------------------------------------------+
+; Slow 1200mV 0C Model Minimum Pulse Width Summary                                   ;
++-----------------------------------------------------------+--------+---------------+
+; Clock                                                     ; Slack  ; End Point TNS ;
++-----------------------------------------------------------+--------+---------------+
+; MAX10_CLK1_50                                             ; 9.648  ; 0.000         ;
+; MAX10_CLK2_50                                             ; 16.000 ; 0.000         ;
+; u2|altpll_component|auto_generated|pll1|clk[0]            ; 19.552 ; 0.000         ;
+; ADC_CLK_10                                                ; 49.542 ; 0.000         ;
+; u1|adc_mega_0|ADC_CTRL|adc_pll|auto_generated|pll1|clk[0] ; 94.631 ; 0.000         ;
++-----------------------------------------------------------+--------+---------------+
 
 
 ----------------------------------------------
 ; Slow 1200mV 0C Model Metastability Summary ;
 ----------------------------------------------
-No synchronizer chains to report.
+Worst-Case MTBF of Design is 1e+09 years or 3.15e+16 seconds.
+Typical MTBF of Design is 1e+09 years or 3.15e+16 seconds.
+
+Number of Synchronizer Chains Found: 2
+Shortest Synchronizer Chain: 2 Registers
+Fraction of Chains for which MTBFs Could Not be Calculated: 0.000
+Worst Case Available Settling Time: 195.938 ns
+
+Worst-Case MTBF values are calculated based on the worst-case silicon characteristics, with worst-case operating conditions.
+  - Under worst-case conditions, an increase of 100ps in available settling time will increase MTBF values by a factor of 1.8
+Typical MTBF values are calculated based on the nominal silicon characteristics, at nominal operating conditions.
+  - Under typical conditions, an increase of 100ps in available settling time will increase MTBF values by a factor of 3.7
 
 
-+-------------------------------------------------------------------------+
-; Fast 1200mV 0C Model Setup Summary                                      ;
-+------------------------------------------------+--------+---------------+
-; Clock                                          ; Slack  ; End Point TNS ;
-+------------------------------------------------+--------+---------------+
-; u2|altpll_component|auto_generated|pll1|clk[0] ; -7.948 ; -282.326      ;
-; MAX10_CLK1_50                                  ; 16.146 ; 0.000         ;
-+------------------------------------------------+--------+---------------+
+
++--------------------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Setup Summary                                                   ;
++-----------------------------------------------------------+----------+---------------+
+; Clock                                                     ; Slack    ; End Point TNS ;
++-----------------------------------------------------------+----------+---------------+
+; ADC_CLK_10                                                ; -754.136 ; -9049.148     ;
+; u2|altpll_component|auto_generated|pll1|clk[0]            ; -8.172   ; -290.566      ;
+; MAX10_CLK1_50                                             ; 15.970   ; 0.000         ;
+; u1|adc_mega_0|ADC_CTRL|adc_pll|auto_generated|pll1|clk[0] ; 85.918   ; 0.000         ;
++-----------------------------------------------------------+----------+---------------+
 
 
-+------------------------------------------------------------------------+
-; Fast 1200mV 0C Model Hold Summary                                      ;
-+------------------------------------------------+-------+---------------+
-; Clock                                          ; Slack ; End Point TNS ;
-+------------------------------------------------+-------+---------------+
-; MAX10_CLK1_50                                  ; 0.152 ; 0.000         ;
-; u2|altpll_component|auto_generated|pll1|clk[0] ; 0.202 ; 0.000         ;
-+------------------------------------------------+-------+---------------+
++------------------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Hold Summary                                                  ;
++-----------------------------------------------------------+--------+---------------+
+; Clock                                                     ; Slack  ; End Point TNS ;
++-----------------------------------------------------------+--------+---------------+
+; u1|adc_mega_0|ADC_CTRL|adc_pll|auto_generated|pll1|clk[0] ; -0.138 ; -0.402        ;
+; ADC_CLK_10                                                ; 0.144  ; 0.000         ;
+; MAX10_CLK1_50                                             ; 0.152  ; 0.000         ;
+; u2|altpll_component|auto_generated|pll1|clk[0]            ; 0.205  ; 0.000         ;
++-----------------------------------------------------------+--------+---------------+
 
 
 -----------------------------------------
@@ -278,40 +319,55 @@ No paths to report.
 No paths to report.
 
 
-+-------------------------------------------------------------------------+
-; Fast 1200mV 0C Model Minimum Pulse Width Summary                        ;
-+------------------------------------------------+--------+---------------+
-; Clock                                          ; Slack  ; End Point TNS ;
-+------------------------------------------------+--------+---------------+
-; MAX10_CLK1_50                                  ; 9.330  ; 0.000         ;
-; MAX10_CLK2_50                                  ; 16.000 ; 0.000         ;
-; u2|altpll_component|auto_generated|pll1|clk[0] ; 19.630 ; 0.000         ;
-; ADC_CLK_10                                     ; 96.000 ; 0.000         ;
-+------------------------------------------------+--------+---------------+
++------------------------------------------------------------------------------------+
+; Fast 1200mV 0C Model Minimum Pulse Width Summary                                   ;
++-----------------------------------------------------------+--------+---------------+
+; Clock                                                     ; Slack  ; End Point TNS ;
++-----------------------------------------------------------+--------+---------------+
+; MAX10_CLK1_50                                             ; 9.330  ; 0.000         ;
+; MAX10_CLK2_50                                             ; 16.000 ; 0.000         ;
+; u2|altpll_component|auto_generated|pll1|clk[0]            ; 19.635 ; 0.000         ;
+; ADC_CLK_10                                                ; 49.272 ; 0.000         ;
+; u1|adc_mega_0|ADC_CTRL|adc_pll|auto_generated|pll1|clk[0] ; 94.903 ; 0.000         ;
++-----------------------------------------------------------+--------+---------------+
 
 
 ----------------------------------------------
 ; Fast 1200mV 0C Model Metastability Summary ;
 ----------------------------------------------
-No synchronizer chains to report.
+Worst-Case MTBF of Design is 1e+09 years or 3.15e+16 seconds.
+Typical MTBF of Design is 1e+09 years or 3.15e+16 seconds.
+
+Number of Synchronizer Chains Found: 2
+Shortest Synchronizer Chain: 2 Registers
+Fraction of Chains for which MTBFs Could Not be Calculated: 0.000
+Worst Case Available Settling Time: 198.066 ns
+
+Worst-Case MTBF values are calculated based on the worst-case silicon characteristics, with worst-case operating conditions.
+  - Under worst-case conditions, an increase of 100ps in available settling time will increase MTBF values by a factor of 1.8
+Typical MTBF values are calculated based on the nominal silicon characteristics, at nominal operating conditions.
+  - Under typical conditions, an increase of 100ps in available settling time will increase MTBF values by a factor of 3.7
 
 
-+----------------------------------------------------------------------------------------------------------------+
-; Multicorner Timing Analysis Summary                                                                            ;
-+-------------------------------------------------+-----------+-------+----------+---------+---------------------+
-; Clock                                           ; Setup     ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
-+-------------------------------------------------+-----------+-------+----------+---------+---------------------+
-; Worst-case Slack                                ; -73.920   ; 0.152 ; N/A      ; N/A     ; 9.330               ;
-;  ADC_CLK_10                                     ; N/A       ; N/A   ; N/A      ; N/A     ; 96.000              ;
-;  MAX10_CLK1_50                                  ; 10.887    ; 0.152 ; N/A      ; N/A     ; 9.330               ;
-;  MAX10_CLK2_50                                  ; N/A       ; N/A   ; N/A      ; N/A     ; 16.000              ;
-;  u2|altpll_component|auto_generated|pll1|clk[0] ; -73.920   ; 0.202 ; N/A      ; N/A     ; 19.552              ;
-; Design-wide TNS                                 ; -4249.209 ; 0.0   ; 0.0      ; 0.0     ; 0.0                 ;
-;  ADC_CLK_10                                     ; N/A       ; N/A   ; N/A      ; N/A     ; 0.000               ;
-;  MAX10_CLK1_50                                  ; 0.000     ; 0.000 ; N/A      ; N/A     ; 0.000               ;
-;  MAX10_CLK2_50                                  ; N/A       ; N/A   ; N/A      ; N/A     ; 0.000               ;
-;  u2|altpll_component|auto_generated|pll1|clk[0] ; -4249.209 ; 0.000 ; N/A      ; N/A     ; 0.000               ;
-+-------------------------------------------------+-----------+-------+----------+---------+---------------------+
+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                                                                         ;
++------------------------------------------------------------+------------+--------+----------+---------+---------------------+
+; Clock                                                      ; Setup      ; Hold   ; Recovery ; Removal ; Minimum Pulse Width ;
++------------------------------------------------------------+------------+--------+----------+---------+---------------------+
+; Worst-case Slack                                           ; -802.217   ; -0.138 ; N/A      ; N/A     ; 9.330               ;
+;  ADC_CLK_10                                                ; -802.217   ; 0.144  ; N/A      ; N/A     ; 49.272              ;
+;  MAX10_CLK1_50                                             ; 10.504     ; 0.152  ; N/A      ; N/A     ; 9.330               ;
+;  MAX10_CLK2_50                                             ; N/A        ; N/A    ; N/A      ; N/A     ; 16.000              ;
+;  u1|adc_mega_0|ADC_CTRL|adc_pll|auto_generated|pll1|clk[0] ; 77.852     ; -0.138 ; N/A      ; N/A     ; 94.575              ;
+;  u2|altpll_component|auto_generated|pll1|clk[0]            ; -74.566    ; 0.205  ; N/A      ; N/A     ; 19.552              ;
+; Design-wide TNS                                            ; -13857.515 ; -0.402 ; 0.0      ; 0.0     ; 0.0                 ;
+;  ADC_CLK_10                                                ; -9625.253  ; 0.000  ; N/A      ; N/A     ; 0.000               ;
+;  MAX10_CLK1_50                                             ; 0.000      ; 0.000  ; N/A      ; N/A     ; 0.000               ;
+;  MAX10_CLK2_50                                             ; N/A        ; N/A    ; N/A      ; N/A     ; 0.000               ;
+;  u1|adc_mega_0|ADC_CTRL|adc_pll|auto_generated|pll1|clk[0] ; 0.000      ; -0.402 ; N/A      ; N/A     ; 0.000               ;
+;  u2|altpll_component|auto_generated|pll1|clk[0]            ; -4232.262  ; 0.000  ; N/A      ; N/A     ; 0.000               ;
++------------------------------------------------------------+------------+--------+----------+---------+---------------------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -369,7 +425,6 @@ No synchronizer chains to report.
 +---------------------+-----------------------+-----------------+-----------------+
 ; Pin                 ; I/O Standard          ; 10-90 Rise Time ; 90-10 Fall Time ;
 +---------------------+-----------------------+-----------------+-----------------+
-; ADC_CLK_10          ; 3.3-V LVTTL           ; 2640 ps         ; 2640 ps         ;
 ; MAX10_CLK2_50       ; 3.3-V LVTTL           ; 2640 ps         ; 2640 ps         ;
 ; KEY[0]              ; 3.3 V Schmitt Trigger ; 2640 ps         ; 2640 ps         ;
 ; KEY[1]              ; 3.3 V Schmitt Trigger ; 2640 ps         ; 2640 ps         ;
@@ -381,6 +436,7 @@ No synchronizer chains to report.
 ; SW[8]               ; 3.3-V LVTTL           ; 2640 ps         ; 2640 ps         ;
 ; SW[9]               ; 3.3-V LVTTL           ; 2640 ps         ; 2640 ps         ;
 ; ARDUINO_RESET_N     ; 3.3 V Schmitt Trigger ; 2640 ps         ; 2640 ps         ;
+; ADC_CLK_10          ; 3.3-V LVTTL           ; 2640 ps         ; 2640 ps         ;
 ; MAX10_CLK1_50       ; 3.3-V LVTTL           ; 2640 ps         ; 2640 ps         ;
 ; SW[2]               ; 3.3-V LVTTL           ; 2640 ps         ; 2640 ps         ;
 ; SW[1]               ; 3.3-V LVTTL           ; 2640 ps         ; 2640 ps         ;
@@ -392,6 +448,22 @@ No synchronizer chains to report.
 ; ~ALTERA_nCONFIG~    ; 2.5 V Schmitt Trigger ; 2000 ps         ; 2000 ps         ;
 ; ~ALTERA_nSTATUS~    ; 2.5 V Schmitt Trigger ; 2000 ps         ; 2000 ps         ;
 ; ~ALTERA_CONF_DONE~  ; 2.5 V Schmitt Trigger ; 2000 ps         ; 2000 ps         ;
+; ~ALTERA_ADC1IN1~    ; 2.5 V                 ; 2000 ps         ; 2000 ps         ;
+; ~ALTERA_ADC2IN1~    ; 2.5 V                 ; 2000 ps         ; 2000 ps         ;
+; ~ALTERA_ADC1IN2~    ; 2.5 V                 ; 2000 ps         ; 2000 ps         ;
+; ~ALTERA_ADC2IN8~    ; 2.5 V                 ; 2000 ps         ; 2000 ps         ;
+; ~ALTERA_ADC1IN3~    ; 2.5 V                 ; 2000 ps         ; 2000 ps         ;
+; ~ALTERA_ADC2IN3~    ; 2.5 V                 ; 2000 ps         ; 2000 ps         ;
+; ~ALTERA_ADC1IN4~    ; 2.5 V                 ; 2000 ps         ; 2000 ps         ;
+; ~ALTERA_ADC2IN4~    ; 2.5 V                 ; 2000 ps         ; 2000 ps         ;
+; ~ALTERA_ADC1IN5~    ; 2.5 V                 ; 2000 ps         ; 2000 ps         ;
+; ~ALTERA_ADC2IN5~    ; 2.5 V                 ; 2000 ps         ; 2000 ps         ;
+; ~ALTERA_ADC1IN6~    ; 2.5 V                 ; 2000 ps         ; 2000 ps         ;
+; ~ALTERA_ADC2IN6~    ; 2.5 V                 ; 2000 ps         ; 2000 ps         ;
+; ~ALTERA_ADC1IN7~    ; 2.5 V                 ; 2000 ps         ; 2000 ps         ;
+; ~ALTERA_ADC2IN7~    ; 2.5 V                 ; 2000 ps         ; 2000 ps         ;
+; ~ALTERA_ADC1IN8~    ; 2.5 V                 ; 2000 ps         ; 2000 ps         ;
+; ~ALTERA_ADC2IN2~    ; 2.5 V                 ; 2000 ps         ; 2000 ps         ;
 +---------------------+-----------------------+-----------------+-----------------+
 
 
@@ -545,25 +617,31 @@ No synchronizer chains to report.
 +-----------------+-----------------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------+
-; Setup Transfers                                                                                                                                 ;
-+------------------------------------------------+------------------------------------------------+--------------+----------+----------+----------+
-; From Clock                                     ; To Clock                                       ; RR Paths     ; FR Paths ; RF Paths ; FF Paths ;
-+------------------------------------------------+------------------------------------------------+--------------+----------+----------+----------+
-; MAX10_CLK1_50                                  ; MAX10_CLK1_50                                  ; 3360         ; 0        ; 0        ; 0        ;
-; u2|altpll_component|auto_generated|pll1|clk[0] ; u2|altpll_component|auto_generated|pll1|clk[0] ; > 2147483647 ; 0        ; 0        ; 0        ;
-+------------------------------------------------+------------------------------------------------+--------------+----------+----------+----------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup Transfers                                                                                                                                                       ;
++-----------------------------------------------------------+-----------------------------------------------------------+--------------+----------+----------+----------+
+; From Clock                                                ; To Clock                                                  ; RR Paths     ; FR Paths ; RF Paths ; FF Paths ;
++-----------------------------------------------------------+-----------------------------------------------------------+--------------+----------+----------+----------+
+; ADC_CLK_10                                                ; ADC_CLK_10                                                ; 644          ; 0        ; 0        ; 0        ;
+; u1|adc_mega_0|ADC_CTRL|adc_pll|auto_generated|pll1|clk[0] ; ADC_CLK_10                                                ; 14           ; 1        ; 0        ; 0        ;
+; MAX10_CLK1_50                                             ; MAX10_CLK1_50                                             ; 3374         ; 0        ; 0        ; 0        ;
+; ADC_CLK_10                                                ; u1|adc_mega_0|ADC_CTRL|adc_pll|auto_generated|pll1|clk[0] ; 21           ; 0        ; 0        ; 0        ;
+; u2|altpll_component|auto_generated|pll1|clk[0]            ; u2|altpll_component|auto_generated|pll1|clk[0]            ; > 2147483647 ; 0        ; 0        ; 0        ;
++-----------------------------------------------------------+-----------------------------------------------------------+--------------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------+
-; Hold Transfers                                                                                                                                  ;
-+------------------------------------------------+------------------------------------------------+--------------+----------+----------+----------+
-; From Clock                                     ; To Clock                                       ; RR Paths     ; FR Paths ; RF Paths ; FF Paths ;
-+------------------------------------------------+------------------------------------------------+--------------+----------+----------+----------+
-; MAX10_CLK1_50                                  ; MAX10_CLK1_50                                  ; 3360         ; 0        ; 0        ; 0        ;
-; u2|altpll_component|auto_generated|pll1|clk[0] ; u2|altpll_component|auto_generated|pll1|clk[0] ; > 2147483647 ; 0        ; 0        ; 0        ;
-+------------------------------------------------+------------------------------------------------+--------------+----------+----------+----------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold Transfers                                                                                                                                                        ;
++-----------------------------------------------------------+-----------------------------------------------------------+--------------+----------+----------+----------+
+; From Clock                                                ; To Clock                                                  ; RR Paths     ; FR Paths ; RF Paths ; FF Paths ;
++-----------------------------------------------------------+-----------------------------------------------------------+--------------+----------+----------+----------+
+; ADC_CLK_10                                                ; ADC_CLK_10                                                ; 644          ; 0        ; 0        ; 0        ;
+; u1|adc_mega_0|ADC_CTRL|adc_pll|auto_generated|pll1|clk[0] ; ADC_CLK_10                                                ; 14           ; 1        ; 0        ; 0        ;
+; MAX10_CLK1_50                                             ; MAX10_CLK1_50                                             ; 3374         ; 0        ; 0        ; 0        ;
+; ADC_CLK_10                                                ; u1|adc_mega_0|ADC_CTRL|adc_pll|auto_generated|pll1|clk[0] ; 21           ; 0        ; 0        ; 0        ;
+; u2|altpll_component|auto_generated|pll1|clk[0]            ; u2|altpll_component|auto_generated|pll1|clk[0]            ; > 2147483647 ; 0        ; 0        ; 0        ;
++-----------------------------------------------------------+-----------------------------------------------------------+--------------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
 
@@ -588,21 +666,22 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 ; Unconstrained Clocks            ; 0     ; 0    ;
 ; Unconstrained Input Ports       ; 3     ; 3    ;
 ; Unconstrained Input Port Paths  ; 3     ; 3    ;
-; Unconstrained Output Ports      ; 8     ; 8    ;
-; Unconstrained Output Port Paths ; 328   ; 328  ;
+; Unconstrained Output Ports      ; 19    ; 19   ;
+; Unconstrained Output Port Paths ; 319   ; 319  ;
 +---------------------------------+-------+------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------+
-; Clock Status Summary                                                                                                      ;
-+------------------------------------------------+------------------------------------------------+-----------+-------------+
-; Target                                         ; Clock                                          ; Type      ; Status      ;
-+------------------------------------------------+------------------------------------------------+-----------+-------------+
-; ADC_CLK_10                                     ; ADC_CLK_10                                     ; Base      ; Constrained ;
-; MAX10_CLK1_50                                  ; MAX10_CLK1_50                                  ; Base      ; Constrained ;
-; MAX10_CLK2_50                                  ; MAX10_CLK2_50                                  ; Base      ; Constrained ;
-; u2|altpll_component|auto_generated|pll1|clk[0] ; u2|altpll_component|auto_generated|pll1|clk[0] ; Generated ; Constrained ;
-+------------------------------------------------+------------------------------------------------+-----------+-------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Status Summary                                                                                                                            ;
++-----------------------------------------------------------+-----------------------------------------------------------+-----------+-------------+
+; Target                                                    ; Clock                                                     ; Type      ; Status      ;
++-----------------------------------------------------------+-----------------------------------------------------------+-----------+-------------+
+; ADC_CLK_10                                                ; ADC_CLK_10                                                ; Base      ; Constrained ;
+; MAX10_CLK1_50                                             ; MAX10_CLK1_50                                             ; Base      ; Constrained ;
+; MAX10_CLK2_50                                             ; MAX10_CLK2_50                                             ; Base      ; Constrained ;
+; u1|adc_mega_0|ADC_CTRL|adc_pll|auto_generated|pll1|clk[0] ; u1|adc_mega_0|ADC_CTRL|adc_pll|auto_generated|pll1|clk[0] ; Generated ; Constrained ;
+; u2|altpll_component|auto_generated|pll1|clk[0]            ; u2|altpll_component|auto_generated|pll1|clk[0]            ; Generated ; Constrained ;
++-----------------------------------------------------------+-----------------------------------------------------------+-----------+-------------+
 
 
 +---------------------------------------------------------------------------------------------------+
@@ -622,8 +701,19 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 ; Output Port   ; Comment                                                                               ;
 +---------------+---------------------------------------------------------------------------------------+
 ; ARDUINO_IO[7] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; LEDR[0]       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; LEDR[1]       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; LEDR[2]       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; LEDR[3]       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; LEDR[4]       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; LEDR[5]       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; LEDR[6]       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; LEDR[7]       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; LEDR[8]       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; LEDR[9]       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; VGA_B[0]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; VGA_B[1]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; VGA_G[1]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; VGA_G[2]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; VGA_HS        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; VGA_R[1]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
@@ -649,8 +739,19 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 ; Output Port   ; Comment                                                                               ;
 +---------------+---------------------------------------------------------------------------------------+
 ; ARDUINO_IO[7] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; LEDR[0]       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; LEDR[1]       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; LEDR[2]       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; LEDR[3]       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; LEDR[4]       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; LEDR[5]       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; LEDR[6]       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; LEDR[7]       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; LEDR[8]       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; LEDR[9]       ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; VGA_B[0]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; VGA_B[1]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; VGA_G[1]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; VGA_G[2]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; VGA_HS        ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; VGA_R[1]      ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
@@ -665,57 +766,90 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime Timing Analyzer
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Thu Nov 19 21:27:02 2020
+    Info: Processing started: Fri Nov 20 19:38:44 2020
 Info: Command: quartus_sta brick_breaker -c brick_breaker
 Info: qsta_default_script.tcl version: #1
-Warning (20013): Ignored 19 assignments for entity "my_adc" -- entity does not exist in design
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (21077): Low junction temperature is 0 degrees C
 Info (21077): High junction temperature is 85 degrees C
+Info (332164): Evaluating HDL-embedded SDC commands
+    Info (332165): Entity altera_std_synchronizer
+        Info (332166): set_false_path -to [get_keepers {*altera_std_synchronizer:*|din_s1}]
 Info (332104): Reading SDC File: 'brick_breaker.SDC'
 Info (332110): Deriving PLL clocks
     Info (332110): create_generated_clock -source {u2|altpll_component|auto_generated|pll1|inclk[0]} -divide_by 147 -multiply_by 74 -duty_cycle 50.00 -name {u2|altpll_component|auto_generated|pll1|clk[0]} {u2|altpll_component|auto_generated|pll1|clk[0]}
+    Info (332110): create_generated_clock -source {u1|adc_mega_0|ADC_CTRL|adc_pll|auto_generated|pll1|inclk[0]} -divide_by 2 -duty_cycle 50.00 -name {u1|adc_mega_0|ADC_CTRL|adc_pll|auto_generated|pll1|clk[0]} {u1|adc_mega_0|ADC_CTRL|adc_pll|auto_generated|pll1|clk[0]}
 Info (332151): Clock uncertainty is not calculated until you update the timing netlist.
+Info (332097): The following timing edges are non-unate.  The Timing Analyzer will assume pos-unate behavior for these edges in the clock network.
+    Info (332098): From: u1|adc_mega_0|ADC_CTRL|max10_adc_core|control_internal|adc_inst|adcblock_instance|primitive_instance|clkin_from_pll_c0  to: my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_control:control_internal|fiftyfivenm_adcblock_top_wrapper:adc_inst|fiftyfivenm_adcblock_primitive_wrapper:adcblock_instance|eoc
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
+Warning (332056): PLL cross checking found inconsistent PLL clock settings:
+    Warning (332056): Clock: u1|adc_mega_0|ADC_CTRL|adc_pll|auto_generated|pll1|clk[0] with master clock period: 100.000 found on PLL node: u1|adc_mega_0|ADC_CTRL|adc_pll|auto_generated|pll1|clk[0] does not match the master clock period requirement: 10.000
 Info: Found TIMING_ANALYZER_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
 Info: Analyzing Slow 1200mV 85C Model
 Info: Can't run Report Timing Closure Recommendations. The current device family is not supported.
 Critical Warning (332148): Timing requirements not met
-Info (332146): Worst-case setup slack is -73.920
+Info (332146): Worst-case setup slack is -802.217
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):   -73.920           -4249.209 u2|altpll_component|auto_generated|pll1|clk[0] 
-    Info (332119):    10.887               0.000 MAX10_CLK1_50 
-Info (332146): Worst-case hold slack is 0.348
+    Info (332119):  -802.217           -9625.253 ADC_CLK_10 
+    Info (332119):   -74.566           -4232.262 u2|altpll_component|auto_generated|pll1|clk[0] 
+    Info (332119):    10.504               0.000 MAX10_CLK1_50 
+    Info (332119):    77.852               0.000 u1|adc_mega_0|ADC_CTRL|adc_pll|auto_generated|pll1|clk[0] 
+Info (332146): Worst-case hold slack is 0.329
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.348               0.000 MAX10_CLK1_50 
-    Info (332119):     0.397               0.000 u2|altpll_component|auto_generated|pll1|clk[0] 
+    Info (332119):     0.329               0.000 ADC_CLK_10 
+    Info (332119):     0.347               0.000 MAX10_CLK1_50 
+    Info (332119):     0.402               0.000 u2|altpll_component|auto_generated|pll1|clk[0] 
+    Info (332119):     6.227               0.000 u1|adc_mega_0|ADC_CTRL|adc_pll|auto_generated|pll1|clk[0] 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
-Info (332146): Worst-case minimum pulse width slack is 9.638
+Info (332146): Worst-case minimum pulse width slack is 9.639
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     9.638               0.000 MAX10_CLK1_50 
+    Info (332119):     9.639               0.000 MAX10_CLK1_50 
     Info (332119):    16.000               0.000 MAX10_CLK2_50 
-    Info (332119):    19.577               0.000 u2|altpll_component|auto_generated|pll1|clk[0] 
-    Info (332119):    96.000               0.000 ADC_CLK_10 
+    Info (332119):    19.583               0.000 u2|altpll_component|auto_generated|pll1|clk[0] 
+    Info (332119):    49.529               0.000 ADC_CLK_10 
+    Info (332119):    94.575               0.000 u1|adc_mega_0|ADC_CTRL|adc_pll|auto_generated|pll1|clk[0] 
+Info (332114): Report Metastability: Found 2 synchronizer chains.
+    Info (332114): Worst-Case MTBF of Design is 1e+09 years or 3.15e+16 seconds.
+    Info (332114): Typical MTBF of Design is 1e+09 years or 3.15e+16 seconds.
+
+    Info (332114): Number of Synchronizer Chains Found: 2
+    Info (332114): Shortest Synchronizer Chain: 2 Registers
+    Info (332114): Fraction of Chains for which MTBFs Could Not be Calculated: 0.000
+    Info (332114): Worst Case Available Settling Time: 195.605 ns
+    Info (332114): 
+    Info (332114): Worst-Case MTBF values are calculated based on the worst-case silicon characteristics, with worst-case operating conditions.
+    Info (332114):   - Under worst-case conditions, an increase of 100ps in available settling time will increase MTBF values by a factor of 1.8
+    Info (332114): Typical MTBF values are calculated based on the nominal silicon characteristics, at nominal operating conditions.
+    Info (332114):   - Under typical conditions, an increase of 100ps in available settling time will increase MTBF values by a factor of 3.7
 Info: Analyzing Slow 1200mV 0C Model
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
+Info (332097): The following timing edges are non-unate.  The Timing Analyzer will assume pos-unate behavior for these edges in the clock network.
+    Info (332098): From: u1|adc_mega_0|ADC_CTRL|max10_adc_core|control_internal|adc_inst|adcblock_instance|primitive_instance|clkin_from_pll_c0  to: my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_control:control_internal|fiftyfivenm_adcblock_top_wrapper:adc_inst|fiftyfivenm_adcblock_primitive_wrapper:adcblock_instance|eoc
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
+Warning (332056): PLL cross checking found inconsistent PLL clock settings:
+    Warning (332056): Clock: u1|adc_mega_0|ADC_CTRL|adc_pll|auto_generated|pll1|clk[0] with master clock period: 100.000 found on PLL node: u1|adc_mega_0|ADC_CTRL|adc_pll|auto_generated|pll1|clk[0] does not match the master clock period requirement: 10.000
 Critical Warning (332148): Timing requirements not met
-Info (332146): Worst-case setup slack is -63.519
+Info (332146): Worst-case setup slack is -794.130
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):   -63.519           -3606.059 u2|altpll_component|auto_generated|pll1|clk[0] 
-    Info (332119):    11.596               0.000 MAX10_CLK1_50 
-Info (332146): Worst-case hold slack is 0.312
+    Info (332119):  -794.130           -9528.319 ADC_CLK_10 
+    Info (332119):   -64.270           -3591.119 u2|altpll_component|auto_generated|pll1|clk[0] 
+    Info (332119):    11.197               0.000 MAX10_CLK1_50 
+    Info (332119):    79.295               0.000 u1|adc_mega_0|ADC_CTRL|adc_pll|auto_generated|pll1|clk[0] 
+Info (332146): Worst-case hold slack is 0.295
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.312               0.000 MAX10_CLK1_50 
-    Info (332119):     0.319               0.000 u2|altpll_component|auto_generated|pll1|clk[0] 
+    Info (332119):     0.295               0.000 ADC_CLK_10 
+    Info (332119):     0.311               0.000 MAX10_CLK1_50 
+    Info (332119):     0.323               0.000 u2|altpll_component|auto_generated|pll1|clk[0] 
+    Info (332119):     4.933               0.000 u1|adc_mega_0|ADC_CTRL|adc_pll|auto_generated|pll1|clk[0] 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
 Info (332146): Worst-case minimum pulse width slack is 9.648
@@ -724,20 +858,42 @@ Info (332146): Worst-case minimum pulse width slack is 9.648
     Info (332119):     9.648               0.000 MAX10_CLK1_50 
     Info (332119):    16.000               0.000 MAX10_CLK2_50 
     Info (332119):    19.552               0.000 u2|altpll_component|auto_generated|pll1|clk[0] 
-    Info (332119):    96.000               0.000 ADC_CLK_10 
+    Info (332119):    49.542               0.000 ADC_CLK_10 
+    Info (332119):    94.631               0.000 u1|adc_mega_0|ADC_CTRL|adc_pll|auto_generated|pll1|clk[0] 
+Info (332114): Report Metastability: Found 2 synchronizer chains.
+    Info (332114): Worst-Case MTBF of Design is 1e+09 years or 3.15e+16 seconds.
+    Info (332114): Typical MTBF of Design is 1e+09 years or 3.15e+16 seconds.
+
+    Info (332114): Number of Synchronizer Chains Found: 2
+    Info (332114): Shortest Synchronizer Chain: 2 Registers
+    Info (332114): Fraction of Chains for which MTBFs Could Not be Calculated: 0.000
+    Info (332114): Worst Case Available Settling Time: 195.938 ns
+    Info (332114): 
+    Info (332114): Worst-Case MTBF values are calculated based on the worst-case silicon characteristics, with worst-case operating conditions.
+    Info (332114):   - Under worst-case conditions, an increase of 100ps in available settling time will increase MTBF values by a factor of 1.8
+    Info (332114): Typical MTBF values are calculated based on the nominal silicon characteristics, at nominal operating conditions.
+    Info (332114):   - Under typical conditions, an increase of 100ps in available settling time will increase MTBF values by a factor of 3.7
 Info: Analyzing Fast 1200mV 0C Model
+Info (332097): The following timing edges are non-unate.  The Timing Analyzer will assume pos-unate behavior for these edges in the clock network.
+    Info (332098): From: u1|adc_mega_0|ADC_CTRL|max10_adc_core|control_internal|adc_inst|adcblock_instance|primitive_instance|clkin_from_pll_c0  to: my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_control:control_internal|fiftyfivenm_adcblock_top_wrapper:adc_inst|fiftyfivenm_adcblock_primitive_wrapper:adcblock_instance|eoc
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
+Warning (332056): PLL cross checking found inconsistent PLL clock settings:
+    Warning (332056): Clock: u1|adc_mega_0|ADC_CTRL|adc_pll|auto_generated|pll1|clk[0] with master clock period: 100.000 found on PLL node: u1|adc_mega_0|ADC_CTRL|adc_pll|auto_generated|pll1|clk[0] does not match the master clock period requirement: 10.000
 Critical Warning (332148): Timing requirements not met
-Info (332146): Worst-case setup slack is -7.948
+Info (332146): Worst-case setup slack is -754.136
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -7.948            -282.326 u2|altpll_component|auto_generated|pll1|clk[0] 
-    Info (332119):    16.146               0.000 MAX10_CLK1_50 
-Info (332146): Worst-case hold slack is 0.152
+    Info (332119):  -754.136           -9049.148 ADC_CLK_10 
+    Info (332119):    -8.172            -290.566 u2|altpll_component|auto_generated|pll1|clk[0] 
+    Info (332119):    15.970               0.000 MAX10_CLK1_50 
+    Info (332119):    85.918               0.000 u1|adc_mega_0|ADC_CTRL|adc_pll|auto_generated|pll1|clk[0] 
+Info (332146): Worst-case hold slack is -0.138
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
+    Info (332119):    -0.138              -0.402 u1|adc_mega_0|ADC_CTRL|adc_pll|auto_generated|pll1|clk[0] 
+    Info (332119):     0.144               0.000 ADC_CLK_10 
     Info (332119):     0.152               0.000 MAX10_CLK1_50 
-    Info (332119):     0.202               0.000 u2|altpll_component|auto_generated|pll1|clk[0] 
+    Info (332119):     0.205               0.000 u2|altpll_component|auto_generated|pll1|clk[0] 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
 Info (332146): Worst-case minimum pulse width slack is 9.330
@@ -745,13 +901,27 @@ Info (332146): Worst-case minimum pulse width slack is 9.330
     Info (332119): ========= =================== =====================
     Info (332119):     9.330               0.000 MAX10_CLK1_50 
     Info (332119):    16.000               0.000 MAX10_CLK2_50 
-    Info (332119):    19.630               0.000 u2|altpll_component|auto_generated|pll1|clk[0] 
-    Info (332119):    96.000               0.000 ADC_CLK_10 
+    Info (332119):    19.635               0.000 u2|altpll_component|auto_generated|pll1|clk[0] 
+    Info (332119):    49.272               0.000 ADC_CLK_10 
+    Info (332119):    94.903               0.000 u1|adc_mega_0|ADC_CTRL|adc_pll|auto_generated|pll1|clk[0] 
+Info (332114): Report Metastability: Found 2 synchronizer chains.
+    Info (332114): Worst-Case MTBF of Design is 1e+09 years or 3.15e+16 seconds.
+    Info (332114): Typical MTBF of Design is 1e+09 years or 3.15e+16 seconds.
+
+    Info (332114): Number of Synchronizer Chains Found: 2
+    Info (332114): Shortest Synchronizer Chain: 2 Registers
+    Info (332114): Fraction of Chains for which MTBFs Could Not be Calculated: 0.000
+    Info (332114): Worst Case Available Settling Time: 198.066 ns
+    Info (332114): 
+    Info (332114): Worst-Case MTBF values are calculated based on the worst-case silicon characteristics, with worst-case operating conditions.
+    Info (332114):   - Under worst-case conditions, an increase of 100ps in available settling time will increase MTBF values by a factor of 1.8
+    Info (332114): Typical MTBF values are calculated based on the nominal silicon characteristics, at nominal operating conditions.
+    Info (332114):   - Under typical conditions, an increase of 100ps in available settling time will increase MTBF values by a factor of 3.7
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
-Info: Quartus Prime Timing Analyzer was successful. 0 errors, 5 warnings
-    Info: Peak virtual memory: 4855 megabytes
-    Info: Processing ended: Thu Nov 19 21:27:05 2020
+Info: Quartus Prime Timing Analyzer was successful. 0 errors, 10 warnings
+    Info: Peak virtual memory: 4861 megabytes
+    Info: Processing ended: Fri Nov 20 19:38:47 2020
     Info: Elapsed time: 00:00:03
     Info: Total CPU time (on all processors): 00:00:05
 

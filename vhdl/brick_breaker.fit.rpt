@@ -1,5 +1,5 @@
 Fitter report for brick_breaker
-Thu Nov 19 21:26:58 2020
+Fri Nov 20 19:38:40 2020
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -31,19 +31,22 @@ Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
  23. Pad To Core Delay Chain Fanout
  24. Control Signals
  25. Global & Other Fast Signals
- 26. Routing Usage Summary
- 27. LAB Logic Elements
- 28. LAB-wide Signals
- 29. LAB Signals Sourced
- 30. LAB Signals Sourced Out
- 31. LAB Distinct Inputs
- 32. I/O Rules Summary
- 33. I/O Rules Details
- 34. I/O Rules Matrix
- 35. Fitter Device Options
- 36. Operating Settings and Conditions
- 37. Fitter Messages
- 38. Fitter Suppressed Messages
+ 26. Fitter RAM Summary
+ 27. Routing Usage Summary
+ 28. LAB Logic Elements
+ 29. LAB-wide Signals
+ 30. LAB Signals Sourced
+ 31. LAB Signals Sourced Out
+ 32. LAB Distinct Inputs
+ 33. I/O Rules Summary
+ 34. I/O Rules Details
+ 35. I/O Rules Matrix
+ 36. Fitter Device Options
+ 37. Operating Settings and Conditions
+ 38. Estimated Delay Added for Hold Timing Summary
+ 39. Estimated Delay Added for Hold Timing Details
+ 40. Fitter Messages
+ 41. Fitter Suppressed Messages
 
 
 
@@ -70,24 +73,24 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Fitter Summary                                                                   ;
 +------------------------------------+---------------------------------------------+
-; Fitter Status                      ; Successful - Thu Nov 19 21:26:58 2020       ;
+; Fitter Status                      ; Successful - Fri Nov 20 19:38:40 2020       ;
 ; Quartus Prime Version              ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                      ; brick_breaker                               ;
 ; Top-level Entity Name              ; brick_breaker                               ;
 ; Family                             ; MAX 10                                      ;
 ; Device                             ; 10M50DAF484C7G                              ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 3,028 / 49,760 ( 6 % )                      ;
-;     Total combinational functions  ; 3,026 / 49,760 ( 6 % )                      ;
-;     Dedicated logic registers      ; 141 / 49,760 ( < 1 % )                      ;
-; Total registers                    ; 141                                         ;
+; Total logic elements               ; 3,395 / 49,760 ( 7 % )                      ;
+;     Total combinational functions  ; 3,355 / 49,760 ( 7 % )                      ;
+;     Dedicated logic registers      ; 262 / 49,760 ( < 1 % )                      ;
+; Total registers                    ; 262                                         ;
 ; Total pins                         ; 56 / 360 ( 16 % )                           ;
 ; Total virtual pins                 ; 0                                           ;
-; Total memory bits                  ; 0 / 1,677,312 ( 0 % )                       ;
+; Total memory bits                  ; 768 / 1,677,312 ( < 1 % )                   ;
 ; Embedded Multiplier 9-bit elements ; 0 / 288 ( 0 % )                             ;
-; Total PLLs                         ; 1 / 4 ( 25 % )                              ;
+; Total PLLs                         ; 2 / 4 ( 50 % )                              ;
 ; UFM blocks                         ; 0 / 1 ( 0 % )                               ;
-; ADC blocks                         ; 0 / 2 ( 0 % )                               ;
+; ADC blocks                         ; 1 / 2 ( 50 % )                              ;
 +------------------------------------+---------------------------------------------+
 
 
@@ -161,9 +164,9 @@ https://fpgasoftware.intel.com/eula.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;  10.0%      ;
-;     Processor 3            ;   9.9%      ;
-;     Processor 4            ;   9.8%      ;
+;     Processor 2            ;  10.1%      ;
+;     Processor 3            ;  10.0%      ;
+;     Processor 4            ;   9.9%      ;
 +----------------------------+-------------+
 
 
@@ -277,8 +280,8 @@ https://fpgasoftware.intel.com/eula.
 ; Type                ; Total [A + B]       ; From Design Partitions [A] ; From Rapid Recompile [B] ;
 +---------------------+---------------------+----------------------------+--------------------------+
 ; Placement (by node) ;                     ;                            ;                          ;
-;     -- Requested    ; 0.00 % ( 0 / 3302 ) ; 0.00 % ( 0 / 3302 )        ; 0.00 % ( 0 / 3302 )      ;
-;     -- Achieved     ; 0.00 % ( 0 / 3302 ) ; 0.00 % ( 0 / 3302 )        ; 0.00 % ( 0 / 3302 )      ;
+;     -- Requested    ; 0.00 % ( 0 / 3797 ) ; 0.00 % ( 0 / 3797 )        ; 0.00 % ( 0 / 3797 )      ;
+;     -- Achieved     ; 0.00 % ( 0 / 3797 ) ; 0.00 % ( 0 / 3797 )        ; 0.00 % ( 0 / 3797 )      ;
 ;                     ;                     ;                            ;                          ;
 ; Routing (by net)    ;                     ;                            ;                          ;
 ;     -- Requested    ; 0.00 % ( 0 / 0 )    ; 0.00 % ( 0 / 0 )           ; 0.00 % ( 0 / 0 )         ;
@@ -301,8 +304,8 @@ https://fpgasoftware.intel.com/eula.
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 ; Partition Name                 ; Preservation Achieved ; Preservation Level Used ; Netlist Type Used ; Preservation Method ; Notes ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
-; Top                            ; 0.00 % ( 0 / 3284 )   ; N/A                     ; Source File       ; N/A                 ;       ;
-; hard_block:auto_generated_inst ; 0.00 % ( 0 / 18 )     ; N/A                     ; Source File       ; N/A                 ;       ;
+; Top                            ; 0.00 % ( 0 / 3746 )   ; N/A                     ; Source File       ; N/A                 ;       ;
+; hard_block:auto_generated_inst ; 0.00 % ( 0 / 51 )     ; N/A                     ; Source File       ; N/A                 ;       ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 
 
@@ -312,57 +315,57 @@ https://fpgasoftware.intel.com/eula.
 The pin-out file can be found in E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/brick_breaker.pin.
 
 
-+----------------------------------------------------------------------+
-; Fitter Resource Usage Summary                                        ;
-+---------------------------------------------+------------------------+
-; Resource                                    ; Usage                  ;
-+---------------------------------------------+------------------------+
-; Total logic elements                        ; 3,028 / 49,760 ( 6 % ) ;
-;     -- Combinational with no register       ; 2887                   ;
-;     -- Register only                        ; 2                      ;
-;     -- Combinational with a register        ; 139                    ;
-;                                             ;                        ;
-; Logic element usage by number of LUT inputs ;                        ;
-;     -- 4 input functions                    ; 1035                   ;
-;     -- 3 input functions                    ; 801                    ;
-;     -- <=2 input functions                  ; 1190                   ;
-;     -- Register only                        ; 2                      ;
-;                                             ;                        ;
-; Logic elements by mode                      ;                        ;
-;     -- normal mode                          ; 2104                   ;
-;     -- arithmetic mode                      ; 922                    ;
-;                                             ;                        ;
-; Total registers*                            ; 141 / 51,509 ( < 1 % ) ;
-;     -- Dedicated logic registers            ; 141 / 49,760 ( < 1 % ) ;
-;     -- I/O registers                        ; 0 / 1,749 ( 0 % )      ;
-;                                             ;                        ;
-; Total LABs:  partially or completely used   ; 224 / 3,110 ( 7 % )    ;
-; Virtual pins                                ; 0                      ;
-; I/O pins                                    ; 56 / 360 ( 16 % )      ;
-;     -- Clock pins                           ; 3 / 8 ( 38 % )         ;
-;     -- Dedicated input pins                 ; 1 / 1 ( 100 % )        ;
-;                                             ;                        ;
-; M9Ks                                        ; 0 / 182 ( 0 % )        ;
-; UFM blocks                                  ; 0 / 1 ( 0 % )          ;
-; ADC blocks                                  ; 0 / 2 ( 0 % )          ;
-; Total block memory bits                     ; 0 / 1,677,312 ( 0 % )  ;
-; Total block memory implementation bits      ; 0 / 1,677,312 ( 0 % )  ;
-; Embedded Multiplier 9-bit elements          ; 0 / 288 ( 0 % )        ;
-; PLLs                                        ; 1 / 4 ( 25 % )         ;
-; Global signals                              ; 2                      ;
-;     -- Global clocks                        ; 2 / 20 ( 10 % )        ;
-; JTAGs                                       ; 0 / 1 ( 0 % )          ;
-; CRC blocks                                  ; 0 / 1 ( 0 % )          ;
-; Remote update blocks                        ; 0 / 1 ( 0 % )          ;
-; Oscillator blocks                           ; 0 / 1 ( 0 % )          ;
-; Impedance control blocks                    ; 0 / 1 ( 0 % )          ;
-; Average interconnect usage (total/H/V)      ; 1.6% / 1.4% / 1.8%     ;
-; Peak interconnect usage (total/H/V)         ; 28.9% / 25.8% / 33.3%  ;
-; Maximum fan-out                             ; 193                    ;
-; Highest non-global fan-out                  ; 193                    ;
-; Total fan-out                               ; 9396                   ;
-; Average fan-out                             ; 2.85                   ;
-+---------------------------------------------+------------------------+
++---------------------------------------------------------------------------+
+; Fitter Resource Usage Summary                                             ;
++---------------------------------------------+-----------------------------+
+; Resource                                    ; Usage                       ;
++---------------------------------------------+-----------------------------+
+; Total logic elements                        ; 3,395 / 49,760 ( 7 % )      ;
+;     -- Combinational with no register       ; 3133                        ;
+;     -- Register only                        ; 40                          ;
+;     -- Combinational with a register        ; 222                         ;
+;                                             ;                             ;
+; Logic element usage by number of LUT inputs ;                             ;
+;     -- 4 input functions                    ; 1067                        ;
+;     -- 3 input functions                    ; 874                         ;
+;     -- <=2 input functions                  ; 1414                        ;
+;     -- Register only                        ; 40                          ;
+;                                             ;                             ;
+; Logic elements by mode                      ;                             ;
+;     -- normal mode                          ; 2290                        ;
+;     -- arithmetic mode                      ; 1065                        ;
+;                                             ;                             ;
+; Total registers*                            ; 262 / 51,509 ( < 1 % )      ;
+;     -- Dedicated logic registers            ; 262 / 49,760 ( < 1 % )      ;
+;     -- I/O registers                        ; 0 / 1,749 ( 0 % )           ;
+;                                             ;                             ;
+; Total LABs:  partially or completely used   ; 249 / 3,110 ( 8 % )         ;
+; Virtual pins                                ; 0                           ;
+; I/O pins                                    ; 56 / 360 ( 16 % )           ;
+;     -- Clock pins                           ; 3 / 8 ( 38 % )              ;
+;     -- Dedicated input pins                 ; 1 / 1 ( 100 % )             ;
+;                                             ;                             ;
+; M9Ks                                        ; 1 / 182 ( < 1 % )           ;
+; UFM blocks                                  ; 0 / 1 ( 0 % )               ;
+; ADC blocks                                  ; 1 / 2 ( 50 % )              ;
+; Total block memory bits                     ; 768 / 1,677,312 ( < 1 % )   ;
+; Total block memory implementation bits      ; 9,216 / 1,677,312 ( < 1 % ) ;
+; Embedded Multiplier 9-bit elements          ; 0 / 288 ( 0 % )             ;
+; PLLs                                        ; 2 / 4 ( 50 % )              ;
+; Global signals                              ; 3                           ;
+;     -- Global clocks                        ; 3 / 20 ( 15 % )             ;
+; JTAGs                                       ; 0 / 1 ( 0 % )               ;
+; CRC blocks                                  ; 0 / 1 ( 0 % )               ;
+; Remote update blocks                        ; 0 / 1 ( 0 % )               ;
+; Oscillator blocks                           ; 0 / 1 ( 0 % )               ;
+; Impedance control blocks                    ; 0 / 1 ( 0 % )               ;
+; Average interconnect usage (total/H/V)      ; 1.8% / 1.6% / 2.1%          ;
+; Peak interconnect usage (total/H/V)         ; 19.5% / 15.7% / 25.1%       ;
+; Maximum fan-out                             ; 176                         ;
+; Highest non-global fan-out                  ; 176                         ;
+; Total fan-out                               ; 10562                       ;
+; Average fan-out                             ; 2.77                        ;
++---------------------------------------------+-----------------------------+
 *  Register count does not include registers inside RAM blocks or DSP blocks.
 
 
@@ -374,54 +377,55 @@ The pin-out file can be found in E:/Desktop/Reconfigurable Computing  Labs/brick
 +---------------------------------------------+-----------------------+--------------------------------+
 ; Difficulty Clustering Region                ; Low                   ; Low                            ;
 ;                                             ;                       ;                                ;
-; Total logic elements                        ; 3028 / 49760 ( 6 % )  ; 0 / 49760 ( 0 % )              ;
-;     -- Combinational with no register       ; 2887                  ; 0                              ;
-;     -- Register only                        ; 2                     ; 0                              ;
-;     -- Combinational with a register        ; 139                   ; 0                              ;
+; Total logic elements                        ; 3395 / 49760 ( 7 % )  ; 0 / 49760 ( 0 % )              ;
+;     -- Combinational with no register       ; 3133                  ; 0                              ;
+;     -- Register only                        ; 40                    ; 0                              ;
+;     -- Combinational with a register        ; 222                   ; 0                              ;
 ;                                             ;                       ;                                ;
 ; Logic element usage by number of LUT inputs ;                       ;                                ;
-;     -- 4 input functions                    ; 1035                  ; 0                              ;
-;     -- 3 input functions                    ; 801                   ; 0                              ;
-;     -- <=2 input functions                  ; 1190                  ; 0                              ;
-;     -- Register only                        ; 2                     ; 0                              ;
+;     -- 4 input functions                    ; 1067                  ; 0                              ;
+;     -- 3 input functions                    ; 874                   ; 0                              ;
+;     -- <=2 input functions                  ; 1414                  ; 0                              ;
+;     -- Register only                        ; 40                    ; 0                              ;
 ;                                             ;                       ;                                ;
 ; Logic elements by mode                      ;                       ;                                ;
-;     -- normal mode                          ; 2104                  ; 0                              ;
-;     -- arithmetic mode                      ; 922                   ; 0                              ;
+;     -- normal mode                          ; 2290                  ; 0                              ;
+;     -- arithmetic mode                      ; 1065                  ; 0                              ;
 ;                                             ;                       ;                                ;
-; Total registers                             ; 141                   ; 0                              ;
-;     -- Dedicated logic registers            ; 141 / 49760 ( < 1 % ) ; 0 / 49760 ( 0 % )              ;
+; Total registers                             ; 262                   ; 0                              ;
+;     -- Dedicated logic registers            ; 262 / 49760 ( < 1 % ) ; 0 / 49760 ( 0 % )              ;
 ;     -- I/O registers                        ; 0                     ; 0                              ;
 ;                                             ;                       ;                                ;
-; Total LABs:  partially or completely used   ; 224 / 3110 ( 7 % )    ; 0 / 3110 ( 0 % )               ;
+; Total LABs:  partially or completely used   ; 249 / 3110 ( 8 % )    ; 0 / 3110 ( 0 % )               ;
 ;                                             ;                       ;                                ;
 ; Virtual pins                                ; 0                     ; 0                              ;
 ; I/O pins                                    ; 56                    ; 0                              ;
 ; Embedded Multiplier 9-bit elements          ; 0 / 288 ( 0 % )       ; 0 / 288 ( 0 % )                ;
-; Total memory bits                           ; 0                     ; 0                              ;
-; Total RAM block bits                        ; 0                     ; 0                              ;
-; PLL                                         ; 0 / 4 ( 0 % )         ; 1 / 4 ( 25 % )                 ;
-; Clock control block                         ; 1 / 24 ( 4 % )        ; 1 / 24 ( 4 % )                 ;
+; Total memory bits                           ; 768                   ; 0                              ;
+; Total RAM block bits                        ; 9216                  ; 0                              ;
+; PLL                                         ; 0 / 4 ( 0 % )         ; 2 / 4 ( 50 % )                 ;
+; M9K                                         ; 1 / 182 ( < 1 % )     ; 0 / 182 ( 0 % )                ;
+; Clock control block                         ; 2 / 24 ( 8 % )        ; 1 / 24 ( 4 % )                 ;
 ; User Flash Memory                           ; 1 / 1 ( 100 % )       ; 0 / 1 ( 0 % )                  ;
 ; Analog-to-Digital Converter                 ; 2 / 2 ( 100 % )       ; 0 / 2 ( 0 % )                  ;
 ;                                             ;                       ;                                ;
 ; Connections                                 ;                       ;                                ;
-;     -- Input Connections                    ; 105                   ; 1                              ;
+;     -- Input Connections                    ; 108                   ; 2                              ;
 ;     -- Registered Input Connections         ; 104                   ; 0                              ;
-;     -- Output Connections                   ; 2                     ; 104                            ;
+;     -- Output Connections                   ; 3                     ; 107                            ;
 ;     -- Registered Output Connections        ; 0                     ; 0                              ;
 ;                                             ;                       ;                                ;
 ; Internal Connections                        ;                       ;                                ;
-;     -- Total Connections                    ; 9400                  ; 115                            ;
-;     -- Registered Connections               ; 953                   ; 0                              ;
+;     -- Total Connections                    ; 10544                 ; 136                            ;
+;     -- Registered Connections               ; 1287                  ; 0                              ;
 ;                                             ;                       ;                                ;
 ; External Connections                        ;                       ;                                ;
-;     -- Top                                  ; 2                     ; 105                            ;
-;     -- hard_block:auto_generated_inst       ; 105                   ; 0                              ;
+;     -- Top                                  ; 2                     ; 109                            ;
+;     -- hard_block:auto_generated_inst       ; 109                   ; 0                              ;
 ;                                             ;                       ;                                ;
 ; Partition Interface                         ;                       ;                                ;
-;     -- Input Ports                          ; 15                    ; 1                              ;
-;     -- Output Ports                         ; 40                    ; 1                              ;
+;     -- Input Ports                          ; 15                    ; 2                              ;
+;     -- Output Ports                         ; 40                    ; 3                              ;
 ;     -- Bidir Ports                          ; 1                     ; 0                              ;
 ;                                             ;                       ;                                ;
 ; Registered Ports                            ;                       ;                                ;
@@ -445,7 +449,7 @@ The pin-out file can be found in E:/Desktop/Reconfigurable Computing  Labs/brick
 +---------------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+-----------------------+---------------------------+----------------------+-----------+
 ; Name          ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Z coordinate ; Combinational Fan-Out ; Registered Fan-Out ; Global ; Input Register ; Power Up High ; PCI I/O Enabled ; Bus Hold ; Weak Pull Up ; I/O Standard          ; Termination Control Block ; Location assigned by ; Slew Rate ;
 +---------------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+-----------------------+---------------------------+----------------------+-----------+
-; ADC_CLK_10    ; N5    ; 2        ; 0            ; 23           ; 21           ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 3.3-V LVTTL           ; --                        ; User                 ; 0         ;
+; ADC_CLK_10    ; N5    ; 2        ; 0            ; 23           ; 21           ; 123                   ; 0                  ; yes    ; no             ; no            ; yes             ; no       ; Off          ; 3.3-V LVTTL           ; --                        ; User                 ; 0         ;
 ; KEY[0]        ; B8    ; 7        ; 46           ; 54           ; 28           ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 3.3 V Schmitt Trigger ; --                        ; User                 ; 0         ;
 ; KEY[1]        ; A7    ; 7        ; 49           ; 54           ; 28           ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 3.3 V Schmitt Trigger ; --                        ; User                 ; 0         ;
 ; MAX10_CLK1_50 ; P11   ; 3        ; 34           ; 0            ; 28           ; 38                    ; 0                  ; yes    ; no             ; no            ; yes             ; no       ; Off          ; 3.3-V LVTTL           ; --                        ; User                 ; 0         ;
@@ -536,21 +540,21 @@ The pin-out file can be found in E:/Desktop/Reconfigurable Computing  Labs/brick
 +----------+----------------------------------------------------+--------------------------------+---------------------+------------------+
 
 
-+------------------------------------------------------------+
-; I/O Bank Usage                                             ;
-+----------+------------------+---------------+--------------+
-; I/O Bank ; Usage            ; VCCIO Voltage ; VREF Voltage ;
-+----------+------------------+---------------+--------------+
-; 1A       ; 0 / 16 ( 0 % )   ; 2.5V          ; --           ;
-; 1B       ; 4 / 24 ( 17 % )  ; 2.5V          ; --           ;
-; 2        ; 12 / 36 ( 33 % ) ; 3.3V          ; --           ;
-; 3        ; 10 / 48 ( 21 % ) ; 3.3V          ; --           ;
-; 4        ; 10 / 48 ( 21 % ) ; 3.3V          ; --           ;
-; 5        ; 0 / 40 ( 0 % )   ; 2.5V          ; --           ;
-; 6        ; 1 / 60 ( 2 % )   ; 3.3V          ; --           ;
-; 7        ; 23 / 52 ( 44 % ) ; 3.3V          ; --           ;
-; 8        ; 4 / 36 ( 11 % )  ; 2.5V          ; --           ;
-+----------+------------------+---------------+--------------+
++-------------------------------------------------------------+
+; I/O Bank Usage                                              ;
++----------+-------------------+---------------+--------------+
+; I/O Bank ; Usage             ; VCCIO Voltage ; VREF Voltage ;
++----------+-------------------+---------------+--------------+
+; 1A       ; 16 / 16 ( 100 % ) ; 2.5V          ; --           ;
+; 1B       ; 4 / 24 ( 17 % )   ; 2.5V          ; --           ;
+; 2        ; 12 / 36 ( 33 % )  ; 3.3V          ; --           ;
+; 3        ; 10 / 48 ( 21 % )  ; 3.3V          ; --           ;
+; 4        ; 10 / 48 ( 21 % )  ; 3.3V          ; --           ;
+; 5        ; 0 / 40 ( 0 % )    ; 2.5V          ; --           ;
+; 6        ; 1 / 60 ( 2 % )    ; 3.3V          ; --           ;
+; 7        ; 23 / 52 ( 44 % )  ; 3.3V          ; --           ;
+; 8        ; 4 / 36 ( 11 % )   ; 2.5V          ; --           ;
++----------+-------------------+---------------+--------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -692,8 +696,8 @@ The pin-out file can be found in E:/Desktop/Reconfigurable Computing  Labs/brick
 ; D22      ; 341        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
 ; E1       ; 41         ; 1B       ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
 ; E2       ;            ;          ; GND                                            ; gnd    ;                       ;         ; --         ;                 ; --       ; --           ;
-; E3       ; 3          ; 1A       ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
-; E4       ; 1          ; 1A       ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
+; E3       ; 3          ; 1A       ; ~ALTERA_ADC2IN8~                               ; input  ; 2.5 V                 ;         ; Row I/O    ; N               ; no       ; Off          ;
+; E4       ; 1          ; 1A       ; ~ALTERA_ADC2IN1~                               ; input  ; 2.5 V                 ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; E5       ;            ;          ; NC                                             ;        ;                       ;         ; --         ;                 ; --       ; --           ;
 ; E6       ; 498        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Column I/O ;                 ; no       ; On           ;
 ; E7       ;            ;          ; GND                                            ; gnd    ;                       ;         ; --         ;                 ; --       ; --           ;
@@ -714,9 +718,9 @@ The pin-out file can be found in E:/Desktop/Reconfigurable Computing  Labs/brick
 ; E22      ; 333        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
 ; F1       ; 47         ; 1B       ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
 ; F2       ; 43         ; 1B       ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
-; F3       ; 7          ; 1A       ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
-; F4       ; 2          ; 1A       ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
-; F5       ; 0          ; 1A       ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
+; F3       ; 7          ; 1A       ; ~ALTERA_ADC2IN4~                               ; input  ; 2.5 V                 ;         ; Row I/O    ; N               ; no       ; Off          ;
+; F4       ; 2          ; 1A       ; ~ALTERA_ADC1IN2~                               ; input  ; 2.5 V                 ;         ; Row I/O    ; N               ; no       ; Off          ;
+; F5       ; 0          ; 1A       ; ~ALTERA_ADC1IN1~                               ; input  ; 2.5 V                 ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; F6       ;            ;          ; NC                                             ;        ;                       ;         ; --         ;                 ; --       ; --           ;
 ; F7       ; 490        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Column I/O ;                 ; no       ; On           ;
 ; F8       ; 494        ; 8        ; ~ALTERA_CONF_DONE~ / RESERVED_INPUT            ; input  ; 2.5 V Schmitt Trigger ;         ; Column I/O ; N               ; no       ; Off          ;
@@ -736,8 +740,8 @@ The pin-out file can be found in E:/Desktop/Reconfigurable Computing  Labs/brick
 ; F22      ; 331        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
 ; G1       ; 45         ; 1B       ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
 ; G2       ; 34         ; 1B       ; ~ALTERA_TCK~ / RESERVED_INPUT                  ; input  ; 2.5 V Schmitt Trigger ;         ; Row I/O    ; N               ; no       ; Off          ;
-; G3       ; 11         ; 1A       ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
-; G4       ; 5          ; 1A       ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
+; G3       ; 11         ; 1A       ; ~ALTERA_ADC2IN6~                               ; input  ; 2.5 V                 ;         ; Row I/O    ; N               ; no       ; Off          ;
+; G4       ; 5          ; 1A       ; ~ALTERA_ADC2IN3~                               ; input  ; 2.5 V                 ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; G5       ;            ;          ; ANAIN1                                         ;        ;                       ;         ; --         ;                 ; --       ; --           ;
 ; G6       ;            ;          ; GND                                            ; gnd    ;                       ;         ; --         ;                 ; --       ; --           ;
 ; G7       ;            ;          ; VCCD_PLL3                                      ; power  ;                       ; 1.2V    ; --         ;                 ; --       ; --           ;
@@ -758,8 +762,8 @@ The pin-out file can be found in E:/Desktop/Reconfigurable Computing  Labs/brick
 ; G22      ; 329        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
 ; H1       ; 44         ; 1B       ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
 ; H2       ; 32         ; 1B       ; ~ALTERA_TMS~ / RESERVED_INPUT_WITH_WEAK_PULLUP ; input  ; 2.5 V Schmitt Trigger ;         ; Row I/O    ; N               ; no       ; On           ;
-; H3       ; 10         ; 1A       ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
-; H4       ; 9          ; 1A       ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
+; H3       ; 10         ; 1A       ; ~ALTERA_ADC1IN6~                               ; input  ; 2.5 V                 ;         ; Row I/O    ; N               ; no       ; Off          ;
+; H4       ; 9          ; 1A       ; ~ALTERA_ADC2IN5~                               ; input  ; 2.5 V                 ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; H5       ;            ;          ; REFGND                                         ;        ;                       ;         ; --         ;                 ; --       ; --           ;
 ; H6       ;            ;          ; ADC_VREF                                       ;        ;                       ;         ; --         ;                 ; --       ; --           ;
 ; H7       ;            ; --       ; VCCA_ADC                                       ; power  ;                       ; 2.5V    ; --         ;                 ; --       ; --           ;
@@ -780,13 +784,13 @@ The pin-out file can be found in E:/Desktop/Reconfigurable Computing  Labs/brick
 ; H22      ; 321        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
 ; J1       ; 46         ; 1B       ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
 ; J2       ;            ;          ; GND                                            ; gnd    ;                       ;         ; --         ;                 ; --       ; --           ;
-; J3       ; 15         ; 1A       ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
-; J4       ; 8          ; 1A       ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
+; J3       ; 15         ; 1A       ; ~ALTERA_ADC2IN2~                               ; input  ; 2.5 V                 ;         ; Row I/O    ; N               ; no       ; Off          ;
+; J4       ; 8          ; 1A       ; ~ALTERA_ADC1IN5~                               ; input  ; 2.5 V                 ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; J5       ;            ;          ; ANAIN2                                         ;        ;                       ;         ; --         ;                 ; --       ; --           ;
 ; J6       ;            ;          ; GND                                            ; gnd    ;                       ;         ; --         ;                 ; --       ; --           ;
 ; J7       ;            ;          ; VCCINT                                         ; power  ;                       ; 1.2V    ; --         ;                 ; --       ; --           ;
-; J8       ; 4          ; 1A       ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
-; J9       ; 6          ; 1A       ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
+; J8       ; 4          ; 1A       ; ~ALTERA_ADC1IN3~                               ; input  ; 2.5 V                 ;         ; Row I/O    ; N               ; no       ; Off          ;
+; J9       ; 6          ; 1A       ; ~ALTERA_ADC1IN4~                               ; input  ; 2.5 V                 ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; J10      ; 468        ; 8        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Column I/O ;                 ; no       ; On           ;
 ; J11      ; 446        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Column I/O ;                 ; no       ; On           ;
 ; J12      ; 434        ; 7        ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Column I/O ;                 ; no       ; On           ;
@@ -803,9 +807,9 @@ The pin-out file can be found in E:/Desktop/Reconfigurable Computing  Labs/brick
 ; K1       ; 49         ; 1B       ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
 ; K2       ; 37         ; 1B       ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
 ; K3       ;            ;          ; GND                                            ; gnd    ;                       ;         ; --         ;                 ; --       ; --           ;
-; K4       ; 13         ; 1A       ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
-; K5       ; 12         ; 1A       ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
-; K6       ; 14         ; 1A       ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
+; K4       ; 13         ; 1A       ; ~ALTERA_ADC2IN7~                               ; input  ; 2.5 V                 ;         ; Row I/O    ; N               ; no       ; Off          ;
+; K5       ; 12         ; 1A       ; ~ALTERA_ADC1IN7~                               ; input  ; 2.5 V                 ;         ; Row I/O    ; N               ; no       ; Off          ;
+; K6       ; 14         ; 1A       ; ~ALTERA_ADC1IN8~                               ; input  ; 2.5 V                 ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; K7       ;            ; 1A       ; VCCIO1A                                        ; power  ;                       ; 2.5V    ; --         ;                 ; --       ; --           ;
 ; K8       ; 28         ; 1B       ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
 ; K9       ; 30         ; 1B       ; RESERVED_INPUT_WITH_WEAK_PULLUP                ;        ;                       ;         ; Row I/O    ;                 ; no       ; On           ;
@@ -1046,54 +1050,55 @@ The pin-out file can be found in E:/Desktop/Reconfigurable Computing  Labs/brick
 Note: Pin directions (input, output or bidir) are based on device operating in user mode.
 
 
-+---------------------------------------------------------------------------------------------------+
-; PLL Summary                                                                                       ;
-+-------------------------------+-------------------------------------------------------------------+
-; Name                          ; myPLL:u2|altpll:altpll_component|myPLL_altpll:auto_generated|pll1 ;
-+-------------------------------+-------------------------------------------------------------------+
-; SDC pin name                  ; u2|altpll_component|auto_generated|pll1                           ;
-; PLL mode                      ; Normal                                                            ;
-; Compensate clock              ; clock0                                                            ;
-; Compensated input/output pins ; --                                                                ;
-; Switchover type               ; --                                                                ;
-; Input frequency 0             ; 50.0 MHz                                                          ;
-; Input frequency 1             ; --                                                                ;
-; Nominal PFD frequency         ; 7.1 MHz                                                           ;
-; Nominal VCO frequency         ; 528.6 MHz                                                         ;
-; VCO post scale K counter      ; 2                                                                 ;
-; VCO frequency control         ; Auto                                                              ;
-; VCO phase shift step          ; 236 ps                                                            ;
-; VCO multiply                  ; --                                                                ;
-; VCO divide                    ; --                                                                ;
-; Freq min lock                 ; 37.8 MHz                                                          ;
-; Freq max lock                 ; 61.51 MHz                                                         ;
-; M VCO Tap                     ; 0                                                                 ;
-; M Initial                     ; 1                                                                 ;
-; M value                       ; 74                                                                ;
-; N value                       ; 7                                                                 ;
-; Charge pump current           ; setting 1                                                         ;
-; Loop filter resistance        ; setting 16                                                        ;
-; Loop filter capacitance       ; setting 0                                                         ;
-; Bandwidth                     ; 340 kHz to 540 kHz                                                ;
-; Bandwidth type                ; Medium                                                            ;
-; Real time reconfigurable      ; Off                                                               ;
-; Scan chain MIF file           ; --                                                                ;
-; Preserve PLL counter order    ; Off                                                               ;
-; PLL location                  ; PLL_1                                                             ;
-; Inclk0 signal                 ; MAX10_CLK1_50                                                     ;
-; Inclk1 signal                 ; --                                                                ;
-; Inclk0 signal type            ; Dedicated Pin                                                     ;
-; Inclk1 signal type            ; --                                                                ;
-+-------------------------------+-------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; PLL Summary                                                                                                                                                                                                                          ;
++-------------------------------+-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
+; Name                          ; myPLL:u2|altpll:altpll_component|myPLL_altpll:auto_generated|pll1 ; my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|altpll:adc_pll|MAX10_ADC_PLL_altpll:auto_generated|pll1 ;
++-------------------------------+-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
+; SDC pin name                  ; u2|altpll_component|auto_generated|pll1                           ; u1|adc_mega_0|ADC_CTRL|adc_pll|auto_generated|pll1                                                                               ;
+; PLL mode                      ; Normal                                                            ; Normal                                                                                                                           ;
+; Compensate clock              ; clock0                                                            ; clock0                                                                                                                           ;
+; Compensated input/output pins ; --                                                                ; --                                                                                                                               ;
+; Switchover type               ; --                                                                ; --                                                                                                                               ;
+; Input frequency 0             ; 50.0 MHz                                                          ; 100.0 MHz                                                                                                                        ;
+; Input frequency 1             ; --                                                                ; --                                                                                                                               ;
+; Nominal PFD frequency         ; 7.1 MHz                                                           ; 100.0 MHz                                                                                                                        ;
+; Nominal VCO frequency         ; 528.6 MHz                                                         ; 600.0 MHz                                                                                                                        ;
+; VCO post scale K counter      ; 2                                                                 ; 2                                                                                                                                ;
+; VCO frequency control         ; Auto                                                              ; Auto                                                                                                                             ;
+; VCO phase shift step          ; 236 ps                                                            ; 208 ps                                                                                                                           ;
+; VCO multiply                  ; --                                                                ; --                                                                                                                               ;
+; VCO divide                    ; --                                                                ; --                                                                                                                               ;
+; Freq min lock                 ; 37.8 MHz                                                          ; 50.01 MHz                                                                                                                        ;
+; Freq max lock                 ; 61.51 MHz                                                         ; 108.37 MHz                                                                                                                       ;
+; M VCO Tap                     ; 0                                                                 ; 0                                                                                                                                ;
+; M Initial                     ; 1                                                                 ; 1                                                                                                                                ;
+; M value                       ; 74                                                                ; 6                                                                                                                                ;
+; N value                       ; 7                                                                 ; 1                                                                                                                                ;
+; Charge pump current           ; setting 1                                                         ; setting 1                                                                                                                        ;
+; Loop filter resistance        ; setting 16                                                        ; setting 27                                                                                                                       ;
+; Loop filter capacitance       ; setting 0                                                         ; setting 0                                                                                                                        ;
+; Bandwidth                     ; 340 kHz to 540 kHz                                                ; 1.03 MHz to 1.97 MHz                                                                                                             ;
+; Bandwidth type                ; Medium                                                            ; Medium                                                                                                                           ;
+; Real time reconfigurable      ; Off                                                               ; Off                                                                                                                              ;
+; Scan chain MIF file           ; --                                                                ; --                                                                                                                               ;
+; Preserve PLL counter order    ; Off                                                               ; Off                                                                                                                              ;
+; PLL location                  ; PLL_4                                                             ; PLL_1                                                                                                                            ;
+; Inclk0 signal                 ; MAX10_CLK1_50                                                     ; ADC_CLK_10                                                                                                                       ;
+; Inclk1 signal                 ; --                                                                ; --                                                                                                                               ;
+; Inclk0 signal type            ; Dedicated Pin                                                     ; Dedicated Pin                                                                                                                    ;
+; Inclk1 signal type            ; --                                                                ; --                                                                                                                               ;
++-------------------------------+-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; PLL Usage                                                                                                                                                                                                                                                                                              ;
-+-------------------------------------------------------------------------------+--------------+------+-----+------------------+-------------+------------------+------------+---------+---------------+------------+---------------+---------+---------+------------------------------------------------+
-; Name                                                                          ; Output Clock ; Mult ; Div ; Output Frequency ; Phase Shift ; Phase Shift Step ; Duty Cycle ; Counter ; Counter Value ; High / Low ; Cascade Input ; Initial ; VCO Tap ; SDC Pin Name                                   ;
-+-------------------------------------------------------------------------------+--------------+------+-----+------------------+-------------+------------------+------------+---------+---------------+------------+---------------+---------+---------+------------------------------------------------+
-; myPLL:u2|altpll:altpll_component|myPLL_altpll:auto_generated|wire_pll1_clk[0] ; clock0       ; 74   ; 147 ; 25.17 MHz        ; 0 (0 ps)    ; 2.14 (236 ps)    ; 50/50      ; C0      ; 21            ; 11/10 Odd  ; --            ; 1       ; 0       ; u2|altpll_component|auto_generated|pll1|clk[0] ;
-+-------------------------------------------------------------------------------+--------------+------+-----+------------------+-------------+------------------+------------+---------+---------------+------------+---------------+---------+---------+------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; PLL Usage                                                                                                                                                                                                                                                                                                                                                                        ;
++----------------------------------------------------------------------------------------------------------------------------------------------+--------------+------+-----+------------------+-------------+------------------+------------+---------+---------------+------------+---------------+---------+---------+-----------------------------------------------------------+
+; Name                                                                                                                                         ; Output Clock ; Mult ; Div ; Output Frequency ; Phase Shift ; Phase Shift Step ; Duty Cycle ; Counter ; Counter Value ; High / Low ; Cascade Input ; Initial ; VCO Tap ; SDC Pin Name                                              ;
++----------------------------------------------------------------------------------------------------------------------------------------------+--------------+------+-----+------------------+-------------+------------------+------------+---------+---------------+------------+---------------+---------+---------+-----------------------------------------------------------+
+; myPLL:u2|altpll:altpll_component|myPLL_altpll:auto_generated|wire_pll1_clk[0]                                                                ; clock0       ; 74   ; 147 ; 25.17 MHz        ; 0 (0 ps)    ; 2.14 (236 ps)    ; 50/50      ; C0      ; 21            ; 11/10 Odd  ; --            ; 1       ; 0       ; u2|altpll_component|auto_generated|pll1|clk[0]            ;
+; my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|altpll:adc_pll|MAX10_ADC_PLL_altpll:auto_generated|wire_pll1_clk[0] ; clock0       ; 1    ; 2   ; 50.0 MHz         ; 0 (0 ps)    ; 3.75 (208 ps)    ; 50/50      ; C0      ; 12            ; 6/6 Even   ; --            ; 1       ; 0       ; u1|adc_mega_0|ADC_CTRL|adc_pll|auto_generated|pll1|clk[0] ;
++----------------------------------------------------------------------------------------------------------------------------------------------+--------------+------+-----+------------------+-------------+------------------+------------+---------+---------------+------------+---------------+---------+---------+-----------------------------------------------------------+
 
 
 +------------------------------------------+
@@ -1145,27 +1150,50 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 +-----------------+------------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Fitter Resource Utilization by Entity                                                                                                                                                                                                                                                                                                                                                                                     ;
-+------------------------------------------+-------------+---------------------------+---------------+-------------+------+------------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+------------+---------------------------------------------------------------------------------------------------------------------+-----------------+--------------+
-; Compilation Hierarchy Node               ; Logic Cells ; Dedicated Logic Registers ; I/O Registers ; Memory Bits ; M9Ks ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; ADC blocks ; Full Hierarchy Name                                                                                                 ; Entity Name     ; Library Name ;
-+------------------------------------------+-------------+---------------------------+---------------+-------------+------+------------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+------------+---------------------------------------------------------------------------------------------------------------------+-----------------+--------------+
-; |brick_breaker                           ; 3028 (1)    ; 141 (0)                   ; 0 (0)         ; 0           ; 0    ; 1          ; 0            ; 0       ; 0         ; 56   ; 0            ; 2887 (1)     ; 2 (0)             ; 139 (0)          ; 0          ; |brick_breaker                                                                                                      ; brick_breaker   ; work         ;
-;    |myPLL:u2|                            ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; 0          ; |brick_breaker|myPLL:u2                                                                                             ; myPLL           ; work         ;
-;       |altpll:altpll_component|          ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; 0          ; |brick_breaker|myPLL:u2|altpll:altpll_component                                                                     ; altpll          ; work         ;
-;          |myPLL_altpll:auto_generated|   ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; 0          ; |brick_breaker|myPLL:u2|altpll:altpll_component|myPLL_altpll:auto_generated                                         ; myPLL_altpll    ; work         ;
-;    |sound_board:u0|                      ; 136 (136)   ; 37 (37)                   ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 99 (99)      ; 0 (0)             ; 37 (37)          ; 0          ; |brick_breaker|sound_board:u0                                                                                       ; sound_board     ; work         ;
-;    |sync:u3|                             ; 2891 (298)  ; 104 (104)                 ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 2787 (194)   ; 2 (2)             ; 102 (80)         ; 0          ; |brick_breaker|sync:u3                                                                                              ; sync            ; work         ;
-;       |lpm_divide:Mod0|                  ; 1122 (0)    ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 1122 (0)     ; 0 (0)             ; 0 (0)            ; 0          ; |brick_breaker|sync:u3|lpm_divide:Mod0                                                                              ; lpm_divide      ; work         ;
-;          |lpm_divide_25o:auto_generated| ; 1122 (0)    ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 1122 (0)     ; 0 (0)             ; 0 (0)            ; 0          ; |brick_breaker|sync:u3|lpm_divide:Mod0|lpm_divide_25o:auto_generated                                                ; lpm_divide_25o  ; work         ;
-;             |abs_divider_4dg:divider|    ; 1122 (58)   ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 1122 (58)    ; 0 (0)             ; 0 (0)            ; 0          ; |brick_breaker|sync:u3|lpm_divide:Mod0|lpm_divide_25o:auto_generated|abs_divider_4dg:divider                        ; abs_divider_4dg ; work         ;
-;                |alt_u_div_ske:divider|   ; 1064 (1064) ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 1064 (1064)  ; 0 (0)             ; 0 (0)            ; 0          ; |brick_breaker|sync:u3|lpm_divide:Mod0|lpm_divide_25o:auto_generated|abs_divider_4dg:divider|alt_u_div_ske:divider  ; alt_u_div_ske   ; work         ;
-;       |lpm_divide:Mod1|                  ; 1493 (0)    ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 1471 (0)     ; 0 (0)             ; 22 (0)           ; 0          ; |brick_breaker|sync:u3|lpm_divide:Mod1                                                                              ; lpm_divide      ; work         ;
-;          |lpm_divide_25o:auto_generated| ; 1493 (0)    ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 1471 (0)     ; 0 (0)             ; 22 (0)           ; 0          ; |brick_breaker|sync:u3|lpm_divide:Mod1|lpm_divide_25o:auto_generated                                                ; lpm_divide_25o  ; work         ;
-;             |abs_divider_4dg:divider|    ; 1493 (59)   ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 1471 (59)    ; 0 (0)             ; 22 (0)           ; 0          ; |brick_breaker|sync:u3|lpm_divide:Mod1|lpm_divide_25o:auto_generated|abs_divider_4dg:divider                        ; abs_divider_4dg ; work         ;
-;                |alt_u_div_ske:divider|   ; 1387 (1387) ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 1386 (1386)  ; 0 (0)             ; 1 (1)            ; 0          ; |brick_breaker|sync:u3|lpm_divide:Mod1|lpm_divide_25o:auto_generated|abs_divider_4dg:divider|alt_u_div_ske:divider  ; alt_u_div_ske   ; work         ;
-;                |lpm_abs_8b9:my_abs_num|  ; 47 (47)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 26 (26)      ; 0 (0)             ; 21 (21)          ; 0          ; |brick_breaker|sync:u3|lpm_divide:Mod1|lpm_divide_25o:auto_generated|abs_divider_4dg:divider|lpm_abs_8b9:my_abs_num ; lpm_abs_8b9     ; work         ;
-+------------------------------------------+-------------+---------------------------+---------------+-------------+------+------------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+------------+---------------------------------------------------------------------------------------------------------------------+-----------------+--------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fitter Resource Utilization by Entity                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         ;
++---------------------------------------------------------------------------------+-------------+---------------------------+---------------+-------------+------+------------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------+--------------+
+; Compilation Hierarchy Node                                                      ; Logic Cells ; Dedicated Logic Registers ; I/O Registers ; Memory Bits ; M9Ks ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; ADC blocks ; Full Hierarchy Name                                                                                                                                                                                                                                                                                       ; Entity Name                            ; Library Name ;
++---------------------------------------------------------------------------------+-------------+---------------------------+---------------+-------------+------+------------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------+--------------+
+; |brick_breaker                                                                  ; 3395 (1)    ; 262 (0)                   ; 0 (0)         ; 768         ; 1    ; 1          ; 0            ; 0       ; 0         ; 56   ; 0            ; 3133 (1)     ; 40 (0)            ; 222 (0)          ; 0          ; |brick_breaker                                                                                                                                                                                                                                                                                            ; brick_breaker                          ; work         ;
+;    |myPLL:u2|                                                                   ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; 0          ; |brick_breaker|myPLL:u2                                                                                                                                                                                                                                                                                   ; myPLL                                  ; work         ;
+;       |altpll:altpll_component|                                                 ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; 0          ; |brick_breaker|myPLL:u2|altpll:altpll_component                                                                                                                                                                                                                                                           ; altpll                                 ; work         ;
+;          |myPLL_altpll:auto_generated|                                          ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; 0          ; |brick_breaker|myPLL:u2|altpll:altpll_component|myPLL_altpll:auto_generated                                                                                                                                                                                                                               ; myPLL_altpll                           ; work         ;
+;    |my_adc:u1|                                                                  ; 144 (0)     ; 121 (0)                   ; 0 (0)         ; 768         ; 1    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 23 (0)       ; 35 (0)            ; 86 (0)           ; 0          ; |brick_breaker|my_adc:u1                                                                                                                                                                                                                                                                                  ; my_adc                                 ; my_adc       ;
+;       |my_adc_adc_mega_0:adc_mega_0|                                            ; 144 (13)    ; 121 (13)                  ; 0 (0)         ; 768         ; 1    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 23 (0)       ; 35 (1)            ; 86 (12)          ; 0          ; |brick_breaker|my_adc:u1|my_adc_adc_mega_0:adc_mega_0                                                                                                                                                                                                                                                     ; my_adc_adc_mega_0                      ; my_adc       ;
+;          |altera_up_avalon_adv_adc:ADC_CTRL|                                    ; 131 (31)    ; 108 (21)                  ; 0 (0)         ; 768         ; 1    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 23 (10)      ; 34 (12)           ; 74 (9)           ; 0          ; |brick_breaker|my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL                                                                                                                                                                                                                   ; altera_up_avalon_adv_adc               ; my_adc       ;
+;             |DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|                   ; 100 (0)     ; 87 (0)                    ; 0 (0)         ; 768         ; 1    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 13 (0)       ; 22 (0)            ; 65 (0)           ; 0          ; |brick_breaker|my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core                                                                                                                                                                   ; DE10_Lite_ADC_Core_modular_adc_0       ; my_adc       ;
+;                |altera_modular_adc_control:control_internal|                    ; 72 (0)      ; 59 (0)                    ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 13 (0)       ; 21 (0)            ; 38 (0)           ; 0          ; |brick_breaker|my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_control:control_internal                                                                                                                       ; altera_modular_adc_control             ; my_adc       ;
+;                   |altera_modular_adc_control_fsm:u_control_fsm|                ; 67 (63)     ; 59 (55)                   ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 8 (8)        ; 21 (18)           ; 38 (38)          ; 0          ; |brick_breaker|my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm                                                                          ; altera_modular_adc_control_fsm         ; my_adc       ;
+;                      |altera_std_synchronizer:u_clk_dft_synchronizer|           ; 2 (2)       ; 2 (2)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 1 (1)             ; 1 (1)            ; 0          ; |brick_breaker|my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|altera_std_synchronizer:u_clk_dft_synchronizer                           ; altera_std_synchronizer                ; work         ;
+;                      |altera_std_synchronizer:u_eoc_synchronizer|               ; 2 (2)       ; 2 (2)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 2 (2)             ; 0 (0)            ; 0          ; |brick_breaker|my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|altera_std_synchronizer:u_eoc_synchronizer                               ; altera_std_synchronizer                ; work         ;
+;                   |fiftyfivenm_adcblock_top_wrapper:adc_inst|                   ; 5 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 5 (0)        ; 0 (0)             ; 0 (0)            ; 0          ; |brick_breaker|my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_control:control_internal|fiftyfivenm_adcblock_top_wrapper:adc_inst                                                                             ; fiftyfivenm_adcblock_top_wrapper       ; my_adc       ;
+;                      |chsel_code_converter_sw_to_hw:decoder|                    ; 5 (5)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 5 (5)        ; 0 (0)             ; 0 (0)            ; 0          ; |brick_breaker|my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_control:control_internal|fiftyfivenm_adcblock_top_wrapper:adc_inst|chsel_code_converter_sw_to_hw:decoder                                       ; chsel_code_converter_sw_to_hw          ; my_adc       ;
+;                      |fiftyfivenm_adcblock_primitive_wrapper:adcblock_instance| ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; 0          ; |brick_breaker|my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_control:control_internal|fiftyfivenm_adcblock_top_wrapper:adc_inst|fiftyfivenm_adcblock_primitive_wrapper:adcblock_instance                    ; fiftyfivenm_adcblock_primitive_wrapper ; my_adc       ;
+;                |altera_modular_adc_sample_store:sample_store_internal|          ; 21 (21)     ; 21 (21)                   ; 0 (0)         ; 768         ; 1    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 1 (1)             ; 20 (20)          ; 0          ; |brick_breaker|my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_sample_store:sample_store_internal                                                                                                             ; altera_modular_adc_sample_store        ; my_adc       ;
+;                   |altera_modular_adc_sample_store_ram:u_ss_ram|                ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 768         ; 1    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; 0          ; |brick_breaker|my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_sample_store:sample_store_internal|altera_modular_adc_sample_store_ram:u_ss_ram                                                                ; altera_modular_adc_sample_store_ram    ; my_adc       ;
+;                      |altsyncram:altsyncram_component|                          ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 768         ; 1    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; 0          ; |brick_breaker|my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_sample_store:sample_store_internal|altera_modular_adc_sample_store_ram:u_ss_ram|altsyncram:altsyncram_component                                ; altsyncram                             ; work         ;
+;                         |altsyncram_v5s1:auto_generated|                        ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 768         ; 1    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; 0          ; |brick_breaker|my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_sample_store:sample_store_internal|altera_modular_adc_sample_store_ram:u_ss_ram|altsyncram:altsyncram_component|altsyncram_v5s1:auto_generated ; altsyncram_v5s1                        ; work         ;
+;                |altera_modular_adc_sequencer:sequencer_internal|                ; 7 (0)       ; 7 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 7 (0)            ; 0          ; |brick_breaker|my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_sequencer:sequencer_internal                                                                                                                   ; altera_modular_adc_sequencer           ; my_adc       ;
+;                   |altera_modular_adc_sequencer_ctrl:u_seq_ctrl|                ; 7 (7)       ; 7 (7)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 7 (7)            ; 0          ; |brick_breaker|my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_sequencer:sequencer_internal|altera_modular_adc_sequencer_ctrl:u_seq_ctrl                                                                      ; altera_modular_adc_sequencer_ctrl      ; my_adc       ;
+;             |altpll:adc_pll|                                                    ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; 0          ; |brick_breaker|my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|altpll:adc_pll                                                                                                                                                                                                    ; altpll                                 ; work         ;
+;                |MAX10_ADC_PLL_altpll:auto_generated|                            ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; 0          ; |brick_breaker|my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|altpll:adc_pll|MAX10_ADC_PLL_altpll:auto_generated                                                                                                                                                                ; MAX10_ADC_PLL_altpll                   ; work         ;
+;    |sound_board:u0|                                                             ; 138 (138)   ; 37 (37)                   ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 101 (101)    ; 0 (0)             ; 37 (37)          ; 0          ; |brick_breaker|sound_board:u0                                                                                                                                                                                                                                                                             ; sound_board                            ; work         ;
+;    |sync:u3|                                                                    ; 3123 (379)  ; 104 (104)                 ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 3008 (275)   ; 5 (5)             ; 110 (70)         ; 0          ; |brick_breaker|sync:u3                                                                                                                                                                                                                                                                                    ; sync                                   ; work         ;
+;       |lpm_divide:Div0|                                                         ; 142 (0)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 131 (0)      ; 0 (0)             ; 11 (0)           ; 0          ; |brick_breaker|sync:u3|lpm_divide:Div0                                                                                                                                                                                                                                                                    ; lpm_divide                             ; work         ;
+;          |lpm_divide_fbo:auto_generated|                                        ; 142 (0)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 131 (0)      ; 0 (0)             ; 11 (0)           ; 0          ; |brick_breaker|sync:u3|lpm_divide:Div0|lpm_divide_fbo:auto_generated                                                                                                                                                                                                                                      ; lpm_divide_fbo                         ; work         ;
+;             |abs_divider_kbg:divider|                                           ; 142 (0)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 131 (0)      ; 0 (0)             ; 11 (0)           ; 0          ; |brick_breaker|sync:u3|lpm_divide:Div0|lpm_divide_fbo:auto_generated|abs_divider_kbg:divider                                                                                                                                                                                                              ; abs_divider_kbg                        ; work         ;
+;                |alt_u_div_she:divider|                                          ; 142 (142)   ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 131 (131)    ; 0 (0)             ; 11 (11)          ; 0          ; |brick_breaker|sync:u3|lpm_divide:Div0|lpm_divide_fbo:auto_generated|abs_divider_kbg:divider|alt_u_div_she:divider                                                                                                                                                                                        ; alt_u_div_she                          ; work         ;
+;       |lpm_divide:Mod0|                                                         ; 1122 (0)    ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 1121 (0)     ; 0 (0)             ; 1 (0)            ; 0          ; |brick_breaker|sync:u3|lpm_divide:Mod0                                                                                                                                                                                                                                                                    ; lpm_divide                             ; work         ;
+;          |lpm_divide_25o:auto_generated|                                        ; 1122 (0)    ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 1121 (0)     ; 0 (0)             ; 1 (0)            ; 0          ; |brick_breaker|sync:u3|lpm_divide:Mod0|lpm_divide_25o:auto_generated                                                                                                                                                                                                                                      ; lpm_divide_25o                         ; work         ;
+;             |abs_divider_4dg:divider|                                           ; 1122 (58)   ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 1121 (58)    ; 0 (0)             ; 1 (0)            ; 0          ; |brick_breaker|sync:u3|lpm_divide:Mod0|lpm_divide_25o:auto_generated|abs_divider_4dg:divider                                                                                                                                                                                                              ; abs_divider_4dg                        ; work         ;
+;                |alt_u_div_ske:divider|                                          ; 1064 (1064) ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 1063 (1063)  ; 0 (0)             ; 1 (1)            ; 0          ; |brick_breaker|sync:u3|lpm_divide:Mod0|lpm_divide_25o:auto_generated|abs_divider_4dg:divider|alt_u_div_ske:divider                                                                                                                                                                                        ; alt_u_div_ske                          ; work         ;
+;       |lpm_divide:Mod1|                                                         ; 1509 (0)    ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 1481 (0)     ; 0 (0)             ; 28 (0)           ; 0          ; |brick_breaker|sync:u3|lpm_divide:Mod1                                                                                                                                                                                                                                                                    ; lpm_divide                             ; work         ;
+;          |lpm_divide_25o:auto_generated|                                        ; 1509 (0)    ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 1481 (0)     ; 0 (0)             ; 28 (0)           ; 0          ; |brick_breaker|sync:u3|lpm_divide:Mod1|lpm_divide_25o:auto_generated                                                                                                                                                                                                                                      ; lpm_divide_25o                         ; work         ;
+;             |abs_divider_4dg:divider|                                           ; 1509 (59)   ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 1481 (59)    ; 0 (0)             ; 28 (0)           ; 0          ; |brick_breaker|sync:u3|lpm_divide:Mod1|lpm_divide_25o:auto_generated|abs_divider_4dg:divider                                                                                                                                                                                                              ; abs_divider_4dg                        ; work         ;
+;                |alt_u_div_ske:divider|                                          ; 1387 (1387) ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 1382 (1382)  ; 0 (0)             ; 5 (5)            ; 0          ; |brick_breaker|sync:u3|lpm_divide:Mod1|lpm_divide_25o:auto_generated|abs_divider_4dg:divider|alt_u_div_ske:divider                                                                                                                                                                                        ; alt_u_div_ske                          ; work         ;
+;                |lpm_abs_8b9:my_abs_num|                                         ; 63 (63)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 40 (40)      ; 0 (0)             ; 23 (23)          ; 0          ; |brick_breaker|sync:u3|lpm_divide:Mod1|lpm_divide_25o:auto_generated|abs_divider_4dg:divider|lpm_abs_8b9:my_abs_num                                                                                                                                                                                       ; lpm_abs_8b9                            ; work         ;
++---------------------------------------------------------------------------------+-------------+---------------------------+---------------+-------------+------+------------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -1174,7 +1202,6 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------+----------+---------------+---------------+-----------------------+-----+------+
 ; Name            ; Pin Type ; Pad to Core 0 ; Pad to Core 1 ; Pad to Input Register ; TCO ; TCOE ;
 +-----------------+----------+---------------+---------------+-----------------------+-----+------+
-; ADC_CLK_10      ; Input    ; --            ; --            ; --                    ; --  ; --   ;
 ; MAX10_CLK2_50   ; Input    ; --            ; --            ; --                    ; --  ; --   ;
 ; KEY[0]          ; Input    ; --            ; --            ; --                    ; --  ; --   ;
 ; KEY[1]          ; Input    ; --            ; --            ; --                    ; --  ; --   ;
@@ -1226,10 +1253,11 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; ARDUINO_IO[14]  ; Output   ; --            ; --            ; --                    ; --  ; --   ;
 ; ARDUINO_IO[15]  ; Output   ; --            ; --            ; --                    ; --  ; --   ;
 ; ARDUINO_RESET_N ; Bidir    ; --            ; --            ; --                    ; --  ; --   ;
+; ADC_CLK_10      ; Input    ; (0) 0 ps      ; --            ; --                    ; --  ; --   ;
 ; MAX10_CLK1_50   ; Input    ; (0) 0 ps      ; --            ; --                    ; --  ; --   ;
 ; SW[2]           ; Input    ; --            ; (6) 868 ps    ; --                    ; --  ; --   ;
-; SW[1]           ; Input    ; --            ; (6) 868 ps    ; --                    ; --  ; --   ;
-; SW[0]           ; Input    ; (6) 868 ps    ; --            ; --                    ; --  ; --   ;
+; SW[1]           ; Input    ; (6) 868 ps    ; --            ; --                    ; --  ; --   ;
+; SW[0]           ; Input    ; --            ; (6) 868 ps    ; --                    ; --  ; --   ;
 +-----------------+----------+---------------+---------------+-----------------------+-----+------+
 
 
@@ -1238,7 +1266,6 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-------------------------------------------+-------------------+---------+
 ; Source Pin / Fanout                       ; Pad To Core Index ; Setting ;
 +-------------------------------------------+-------------------+---------+
-; ADC_CLK_10                                ;                   ;         ;
 ; MAX10_CLK2_50                             ;                   ;         ;
 ; KEY[0]                                    ;                   ;         ;
 ; KEY[1]                                    ;                   ;         ;
@@ -1250,32 +1277,46 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; SW[8]                                     ;                   ;         ;
 ; SW[9]                                     ;                   ;         ;
 ; ARDUINO_RESET_N                           ;                   ;         ;
+; ADC_CLK_10                                ;                   ;         ;
 ; MAX10_CLK1_50                             ;                   ;         ;
 ; SW[2]                                     ;                   ;         ;
 ;      - sound_board:u0|sound_effect_sig[2] ; 1                 ; 6       ;
 ; SW[1]                                     ;                   ;         ;
-;      - sound_board:u0|sound_effect_sig[1] ; 1                 ; 6       ;
+;      - sound_board:u0|sound_effect_sig[1] ; 0                 ; 6       ;
 ; SW[0]                                     ;                   ;         ;
-;      - sound_board:u0|sound_effect_sig[0] ; 0                 ; 6       ;
+;      - sound_board:u0|sound_effect_sig[0] ; 1                 ; 6       ;
 +-------------------------------------------+-------------------+---------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Control Signals                                                                                                                                                                                            ;
-+-------------------------------------------------------------------------------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
-; Name                                                                          ; Location           ; Fan-Out ; Usage        ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
-+-------------------------------------------------------------------------------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
-; MAX10_CLK1_50                                                                 ; PIN_P11            ; 2       ; Clock        ; no     ; --                   ; --               ; --                        ;
-; MAX10_CLK1_50                                                                 ; PIN_P11            ; 37      ; Clock        ; yes    ; Global Clock         ; GCLK19           ; --                        ;
-; myPLL:u2|altpll:altpll_component|myPLL_altpll:auto_generated|wire_pll1_clk[0] ; PLL_1              ; 104     ; Clock        ; yes    ; Global Clock         ; GCLK18           ; --                        ;
-; sound_board:u0|ready                                                          ; FF_X47_Y50_N19     ; 4       ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; sound_board:u0|sound_count[4]~80                                              ; LCCOMB_X47_Y50_N30 ; 32      ; Sync. clear  ; no     ; --                   ; --               ; --                        ;
-; sound_board:u0|sound_count[4]~81                                              ; LCCOMB_X47_Y50_N4  ; 32      ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; sync:u3|current_hs_state.P_DATA                                               ; FF_X44_Y18_N1      ; 37      ; Sync. clear  ; no     ; --                   ; --               ; --                        ;
-; sync:u3|m~0                                                                   ; LCCOMB_X34_Y24_N18 ; 32      ; Sync. clear  ; no     ; --                   ; --               ; --                        ;
-; sync:u3|x_pos[14]~44                                                          ; LCCOMB_X44_Y20_N24 ; 32      ; Sync. clear  ; no     ; --                   ; --               ; --                        ;
-; sync:u3|y_pos[25]~39                                                          ; LCCOMB_X44_Y18_N6  ; 32      ; Clock enable ; no     ; --                   ; --               ; --                        ;
-+-------------------------------------------------------------------------------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Control Signals                                                                                                                                                                                                                                                                                                                                                              ;
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------+---------+----------------------------+--------+----------------------+------------------+---------------------------+
+; Name                                                                                                                                                                                                                              ; Location           ; Fan-Out ; Usage                      ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------+---------+----------------------------+--------+----------------------+------------------+---------------------------+
+; ADC_CLK_10                                                                                                                                                                                                                        ; PIN_N5             ; 2       ; Clock                      ; no     ; --                   ; --               ; --                        ;
+; ADC_CLK_10                                                                                                                                                                                                                        ; PIN_N5             ; 122     ; Clock                      ; yes    ; Global Clock         ; GCLK4            ; --                        ;
+; MAX10_CLK1_50                                                                                                                                                                                                                     ; PIN_P11            ; 2       ; Clock                      ; no     ; --                   ; --               ; --                        ;
+; MAX10_CLK1_50                                                                                                                                                                                                                     ; PIN_P11            ; 37      ; Clock                      ; yes    ; Global Clock         ; GCLK19           ; --                        ;
+; myPLL:u2|altpll:altpll_component|myPLL_altpll:auto_generated|wire_pll1_clk[0]                                                                                                                                                     ; PLL_4              ; 104     ; Clock                      ; yes    ; Global Clock         ; GCLK8            ; --                        ;
+; my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|WideOr13        ; LCCOMB_X46_Y52_N16 ; 4       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|arc_to_conv~0   ; LCCOMB_X47_Y53_N2  ; 8       ; Sync. clear                ; no     ; --                   ; --               ; --                        ;
+; my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|conv_dly1_s_flp ; FF_X47_Y52_N19     ; 16      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|int_timer[0]~24 ; LCCOMB_X47_Y53_N28 ; 8       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|load_dout~0     ; LCCOMB_X44_Y52_N2  ; 14      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|rsp_valid       ; FF_X47_Y52_N27     ; 16      ; Clock enable, Write enable ; no     ; --                   ; --               ; --                        ;
+; my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_sample_store:sample_store_internal|set_eop                                            ; LCCOMB_X47_Y52_N24 ; 6       ; Sync. clear                ; no     ; --                   ; --               ; --                        ;
+; my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|channel[2]~1                                                                                                                                             ; LCCOMB_X52_Y49_N2  ; 4       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|currState.doneConversionState                                                                                                                            ; FF_X52_Y49_N29     ; 16      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|currState.readConversionState                                                                                                                            ; FF_X52_Y49_N13     ; 10      ; Read enable                ; no     ; --                   ; --               ; --                        ;
+; my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|reading3[0]~1                                                                                                                                            ; LCCOMB_X52_Y49_N6  ; 12      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; sound_board:u0|ready                                                                                                                                                                                                              ; FF_X50_Y50_N17     ; 4       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; sound_board:u0|sound_count[7]~80                                                                                                                                                                                                  ; LCCOMB_X50_Y50_N0  ; 32      ; Sync. clear                ; no     ; --                   ; --               ; --                        ;
+; sound_board:u0|sound_count[7]~81                                                                                                                                                                                                  ; LCCOMB_X50_Y50_N10 ; 32      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; sync:u3|current_hs_state.P_DATA                                                                                                                                                                                                   ; FF_X44_Y26_N25     ; 40      ; Sync. clear                ; no     ; --                   ; --               ; --                        ;
+; sync:u3|m~0                                                                                                                                                                                                                       ; LCCOMB_X56_Y21_N18 ; 32      ; Sync. clear                ; no     ; --                   ; --               ; --                        ;
+; sync:u3|x_pos[14]~96                                                                                                                                                                                                              ; LCCOMB_X49_Y28_N16 ; 32      ; Sync. clear                ; no     ; --                   ; --               ; --                        ;
+; sync:u3|y_pos[14]~38                                                                                                                                                                                                              ; LCCOMB_X44_Y26_N6  ; 32      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------+---------+----------------------------+--------+----------------------+------------------+---------------------------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1283,9 +1324,20 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-------------------------------------------------------------------------------+----------+---------+--------------------------------------+----------------------+------------------+---------------------------+
 ; Name                                                                          ; Location ; Fan-Out ; Fan-Out Using Intentional Clock Skew ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
 +-------------------------------------------------------------------------------+----------+---------+--------------------------------------+----------------------+------------------+---------------------------+
+; ADC_CLK_10                                                                    ; PIN_N5   ; 122     ; 20                                   ; Global Clock         ; GCLK4            ; --                        ;
 ; MAX10_CLK1_50                                                                 ; PIN_P11  ; 37      ; 0                                    ; Global Clock         ; GCLK19           ; --                        ;
-; myPLL:u2|altpll:altpll_component|myPLL_altpll:auto_generated|wire_pll1_clk[0] ; PLL_1    ; 104     ; 45                                   ; Global Clock         ; GCLK18           ; --                        ;
+; myPLL:u2|altpll:altpll_component|myPLL_altpll:auto_generated|wire_pll1_clk[0] ; PLL_4    ; 104     ; 36                                   ; Global Clock         ; GCLK8            ; --                        ;
 +-------------------------------------------------------------------------------+----------+---------+--------------------------------------+----------------------+------------------+---------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fitter RAM Summary                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                ;
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+--------------+------------------------+-------------------------+------------------------+-------------------------+------+-----------------------------+-----------------------------+-----------------------------+-----------------------------+---------------------+------+------+----------------+----------------------+------------------------+------------------------+----------+------------------------+---------------+
+; Name                                                                                                                                                                                                                                                                                                  ; Type ; Mode             ; Clock Mode   ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Port A Input Registers ; Port A Output Registers ; Port B Input Registers ; Port B Output Registers ; Size ; Implementation Port A Depth ; Implementation Port A Width ; Implementation Port B Depth ; Implementation Port B Width ; Implementation Bits ; M9Ks ; MIF  ; Location       ; Mixed Width RDW Mode ; Port A RDW Mode        ; Port B RDW Mode        ; ECC Mode ; ECC Pipeline Registers ; Fits in MLABs ;
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+--------------+------------------------+-------------------------+------------------------+-------------------------+------+-----------------------------+-----------------------------+-----------------------------+-----------------------------+---------------------+------+------+----------------+----------------------+------------------------+------------------------+----------+------------------------+---------------+
+; my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_sample_store:sample_store_internal|altera_modular_adc_sample_store_ram:u_ss_ram|altsyncram:altsyncram_component|altsyncram_v5s1:auto_generated|ALTSYNCRAM ; M9K  ; Simple Dual Port ; Single Clock ; 64           ; 16           ; 64           ; 16           ; yes                    ; no                      ; yes                    ; no                      ; 1024 ; 64                          ; 12                          ; 64                          ; 12                          ; 768                 ; 1    ; None ; M9K_X53_Y49_N0 ; Old data             ; New data with NBE Read ; New data with NBE Read ; Off      ; No                     ; No - Unknown  ;
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+--------------+------------------------+-------------------------+------------------------+-------------------------+------+-----------------------------+-----------------------------+-----------------------------+-----------------------------+---------------------+------+------+----------------+----------------------+------------------------+------------------------+----------+------------------------+---------------+
+Note: Fitter may spread logical memories into multiple blocks to improve timing. The actual required RAM blocks can be found in the Fitter Resource Usage section.
 
 
 +-------------------------------------------------+
@@ -1293,49 +1345,49 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------+-------------------------+
 ; Routing Resource Type ; Usage                   ;
 +-----------------------+-------------------------+
-; Block interconnects   ; 4,380 / 148,641 ( 3 % ) ;
-; C16 interconnects     ; 16 / 5,382 ( < 1 % )    ;
-; C4 interconnects      ; 2,101 / 106,704 ( 2 % ) ;
-; Direct links          ; 810 / 148,641 ( < 1 % ) ;
-; Global clocks         ; 2 / 20 ( 10 % )         ;
-; Local interconnects   ; 1,293 / 49,760 ( 3 % )  ;
+; Block interconnects   ; 4,703 / 148,641 ( 3 % ) ;
+; C16 interconnects     ; 29 / 5,382 ( < 1 % )    ;
+; C4 interconnects      ; 2,408 / 106,704 ( 2 % ) ;
+; Direct links          ; 805 / 148,641 ( < 1 % ) ;
+; Global clocks         ; 3 / 20 ( 15 % )         ;
+; Local interconnects   ; 1,427 / 49,760 ( 3 % )  ;
 ; NSLEEPs               ; 0 / 500 ( 0 % )         ;
-; R24 interconnects     ; 17 / 5,406 ( < 1 % )    ;
-; R4 interconnects      ; 2,240 / 147,764 ( 2 % ) ;
+; R24 interconnects     ; 38 / 5,406 ( < 1 % )    ;
+; R4 interconnects      ; 2,385 / 147,764 ( 2 % ) ;
 +-----------------------+-------------------------+
 
 
 +-----------------------------------------------------------------------------+
 ; LAB Logic Elements                                                          ;
 +---------------------------------------------+-------------------------------+
-; Number of Logic Elements  (Average = 13.52) ; Number of LABs  (Total = 224) ;
+; Number of Logic Elements  (Average = 13.63) ; Number of LABs  (Total = 249) ;
 +---------------------------------------------+-------------------------------+
-; 1                                           ; 16                            ;
+; 1                                           ; 11                            ;
 ; 2                                           ; 5                             ;
-; 3                                           ; 2                             ;
+; 3                                           ; 5                             ;
 ; 4                                           ; 0                             ;
 ; 5                                           ; 2                             ;
-; 6                                           ; 1                             ;
-; 7                                           ; 1                             ;
-; 8                                           ; 3                             ;
-; 9                                           ; 2                             ;
-; 10                                          ; 2                             ;
-; 11                                          ; 8                             ;
-; 12                                          ; 9                             ;
+; 6                                           ; 2                             ;
+; 7                                           ; 9                             ;
+; 8                                           ; 1                             ;
+; 9                                           ; 5                             ;
+; 10                                          ; 3                             ;
+; 11                                          ; 6                             ;
+; 12                                          ; 5                             ;
 ; 13                                          ; 9                             ;
-; 14                                          ; 8                             ;
-; 15                                          ; 10                            ;
-; 16                                          ; 146                           ;
+; 14                                          ; 5                             ;
+; 15                                          ; 18                            ;
+; 16                                          ; 163                           ;
 +---------------------------------------------+-------------------------------+
 
 
 +--------------------------------------------------------------------+
 ; LAB-wide Signals                                                   ;
 +------------------------------------+-------------------------------+
-; LAB-wide Signals  (Average = 0.14) ; Number of LABs  (Total = 224) ;
+; LAB-wide Signals  (Average = 0.24) ; Number of LABs  (Total = 249) ;
 +------------------------------------+-------------------------------+
-; 1 Clock                            ; 15                            ;
-; 1 Clock enable                     ; 4                             ;
+; 1 Clock                            ; 32                            ;
+; 1 Clock enable                     ; 16                            ;
 ; 1 Sync. clear                      ; 12                            ;
 +------------------------------------+-------------------------------+
 
@@ -1343,116 +1395,122 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +------------------------------------------------------------------------------+
 ; LAB Signals Sourced                                                          ;
 +----------------------------------------------+-------------------------------+
-; Number of Signals Sourced  (Average = 14.11) ; Number of LABs  (Total = 224) ;
+; Number of Signals Sourced  (Average = 14.31) ; Number of LABs  (Total = 249) ;
 +----------------------------------------------+-------------------------------+
-; 0                                            ; 0                             ;
-; 1                                            ; 16                            ;
+; 0                                            ; 2                             ;
+; 1                                            ; 13                            ;
 ; 2                                            ; 5                             ;
-; 3                                            ; 2                             ;
+; 3                                            ; 5                             ;
 ; 4                                            ; 0                             ;
 ; 5                                            ; 2                             ;
 ; 6                                            ; 1                             ;
-; 7                                            ; 1                             ;
-; 8                                            ; 3                             ;
-; 9                                            ; 2                             ;
-; 10                                           ; 2                             ;
-; 11                                           ; 8                             ;
-; 12                                           ; 10                            ;
-; 13                                           ; 10                            ;
-; 14                                           ; 8                             ;
-; 15                                           ; 10                            ;
-; 16                                           ; 130                           ;
-; 17                                           ; 0                             ;
-; 18                                           ; 1                             ;
+; 7                                            ; 9                             ;
+; 8                                            ; 1                             ;
+; 9                                            ; 4                             ;
+; 10                                           ; 3                             ;
+; 11                                           ; 7                             ;
+; 12                                           ; 7                             ;
+; 13                                           ; 7                             ;
+; 14                                           ; 5                             ;
+; 15                                           ; 18                            ;
+; 16                                           ; 134                           ;
+; 17                                           ; 2                             ;
+; 18                                           ; 4                             ;
 ; 19                                           ; 0                             ;
-; 20                                           ; 1                             ;
-; 21                                           ; 2                             ;
-; 22                                           ; 3                             ;
-; 23                                           ; 0                             ;
+; 20                                           ; 2                             ;
+; 21                                           ; 0                             ;
+; 22                                           ; 4                             ;
+; 23                                           ; 1                             ;
 ; 24                                           ; 0                             ;
-; 25                                           ; 0                             ;
-; 26                                           ; 0                             ;
-; 27                                           ; 1                             ;
-; 28                                           ; 0                             ;
-; 29                                           ; 0                             ;
+; 25                                           ; 1                             ;
+; 26                                           ; 3                             ;
+; 27                                           ; 0                             ;
+; 28                                           ; 1                             ;
+; 29                                           ; 2                             ;
 ; 30                                           ; 0                             ;
-; 31                                           ; 2                             ;
-; 32                                           ; 4                             ;
+; 31                                           ; 1                             ;
+; 32                                           ; 5                             ;
 +----------------------------------------------+-------------------------------+
 
 
 +----------------------------------------------------------------------------------+
 ; LAB Signals Sourced Out                                                          ;
 +--------------------------------------------------+-------------------------------+
-; Number of Signals Sourced Out  (Average = 10.92) ; Number of LABs  (Total = 224) ;
+; Number of Signals Sourced Out  (Average = 10.76) ; Number of LABs  (Total = 249) ;
 +--------------------------------------------------+-------------------------------+
-; 0                                                ; 0                             ;
-; 1                                                ; 18                            ;
-; 2                                                ; 8                             ;
-; 3                                                ; 8                             ;
-; 4                                                ; 3                             ;
-; 5                                                ; 9                             ;
-; 6                                                ; 8                             ;
-; 7                                                ; 9                             ;
-; 8                                                ; 9                             ;
-; 9                                                ; 2                             ;
-; 10                                               ; 3                             ;
-; 11                                               ; 15                            ;
-; 12                                               ; 19                            ;
-; 13                                               ; 14                            ;
-; 14                                               ; 29                            ;
-; 15                                               ; 16                            ;
-; 16                                               ; 51                            ;
+; 0                                                ; 2                             ;
+; 1                                                ; 14                            ;
+; 2                                                ; 10                            ;
+; 3                                                ; 7                             ;
+; 4                                                ; 11                            ;
+; 5                                                ; 8                             ;
+; 6                                                ; 11                            ;
+; 7                                                ; 7                             ;
+; 8                                                ; 6                             ;
+; 9                                                ; 10                            ;
+; 10                                               ; 10                            ;
+; 11                                               ; 12                            ;
+; 12                                               ; 18                            ;
+; 13                                               ; 24                            ;
+; 14                                               ; 32                            ;
+; 15                                               ; 14                            ;
+; 16                                               ; 49                            ;
 ; 17                                               ; 1                             ;
 ; 18                                               ; 0                             ;
-; 19                                               ; 0                             ;
+; 19                                               ; 1                             ;
 ; 20                                               ; 0                             ;
 ; 21                                               ; 0                             ;
 ; 22                                               ; 1                             ;
-; 23                                               ; 1                             ;
+; 23                                               ; 0                             ;
+; 24                                               ; 0                             ;
+; 25                                               ; 0                             ;
+; 26                                               ; 0                             ;
+; 27                                               ; 1                             ;
 +--------------------------------------------------+-------------------------------+
 
 
 +------------------------------------------------------------------------------+
 ; LAB Distinct Inputs                                                          ;
 +----------------------------------------------+-------------------------------+
-; Number of Distinct Inputs  (Average = 18.40) ; Number of LABs  (Total = 224) ;
+; Number of Distinct Inputs  (Average = 17.73) ; Number of LABs  (Total = 249) ;
 +----------------------------------------------+-------------------------------+
 ; 0                                            ; 0                             ;
 ; 1                                            ; 0                             ;
-; 2                                            ; 7                             ;
-; 3                                            ; 6                             ;
-; 4                                            ; 9                             ;
-; 5                                            ; 1                             ;
-; 6                                            ; 2                             ;
-; 7                                            ; 4                             ;
-; 8                                            ; 6                             ;
-; 9                                            ; 7                             ;
-; 10                                           ; 1                             ;
-; 11                                           ; 6                             ;
-; 12                                           ; 6                             ;
+; 2                                            ; 9                             ;
+; 3                                            ; 7                             ;
+; 4                                            ; 7                             ;
+; 5                                            ; 3                             ;
+; 6                                            ; 4                             ;
+; 7                                            ; 6                             ;
+; 8                                            ; 7                             ;
+; 9                                            ; 5                             ;
+; 10                                           ; 7                             ;
+; 11                                           ; 4                             ;
+; 12                                           ; 9                             ;
 ; 13                                           ; 6                             ;
-; 14                                           ; 6                             ;
-; 15                                           ; 8                             ;
-; 16                                           ; 9                             ;
-; 17                                           ; 14                            ;
-; 18                                           ; 5                             ;
-; 19                                           ; 6                             ;
-; 20                                           ; 11                            ;
+; 14                                           ; 14                            ;
+; 15                                           ; 10                            ;
+; 16                                           ; 10                            ;
+; 17                                           ; 10                            ;
+; 18                                           ; 6                             ;
+; 19                                           ; 7                             ;
+; 20                                           ; 12                            ;
 ; 21                                           ; 11                            ;
-; 22                                           ; 10                            ;
-; 23                                           ; 10                            ;
-; 24                                           ; 9                             ;
-; 25                                           ; 10                            ;
-; 26                                           ; 13                            ;
-; 27                                           ; 5                             ;
+; 22                                           ; 6                             ;
+; 23                                           ; 14                            ;
+; 24                                           ; 10                            ;
+; 25                                           ; 14                            ;
+; 26                                           ; 10                            ;
+; 27                                           ; 11                            ;
 ; 28                                           ; 8                             ;
-; 29                                           ; 11                            ;
-; 30                                           ; 8                             ;
+; 29                                           ; 4                             ;
+; 30                                           ; 6                             ;
 ; 31                                           ; 3                             ;
-; 32                                           ; 1                             ;
+; 32                                           ; 4                             ;
 ; 33                                           ; 3                             ;
-; 34                                           ; 1                             ;
+; 34                                           ; 0                             ;
+; 35                                           ; 0                             ;
+; 36                                           ; 1                             ;
 +----------------------------------------------+-------------------------------+
 
 
@@ -1516,7 +1574,6 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Total Unchecked    ; 0         ; 0            ; 0         ; 0            ; 0            ; 0         ; 0         ; 0            ; 0         ; 0         ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0         ; 0            ; 0            ;
 ; Total Inapplicable ; 0         ; 56           ; 0         ; 56           ; 56           ; 0         ; 0         ; 56           ; 0         ; 0         ; 56           ; 56           ; 56           ; 56           ; 40           ; 56           ; 56           ; 40           ; 56           ; 56           ; 55           ; 56           ; 56           ; 56           ; 56           ; 56           ; 56           ; 0         ; 56           ; 56           ;
 ; Total Fail         ; 0         ; 0            ; 0         ; 0            ; 0            ; 0         ; 0         ; 0            ; 0         ; 0         ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0         ; 0            ; 0            ;
-; ADC_CLK_10         ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; MAX10_CLK2_50      ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; KEY[0]             ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; KEY[1]             ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
@@ -1568,6 +1625,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; ARDUINO_IO[14]     ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; ARDUINO_IO[15]     ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; ARDUINO_RESET_N    ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; ADC_CLK_10         ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; MAX10_CLK1_50      ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; SW[2]              ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; SW[1]              ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
@@ -1612,6 +1670,38 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------------+--------+
 
 
++-------------------------------------------------------------------------------------------------+
+; Estimated Delay Added for Hold Timing Summary                                                   ;
++-----------------+-----------------------------------------------------------+-------------------+
+; Source Clock(s) ; Destination Clock(s)                                      ; Delay Added in ns ;
++-----------------+-----------------------------------------------------------+-------------------+
+; ADC_CLK_10      ; u1|adc_mega_0|ADC_CTRL|adc_pll|auto_generated|pll1|clk[0] ; 41.0              ;
++-----------------+-----------------------------------------------------------+-------------------+
+Note: For more information on problematic transfers, consider running the Fitter again with the Optimize hold timing option (Settings Menu) turned off.
+This will disable optimization of problematic paths and expose them for further analysis using the Timing Analyzer.
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Estimated Delay Added for Hold Timing Details                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ;
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------+
+; Source Register                                                                                                                                                                                                                   ; Destination Register                                                                                                                                                                                                                                                                                                       ; Delay Added in ns ;
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------+
+; my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|soc             ; my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_control:control_internal|fiftyfivenm_adcblock_top_wrapper:adc_inst|fiftyfivenm_adcblock_primitive_wrapper:adcblock_instance|primitive_instance~SOC_DFF                         ; 4.187             ;
+; my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|chsel[1]        ; my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_control:control_internal|fiftyfivenm_adcblock_top_wrapper:adc_inst|fiftyfivenm_adcblock_primitive_wrapper:adcblock_instance|primitive_instance~CHSEL_2                         ; 4.082             ;
+; my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|chsel[2]        ; my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_control:control_internal|fiftyfivenm_adcblock_top_wrapper:adc_inst|fiftyfivenm_adcblock_primitive_wrapper:adcblock_instance|primitive_instance~CHSEL_2                         ; 4.023             ;
+; my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|chsel[0]        ; my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_control:control_internal|fiftyfivenm_adcblock_top_wrapper:adc_inst|fiftyfivenm_adcblock_primitive_wrapper:adcblock_instance|primitive_instance~CHSEL_0                         ; 3.922             ;
+; my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|chsel[3]        ; my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_control:control_internal|fiftyfivenm_adcblock_top_wrapper:adc_inst|fiftyfivenm_adcblock_primitive_wrapper:adcblock_instance|primitive_instance~CHSEL_4                         ; 3.822             ;
+; my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|channel[3]                                                                                                                                               ; my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|currState.doneConversionState                                                                                                                                                                                                                     ; 0.102             ;
+; my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|dout_flp[4]     ; my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|rsp_data[4]                                                                                              ; 0.099             ;
+; my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|cmd_eop_dly     ; my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|rsp_eop                                                                                                  ; 0.099             ;
+; my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|currState.readConversionState                                                                                                                            ; my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_sample_store:sample_store_internal|altera_modular_adc_sample_store_ram:u_ss_ram|altsyncram:altsyncram_component|altsyncram_v5s1:auto_generated|ram_block1a8~portb_re_reg       ; 0.098             ;
+; my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_sequencer:sequencer_internal|altera_modular_adc_sequencer_ctrl:u_seq_ctrl|slot_sel[2] ; my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_sequencer:sequencer_internal|altera_modular_adc_sequencer_ctrl:u_seq_ctrl|cmd_channel[1]                                                                                       ; 0.096             ;
+; my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_sequencer:sequencer_internal|altera_modular_adc_sequencer_ctrl:u_seq_ctrl|slot_sel[1] ; my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_sequencer:sequencer_internal|altera_modular_adc_sequencer_ctrl:u_seq_ctrl|cmd_channel[2]                                                                                       ; 0.082             ;
+; my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|channel[1]                                                                                                                                               ; my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_sample_store:sample_store_internal|altera_modular_adc_sample_store_ram:u_ss_ram|altsyncram:altsyncram_component|altsyncram_v5s1:auto_generated|ram_block1a8~portb_address_reg0 ; 0.017             ;
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------+
+Note: This table only shows the top 12 path(s) that have the largest delay added for hold.
+
+
 +-----------------+
 ; Fitter Messages ;
 +-----------------+
@@ -1622,6 +1712,8 @@ Info (21077): Low junction temperature is 0 degrees C
 Info (21077): High junction temperature is 85 degrees C
 Info (15535): Implemented PLL "myPLL:u2|altpll:altpll_component|myPLL_altpll:auto_generated|pll1" as MAX 10 PLL type File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/db/mypll_altpll.v Line: 44
     Info (15099): Implementing clock multiplication of 74, clock division of 147, and phase shift of 0 degrees (0 ps) for myPLL:u2|altpll:altpll_component|myPLL_altpll:auto_generated|wire_pll1_clk[0] port File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/db/mypll_altpll.v Line: 44
+Info (15535): Implemented PLL "my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|altpll:adc_pll|MAX10_ADC_PLL_altpll:auto_generated|pll1" as MAX 10 PLL type File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/db/max10_adc_pll_altpll.v Line: 46
+    Info (15099): Implementing clock multiplication of 1, clock division of 2, and phase shift of 0 degrees (0 ps) for my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|altpll:adc_pll|MAX10_ADC_PLL_altpll:auto_generated|wire_pll1_clk[0] port File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/db/max10_adc_pll_altpll.v Line: 46
 Info (171003): Fitter is performing an Auto Fit compilation, which may decrease Fitter effort to reduce compilation time
 Warning (292013): Feature LogicLock is only available with a valid subscription license. You can purchase a software subscription to gain full access to this feature.
 Info (176444): Device migration not selected. If you intend to use device migration later, you may need to change the pin assignments as they may be incompatible with other devices
@@ -1651,27 +1743,57 @@ Info (169141): DATA[0] dual-purpose pin not reserved
 Info (12825): Data[1]/ASDO dual-purpose pin not reserved
 Info (12825): nCSO dual-purpose pin not reserved
 Info (12825): DCLK dual-purpose pin not reserved
+Info (169124): Fitter converted 16 user pins into dedicated programming pins
+    Info (169125): Pin ~ALTERA_ADC1IN1~ is reserved at location F5
+    Info (169125): Pin ~ALTERA_ADC2IN1~ is reserved at location E4
+    Info (169125): Pin ~ALTERA_ADC1IN2~ is reserved at location F4
+    Info (169125): Pin ~ALTERA_ADC2IN8~ is reserved at location E3
+    Info (169125): Pin ~ALTERA_ADC1IN3~ is reserved at location J8
+    Info (169125): Pin ~ALTERA_ADC2IN3~ is reserved at location G4
+    Info (169125): Pin ~ALTERA_ADC1IN4~ is reserved at location J9
+    Info (169125): Pin ~ALTERA_ADC2IN4~ is reserved at location F3
+    Info (169125): Pin ~ALTERA_ADC1IN5~ is reserved at location J4
+    Info (169125): Pin ~ALTERA_ADC2IN5~ is reserved at location H4
+    Info (169125): Pin ~ALTERA_ADC1IN6~ is reserved at location H3
+    Info (169125): Pin ~ALTERA_ADC2IN6~ is reserved at location G3
+    Info (169125): Pin ~ALTERA_ADC1IN7~ is reserved at location K5
+    Info (169125): Pin ~ALTERA_ADC2IN7~ is reserved at location K4
+    Info (169125): Pin ~ALTERA_ADC1IN8~ is reserved at location K6
+    Info (169125): Pin ~ALTERA_ADC2IN2~ is reserved at location J3
 Warning (15714): Some pins have incomplete I/O assignments. Refer to the I/O Assignment Warnings report for details
+Info (176045): Design uses memory blocks. Violating setup or hold times of memory block address registers for either read or write operations could cause memory contents to be corrupted. Make sure that all memory block address registers meet the setup and hold time requirements.
+Info (332164): Evaluating HDL-embedded SDC commands
+    Info (332165): Entity altera_std_synchronizer
+        Info (332166): set_false_path -to [get_keepers {*altera_std_synchronizer:*|din_s1}]
 Info (332104): Reading SDC File: 'brick_breaker.SDC'
 Info (332110): Deriving PLL clocks
     Info (332110): create_generated_clock -source {u2|altpll_component|auto_generated|pll1|inclk[0]} -divide_by 147 -multiply_by 74 -duty_cycle 50.00 -name {u2|altpll_component|auto_generated|pll1|clk[0]} {u2|altpll_component|auto_generated|pll1|clk[0]}
+    Info (332110): create_generated_clock -source {u1|adc_mega_0|ADC_CTRL|adc_pll|auto_generated|pll1|inclk[0]} -divide_by 2 -duty_cycle 50.00 -name {u1|adc_mega_0|ADC_CTRL|adc_pll|auto_generated|pll1|clk[0]} {u1|adc_mega_0|ADC_CTRL|adc_pll|auto_generated|pll1|clk[0]}
 Info (332151): Clock uncertainty is not calculated until you update the timing netlist.
+Info (332097): The following timing edges are non-unate.  The Timing Analyzer will assume pos-unate behavior for these edges in the clock network.
+    Info (332098): From: u1|adc_mega_0|ADC_CTRL|max10_adc_core|control_internal|adc_inst|adcblock_instance|primitive_instance|clkin_from_pll_c0  to: my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_control:control_internal|fiftyfivenm_adcblock_top_wrapper:adc_inst|fiftyfivenm_adcblock_primitive_wrapper:adcblock_instance|eoc
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
+Warning (332056): PLL cross checking found inconsistent PLL clock settings:
+    Warning (332056): Clock: u1|adc_mega_0|ADC_CTRL|adc_pll|auto_generated|pll1|clk[0] with master clock period: 100.000 found on PLL node: u1|adc_mega_0|ADC_CTRL|adc_pll|auto_generated|pll1|clk[0] does not match the master clock period requirement: 10.000
 Info (332129): Detected timing requirements -- optimizing circuit to achieve only the specified requirements
-Info (332111): Found 4 clocks
+Info (332111): Found 5 clocks
     Info (332111):   Period   Clock Name
     Info (332111): ======== ============
     Info (332111):  100.000   ADC_CLK_10
     Info (332111):   20.000 MAX10_CLK1_50
     Info (332111):   20.000 MAX10_CLK2_50
+    Info (332111):  200.000 u1|adc_mega_0|ADC_CTRL|adc_pll|auto_generated|pll1|clk[0]
     Info (332111):   39.729 u2|altpll_component|auto_generated|pll1|clk[0]
+Info (176353): Automatically promoted node ADC_CLK_10~input (placed in PIN N5 (CLK0p, DIFFIO_RX_L28p, DIFFOUT_L28p, High_Speed)) File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/brick_breaker.vhd Line: 7
+    Info (176355): Automatically promoted destinations to use location or clock signal Global Clock CLKCTRL_G4
 Info (176353): Automatically promoted node MAX10_CLK1_50~input (placed in PIN P11 (CLK7p, DIFFIO_TX_RX_B20p, DIFFOUT_B20p, High_Speed)) File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/brick_breaker.vhd Line: 8
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock CLKCTRL_G19
-Info (176353): Automatically promoted node myPLL:u2|altpll:altpll_component|myPLL_altpll:auto_generated|wire_pll1_clk[0] (placed in counter C0 of PLL_1) File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/db/mypll_altpll.v Line: 78
-    Info (176355): Automatically promoted destinations to use location or clock signal Global Clock CLKCTRL_G18
+Info (176353): Automatically promoted node myPLL:u2|altpll:altpll_component|myPLL_altpll:auto_generated|wire_pll1_clk[0] (placed in counter C0 of PLL_4) File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/db/mypll_altpll.v Line: 78
+    Info (176355): Automatically promoted destinations to use location or clock signal Global Clock CLKCTRL_G8
 Info (176233): Starting register packing
 Info (176235): Finished register packing
     Extra Info (176219): No registers were packed into other blocks
+Warning (15058): PLL "my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|altpll:adc_pll|MAX10_ADC_PLL_altpll:auto_generated|pll1" is in normal or source synchronous mode with output clock "compensate_clock" set to clk[0] that is not fully compensated because it feeds an output pin -- only PLLs in zero delay buffer mode can fully compensate output pins File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/db/max10_adc_pll_altpll.v Line: 46
 Warning (15705): Ignored locations or region assignments to the following nodes
     Warning (15706): Node "HEX0[0]" is assigned to location or region, but does not exist in design
     Warning (15706): Node "HEX0[1]" is assigned to location or region, but does not exist in design
@@ -1730,11 +1852,11 @@ Info (170137): Fitter placement was successful
 Info (170192): Fitter placement operations ending: elapsed time is 00:00:05
 Info (170193): Fitter routing operations beginning
 Info (170195): Router estimated average interconnect usage is 1% of the available device resources
-    Info (170196): Router estimated peak interconnect usage is 24% of the available device resources in the region that extends from location X33_Y11 to location X44_Y21
+    Info (170196): Router estimated peak interconnect usage is 15% of the available device resources in the region that extends from location X33_Y22 to location X44_Y32
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
 Info (170194): Fitter routing operations ending: elapsed time is 00:00:04
-Info (11888): Total time spent on timing analysis during the Fitter is 0.88 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 1.07 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
@@ -1742,7 +1864,6 @@ Info (334004): Delay annotation completed successfully
 Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:02
 Warning (171167): Found invalid Fitter assignments. See the Ignored Assignments panel in the Fitter Compilation Report for more information.
 Warning (169177): 16 pins must meet Intel FPGA requirements for 3.3-, 3.0-, and 2.5-V interfaces. For more information, refer to AN 447: Interfacing MAX 10 Devices with 3.3/3.0/2.5-V LVTTL/LVCMOS I/O Systems.
-    Info (169178): Pin ADC_CLK_10 uses I/O standard 3.3-V LVTTL at N5 File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/brick_breaker.vhd Line: 7
     Info (169178): Pin MAX10_CLK2_50 uses I/O standard 3.3-V LVTTL at N14 File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/brick_breaker.vhd Line: 9
     Info (169178): Pin KEY[0] uses I/O standard 3.3 V Schmitt Trigger at B8 File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/brick_breaker.vhd Line: 10
     Info (169178): Pin KEY[1] uses I/O standard 3.3 V Schmitt Trigger at A7 File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/brick_breaker.vhd Line: 10
@@ -1754,18 +1875,22 @@ Warning (169177): 16 pins must meet Intel FPGA requirements for 3.3-, 3.0-, and 
     Info (169178): Pin SW[8] uses I/O standard 3.3-V LVTTL at B14 File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/brick_breaker.vhd Line: 12
     Info (169178): Pin SW[9] uses I/O standard 3.3-V LVTTL at F15 File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/brick_breaker.vhd Line: 12
     Info (169178): Pin ARDUINO_RESET_N uses I/O standard 3.3 V Schmitt Trigger at F16 File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/brick_breaker.vhd Line: 19
+    Info (169178): Pin ADC_CLK_10 uses I/O standard 3.3-V LVTTL at N5 File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/brick_breaker.vhd Line: 7
     Info (169178): Pin MAX10_CLK1_50 uses I/O standard 3.3-V LVTTL at P11 File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/brick_breaker.vhd Line: 8
     Info (169178): Pin SW[2] uses I/O standard 3.3-V LVTTL at D12 File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/brick_breaker.vhd Line: 12
     Info (169178): Pin SW[1] uses I/O standard 3.3-V LVTTL at C11 File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/brick_breaker.vhd Line: 12
     Info (169178): Pin SW[0] uses I/O standard 3.3-V LVTTL at C10 File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/brick_breaker.vhd Line: 12
+Critical Warning (16248): Pin VGA_HS is placed too close with ADC pins. I/O pins place too near to ADC pins will cause performance degradation on ADC sampling. Please reassign the pin assignment further away from ADC pins and re-run the compilation again. File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/brick_breaker.vhd Line: 16
+Critical Warning (16248): Pin VGA_VS is placed too close with ADC pins. I/O pins place too near to ADC pins will cause performance degradation on ADC sampling. Please reassign the pin assignment further away from ADC pins and re-run the compilation again. File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/brick_breaker.vhd Line: 17
+Critical Warning (16248): Pin ADC_CLK_10 is placed too close with ADC pins. I/O pins place too near to ADC pins will cause performance degradation on ADC sampling. Please reassign the pin assignment further away from ADC pins and re-run the compilation again. File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/brick_breaker.vhd Line: 7
 Warning (169064): Following 1 pins have no output enable or a GND or VCC output enable - later changes to this connectivity may change fitting results
     Info (169065): Pin ARDUINO_RESET_N has a permanently disabled output enable File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/brick_breaker.vhd Line: 19
 Info (144001): Generated suppressed messages file E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/brick_breaker.fit.smsg
-Info: Quartus Prime Fitter was successful. 0 errors, 55 warnings
-    Info: Peak virtual memory: 5688 megabytes
-    Info: Processing ended: Thu Nov 19 21:26:58 2020
-    Info: Elapsed time: 00:00:17
-    Info: Total CPU time (on all processors): 00:00:33
+Info: Quartus Prime Fitter was successful. 0 errors, 61 warnings
+    Info: Peak virtual memory: 5686 megabytes
+    Info: Processing ended: Fri Nov 20 19:38:40 2020
+    Info: Elapsed time: 00:00:18
+    Info: Total CPU time (on all processors): 00:00:36
 
 
 +----------------------------+

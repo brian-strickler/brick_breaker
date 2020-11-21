@@ -29,7 +29,8 @@ signal sound_fx : std_logic_vector(2 downto 0); -- b"000"/no sound, b"001"/ball 
 signal vga_clk : std_logic; -- maps to c0 of myPLL
 signal vga_rst : std_logic := '1';
 signal color : std_logic_vector(11 downto 0) := X"000";
-signal pad : std_logic_vector(11 downto 0) := "100000000000";
+
+signal adc_clk : std_logic := '0';
 
 	component sound_board is
 		port (
@@ -39,13 +40,13 @@ signal pad : std_logic_vector(11 downto 0) := "100000000000";
 		);
 	end component sound_board;
 	
---	component my_adc is 										-- creates digital value from potentiometer
---		port (
---			CLOCK : in  std_logic                     := 'X'; 	-- clk
---			RESET : in  std_logic                     := 'X'; 	-- reset
---			CH3   : out std_logic_vector(11 downto 0)        	-- CH0
---		);
---	end component my_adc;
+	component my_adc is 										-- creates digital value from potentiometer
+		port (
+			CLOCK : in  std_logic                     := 'X'; 	-- clk
+			RESET : in  std_logic                     := 'X'; 	-- reset
+			CH3   : out std_logic_vector(11 downto 0)        	-- CH0
+		);
+	end component my_adc;
 
 	component myPLL is
 		port
@@ -66,6 +67,13 @@ signal pad : std_logic_vector(11 downto 0) := "100000000000";
 		);
 	end component sync;
 	
+	component adcPLL is
+		port (
+			inclk0		: IN STD_LOGIC  := '0';
+			c0		: OUT STD_LOGIC 
+		);
+	end component adcPLL;
+	
 begin
 	
 	u0 : component sound_board
@@ -75,12 +83,12 @@ begin
 			SOUND_OUT => ARDUINO_IO(7)
 		);
 	
---	u1 : component my_adc
---		port map (
---			CLOCK => MAX10_CLK1_50, --      clk.clk
---			RESET => rst, --    reset.reset
---			CH3   => pot   --         .CH1
---		);
+	u1 : component my_adc
+		port map (
+			CLOCK => ADC_CLK_10, --      clk.clk
+			RESET => rst, --    reset.reset
+			CH3   => pot   --         .CH1
+		);
 	
 	u2 : component myPLL
 		port map
@@ -96,7 +104,13 @@ begin
 			vs_sig => VGA_VS,
 			hs_sig => VGA_HS,
 			pixel_data 	=> color,
-			pot => pad
+			pot => pot
+		);	
+		
+	u4 : adcPLL
+		port map(
+			inclk0 => ADC_CLK_10,
+			c0 => adc_clk
 		);	
 	
 	process(SW) begin
