@@ -16,10 +16,10 @@ end entity sync;
 architecture behavioral of sync is
 
 	-- Note / R: bits 11:8 / G: bits 7:4 / B: bits 3:0 /  MSB:LSB ->
-	constant red : std_logic_vector(11 downto 0) := X"F00";
+	constant red : std_logic_vector(11 downto 0) := X"D00";
 	constant black : std_logic_vector(11 downto 0) := X"000";
-	constant brown : std_logic_vector(11 downto 0) := X"643";
-	constant grey : std_logic_vector(11 downto 0) := X"222";
+	constant brown : std_logic_vector(11 downto 0) := X"822";
+	constant grey : std_logic_vector(11 downto 0) := X"FFF";
 	
 	type MY_MEM is array (0 to 639) of std_logic_vector(11 downto 0);
 	constant full_bricks : MY_MEM := (red, red, red, red, red, red, red, red, red, red, red, red, red, red, red, grey, red, red, red, red, red, red, red, red, red, red, red, red, red, red, red, grey, red, red, red, red, red, red, red, red, red, red, red, red, red, red, red, grey, red, red, red, red, red, red, red, red, red, red, red, red, red, red, red, grey, red, red, red, red, red, red, red, red, red, red, red, red, red, red, red, grey, red, red, red, red, red, red, red, red, red, red, red, red, red, red, red, grey, red, red, red, red, red, red, red, red, red, red, red, red, red, red, red, grey, red, red, red, red, red, red, red, red, red, red, red, red, red, red, red, grey, red, red, red, red, red, red, red, red, red, red, red, red, red, red, red, grey, red, red, red, red, red, red, red, red, red, red, red, red, red, red, red, grey, red, red, red, red, red, red, red, red, red, red, red, red, red, red, red, grey, red, red, red, red, red, red, red, red, red, red, red, red, red, red, red, grey, red, red, red, red, red, red, red, red, red, red, red, red, red, red, red, grey, red, red, red, red, red, red, red, red, red, red, red, red, red, red, red, grey, red, red, red, red, red, red, red, red, red, red, red, red, red, red, red, grey, red, red, red, red, red, red, red, red, red, red, red, red, red, red, red, grey, red, red, red, red, red, red, red, red, red, red, red, red, red, red, red, grey, red, red, red, red, red, red, red, red, red, red, red, red, red, red, red, grey, red, red, red, red, red, red, red, red, red, red, red, red, red, red, red, grey, red, red, red, red, red, red, red, red, red, red, red, red, red, red, red, grey, red, red, red, red, red, red, red, red, red, red, red, red, red, red, red, grey, red, red, red, red, red, red, red, red, red, red, red, red, red, red, red, grey, red, red, red, red, red, red, red, red, red, red, red, red, red, red, red, grey, red, red, red, red, red, red, red, red, red, red, red, red, red, red, red, grey, red, red, red, red, red, red, red, red, red, red, red, red, red, red, red, grey, red, red, red, red, red, red, red, red, red, red, red, red, red, red, red, grey, red, red, red, red, red, red, red, red, red, red, red, red, red, red, red, grey, red, red, red, red, red, red, red, red, red, red, red, red, red, red, red, grey, red, red, red, red, red, red, red, red, red, red, red, red, red, red, red, grey, red, red, red, red, red, red, red, red, red, red, red, red, red, red, red, grey, red, red, red, red, red, red, red, red, red, red, red, red, red, red, red, grey, red, red, red, red, red, red, red, red, red, red, red, red, red, red, red, grey, red, red, red, red, red, red, red, red, red, red, red, red, red, red, red, grey, red, red, red, red, red, red, red, red, red, red, red, red, red, red, red, grey, red, red, red, red, red, red, red, red, red, red, red, red, red, red, red, grey, red, red, red, red, red, red, red, red, red, red, red, red, red, red, red, grey, red, red, red, red, red, red, red, red, red, red, red, red, red, red, red, grey, red, red, red, red, red, red, red, red, red, red, red, red, red, red, red, grey, red, red, red, red, red, red, red, red, red, red, red, red, red, red, red, grey, red, red, red, red, red, red, red, red, red, red, red, red, red, red, red, grey);
@@ -195,12 +195,12 @@ begin
 						end if;
 					end if;
 					
-					if y_pos >= 240 and y_pos <= 474 then	
+					if y_pos >= 240 and y_pos <= 475 then	
 						pixel_data <= black;
 						next_row_counter <= row_counter;
 					end if;
 				
-					if y_pos < 480 and y_pos > 474 then  -- not sure the y_pos and x_pos perfectly match the displays x and y coordinates 
+					if y_pos < 481 and y_pos > 475 then  -- not sure the y_pos and x_pos perfectly match the displays x and y coordinates 
 						next_row_counter <= row_counter;
 						if x_pos >= pad_pos and x_pos < pad_pos + 40 then
 							pixel_data <= brown;
@@ -213,7 +213,11 @@ begin
 	end process;
 	
 	process(pot_sig) begin
-			pad_pos <= 6+pot_sig/4;
+			if pot_sig > 2400 then
+				pad_pos <= 600;
+			else
+				pad_pos <= 6+pot_sig/4;			
+			end if;
 	end process;
 	
 	pot_sig <= to_integer(unsigned(pot));
