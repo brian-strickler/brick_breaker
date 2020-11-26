@@ -1,5 +1,5 @@
 Assembler report for brick_breaker
-Fri Nov 20 19:38:43 2020
+Thu Nov 26 09:45:01 2020
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -10,7 +10,7 @@ Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
   2. Assembler Summary
   3. Assembler Settings
   4. Assembler Generated Files
-  5. Assembler Device Options: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/brick_breaker.sof
+  5. Assembler Device Options: C:/Users/Steve/Documents/cloned_git_repos/brick_breaker/vhdl/brick_breaker.sof
   6. Assembler Messages
 
 
@@ -38,7 +38,7 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Fri Nov 20 19:38:43 2020 ;
+; Assembler Status      ; Successful - Thu Nov 26 09:45:01 2020 ;
 ; Revision Name         ; brick_breaker                         ;
 ; Top-level Entity Name ; brick_breaker                         ;
 ; Family                ; MAX 10                                ;
@@ -53,23 +53,23 @@ https://fpgasoftware.intel.com/eula.
 +--------+---------+---------------+
 
 
-+----------------------------------------------------------------------------------------------+
-; Assembler Generated Files                                                                    ;
-+----------------------------------------------------------------------------------------------+
-; File Name                                                                                    ;
-+----------------------------------------------------------------------------------------------+
-; E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/brick_breaker.sof ;
-+----------------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------+
+; Assembler Generated Files                                                      ;
++--------------------------------------------------------------------------------+
+; File Name                                                                      ;
++--------------------------------------------------------------------------------+
+; C:/Users/Steve/Documents/cloned_git_repos/brick_breaker/vhdl/brick_breaker.sof ;
++--------------------------------------------------------------------------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------+
-; Assembler Device Options: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/brick_breaker.sof ;
-+----------------+-------------------------------------------------------------------------------------------------------+
-; Option         ; Setting                                                                                               ;
-+----------------+-------------------------------------------------------------------------------------------------------+
-; JTAG usercode  ; 0x0043438E                                                                                            ;
-; Checksum       ; 0x0043438E                                                                                            ;
-+----------------+-------------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------+
+; Assembler Device Options: C:/Users/Steve/Documents/cloned_git_repos/brick_breaker/vhdl/brick_breaker.sof ;
++----------------+-----------------------------------------------------------------------------------------+
+; Option         ; Setting                                                                                 ;
++----------------+-----------------------------------------------------------------------------------------+
+; JTAG usercode  ; 0x0043050A                                                                              ;
+; Checksum       ; 0x0043050A                                                                              ;
++----------------+-----------------------------------------------------------------------------------------+
 
 
 +--------------------+
@@ -78,15 +78,15 @@ https://fpgasoftware.intel.com/eula.
 Info: *******************************************************************
 Info: Running Quartus Prime Assembler
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Fri Nov 20 19:38:41 2020
+    Info: Processing started: Thu Nov 26 09:44:56 2020
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off brick_breaker -c brick_breaker
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (115031): Writing out detailed assembly data for power analysis
 Info (115030): Assembler is generating device programming files
 Info: Quartus Prime Assembler was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4705 megabytes
-    Info: Processing ended: Fri Nov 20 19:38:43 2020
-    Info: Elapsed time: 00:00:02
-    Info: Total CPU time (on all processors): 00:00:02
+    Info: Peak virtual memory: 4709 megabytes
+    Info: Processing ended: Thu Nov 26 09:45:01 2020
+    Info: Elapsed time: 00:00:05
+    Info: Total CPU time (on all processors): 00:00:03
 
 
