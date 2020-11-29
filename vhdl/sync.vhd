@@ -16,10 +16,16 @@ end entity sync;
 architecture behavioral of sync is
 
 	-- Note / R: bits 11:8 / G: bits 7:4 / B: bits 3:0 /  MSB:LSB ->
-	constant red : std_logic_vector(11 downto 0) := X"D00";
+	constant red : std_logic_vector(11 downto 0) := X"B00";
 	constant black : std_logic_vector(11 downto 0) := X"000";
-	constant brown : std_logic_vector(11 downto 0) := X"822";
+	constant brown : std_logic_vector(11 downto 0) := X"722";
 	constant grey : std_logic_vector(11 downto 0) := X"FFF";
+	constant blue : std_logic_vector(11 downto 0) := X"00A";
+	
+	type BRICK_STATE is array (0 to 1199) of std_logic;
+	signal brick : BRICK_STATE	:= (others => '1');
+	
+	signal cur_brick : integer range 0 to 1199 := 0;
 	
 	type MY_MEM is array (0 to 639) of std_logic_vector(11 downto 0);
 	constant full_bricks : MY_MEM := (red, red, red, red, red, red, red, red, red, red, red, red, red, red, red, grey, red, red, red, red, red, red, red, red, red, red, red, red, red, red, red, grey, red, red, red, red, red, red, red, red, red, red, red, red, red, red, red, grey, red, red, red, red, red, red, red, red, red, red, red, red, red, red, red, grey, red, red, red, red, red, red, red, red, red, red, red, red, red, red, red, grey, red, red, red, red, red, red, red, red, red, red, red, red, red, red, red, grey, red, red, red, red, red, red, red, red, red, red, red, red, red, red, red, grey, red, red, red, red, red, red, red, red, red, red, red, red, red, red, red, grey, red, red, red, red, red, red, red, red, red, red, red, red, red, red, red, grey, red, red, red, red, red, red, red, red, red, red, red, red, red, red, red, grey, red, red, red, red, red, red, red, red, red, red, red, red, red, red, red, grey, red, red, red, red, red, red, red, red, red, red, red, red, red, red, red, grey, red, red, red, red, red, red, red, red, red, red, red, red, red, red, red, grey, red, red, red, red, red, red, red, red, red, red, red, red, red, red, red, grey, red, red, red, red, red, red, red, red, red, red, red, red, red, red, red, grey, red, red, red, red, red, red, red, red, red, red, red, red, red, red, red, grey, red, red, red, red, red, red, red, red, red, red, red, red, red, red, red, grey, red, red, red, red, red, red, red, red, red, red, red, red, red, red, red, grey, red, red, red, red, red, red, red, red, red, red, red, red, red, red, red, grey, red, red, red, red, red, red, red, red, red, red, red, red, red, red, red, grey, red, red, red, red, red, red, red, red, red, red, red, red, red, red, red, grey, red, red, red, red, red, red, red, red, red, red, red, red, red, red, red, grey, red, red, red, red, red, red, red, red, red, red, red, red, red, red, red, grey, red, red, red, red, red, red, red, red, red, red, red, red, red, red, red, grey, red, red, red, red, red, red, red, red, red, red, red, red, red, red, red, grey, red, red, red, red, red, red, red, red, red, red, red, red, red, red, red, grey, red, red, red, red, red, red, red, red, red, red, red, red, red, red, red, grey, red, red, red, red, red, red, red, red, red, red, red, red, red, red, red, grey, red, red, red, red, red, red, red, red, red, red, red, red, red, red, red, grey, red, red, red, red, red, red, red, red, red, red, red, red, red, red, red, grey, red, red, red, red, red, red, red, red, red, red, red, red, red, red, red, grey, red, red, red, red, red, red, red, red, red, red, red, red, red, red, red, grey, red, red, red, red, red, red, red, red, red, red, red, red, red, red, red, grey, red, red, red, red, red, red, red, red, red, red, red, red, red, red, red, grey, red, red, red, red, red, red, red, red, red, red, red, red, red, red, red, grey, red, red, red, red, red, red, red, red, red, red, red, red, red, red, red, grey, red, red, red, red, red, red, red, red, red, red, red, red, red, red, red, grey, red, red, red, red, red, red, red, red, red, red, red, red, red, red, red, grey, red, red, red, red, red, red, red, red, red, red, red, red, red, red, red, grey, red, red, red, red, red, red, red, red, red, red, red, red, red, red, red, grey);
@@ -37,6 +43,7 @@ architecture behavioral of sync is
 	signal next_row_counter : integer := 0; 
 	signal x_pos : integer := 0;
 	signal y_pos : integer := 0;
+	signal layer : integer := 0;
 	signal next_x_pos : integer := 0;
 	signal next_y_pos : integer := 0;
 	signal count1 : integer := 0;
@@ -46,6 +53,9 @@ architecture behavioral of sync is
 	signal m : std_logic := '0';
 	signal pad_pos : integer := 0;
 	signal pot_sig : integer := 0;
+	signal ball_x : integer := 316;
+	signal ball_y : integer := 250;
+	signal brick_x : integer := 0;
 	
 begin
 	process(clk, reset, current_vs_state, count1, count2, current_hs_state, x_pos, y_pos) 
@@ -181,35 +191,77 @@ begin
 				else
 					next_y_pos <= y_pos;
 					next_x_pos <= x_pos + 1;
-				
-					if (y_pos < 240) then
-						if (y_pos mod 8) = 0 then
-							pixel_data <= grey;
-							next_row_counter <= row_counter + 1;
-						elsif(row_counter mod 2) = 0 then
-							pixel_data <= full_bricks(x_pos);
-							next_row_counter <= row_counter;
-						else
-							pixel_data <= staggered(x_pos);
-							next_row_counter <= row_counter;
-						end if;
-					end if;
 					
-					if y_pos >= 240 and y_pos <= 475 then	
-						pixel_data <= black;
-						next_row_counter <= row_counter;
+					
+					
+					if (y_pos < 240) then
+						if brick(cur_brick) = '0' then
+							pixel_data <= black;
+						else
+							if (y_pos mod 8 = 0) then
+								pixel_data <= grey;
+							elsif layer mod 2 = 0 then
+								pixel_data <= full_bricks(x_pos);
+							else
+								pixel_data <= staggered(x_pos);
+							end if;
+						end if;	
+					end if;
+																
+					if y_pos >= 240 and y_pos <= 475 then
+						if x_pos >= ball_x and x_pos < ball_x + 10 then
+							if y_pos >= ball_y and y_pos < ball_y + 10 then
+								pixel_data <= grey;
+							else
+								pixel_data <= black;
+							end if;	
+						else
+							pixel_data <= black;
+						end if;	
+						next_row_counter <= 0;
 					end if;
 				
 					if y_pos < 481 and y_pos > 475 then  -- not sure the y_pos and x_pos perfectly match the displays x and y coordinates 
-						next_row_counter <= row_counter;
+						next_row_counter <= 0;
 						if x_pos >= pad_pos and x_pos < pad_pos + 40 then
 							pixel_data <= brown;
 						else
 							pixel_data <= black;
 						end if;
 					end if;
+					
 				end if;
 		end case;
+	end process;
+	
+	brick(80) <= '0';
+	brick(85) <= '0';
+	brick(125) <= '0';
+	brick(124) <= '0';
+	brick(1154) <= '0';
+	brick(1155) <= '0';
+	brick(1156) <= '0';
+	brick(1193) <= '0';
+	brick(1116) <= '0';
+	brick(1117) <= '0';
+	brick(1194) <= '0';
+	
+	process(x_pos, layer) begin
+		if layer mod 2 = 1 then	-- even row numbers, staggered start
+			brick_x <= (x_pos+8)/16;
+			cur_brick <= (layer*40)+brick_x;
+		else
+			brick_x <= x_pos/16;
+			cur_brick <= (layer*40)+brick_x;
+		end if;
+	end process;
+	
+	process(y_pos) begin
+		if(y_pos < 240) then
+			layer <= y_pos/8;
+		else 
+			layer <= 0;
+		end if;
 	end process;
 	
 	process(pot_sig) begin

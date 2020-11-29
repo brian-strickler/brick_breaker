@@ -1,5 +1,5 @@
 Analysis & Synthesis report for brick_breaker
-Thu Nov 26 11:50:09 2020
+Sat Nov 28 21:56:54 2020
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -93,15 +93,15 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Nov 26 11:50:08 2020       ;
+; Analysis & Synthesis Status        ; Successful - Sat Nov 28 21:56:54 2020       ;
 ; Quartus Prime Version              ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                      ; brick_breaker                               ;
 ; Top-level Entity Name              ; brick_breaker                               ;
 ; Family                             ; MAX 10                                      ;
-; Total logic elements               ; 3,258                                       ;
-;     Total combinational functions  ; 3,205                                       ;
-;     Dedicated logic registers      ; 263                                         ;
-; Total registers                    ; 263                                         ;
+; Total logic elements               ; 3,368                                       ;
+;     Total combinational functions  ; 3,315                                       ;
+;     Dedicated logic registers      ; 262                                         ;
+; Total registers                    ; 262                                         ;
 ; Total pins                         ; 56                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 768                                         ;
@@ -289,20 +289,20 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+--------------------+
 ; Resource                                    ; Usage              ;
 +---------------------------------------------+--------------------+
-; Estimated Total logic elements              ; 3,258              ;
+; Estimated Total logic elements              ; 3,368              ;
 ;                                             ;                    ;
-; Total combinational functions               ; 3205               ;
+; Total combinational functions               ; 3315               ;
 ; Logic element usage by number of LUT inputs ;                    ;
-;     -- 4 input functions                    ; 1080               ;
-;     -- 3 input functions                    ; 850                ;
-;     -- <=2 input functions                  ; 1275               ;
+;     -- 4 input functions                    ; 1108               ;
+;     -- 3 input functions                    ; 875                ;
+;     -- <=2 input functions                  ; 1332               ;
 ;                                             ;                    ;
 ; Logic elements by mode                      ;                    ;
-;     -- normal mode                          ; 2234               ;
-;     -- arithmetic mode                      ; 971                ;
+;     -- normal mode                          ; 2275               ;
+;     -- arithmetic mode                      ; 1040               ;
 ;                                             ;                    ;
-; Total registers                             ; 263                ;
-;     -- Dedicated logic registers            ; 263                ;
+; Total registers                             ; 262                ;
+;     -- Dedicated logic registers            ; 262                ;
 ;     -- I/O registers                        ; 0                  ;
 ;                                             ;                    ;
 ; I/O pins                                    ; 56                 ;
@@ -315,8 +315,8 @@ https://fpgasoftware.intel.com/eula.
 ;                                             ;                    ;
 ; Maximum fan-out node                        ; sync:u3|count1[31] ;
 ; Maximum fan-out                             ; 193                ;
-; Total fan-out                               ; 10393              ;
-; Average fan-out                             ; 2.89               ;
+; Total fan-out                               ; 10687              ;
+; Average fan-out                             ; 2.88               ;
 +---------------------------------------------+--------------------+
 
 
@@ -325,7 +325,7 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------+--------------+
 ; Compilation Hierarchy Node                                                      ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                                                                                                                                                                                                                                                                       ; Entity Name                            ; Library Name ;
 +---------------------------------------------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------+--------------+
-; |brick_breaker                                                                  ; 3205 (1)            ; 263 (0)                   ; 768         ; 0          ; 0            ; 0       ; 0         ; 56   ; 0            ; 0          ; |brick_breaker                                                                                                                                                                                                                                                                                            ; brick_breaker                          ; work         ;
+; |brick_breaker                                                                  ; 3315 (1)            ; 262 (0)                   ; 768         ; 0          ; 0            ; 0       ; 0         ; 56   ; 0            ; 0          ; |brick_breaker                                                                                                                                                                                                                                                                                            ; brick_breaker                          ; work         ;
 ;    |myPLL:u2|                                                                   ; 0 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |brick_breaker|myPLL:u2                                                                                                                                                                                                                                                                                   ; myPLL                                  ; work         ;
 ;       |altpll:altpll_component|                                                 ; 0 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |brick_breaker|myPLL:u2|altpll:altpll_component                                                                                                                                                                                                                                                           ; altpll                                 ; work         ;
 ;          |myPLL_altpll:auto_generated|                                          ; 0 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |brick_breaker|myPLL:u2|altpll:altpll_component|myPLL_altpll:auto_generated                                                                                                                                                                                                                               ; myPLL_altpll                           ; work         ;
@@ -349,7 +349,7 @@ https://fpgasoftware.intel.com/eula.
 ;             |altpll:adc_pll|                                                    ; 0 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |brick_breaker|my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|altpll:adc_pll                                                                                                                                                                                                    ; altpll                                 ; work         ;
 ;                |MAX10_ADC_PLL_altpll:auto_generated|                            ; 0 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |brick_breaker|my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|altpll:adc_pll|MAX10_ADC_PLL_altpll:auto_generated                                                                                                                                                                ; MAX10_ADC_PLL_altpll                   ; work         ;
 ;    |sound_board:u0|                                                             ; 138 (138)           ; 37 (37)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |brick_breaker|sound_board:u0                                                                                                                                                                                                                                                                             ; sound_board                            ; work         ;
-;    |sync:u3|                                                                    ; 2969 (354)          ; 105 (105)                 ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |brick_breaker|sync:u3                                                                                                                                                                                                                                                                                    ; sync                                   ; work         ;
+;    |sync:u3|                                                                    ; 3079 (464)          ; 104 (104)                 ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |brick_breaker|sync:u3                                                                                                                                                                                                                                                                                    ; sync                                   ; work         ;
 ;       |lpm_divide:Mod0|                                                         ; 1122 (0)            ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |brick_breaker|sync:u3|lpm_divide:Mod0                                                                                                                                                                                                                                                                    ; lpm_divide                             ; work         ;
 ;          |lpm_divide_25o:auto_generated|                                        ; 1122 (0)            ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |brick_breaker|sync:u3|lpm_divide:Mod0|lpm_divide_25o:auto_generated                                                                                                                                                                                                                                      ; lpm_divide_25o                         ; work         ;
 ;             |abs_divider_4dg:divider|                                           ; 1122 (58)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |brick_breaker|sync:u3|lpm_divide:Mod0|lpm_divide_25o:auto_generated|abs_divider_4dg:divider                                                                                                                                                                                                              ; abs_divider_4dg                        ; work         ;
@@ -472,18 +472,18 @@ Encoding Type:  One-Hot
 +-----------------------------------------------------+------------------------+------------------------+
 ; Latch Name                                          ; Latch Enable Signal    ; Free of Timing Hazards ;
 +-----------------------------------------------------+------------------------+------------------------+
-; sync:u3|pixel_data[8]                               ; sync:u3|LessThan10     ; yes                    ;
-; sync:u3|pixel_data[9]                               ; sync:u3|LessThan10     ; yes                    ;
-; sync:u3|pixel_data[10]                              ; GND                    ; yes                    ;
+; sync:u3|pixel_data[8]                               ; sync:u3|pixel_data[10] ; yes                    ;
+; sync:u3|pixel_data[9]                               ; sync:u3|pixel_data[10] ; yes                    ;
+; sync:u3|pixel_data[10]                              ; sync:u3|pixel_data[10] ; yes                    ;
 ; sync:u3|pixel_data[11]                              ; sync:u3|pixel_data[11] ; yes                    ;
-; sync:u3|pixel_data[4]                               ; sync:u3|LessThan10     ; yes                    ;
-; sync:u3|pixel_data[5]                               ; sync:u3|pixel_data[11] ; yes                    ;
-; sync:u3|pixel_data[6]                               ; sync:u3|LessThan10     ; yes                    ;
-; sync:u3|pixel_data[7]                               ; sync:u3|LessThan10     ; yes                    ;
-; sync:u3|pixel_data[0]                               ; sync:u3|LessThan10     ; yes                    ;
-; sync:u3|pixel_data[1]                               ; sync:u3|pixel_data[11] ; yes                    ;
-; sync:u3|pixel_data[2]                               ; sync:u3|LessThan10     ; yes                    ;
-; sync:u3|pixel_data[3]                               ; sync:u3|LessThan10     ; yes                    ;
+; sync:u3|pixel_data[4]                               ; sync:u3|pixel_data[11] ; yes                    ;
+; sync:u3|pixel_data[5]                               ; sync:u3|pixel_data[10] ; yes                    ;
+; sync:u3|pixel_data[6]                               ; sync:u3|pixel_data[11] ; yes                    ;
+; sync:u3|pixel_data[7]                               ; sync:u3|pixel_data[11] ; yes                    ;
+; sync:u3|pixel_data[0]                               ; sync:u3|pixel_data[11] ; yes                    ;
+; sync:u3|pixel_data[1]                               ; sync:u3|pixel_data[10] ; yes                    ;
+; sync:u3|pixel_data[2]                               ; sync:u3|pixel_data[11] ; yes                    ;
+; sync:u3|pixel_data[3]                               ; sync:u3|pixel_data[11] ; yes                    ;
 ; Number of user-specified and inferred latches = 12  ;                        ;                        ;
 +-----------------------------------------------------+------------------------+------------------------+
 Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
@@ -570,8 +570,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|ctrl_state.PUTRESP_PEND                                                                                                                                                                      ; Stuck at GND due to stuck port data_in                                                                                                                                                                                                            ;
 ; my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|pend                                                                                                                                                                                         ; Stuck at VCC due to stuck port data_in                                                                                                                                                                                                            ;
 ; my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|cmd_ready                                                                                                                                                                                    ; Merged with my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|rsp_valid           ;
-; sync:u3|row_counter[1..31]                                                                                                                                                                                                                                                                                                                                                                                     ; Lost fanout                                                                                                                                                                                                                                       ;
-; Total Number of Removed Registers = 151                                                                                                                                                                                                                                                                                                                                                                        ;                                                                                                                                                                                                                                                   ;
+; Total Number of Removed Registers = 120                                                                                                                                                                                                                                                                                                                                                                        ;                                                                                                                                                                                                                                                   ;
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
@@ -630,12 +629,12 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 263   ;
-; Number of registers using Synchronous Clear  ; 143   ;
+; Total registers                              ; 262   ;
+; Number of registers using Synchronous Clear  ; 142   ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 123   ;
+; Number of registers using Clock Enable       ; 122   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -657,12 +656,11 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 ; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |brick_breaker|my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|channel[3]                                                                                                                                                  ;
 ; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |brick_breaker|my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|int_timer[0]       ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |brick_breaker|sync:u3|row_counter[7]                                                                                                                                                                                                               ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |brick_breaker|sync:u3|x_pos[23]                                                                                                                                                                                                                    ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |brick_breaker|my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|chsel[1]           ;
-; 7:1                ; 3 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; Yes        ; |brick_breaker|my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_sequencer:sequencer_internal|altera_modular_adc_sequencer_ctrl:u_seq_ctrl|cmd_channel[1] ;
-; 5:1                ; 32 bits   ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; Yes        ; |brick_breaker|sync:u3|y_pos[5]                                                                                                                                                                                                                     ;
-; 8:1                ; 32 bits   ; 160 LEs       ; 32 LEs               ; 128 LEs                ; Yes        ; |brick_breaker|sound_board:u0|sound_count[13]                                                                                                                                                                                                       ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |brick_breaker|sync:u3|x_pos[27]                                                                                                                                                                                                                    ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |brick_breaker|my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|chsel[2]           ;
+; 7:1                ; 3 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; Yes        ; |brick_breaker|my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_sequencer:sequencer_internal|altera_modular_adc_sequencer_ctrl:u_seq_ctrl|cmd_channel[0] ;
+; 5:1                ; 32 bits   ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; Yes        ; |brick_breaker|sync:u3|y_pos[15]                                                                                                                                                                                                                    ;
+; 8:1                ; 32 bits   ; 160 LEs       ; 32 LEs               ; 128 LEs                ; Yes        ; |brick_breaker|sound_board:u0|sound_count[11]                                                                                                                                                                                                       ;
 ; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |brick_breaker|my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_sequencer:sequencer_internal|altera_modular_adc_sequencer_ctrl:u_seq_ctrl|slot_sel_nxt   ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
@@ -2584,28 +2582,28 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 56                          ;
-; cycloneiii_ff         ; 263                         ;
+; cycloneiii_ff         ; 262                         ;
 ;     ENA               ; 50                          ;
-;     ENA SCLR          ; 73                          ;
+;     ENA SCLR          ; 72                          ;
 ;     SCLR              ; 70                          ;
 ;     plain             ; 70                          ;
 ; cycloneiii_io_obuf    ; 1                           ;
-; cycloneiii_lcell_comb ; 3207                        ;
-;     arith             ; 971                         ;
-;         2 data inputs ; 211                         ;
-;         3 data inputs ; 760                         ;
-;     normal            ; 2236                        ;
+; cycloneiii_lcell_comb ; 3317                        ;
+;     arith             ; 1040                        ;
+;         2 data inputs ; 264                         ;
+;         3 data inputs ; 776                         ;
+;     normal            ; 2277                        ;
 ;         0 data inputs ; 41                          ;
-;         1 data inputs ; 13                          ;
-;         2 data inputs ; 1012                        ;
-;         3 data inputs ; 90                          ;
-;         4 data inputs ; 1080                        ;
+;         1 data inputs ; 16                          ;
+;         2 data inputs ; 1013                        ;
+;         3 data inputs ; 99                          ;
+;         4 data inputs ; 1108                        ;
 ; cycloneiii_pll        ; 2                           ;
 ; cycloneiii_ram_block  ; 12                          ;
 ; fiftyfivenm_adcblock  ; 1                           ;
 ;                       ;                             ;
 ; Max LUT depth         ; 104.90                      ;
-; Average LUT depth     ; 73.65                       ;
+; Average LUT depth     ; 71.65                       ;
 +-----------------------+-----------------------------+
 
 
@@ -2624,7 +2622,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Thu Nov 26 11:49:57 2020
+    Info: Processing started: Sat Nov 28 21:56:42 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off brick_breaker -c brick_breaker
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -2883,19 +2881,28 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/mypl
     Info (12023): Found entity 1: myPLL_altpll File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/db/mypll_altpll.v Line: 30
 Info (12128): Elaborating entity "myPLL_altpll" for hierarchy "myPLL:u2|altpll:altpll_component|myPLL_altpll:auto_generated" File: c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altpll.tdf Line: 898
 Info (12128): Elaborating entity "sync" for hierarchy "sync:u3" File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/brick_breaker.vhd Line: 100
-Warning (10631): VHDL Process Statement warning at sync.vhd(122): inferring latch(es) for signal or variable "pixel_data", which holds its previous value in one or more paths through the process File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/sync.vhd Line: 122
-Info (10041): Inferred latch for "pixel_data[0]" at sync.vhd(122) File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/sync.vhd Line: 122
-Info (10041): Inferred latch for "pixel_data[1]" at sync.vhd(122) File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/sync.vhd Line: 122
-Info (10041): Inferred latch for "pixel_data[2]" at sync.vhd(122) File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/sync.vhd Line: 122
-Info (10041): Inferred latch for "pixel_data[3]" at sync.vhd(122) File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/sync.vhd Line: 122
-Info (10041): Inferred latch for "pixel_data[4]" at sync.vhd(122) File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/sync.vhd Line: 122
-Info (10041): Inferred latch for "pixel_data[5]" at sync.vhd(122) File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/sync.vhd Line: 122
-Info (10041): Inferred latch for "pixel_data[6]" at sync.vhd(122) File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/sync.vhd Line: 122
-Info (10041): Inferred latch for "pixel_data[7]" at sync.vhd(122) File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/sync.vhd Line: 122
-Info (10041): Inferred latch for "pixel_data[8]" at sync.vhd(122) File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/sync.vhd Line: 122
-Info (10041): Inferred latch for "pixel_data[9]" at sync.vhd(122) File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/sync.vhd Line: 122
-Info (10041): Inferred latch for "pixel_data[10]" at sync.vhd(122) File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/sync.vhd Line: 122
-Info (10041): Inferred latch for "pixel_data[11]" at sync.vhd(122) File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/sync.vhd Line: 122
+Warning (10540): VHDL Signal Declaration warning at sync.vhd(56): used explicit default value for signal "ball_x" because signal was never assigned a value File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/sync.vhd Line: 56
+Warning (10540): VHDL Signal Declaration warning at sync.vhd(57): used explicit default value for signal "ball_y" because signal was never assigned a value File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/sync.vhd Line: 57
+Warning (10492): VHDL Process Statement warning at sync.vhd(198): signal "brick" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/sync.vhd Line: 198
+Warning (10492): VHDL Process Statement warning at sync.vhd(198): signal "cur_brick" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/sync.vhd Line: 198
+Warning (10492): VHDL Process Statement warning at sync.vhd(203): signal "layer" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/sync.vhd Line: 203
+Warning (10492): VHDL Process Statement warning at sync.vhd(212): signal "ball_x" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/sync.vhd Line: 212
+Warning (10492): VHDL Process Statement warning at sync.vhd(213): signal "ball_y" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/sync.vhd Line: 213
+Warning (10631): VHDL Process Statement warning at sync.vhd(132): inferring latch(es) for signal or variable "pixel_data", which holds its previous value in one or more paths through the process File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/sync.vhd Line: 132
+Warning (10492): VHDL Process Statement warning at sync.vhd(252): signal "brick_x" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/sync.vhd Line: 252
+Warning (10492): VHDL Process Statement warning at sync.vhd(255): signal "brick_x" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/sync.vhd Line: 255
+Info (10041): Inferred latch for "pixel_data[0]" at sync.vhd(132) File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/sync.vhd Line: 132
+Info (10041): Inferred latch for "pixel_data[1]" at sync.vhd(132) File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/sync.vhd Line: 132
+Info (10041): Inferred latch for "pixel_data[2]" at sync.vhd(132) File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/sync.vhd Line: 132
+Info (10041): Inferred latch for "pixel_data[3]" at sync.vhd(132) File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/sync.vhd Line: 132
+Info (10041): Inferred latch for "pixel_data[4]" at sync.vhd(132) File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/sync.vhd Line: 132
+Info (10041): Inferred latch for "pixel_data[5]" at sync.vhd(132) File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/sync.vhd Line: 132
+Info (10041): Inferred latch for "pixel_data[6]" at sync.vhd(132) File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/sync.vhd Line: 132
+Info (10041): Inferred latch for "pixel_data[7]" at sync.vhd(132) File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/sync.vhd Line: 132
+Info (10041): Inferred latch for "pixel_data[8]" at sync.vhd(132) File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/sync.vhd Line: 132
+Info (10041): Inferred latch for "pixel_data[9]" at sync.vhd(132) File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/sync.vhd Line: 132
+Info (10041): Inferred latch for "pixel_data[10]" at sync.vhd(132) File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/sync.vhd Line: 132
+Info (10041): Inferred latch for "pixel_data[11]" at sync.vhd(132) File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/sync.vhd Line: 132
 Info (12128): Elaborating entity "adcPLL" for hierarchy "adcPLL:u4" File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/brick_breaker.vhd Line: 110
 Info (12128): Elaborating entity "altpll" for hierarchy "adcPLL:u4|altpll:altpll_component" File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/adcPLL.vhd Line: 134
 Info (12130): Elaborated megafunction instantiation "adcPLL:u4|altpll:altpll_component" File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/adcPLL.vhd Line: 134
@@ -2996,10 +3003,10 @@ Warning (14284): Synthesized away the following node(s):
         Warning (14320): Synthesized away node "my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|altera_modular_adc_control_avrg_fifo:ts_avrg_fifo|scfifo:scfifo_component|scfifo_ds61:auto_generated|a_dpfifo_3o41:dpfifo|altsyncram_rqn1:FIFOram|q_b[10]" File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/db/altsyncram_rqn1.tdf Line: 340
         Warning (14320): Synthesized away node "my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|altera_modular_adc_control_avrg_fifo:ts_avrg_fifo|scfifo:scfifo_component|scfifo_ds61:auto_generated|a_dpfifo_3o41:dpfifo|altsyncram_rqn1:FIFOram|q_b[11]" File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/db/altsyncram_rqn1.tdf Line: 370
 Info (278001): Inferred 2 megafunctions from design logic
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "sync:u3|Mod1" File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/sync.vhd Line: 124
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "sync:u3|Mod0" File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/sync.vhd Line: 81
-Info (12130): Elaborated megafunction instantiation "sync:u3|lpm_divide:Mod1" File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/sync.vhd Line: 124
-Info (12133): Instantiated megafunction "sync:u3|lpm_divide:Mod1" with the following parameter: File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/sync.vhd Line: 124
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "sync:u3|Mod1" File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/sync.vhd Line: 134
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "sync:u3|Mod0" File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/sync.vhd Line: 91
+Info (12130): Elaborated megafunction instantiation "sync:u3|lpm_divide:Mod1" File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/sync.vhd Line: 134
+Info (12133): Instantiated megafunction "sync:u3|lpm_divide:Mod1" with the following parameter: File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/sync.vhd Line: 134
     Info (12134): Parameter "LPM_WIDTHN" = "32"
     Info (12134): Parameter "LPM_WIDTHD" = "32"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "SIGNED"
@@ -3017,8 +3024,8 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/add_
     Info (12023): Found entity 1: add_sub_u3c File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/db/add_sub_u3c.tdf Line: 23
 Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_abs_8b9.tdf
     Info (12023): Found entity 1: lpm_abs_8b9 File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/db/lpm_abs_8b9.tdf Line: 25
-Info (12130): Elaborated megafunction instantiation "sync:u3|lpm_divide:Mod0" File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/sync.vhd Line: 81
-Info (12133): Instantiated megafunction "sync:u3|lpm_divide:Mod0" with the following parameter: File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/sync.vhd Line: 81
+Info (12130): Elaborated megafunction instantiation "sync:u3|lpm_divide:Mod0" File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/sync.vhd Line: 91
+Info (12133): Instantiated megafunction "sync:u3|lpm_divide:Mod0" with the following parameter: File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/sync.vhd Line: 91
     Info (12134): Parameter "LPM_WIDTHN" = "32"
     Info (12134): Parameter "LPM_WIDTHD" = "32"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "SIGNED"
@@ -3030,20 +3037,24 @@ Info (13014): Ignored 62 buffer(s)
 Warning (13039): The following bidirectional pins have no drivers
     Warning (13040): bidirectional pin "ARDUINO_RESET_N" has no driver File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/brick_breaker.vhd Line: 19
 Info (13025): Duplicate LATCH primitives merged into single LATCH primitive
-    Info (13026): Duplicate LATCH primitive "sync:u3|pixel_data[9]" merged with LATCH primitive "sync:u3|pixel_data[8]" File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/sync.vhd Line: 122
-    Info (13026): Duplicate LATCH primitive "sync:u3|pixel_data[7]" merged with LATCH primitive "sync:u3|pixel_data[8]" File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/sync.vhd Line: 122
-    Info (13026): Duplicate LATCH primitive "sync:u3|pixel_data[6]" merged with LATCH primitive "sync:u3|pixel_data[8]" File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/sync.vhd Line: 122
-    Info (13026): Duplicate LATCH primitive "sync:u3|pixel_data[4]" merged with LATCH primitive "sync:u3|pixel_data[8]" File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/sync.vhd Line: 122
-    Info (13026): Duplicate LATCH primitive "sync:u3|pixel_data[3]" merged with LATCH primitive "sync:u3|pixel_data[8]" File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/sync.vhd Line: 122
-    Info (13026): Duplicate LATCH primitive "sync:u3|pixel_data[2]" merged with LATCH primitive "sync:u3|pixel_data[8]" File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/sync.vhd Line: 122
-    Info (13026): Duplicate LATCH primitive "sync:u3|pixel_data[0]" merged with LATCH primitive "sync:u3|pixel_data[8]" File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/sync.vhd Line: 122
-    Info (13026): Duplicate LATCH primitive "sync:u3|pixel_data[1]" merged with LATCH primitive "sync:u3|pixel_data[5]" File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/sync.vhd Line: 122
-Warning (13012): Latch sync:u3|pixel_data[8] has unsafe behavior File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/sync.vhd Line: 122
-    Warning (13013): Ports ENA and CLR on the latch are fed by the same signal sync:u3|y_pos[31] File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/sync.vhd Line: 53
-Warning (13012): Latch sync:u3|pixel_data[11] has unsafe behavior File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/sync.vhd Line: 122
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal sync:u3|y_pos[30] File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/sync.vhd Line: 53
-Warning (13012): Latch sync:u3|pixel_data[5] has unsafe behavior File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/sync.vhd Line: 122
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal sync:u3|y_pos[30] File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/sync.vhd Line: 53
+    Info (13026): Duplicate LATCH primitive "sync:u3|pixel_data[9]" merged with LATCH primitive "sync:u3|pixel_data[8]" File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/sync.vhd Line: 132
+    Info (13026): Duplicate LATCH primitive "sync:u3|pixel_data[5]" merged with LATCH primitive "sync:u3|pixel_data[10]" File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/sync.vhd Line: 132
+    Info (13026): Duplicate LATCH primitive "sync:u3|pixel_data[1]" merged with LATCH primitive "sync:u3|pixel_data[10]" File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/sync.vhd Line: 132
+    Info (13026): Duplicate LATCH primitive "sync:u3|pixel_data[7]" merged with LATCH primitive "sync:u3|pixel_data[4]" File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/sync.vhd Line: 132
+    Info (13026): Duplicate LATCH primitive "sync:u3|pixel_data[6]" merged with LATCH primitive "sync:u3|pixel_data[4]" File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/sync.vhd Line: 132
+    Info (13026): Duplicate LATCH primitive "sync:u3|pixel_data[3]" merged with LATCH primitive "sync:u3|pixel_data[4]" File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/sync.vhd Line: 132
+    Info (13026): Duplicate LATCH primitive "sync:u3|pixel_data[2]" merged with LATCH primitive "sync:u3|pixel_data[4]" File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/sync.vhd Line: 132
+    Info (13026): Duplicate LATCH primitive "sync:u3|pixel_data[0]" merged with LATCH primitive "sync:u3|pixel_data[4]" File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/sync.vhd Line: 132
+Warning (13012): Latch sync:u3|pixel_data[8] has unsafe behavior File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/sync.vhd Line: 132
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal sync:u3|y_pos[9] File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/sync.vhd Line: 63
+Warning (13012): Latch sync:u3|pixel_data[10] has unsafe behavior File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/sync.vhd Line: 132
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal sync:u3|y_pos[9] File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/sync.vhd Line: 63
+Warning (13012): Latch sync:u3|pixel_data[11] has unsafe behavior File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/sync.vhd Line: 132
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal sync:u3|y_pos[9] File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/sync.vhd Line: 63
+    Warning (13013): Ports ENA and CLR on the latch are fed by the same signal sync:u3|y_pos[31] File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/sync.vhd Line: 63
+Warning (13012): Latch sync:u3|pixel_data[4] has unsafe behavior File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/sync.vhd Line: 132
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal sync:u3|y_pos[9] File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/sync.vhd Line: 63
+    Warning (13013): Ports ENA and CLR on the latch are fed by the same signal sync:u3|y_pos[31] File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/sync.vhd Line: 63
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "ARDUINO_IO[0]" is stuck at GND File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/brick_breaker.vhd Line: 18
     Warning (13410): Pin "ARDUINO_IO[1]" is stuck at GND File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/brick_breaker.vhd Line: 18
@@ -3061,7 +3072,7 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "ARDUINO_IO[14]" is stuck at GND File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/brick_breaker.vhd Line: 18
     Warning (13410): Pin "ARDUINO_IO[15]" is stuck at GND File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/brick_breaker.vhd Line: 18
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 44 registers lost all their fanouts during netlist optimizations.
+Info (17049): 13 registers lost all their fanouts during netlist optimizations.
 Info (144001): Generated suppressed messages file E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/brick_breaker.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 2 node(s), including 0 DDIO, 2 PLL, 0 transceiver and 0 LCELL
@@ -3076,18 +3087,18 @@ Warning (21074): Design contains 10 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "SW[7]" File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/brick_breaker.vhd Line: 12
     Warning (15610): No output dependent on input pin "SW[8]" File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/brick_breaker.vhd Line: 12
     Warning (15610): No output dependent on input pin "SW[9]" File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/brick_breaker.vhd Line: 12
-Info (21057): Implemented 3339 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 3449 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 15 input pins
     Info (21059): Implemented 40 output pins
     Info (21060): Implemented 1 bidirectional pins
-    Info (21061): Implemented 3268 logic cells
+    Info (21061): Implemented 3378 logic cells
     Info (21064): Implemented 12 RAM segments
     Info (21065): Implemented 2 PLLs
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 83 warnings
-    Info: Peak virtual memory: 4866 megabytes
-    Info: Processing ended: Thu Nov 26 11:50:09 2020
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 96 warnings
+    Info: Peak virtual memory: 4867 megabytes
+    Info: Processing ended: Sat Nov 28 21:56:54 2020
     Info: Elapsed time: 00:00:12
-    Info: Total CPU time (on all processors): 00:00:22
+    Info: Total CPU time (on all processors): 00:00:21
 
 
 +------------------------------------------+
