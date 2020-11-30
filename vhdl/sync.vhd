@@ -56,6 +56,10 @@ architecture behavioral of sync is
 	signal ball_x : integer := 316;
 	signal ball_y : integer := 250;
 	signal brick_x : integer := 0;
+	signal ball_counter : integer := 0;
+	signal ball_move_enable : std_logic := '0';
+	signal x_move : integer := 1;
+	signal y_move : integer := 2;
 	
 begin
 	process(clk, reset, current_vs_state, count1, count2, current_hs_state, x_pos, y_pos) 
@@ -234,22 +238,10 @@ begin
 		end case;
 	end process;
 	
-	brick(80) <= '0';
-	brick(85) <= '0';
-	brick(125) <= '0';
-	brick(124) <= '0';
-	brick(1154) <= '0';
-	brick(1155) <= '0';
-	brick(1156) <= '0';
-	brick(1193) <= '0';
-	brick(1116) <= '0';
-	brick(1117) <= '0';
-	brick(1194) <= '0';
-	
 	process(x_pos, layer) begin
 		if layer mod 2 = 1 then	-- even row numbers, staggered start
-			brick_x <= (x_pos+8)/16;
-			cur_brick <= (layer*40)+brick_x;
+			brick_x <= (x_pos+9)/16;
+			cur_brick <= (layer*40)+brick_x-1;
 		else
 			brick_x <= x_pos/16;
 			cur_brick <= (layer*40)+brick_x;
@@ -272,5 +264,28 @@ begin
 			end if;
 	end process;
 	
+	process(clk, ball_counter) begin
+		if (rising_edge(clk)) then
+			if ball_counter < 500000 then
+				ball_counter <= ball_counter + 1;
+				ball_move_enable <= '0';
+			else
+				ball_counter <= 0;
+				ball_move_enable <= '1';
+				ball_x <= ball_X + x_move;
+				ball_y <= ball_y + y_move;
+			end if;	
+		end if;
+	end process;
+	
+--	process(ball_x, ball_y) begin
+--		if ball_x <= 0 or ball_x >= 630 then
+--			x_move <= 0-x_move;
+--		end if;
+--		if ball_y <= 240 or ball_y >= 470 then
+--			y_move <= 0-x_move;
+--		end if;
+--	end process;
+		
 	pot_sig <= to_integer(unsigned(pot));
 end architecture behavioral;
