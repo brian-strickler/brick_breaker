@@ -1,12 +1,12 @@
-Analysis & Synthesis Status : Successful - Sun Nov 29 21:14:45 2020
+Analysis & Synthesis Status : Successful - Tue Dec 01 10:49:05 2020
 Quartus Prime Version : 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 Revision Name : brick_breaker
 Top-level Entity Name : brick_breaker
 Family : MAX 10
-Total logic elements : 3,553
-    Total combinational functions : 3,500
-    Dedicated logic registers : 357
-Total registers : 357
+Total logic elements : 3,398
+    Total combinational functions : 3,345
+    Dedicated logic registers : 262
+Total registers : 262
 Total pins : 56
 Total virtual pins : 0
 Total memory bits : 768

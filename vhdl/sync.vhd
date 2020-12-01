@@ -264,19 +264,22 @@ begin
 			end if;
 	end process;
 	
-	process(clk, ball_counter) begin
-		if (rising_edge(clk)) then
-			if ball_counter < 500000 then
-				ball_counter <= ball_counter + 1;
-				ball_move_enable <= '0';
-			else
-				ball_counter <= 0;
-				ball_move_enable <= '1';
-				ball_x <= ball_X + x_move;
-				ball_y <= ball_y + y_move;
-			end if;	
-		end if;
-	end process;
+	brick(684) <= '0';
+	brick(273) <= '0';
+	brick(235) <= '0';
+--	process(clk, ball_counter) begin
+--		if (rising_edge(clk)) then
+--			if ball_counter < 500000 then
+--				ball_counter <= ball_counter + 1;
+--				ball_move_enable <= '0';
+--			else
+--				ball_counter <= 0;
+--				ball_move_enable <= '1';
+--				ball_x <= ball_X + x_move;
+--				ball_y <= ball_y + y_move;
+--			end if;	
+--		end if;
+--	end process;
 	
 --	process(ball_x, ball_y) begin
 --		if ball_x <= 0 or ball_x >= 630 then
