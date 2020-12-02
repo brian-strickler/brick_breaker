@@ -1,5 +1,5 @@
 Fitter report for brick_breaker
-Tue Dec 01 10:49:27 2020
+Tue Dec 01 19:05:07 2020
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -73,15 +73,15 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Fitter Summary                                                                   ;
 +------------------------------------+---------------------------------------------+
-; Fitter Status                      ; Successful - Tue Dec 01 10:49:27 2020       ;
+; Fitter Status                      ; Successful - Tue Dec 01 19:05:07 2020       ;
 ; Quartus Prime Version              ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                      ; brick_breaker                               ;
 ; Top-level Entity Name              ; brick_breaker                               ;
 ; Family                             ; MAX 10                                      ;
 ; Device                             ; 10M50DAF484C7G                              ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 3,389 / 49,760 ( 7 % )                      ;
-;     Total combinational functions  ; 3,346 / 49,760 ( 7 % )                      ;
+; Total logic elements               ; 3,423 / 49,760 ( 7 % )                      ;
+;     Total combinational functions  ; 3,376 / 49,760 ( 7 % )                      ;
 ;     Dedicated logic registers      ; 262 / 49,760 ( < 1 % )                      ;
 ; Total registers                    ; 262                                         ;
 ; Total pins                         ; 56 / 360 ( 16 % )                           ;
@@ -156,17 +156,15 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 8           ;
-; Maximum allowed            ; 4           ;
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 2           ;
 ;                            ;             ;
-; Average used               ; 1.31        ;
-; Maximum used               ; 4           ;
+; Average used               ; 1.16        ;
+; Maximum used               ; 2           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;  10.5%      ;
-;     Processor 3            ;  10.4%      ;
-;     Processor 4            ;  10.4%      ;
+;     Processor 2            ;  16.0%      ;
 +----------------------------+-------------+
 
 
@@ -280,8 +278,8 @@ https://fpgasoftware.intel.com/eula.
 ; Type                ; Total [A + B]       ; From Design Partitions [A] ; From Rapid Recompile [B] ;
 +---------------------+---------------------+----------------------------+--------------------------+
 ; Placement (by node) ;                     ;                            ;                          ;
-;     -- Requested    ; 0.00 % ( 0 / 3790 ) ; 0.00 % ( 0 / 3790 )        ; 0.00 % ( 0 / 3790 )      ;
-;     -- Achieved     ; 0.00 % ( 0 / 3790 ) ; 0.00 % ( 0 / 3790 )        ; 0.00 % ( 0 / 3790 )      ;
+;     -- Requested    ; 0.00 % ( 0 / 3820 ) ; 0.00 % ( 0 / 3820 )        ; 0.00 % ( 0 / 3820 )      ;
+;     -- Achieved     ; 0.00 % ( 0 / 3820 ) ; 0.00 % ( 0 / 3820 )        ; 0.00 % ( 0 / 3820 )      ;
 ;                     ;                     ;                            ;                          ;
 ; Routing (by net)    ;                     ;                            ;                          ;
 ;     -- Requested    ; 0.00 % ( 0 / 0 )    ; 0.00 % ( 0 / 0 )           ; 0.00 % ( 0 / 0 )         ;
@@ -304,7 +302,7 @@ https://fpgasoftware.intel.com/eula.
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 ; Partition Name                 ; Preservation Achieved ; Preservation Level Used ; Netlist Type Used ; Preservation Method ; Notes ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
-; Top                            ; 0.00 % ( 0 / 3739 )   ; N/A                     ; Source File       ; N/A                 ;       ;
+; Top                            ; 0.00 % ( 0 / 3769 )   ; N/A                     ; Source File       ; N/A                 ;       ;
 ; hard_block:auto_generated_inst ; 0.00 % ( 0 / 51 )     ; N/A                     ; Source File       ; N/A                 ;       ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 
@@ -312,7 +310,7 @@ https://fpgasoftware.intel.com/eula.
 +--------------+
 ; Pin-Out File ;
 +--------------+
-The pin-out file can be found in E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/brick_breaker.pin.
+The pin-out file can be found in C:/Users/Steve/Documents/cloned_git_repos/brick_breaker/vhdl/brick_breaker.pin.
 
 
 +---------------------------------------------------------------------------+
@@ -320,26 +318,26 @@ The pin-out file can be found in E:/Desktop/Reconfigurable Computing  Labs/brick
 +---------------------------------------------+-----------------------------+
 ; Resource                                    ; Usage                       ;
 +---------------------------------------------+-----------------------------+
-; Total logic elements                        ; 3,389 / 49,760 ( 7 % )      ;
-;     -- Combinational with no register       ; 3127                        ;
-;     -- Register only                        ; 43                          ;
-;     -- Combinational with a register        ; 219                         ;
+; Total logic elements                        ; 3,423 / 49,760 ( 7 % )      ;
+;     -- Combinational with no register       ; 3161                        ;
+;     -- Register only                        ; 47                          ;
+;     -- Combinational with a register        ; 215                         ;
 ;                                             ;                             ;
 ; Logic element usage by number of LUT inputs ;                             ;
-;     -- 4 input functions                    ; 1093                        ;
-;     -- 3 input functions                    ; 875                         ;
-;     -- <=2 input functions                  ; 1378                        ;
-;     -- Register only                        ; 43                          ;
+;     -- 4 input functions                    ; 1102                        ;
+;     -- 3 input functions                    ; 888                         ;
+;     -- <=2 input functions                  ; 1386                        ;
+;     -- Register only                        ; 47                          ;
 ;                                             ;                             ;
 ; Logic elements by mode                      ;                             ;
-;     -- normal mode                          ; 2299                        ;
-;     -- arithmetic mode                      ; 1047                        ;
+;     -- normal mode                          ; 2293                        ;
+;     -- arithmetic mode                      ; 1083                        ;
 ;                                             ;                             ;
 ; Total registers*                            ; 262 / 51,509 ( < 1 % )      ;
 ;     -- Dedicated logic registers            ; 262 / 49,760 ( < 1 % )      ;
 ;     -- I/O registers                        ; 0 / 1,749 ( 0 % )           ;
 ;                                             ;                             ;
-; Total LABs:  partially or completely used   ; 248 / 3,110 ( 8 % )         ;
+; Total LABs:  partially or completely used   ; 261 / 3,110 ( 8 % )         ;
 ; Virtual pins                                ; 0                           ;
 ; I/O pins                                    ; 56 / 360 ( 16 % )           ;
 ;     -- Clock pins                           ; 3 / 8 ( 38 % )              ;
@@ -359,11 +357,11 @@ The pin-out file can be found in E:/Desktop/Reconfigurable Computing  Labs/brick
 ; Remote update blocks                        ; 0 / 1 ( 0 % )               ;
 ; Oscillator blocks                           ; 0 / 1 ( 0 % )               ;
 ; Impedance control blocks                    ; 0 / 1 ( 0 % )               ;
-; Average interconnect usage (total/H/V)      ; 1.9% / 1.7% / 2.2%          ;
-; Peak interconnect usage (total/H/V)         ; 18.3% / 17.4% / 20.5%       ;
-; Maximum fan-out                             ; 177                         ;
-; Highest non-global fan-out                  ; 177                         ;
-; Total fan-out                               ; 10626                       ;
+; Average interconnect usage (total/H/V)      ; 1.9% / 1.8% / 2.1%          ;
+; Peak interconnect usage (total/H/V)         ; 20.3% / 19.2% / 22.0%       ;
+; Maximum fan-out                             ; 185                         ;
+; Highest non-global fan-out                  ; 185                         ;
+; Total fan-out                               ; 10715                       ;
 ; Average fan-out                             ; 2.79                        ;
 +---------------------------------------------+-----------------------------+
 *  Register count does not include registers inside RAM blocks or DSP blocks.
@@ -377,26 +375,26 @@ The pin-out file can be found in E:/Desktop/Reconfigurable Computing  Labs/brick
 +---------------------------------------------+-----------------------+--------------------------------+
 ; Difficulty Clustering Region                ; Low                   ; Low                            ;
 ;                                             ;                       ;                                ;
-; Total logic elements                        ; 3389 / 49760 ( 7 % )  ; 0 / 49760 ( 0 % )              ;
-;     -- Combinational with no register       ; 3127                  ; 0                              ;
-;     -- Register only                        ; 43                    ; 0                              ;
-;     -- Combinational with a register        ; 219                   ; 0                              ;
+; Total logic elements                        ; 3423 / 49760 ( 7 % )  ; 0 / 49760 ( 0 % )              ;
+;     -- Combinational with no register       ; 3161                  ; 0                              ;
+;     -- Register only                        ; 47                    ; 0                              ;
+;     -- Combinational with a register        ; 215                   ; 0                              ;
 ;                                             ;                       ;                                ;
 ; Logic element usage by number of LUT inputs ;                       ;                                ;
-;     -- 4 input functions                    ; 1093                  ; 0                              ;
-;     -- 3 input functions                    ; 875                   ; 0                              ;
-;     -- <=2 input functions                  ; 1378                  ; 0                              ;
-;     -- Register only                        ; 43                    ; 0                              ;
+;     -- 4 input functions                    ; 1102                  ; 0                              ;
+;     -- 3 input functions                    ; 888                   ; 0                              ;
+;     -- <=2 input functions                  ; 1386                  ; 0                              ;
+;     -- Register only                        ; 47                    ; 0                              ;
 ;                                             ;                       ;                                ;
 ; Logic elements by mode                      ;                       ;                                ;
-;     -- normal mode                          ; 2299                  ; 0                              ;
-;     -- arithmetic mode                      ; 1047                  ; 0                              ;
+;     -- normal mode                          ; 2293                  ; 0                              ;
+;     -- arithmetic mode                      ; 1083                  ; 0                              ;
 ;                                             ;                       ;                                ;
 ; Total registers                             ; 262                   ; 0                              ;
 ;     -- Dedicated logic registers            ; 262 / 49760 ( < 1 % ) ; 0 / 49760 ( 0 % )              ;
 ;     -- I/O registers                        ; 0                     ; 0                              ;
 ;                                             ;                       ;                                ;
-; Total LABs:  partially or completely used   ; 248 / 3110 ( 8 % )    ; 0 / 3110 ( 0 % )               ;
+; Total LABs:  partially or completely used   ; 261 / 3110 ( 8 % )    ; 0 / 3110 ( 0 % )               ;
 ;                                             ;                       ;                                ;
 ; Virtual pins                                ; 0                     ; 0                              ;
 ; I/O pins                                    ; 56                    ; 0                              ;
@@ -416,8 +414,8 @@ The pin-out file can be found in E:/Desktop/Reconfigurable Computing  Labs/brick
 ;     -- Registered Output Connections        ; 0                     ; 0                              ;
 ;                                             ;                       ;                                ;
 ; Internal Connections                        ;                       ;                                ;
-;     -- Total Connections                    ; 10608                 ; 136                            ;
-;     -- Registered Connections               ; 1358                  ; 0                              ;
+;     -- Total Connections                    ; 10697                 ; 136                            ;
+;     -- Registered Connections               ; 1401                  ; 0                              ;
 ;                                             ;                       ;                                ;
 ; External Connections                        ;                       ;                                ;
 ;     -- Top                                  ; 2                     ; 109                            ;
@@ -1155,22 +1153,22 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 +---------------------------------------------------------------------------------+-------------+---------------------------+---------------+-------------+------+------------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------+--------------+
 ; Compilation Hierarchy Node                                                      ; Logic Cells ; Dedicated Logic Registers ; I/O Registers ; Memory Bits ; M9Ks ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; ADC blocks ; Full Hierarchy Name                                                                                                                                                                                                                                                                                       ; Entity Name                            ; Library Name ;
 +---------------------------------------------------------------------------------+-------------+---------------------------+---------------+-------------+------+------------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------+--------------+
-; |brick_breaker                                                                  ; 3389 (1)    ; 262 (0)                   ; 0 (0)         ; 768         ; 1    ; 1          ; 0            ; 0       ; 0         ; 56   ; 0            ; 3127 (1)     ; 43 (0)            ; 219 (0)          ; 0          ; |brick_breaker                                                                                                                                                                                                                                                                                            ; brick_breaker                          ; work         ;
+; |brick_breaker                                                                  ; 3423 (1)    ; 262 (0)                   ; 0 (0)         ; 768         ; 1    ; 1          ; 0            ; 0       ; 0         ; 56   ; 0            ; 3161 (1)     ; 47 (0)            ; 215 (0)          ; 0          ; |brick_breaker                                                                                                                                                                                                                                                                                            ; brick_breaker                          ; work         ;
 ;    |myPLL:u2|                                                                   ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; 0          ; |brick_breaker|myPLL:u2                                                                                                                                                                                                                                                                                   ; myPLL                                  ; work         ;
 ;       |altpll:altpll_component|                                                 ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; 0          ; |brick_breaker|myPLL:u2|altpll:altpll_component                                                                                                                                                                                                                                                           ; altpll                                 ; work         ;
 ;          |myPLL_altpll:auto_generated|                                          ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; 0          ; |brick_breaker|myPLL:u2|altpll:altpll_component|myPLL_altpll:auto_generated                                                                                                                                                                                                                               ; myPLL_altpll                           ; work         ;
 ;    |my_adc:u1|                                                                  ; 144 (0)     ; 121 (0)                   ; 0 (0)         ; 768         ; 1    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 23 (0)       ; 36 (0)            ; 85 (0)           ; 0          ; |brick_breaker|my_adc:u1                                                                                                                                                                                                                                                                                  ; my_adc                                 ; my_adc       ;
 ;       |my_adc_adc_mega_0:adc_mega_0|                                            ; 144 (13)    ; 121 (13)                  ; 0 (0)         ; 768         ; 1    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 23 (0)       ; 36 (2)            ; 85 (11)          ; 0          ; |brick_breaker|my_adc:u1|my_adc_adc_mega_0:adc_mega_0                                                                                                                                                                                                                                                     ; my_adc_adc_mega_0                      ; my_adc       ;
-;          |altera_up_avalon_adv_adc:ADC_CTRL|                                    ; 131 (31)    ; 108 (21)                  ; 0 (0)         ; 768         ; 1    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 23 (9)       ; 34 (12)           ; 74 (10)          ; 0          ; |brick_breaker|my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL                                                                                                                                                                                                                   ; altera_up_avalon_adv_adc               ; my_adc       ;
-;             |DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|                   ; 101 (0)     ; 87 (0)                    ; 0 (0)         ; 768         ; 1    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 14 (0)       ; 22 (0)            ; 65 (0)           ; 0          ; |brick_breaker|my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core                                                                                                                                                                   ; DE10_Lite_ADC_Core_modular_adc_0       ; my_adc       ;
-;                |altera_modular_adc_control:control_internal|                    ; 73 (0)      ; 59 (0)                    ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 14 (0)       ; 21 (0)            ; 38 (0)           ; 0          ; |brick_breaker|my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_control:control_internal                                                                                                                       ; altera_modular_adc_control             ; my_adc       ;
-;                   |altera_modular_adc_control_fsm:u_control_fsm|                ; 68 (64)     ; 59 (55)                   ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 9 (9)        ; 21 (18)           ; 38 (38)          ; 0          ; |brick_breaker|my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm                                                                          ; altera_modular_adc_control_fsm         ; my_adc       ;
+;          |altera_up_avalon_adv_adc:ADC_CTRL|                                    ; 131 (31)    ; 108 (21)                  ; 0 (0)         ; 768         ; 1    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 23 (10)      ; 34 (12)           ; 74 (9)           ; 0          ; |brick_breaker|my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL                                                                                                                                                                                                                   ; altera_up_avalon_adv_adc               ; my_adc       ;
+;             |DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|                   ; 100 (0)     ; 87 (0)                    ; 0 (0)         ; 768         ; 1    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 13 (0)       ; 22 (0)            ; 65 (0)           ; 0          ; |brick_breaker|my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core                                                                                                                                                                   ; DE10_Lite_ADC_Core_modular_adc_0       ; my_adc       ;
+;                |altera_modular_adc_control:control_internal|                    ; 72 (0)      ; 59 (0)                    ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 13 (0)       ; 21 (0)            ; 38 (0)           ; 0          ; |brick_breaker|my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_control:control_internal                                                                                                                       ; altera_modular_adc_control             ; my_adc       ;
+;                   |altera_modular_adc_control_fsm:u_control_fsm|                ; 67 (63)     ; 59 (55)                   ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 8 (8)        ; 21 (18)           ; 38 (38)          ; 0          ; |brick_breaker|my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm                                                                          ; altera_modular_adc_control_fsm         ; my_adc       ;
 ;                      |altera_std_synchronizer:u_clk_dft_synchronizer|           ; 2 (2)       ; 2 (2)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 1 (1)             ; 1 (1)            ; 0          ; |brick_breaker|my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|altera_std_synchronizer:u_clk_dft_synchronizer                           ; altera_std_synchronizer                ; work         ;
 ;                      |altera_std_synchronizer:u_eoc_synchronizer|               ; 2 (2)       ; 2 (2)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 2 (2)             ; 0 (0)            ; 0          ; |brick_breaker|my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|altera_std_synchronizer:u_eoc_synchronizer                               ; altera_std_synchronizer                ; work         ;
 ;                   |fiftyfivenm_adcblock_top_wrapper:adc_inst|                   ; 5 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 5 (0)        ; 0 (0)             ; 0 (0)            ; 0          ; |brick_breaker|my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_control:control_internal|fiftyfivenm_adcblock_top_wrapper:adc_inst                                                                             ; fiftyfivenm_adcblock_top_wrapper       ; my_adc       ;
 ;                      |chsel_code_converter_sw_to_hw:decoder|                    ; 5 (5)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 5 (5)        ; 0 (0)             ; 0 (0)            ; 0          ; |brick_breaker|my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_control:control_internal|fiftyfivenm_adcblock_top_wrapper:adc_inst|chsel_code_converter_sw_to_hw:decoder                                       ; chsel_code_converter_sw_to_hw          ; my_adc       ;
 ;                      |fiftyfivenm_adcblock_primitive_wrapper:adcblock_instance| ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; 0          ; |brick_breaker|my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_control:control_internal|fiftyfivenm_adcblock_top_wrapper:adc_inst|fiftyfivenm_adcblock_primitive_wrapper:adcblock_instance                    ; fiftyfivenm_adcblock_primitive_wrapper ; my_adc       ;
-;                |altera_modular_adc_sample_store:sample_store_internal|          ; 22 (22)     ; 21 (21)                   ; 0 (0)         ; 768         ; 1    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 1 (1)             ; 21 (21)          ; 0          ; |brick_breaker|my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_sample_store:sample_store_internal                                                                                                             ; altera_modular_adc_sample_store        ; my_adc       ;
+;                |altera_modular_adc_sample_store:sample_store_internal|          ; 21 (21)     ; 21 (21)                   ; 0 (0)         ; 768         ; 1    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 1 (1)             ; 20 (20)          ; 0          ; |brick_breaker|my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_sample_store:sample_store_internal                                                                                                             ; altera_modular_adc_sample_store        ; my_adc       ;
 ;                   |altera_modular_adc_sample_store_ram:u_ss_ram|                ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 768         ; 1    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; 0          ; |brick_breaker|my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_sample_store:sample_store_internal|altera_modular_adc_sample_store_ram:u_ss_ram                                                                ; altera_modular_adc_sample_store_ram    ; my_adc       ;
 ;                      |altsyncram:altsyncram_component|                          ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 768         ; 1    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; 0          ; |brick_breaker|my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_sample_store:sample_store_internal|altera_modular_adc_sample_store_ram:u_ss_ram|altsyncram:altsyncram_component                                ; altsyncram                             ; work         ;
 ;                         |altsyncram_v5s1:auto_generated|                        ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 768         ; 1    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; 0          ; |brick_breaker|my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_sample_store:sample_store_internal|altera_modular_adc_sample_store_ram:u_ss_ram|altsyncram:altsyncram_component|altsyncram_v5s1:auto_generated ; altsyncram_v5s1                        ; work         ;
@@ -1178,17 +1176,17 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 ;                   |altera_modular_adc_sequencer_ctrl:u_seq_ctrl|                ; 7 (7)       ; 7 (7)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 7 (7)            ; 0          ; |brick_breaker|my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_sequencer:sequencer_internal|altera_modular_adc_sequencer_ctrl:u_seq_ctrl                                                                      ; altera_modular_adc_sequencer_ctrl      ; my_adc       ;
 ;             |altpll:adc_pll|                                                    ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; 0          ; |brick_breaker|my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|altpll:adc_pll                                                                                                                                                                                                    ; altpll                                 ; work         ;
 ;                |MAX10_ADC_PLL_altpll:auto_generated|                            ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; 0          ; |brick_breaker|my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|altpll:adc_pll|MAX10_ADC_PLL_altpll:auto_generated                                                                                                                                                                ; MAX10_ADC_PLL_altpll                   ; work         ;
-;    |sound_board:u0|                                                             ; 140 (140)   ; 37 (37)                   ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 103 (103)    ; 2 (2)             ; 35 (35)          ; 0          ; |brick_breaker|sound_board:u0                                                                                                                                                                                                                                                                             ; sound_board                            ; work         ;
-;    |sync:u3|                                                                    ; 3114 (510)  ; 104 (104)                 ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 3000 (396)   ; 5 (5)             ; 109 (83)         ; 0          ; |brick_breaker|sync:u3                                                                                                                                                                                                                                                                                    ; sync                                   ; work         ;
-;       |lpm_divide:Mod0|                                                         ; 1122 (0)    ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 1122 (0)     ; 0 (0)             ; 0 (0)            ; 0          ; |brick_breaker|sync:u3|lpm_divide:Mod0                                                                                                                                                                                                                                                                    ; lpm_divide                             ; work         ;
-;          |lpm_divide_25o:auto_generated|                                        ; 1122 (0)    ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 1122 (0)     ; 0 (0)             ; 0 (0)            ; 0          ; |brick_breaker|sync:u3|lpm_divide:Mod0|lpm_divide_25o:auto_generated                                                                                                                                                                                                                                      ; lpm_divide_25o                         ; work         ;
-;             |abs_divider_4dg:divider|                                           ; 1122 (58)   ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 1122 (58)    ; 0 (0)             ; 0 (0)            ; 0          ; |brick_breaker|sync:u3|lpm_divide:Mod0|lpm_divide_25o:auto_generated|abs_divider_4dg:divider                                                                                                                                                                                                              ; abs_divider_4dg                        ; work         ;
-;                |alt_u_div_ske:divider|                                          ; 1064 (1064) ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 1064 (1064)  ; 0 (0)             ; 0 (0)            ; 0          ; |brick_breaker|sync:u3|lpm_divide:Mod0|lpm_divide_25o:auto_generated|abs_divider_4dg:divider|alt_u_div_ske:divider                                                                                                                                                                                        ; alt_u_div_ske                          ; work         ;
-;       |lpm_divide:Mod1|                                                         ; 1508 (0)    ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 1482 (0)     ; 0 (0)             ; 26 (0)           ; 0          ; |brick_breaker|sync:u3|lpm_divide:Mod1                                                                                                                                                                                                                                                                    ; lpm_divide                             ; work         ;
-;          |lpm_divide_25o:auto_generated|                                        ; 1508 (0)    ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 1482 (0)     ; 0 (0)             ; 26 (0)           ; 0          ; |brick_breaker|sync:u3|lpm_divide:Mod1|lpm_divide_25o:auto_generated                                                                                                                                                                                                                                      ; lpm_divide_25o                         ; work         ;
-;             |abs_divider_4dg:divider|                                           ; 1508 (59)   ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 1482 (59)    ; 0 (0)             ; 26 (0)           ; 0          ; |brick_breaker|sync:u3|lpm_divide:Mod1|lpm_divide_25o:auto_generated|abs_divider_4dg:divider                                                                                                                                                                                                              ; abs_divider_4dg                        ; work         ;
-;                |alt_u_div_ske:divider|                                          ; 1387 (1387) ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 1386 (1386)  ; 0 (0)             ; 1 (1)            ; 0          ; |brick_breaker|sync:u3|lpm_divide:Mod1|lpm_divide_25o:auto_generated|abs_divider_4dg:divider|alt_u_div_ske:divider                                                                                                                                                                                        ; alt_u_div_ske                          ; work         ;
-;                |lpm_abs_8b9:my_abs_num|                                         ; 62 (62)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 37 (37)      ; 0 (0)             ; 25 (25)          ; 0          ; |brick_breaker|sync:u3|lpm_divide:Mod1|lpm_divide_25o:auto_generated|abs_divider_4dg:divider|lpm_abs_8b9:my_abs_num                                                                                                                                                                                       ; lpm_abs_8b9                            ; work         ;
+;    |sound_board:u0|                                                             ; 138 (138)   ; 37 (37)                   ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 101 (101)    ; 0 (0)             ; 37 (37)          ; 0          ; |brick_breaker|sound_board:u0                                                                                                                                                                                                                                                                             ; sound_board                            ; work         ;
+;    |sync:u3|                                                                    ; 3150 (548)  ; 104 (104)                 ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 3036 (434)   ; 11 (11)           ; 103 (82)         ; 0          ; |brick_breaker|sync:u3                                                                                                                                                                                                                                                                                    ; sync                                   ; work         ;
+;       |lpm_divide:Mod0|                                                         ; 1122 (0)    ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 1117 (0)     ; 0 (0)             ; 5 (0)            ; 0          ; |brick_breaker|sync:u3|lpm_divide:Mod0                                                                                                                                                                                                                                                                    ; lpm_divide                             ; work         ;
+;          |lpm_divide_25o:auto_generated|                                        ; 1122 (0)    ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 1117 (0)     ; 0 (0)             ; 5 (0)            ; 0          ; |brick_breaker|sync:u3|lpm_divide:Mod0|lpm_divide_25o:auto_generated                                                                                                                                                                                                                                      ; lpm_divide_25o                         ; work         ;
+;             |abs_divider_4dg:divider|                                           ; 1122 (58)   ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 1117 (58)    ; 0 (0)             ; 5 (0)            ; 0          ; |brick_breaker|sync:u3|lpm_divide:Mod0|lpm_divide_25o:auto_generated|abs_divider_4dg:divider                                                                                                                                                                                                              ; abs_divider_4dg                        ; work         ;
+;                |alt_u_div_ske:divider|                                          ; 1064 (1064) ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 1059 (1059)  ; 0 (0)             ; 5 (5)            ; 0          ; |brick_breaker|sync:u3|lpm_divide:Mod0|lpm_divide_25o:auto_generated|abs_divider_4dg:divider|alt_u_div_ske:divider                                                                                                                                                                                        ; alt_u_div_ske                          ; work         ;
+;       |lpm_divide:Mod1|                                                         ; 1501 (0)    ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 1485 (0)     ; 0 (0)             ; 16 (0)           ; 0          ; |brick_breaker|sync:u3|lpm_divide:Mod1                                                                                                                                                                                                                                                                    ; lpm_divide                             ; work         ;
+;          |lpm_divide_25o:auto_generated|                                        ; 1501 (0)    ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 1485 (0)     ; 0 (0)             ; 16 (0)           ; 0          ; |brick_breaker|sync:u3|lpm_divide:Mod1|lpm_divide_25o:auto_generated                                                                                                                                                                                                                                      ; lpm_divide_25o                         ; work         ;
+;             |abs_divider_4dg:divider|                                           ; 1501 (59)   ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 1485 (59)    ; 0 (0)             ; 16 (0)           ; 0          ; |brick_breaker|sync:u3|lpm_divide:Mod1|lpm_divide_25o:auto_generated|abs_divider_4dg:divider                                                                                                                                                                                                              ; abs_divider_4dg                        ; work         ;
+;                |alt_u_div_ske:divider|                                          ; 1387 (1387) ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 1385 (1385)  ; 0 (0)             ; 2 (2)            ; 0          ; |brick_breaker|sync:u3|lpm_divide:Mod1|lpm_divide_25o:auto_generated|abs_divider_4dg:divider|alt_u_div_ske:divider                                                                                                                                                                                        ; alt_u_div_ske                          ; work         ;
+;                |lpm_abs_8b9:my_abs_num|                                         ; 55 (55)     ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 41 (41)      ; 0 (0)             ; 14 (14)          ; 0          ; |brick_breaker|sync:u3|lpm_divide:Mod1|lpm_divide_25o:auto_generated|abs_divider_4dg:divider|lpm_abs_8b9:my_abs_num                                                                                                                                                                                       ; lpm_abs_8b9                            ; work         ;
 +---------------------------------------------------------------------------------+-------------+---------------------------+---------------+-------------+------+------------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -1251,37 +1249,37 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; ARDUINO_RESET_N ; Bidir    ; --            ; --            ; --                    ; --  ; --   ;
 ; ADC_CLK_10      ; Input    ; (0) 0 ps      ; --            ; --                    ; --  ; --   ;
 ; MAX10_CLK1_50   ; Input    ; (0) 0 ps      ; --            ; --                    ; --  ; --   ;
-; SW[2]           ; Input    ; (6) 868 ps    ; --            ; --                    ; --  ; --   ;
-; SW[1]           ; Input    ; --            ; (6) 868 ps    ; --                    ; --  ; --   ;
-; SW[0]           ; Input    ; (6) 868 ps    ; --            ; --                    ; --  ; --   ;
+; SW[2]           ; Input    ; --            ; (6) 868 ps    ; --                    ; --  ; --   ;
+; SW[1]           ; Input    ; (6) 868 ps    ; --            ; --                    ; --  ; --   ;
+; SW[0]           ; Input    ; --            ; (6) 868 ps    ; --                    ; --  ; --   ;
 +-----------------+----------+---------------+---------------+-----------------------+-----+------+
 
 
-+--------------------------------------------------------------------------------+
-; Pad To Core Delay Chain Fanout                                                 ;
-+--------------------------------------------------+-------------------+---------+
-; Source Pin / Fanout                              ; Pad To Core Index ; Setting ;
-+--------------------------------------------------+-------------------+---------+
-; MAX10_CLK2_50                                    ;                   ;         ;
-; KEY[0]                                           ;                   ;         ;
-; KEY[1]                                           ;                   ;         ;
-; SW[3]                                            ;                   ;         ;
-; SW[4]                                            ;                   ;         ;
-; SW[5]                                            ;                   ;         ;
-; SW[6]                                            ;                   ;         ;
-; SW[7]                                            ;                   ;         ;
-; SW[8]                                            ;                   ;         ;
-; SW[9]                                            ;                   ;         ;
-; ARDUINO_RESET_N                                  ;                   ;         ;
-; ADC_CLK_10                                       ;                   ;         ;
-; MAX10_CLK1_50                                    ;                   ;         ;
-; SW[2]                                            ;                   ;         ;
-;      - sound_board:u0|sound_effect_sig[2]        ; 0                 ; 6       ;
-; SW[1]                                            ;                   ;         ;
-;      - sound_board:u0|sound_effect_sig[1]~feeder ; 1                 ; 6       ;
-; SW[0]                                            ;                   ;         ;
-;      - sound_board:u0|sound_effect_sig[0]        ; 0                 ; 6       ;
-+--------------------------------------------------+-------------------+---------+
++-------------------------------------------------------------------------+
+; Pad To Core Delay Chain Fanout                                          ;
++-------------------------------------------+-------------------+---------+
+; Source Pin / Fanout                       ; Pad To Core Index ; Setting ;
++-------------------------------------------+-------------------+---------+
+; MAX10_CLK2_50                             ;                   ;         ;
+; KEY[0]                                    ;                   ;         ;
+; KEY[1]                                    ;                   ;         ;
+; SW[3]                                     ;                   ;         ;
+; SW[4]                                     ;                   ;         ;
+; SW[5]                                     ;                   ;         ;
+; SW[6]                                     ;                   ;         ;
+; SW[7]                                     ;                   ;         ;
+; SW[8]                                     ;                   ;         ;
+; SW[9]                                     ;                   ;         ;
+; ARDUINO_RESET_N                           ;                   ;         ;
+; ADC_CLK_10                                ;                   ;         ;
+; MAX10_CLK1_50                             ;                   ;         ;
+; SW[2]                                     ;                   ;         ;
+;      - sound_board:u0|sound_effect_sig[2] ; 1                 ; 6       ;
+; SW[1]                                     ;                   ;         ;
+;      - sound_board:u0|sound_effect_sig[1] ; 0                 ; 6       ;
+; SW[0]                                     ;                   ;         ;
+;      - sound_board:u0|sound_effect_sig[0] ; 1                 ; 6       ;
++-------------------------------------------+-------------------+---------+
 
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1295,25 +1293,25 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; MAX10_CLK1_50                                                                                                                                                                                                                     ; PIN_P11            ; 37      ; Clock                      ; yes    ; Global Clock         ; GCLK19           ; --                        ;
 ; myPLL:u2|altpll:altpll_component|myPLL_altpll:auto_generated|wire_pll1_clk[0]                                                                                                                                                     ; PLL_4              ; 104     ; Clock                      ; yes    ; Global Clock         ; GCLK8            ; --                        ;
 ; my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|WideOr13        ; LCCOMB_X44_Y50_N2  ; 4       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|arc_to_conv~0   ; LCCOMB_X44_Y51_N30 ; 8       ; Sync. clear                ; no     ; --                   ; --               ; --                        ;
-; my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|conv_dly1_s_flp ; FF_X45_Y50_N25     ; 16      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|int_timer[1]~24 ; LCCOMB_X44_Y51_N24 ; 8       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|load_dout~0     ; LCCOMB_X44_Y52_N6  ; 14      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|rsp_valid       ; FF_X45_Y50_N29     ; 16      ; Clock enable, Write enable ; no     ; --                   ; --               ; --                        ;
-; my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_sample_store:sample_store_internal|set_eop                                            ; LCCOMB_X45_Y50_N28 ; 6       ; Sync. clear                ; no     ; --                   ; --               ; --                        ;
-; my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|channel[2]~1                                                                                                                                             ; LCCOMB_X47_Y42_N2  ; 4       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|currState.doneConversionState                                                                                                                            ; FF_X47_Y42_N17     ; 16      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|currState.readConversionState                                                                                                                            ; FF_X47_Y42_N29     ; 10      ; Read enable                ; no     ; --                   ; --               ; --                        ;
-; my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|reading3[0]~1                                                                                                                                            ; LCCOMB_X47_Y42_N10 ; 12      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; sound_board:u0|ready                                                                                                                                                                                                              ; FF_X30_Y18_N11     ; 4       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; sound_board:u0|sound_count[16]~80                                                                                                                                                                                                 ; LCCOMB_X30_Y18_N2  ; 32      ; Sync. clear                ; no     ; --                   ; --               ; --                        ;
-; sound_board:u0|sound_count[16]~81                                                                                                                                                                                                 ; LCCOMB_X30_Y18_N20 ; 32      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
-; sync:u3|current_hs_state.P_DATA                                                                                                                                                                                                   ; FF_X40_Y18_N23     ; 36      ; Sync. clear                ; no     ; --                   ; --               ; --                        ;
-; sync:u3|m~0                                                                                                                                                                                                                       ; LCCOMB_X36_Y18_N16 ; 32      ; Sync. clear                ; no     ; --                   ; --               ; --                        ;
-; sync:u3|pixel_data[10]~24                                                                                                                                                                                                         ; LCCOMB_X37_Y18_N8  ; 35      ; Sync. clear                ; no     ; --                   ; --               ; --                        ;
-; sync:u3|pixel_data[10]~31                                                                                                                                                                                                         ; LCCOMB_X38_Y18_N12 ; 2       ; Latch enable               ; yes    ; Global Clock         ; GCLK17           ; --                        ;
-; sync:u3|pixel_data[11]~23                                                                                                                                                                                                         ; LCCOMB_X38_Y18_N20 ; 2       ; Latch enable               ; yes    ; Global Clock         ; GCLK15           ; --                        ;
-; sync:u3|y_pos[12]~45                                                                                                                                                                                                              ; LCCOMB_X40_Y18_N10 ; 32      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|arc_to_conv~0   ; LCCOMB_X44_Y46_N2  ; 8       ; Sync. clear                ; no     ; --                   ; --               ; --                        ;
+; my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|conv_dly1_s_flp ; FF_X45_Y50_N21     ; 16      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|int_timer[1]~24 ; LCCOMB_X44_Y46_N0  ; 8       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|load_dout~0     ; LCCOMB_X44_Y52_N24 ; 14      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|rsp_valid       ; FF_X52_Y46_N1      ; 16      ; Clock enable, Write enable ; no     ; --                   ; --               ; --                        ;
+; my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_sample_store:sample_store_internal|set_eop                                            ; LCCOMB_X52_Y46_N22 ; 6       ; Sync. clear                ; no     ; --                   ; --               ; --                        ;
+; my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|channel[2]~1                                                                                                                                             ; LCCOMB_X54_Y46_N26 ; 4       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|currState.doneConversionState                                                                                                                            ; FF_X54_Y46_N17     ; 16      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|currState.readConversionState                                                                                                                            ; FF_X54_Y46_N21     ; 10      ; Read enable                ; no     ; --                   ; --               ; --                        ;
+; my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|reading3[0]~1                                                                                                                                            ; LCCOMB_X54_Y46_N18 ; 12      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; sound_board:u0|ready                                                                                                                                                                                                              ; FF_X50_Y51_N7      ; 4       ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; sound_board:u0|sound_count[13]~80                                                                                                                                                                                                 ; LCCOMB_X50_Y51_N30 ; 32      ; Sync. clear                ; no     ; --                   ; --               ; --                        ;
+; sound_board:u0|sound_count[13]~81                                                                                                                                                                                                 ; LCCOMB_X50_Y51_N20 ; 32      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
+; sync:u3|current_hs_state.P_DATA                                                                                                                                                                                                   ; FF_X35_Y20_N19     ; 36      ; Sync. clear                ; no     ; --                   ; --               ; --                        ;
+; sync:u3|m~0                                                                                                                                                                                                                       ; LCCOMB_X36_Y16_N2  ; 32      ; Sync. clear                ; no     ; --                   ; --               ; --                        ;
+; sync:u3|pixel_data[10]~24                                                                                                                                                                                                         ; LCCOMB_X36_Y16_N8  ; 35      ; Sync. clear                ; no     ; --                   ; --               ; --                        ;
+; sync:u3|pixel_data[10]~31                                                                                                                                                                                                         ; LCCOMB_X36_Y17_N16 ; 2       ; Latch enable               ; yes    ; Global Clock         ; GCLK17           ; --                        ;
+; sync:u3|pixel_data[11]~23                                                                                                                                                                                                         ; LCCOMB_X36_Y17_N24 ; 2       ; Latch enable               ; yes    ; Global Clock         ; GCLK16           ; --                        ;
+; sync:u3|y_pos[9]~45                                                                                                                                                                                                               ; LCCOMB_X35_Y20_N16 ; 32      ; Clock enable               ; no     ; --                   ; --               ; --                        ;
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------+---------+----------------------------+--------+----------------------+------------------+---------------------------+
 
 
@@ -1324,9 +1322,9 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-------------------------------------------------------------------------------+--------------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
 ; ADC_CLK_10                                                                    ; PIN_N5             ; 122     ; 12                                   ; Global Clock         ; GCLK4            ; --                        ;
 ; MAX10_CLK1_50                                                                 ; PIN_P11            ; 37      ; 0                                    ; Global Clock         ; GCLK19           ; --                        ;
-; myPLL:u2|altpll:altpll_component|myPLL_altpll:auto_generated|wire_pll1_clk[0] ; PLL_4              ; 104     ; 37                                   ; Global Clock         ; GCLK8            ; --                        ;
-; sync:u3|pixel_data[10]~31                                                     ; LCCOMB_X38_Y18_N12 ; 2       ; 0                                    ; Global Clock         ; GCLK17           ; --                        ;
-; sync:u3|pixel_data[11]~23                                                     ; LCCOMB_X38_Y18_N20 ; 2       ; 0                                    ; Global Clock         ; GCLK15           ; --                        ;
+; myPLL:u2|altpll:altpll_component|myPLL_altpll:auto_generated|wire_pll1_clk[0] ; PLL_4              ; 104     ; 46                                   ; Global Clock         ; GCLK8            ; --                        ;
+; sync:u3|pixel_data[10]~31                                                     ; LCCOMB_X36_Y17_N16 ; 2       ; 0                                    ; Global Clock         ; GCLK17           ; --                        ;
+; sync:u3|pixel_data[11]~23                                                     ; LCCOMB_X36_Y17_N24 ; 2       ; 0                                    ; Global Clock         ; GCLK16           ; --                        ;
 +-------------------------------------------------------------------------------+--------------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
 
 
@@ -1335,7 +1333,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+--------------+------------------------+-------------------------+------------------------+-------------------------+------+-----------------------------+-----------------------------+-----------------------------+-----------------------------+---------------------+------+------+----------------+----------------------+------------------------+------------------------+----------+------------------------+---------------+
 ; Name                                                                                                                                                                                                                                                                                                  ; Type ; Mode             ; Clock Mode   ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Port A Input Registers ; Port A Output Registers ; Port B Input Registers ; Port B Output Registers ; Size ; Implementation Port A Depth ; Implementation Port A Width ; Implementation Port B Depth ; Implementation Port B Width ; Implementation Bits ; M9Ks ; MIF  ; Location       ; Mixed Width RDW Mode ; Port A RDW Mode        ; Port B RDW Mode        ; ECC Mode ; ECC Pipeline Registers ; Fits in MLABs ;
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+--------------+------------------------+-------------------------+------------------------+-------------------------+------+-----------------------------+-----------------------------+-----------------------------+-----------------------------+---------------------+------+------+----------------+----------------------+------------------------+------------------------+----------+------------------------+---------------+
-; my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_sample_store:sample_store_internal|altera_modular_adc_sample_store_ram:u_ss_ram|altsyncram:altsyncram_component|altsyncram_v5s1:auto_generated|ALTSYNCRAM ; M9K  ; Simple Dual Port ; Single Clock ; 64           ; 16           ; 64           ; 16           ; yes                    ; no                      ; yes                    ; no                      ; 1024 ; 64                          ; 12                          ; 64                          ; 12                          ; 768                 ; 1    ; None ; M9K_X53_Y46_N0 ; Old data             ; New data with NBE Read ; New data with NBE Read ; Off      ; No                     ; No - Unknown  ;
+; my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_sample_store:sample_store_internal|altera_modular_adc_sample_store_ram:u_ss_ram|altsyncram:altsyncram_component|altsyncram_v5s1:auto_generated|ALTSYNCRAM ; M9K  ; Simple Dual Port ; Single Clock ; 64           ; 16           ; 64           ; 16           ; yes                    ; no                      ; yes                    ; no                      ; 1024 ; 64                          ; 12                          ; 64                          ; 12                          ; 768                 ; 1    ; None ; M9K_X53_Y48_N0 ; Old data             ; New data with NBE Read ; New data with NBE Read ; Off      ; No                     ; No - Unknown  ;
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+--------------+------------------------+-------------------------+------------------------+-------------------------+------+-----------------------------+-----------------------------+-----------------------------+-----------------------------+---------------------+------+------+----------------+----------------------+------------------------+------------------------+----------+------------------------+---------------+
 Note: Fitter may spread logical memories into multiple blocks to improve timing. The actual required RAM blocks can be found in the Fitter Resource Usage section.
 
@@ -1345,123 +1343,123 @@ Note: Fitter may spread logical memories into multiple blocks to improve timing.
 +-----------------------+-------------------------+
 ; Routing Resource Type ; Usage                   ;
 +-----------------------+-------------------------+
-; Block interconnects   ; 4,826 / 148,641 ( 3 % ) ;
-; C16 interconnects     ; 44 / 5,382 ( < 1 % )    ;
-; C4 interconnects      ; 2,434 / 106,704 ( 2 % ) ;
-; Direct links          ; 863 / 148,641 ( < 1 % ) ;
+; Block interconnects   ; 4,895 / 148,641 ( 3 % ) ;
+; C16 interconnects     ; 32 / 5,382 ( < 1 % )    ;
+; C4 interconnects      ; 2,397 / 106,704 ( 2 % ) ;
+; Direct links          ; 895 / 148,641 ( < 1 % ) ;
 ; Global clocks         ; 5 / 20 ( 25 % )         ;
-; Local interconnects   ; 1,444 / 49,760 ( 3 % )  ;
+; Local interconnects   ; 1,413 / 49,760 ( 3 % )  ;
 ; NSLEEPs               ; 0 / 500 ( 0 % )         ;
-; R24 interconnects     ; 35 / 5,406 ( < 1 % )    ;
-; R4 interconnects      ; 2,639 / 147,764 ( 2 % ) ;
+; R24 interconnects     ; 37 / 5,406 ( < 1 % )    ;
+; R4 interconnects      ; 2,798 / 147,764 ( 2 % ) ;
 +-----------------------+-------------------------+
 
 
 +-----------------------------------------------------------------------------+
 ; LAB Logic Elements                                                          ;
 +---------------------------------------------+-------------------------------+
-; Number of Logic Elements  (Average = 13.67) ; Number of LABs  (Total = 248) ;
+; Number of Logic Elements  (Average = 13.11) ; Number of LABs  (Total = 261) ;
 +---------------------------------------------+-------------------------------+
-; 1                                           ; 17                            ;
-; 2                                           ; 4                             ;
-; 3                                           ; 1                             ;
-; 4                                           ; 1                             ;
-; 5                                           ; 3                             ;
-; 6                                           ; 2                             ;
-; 7                                           ; 1                             ;
-; 8                                           ; 3                             ;
-; 9                                           ; 2                             ;
-; 10                                          ; 4                             ;
-; 11                                          ; 5                             ;
+; 1                                           ; 16                            ;
+; 2                                           ; 5                             ;
+; 3                                           ; 6                             ;
+; 4                                           ; 3                             ;
+; 5                                           ; 5                             ;
+; 6                                           ; 4                             ;
+; 7                                           ; 3                             ;
+; 8                                           ; 5                             ;
+; 9                                           ; 6                             ;
+; 10                                          ; 6                             ;
+; 11                                          ; 3                             ;
 ; 12                                          ; 6                             ;
-; 13                                          ; 8                             ;
-; 14                                          ; 14                            ;
-; 15                                          ; 18                            ;
-; 16                                          ; 159                           ;
+; 13                                          ; 4                             ;
+; 14                                          ; 11                            ;
+; 15                                          ; 16                            ;
+; 16                                          ; 162                           ;
 +---------------------------------------------+-------------------------------+
 
 
 +--------------------------------------------------------------------+
 ; LAB-wide Signals                                                   ;
 +------------------------------------+-------------------------------+
-; LAB-wide Signals  (Average = 0.22) ; Number of LABs  (Total = 248) ;
+; LAB-wide Signals  (Average = 0.23) ; Number of LABs  (Total = 261) ;
 +------------------------------------+-------------------------------+
-; 1 Clock                            ; 30                            ;
+; 1 Clock                            ; 31                            ;
 ; 1 Clock enable                     ; 11                            ;
-; 1 Sync. clear                      ; 14                            ;
+; 1 Sync. clear                      ; 18                            ;
 +------------------------------------+-------------------------------+
 
 
 +------------------------------------------------------------------------------+
 ; LAB Signals Sourced                                                          ;
 +----------------------------------------------+-------------------------------+
-; Number of Signals Sourced  (Average = 14.48) ; Number of LABs  (Total = 248) ;
+; Number of Signals Sourced  (Average = 13.80) ; Number of LABs  (Total = 261) ;
 +----------------------------------------------+-------------------------------+
 ; 0                                            ; 0                             ;
-; 1                                            ; 16                            ;
-; 2                                            ; 6                             ;
-; 3                                            ; 2                             ;
-; 4                                            ; 1                             ;
-; 5                                            ; 3                             ;
-; 6                                            ; 3                             ;
-; 7                                            ; 1                             ;
-; 8                                            ; 3                             ;
-; 9                                            ; 1                             ;
-; 10                                           ; 4                             ;
+; 1                                            ; 17                            ;
+; 2                                            ; 5                             ;
+; 3                                            ; 7                             ;
+; 4                                            ; 4                             ;
+; 5                                            ; 5                             ;
+; 6                                            ; 4                             ;
+; 7                                            ; 3                             ;
+; 8                                            ; 4                             ;
+; 9                                            ; 5                             ;
+; 10                                           ; 6                             ;
 ; 11                                           ; 4                             ;
-; 12                                           ; 6                             ;
-; 13                                           ; 9                             ;
-; 14                                           ; 13                            ;
-; 15                                           ; 19                            ;
-; 16                                           ; 133                           ;
-; 17                                           ; 1                             ;
-; 18                                           ; 1                             ;
-; 19                                           ; 1                             ;
-; 20                                           ; 3                             ;
-; 21                                           ; 1                             ;
-; 22                                           ; 1                             ;
-; 23                                           ; 0                             ;
+; 12                                           ; 8                             ;
+; 13                                           ; 7                             ;
+; 14                                           ; 12                            ;
+; 15                                           ; 10                            ;
+; 16                                           ; 134                           ;
+; 17                                           ; 3                             ;
+; 18                                           ; 0                             ;
+; 19                                           ; 3                             ;
+; 20                                           ; 2                             ;
+; 21                                           ; 2                             ;
+; 22                                           ; 0                             ;
+; 23                                           ; 2                             ;
 ; 24                                           ; 0                             ;
 ; 25                                           ; 2                             ;
-; 26                                           ; 3                             ;
+; 26                                           ; 1                             ;
 ; 27                                           ; 1                             ;
 ; 28                                           ; 4                             ;
 ; 29                                           ; 1                             ;
 ; 30                                           ; 0                             ;
-; 31                                           ; 0                             ;
-; 32                                           ; 5                             ;
+; 31                                           ; 1                             ;
+; 32                                           ; 4                             ;
 +----------------------------------------------+-------------------------------+
 
 
 +----------------------------------------------------------------------------------+
 ; LAB Signals Sourced Out                                                          ;
 +--------------------------------------------------+-------------------------------+
-; Number of Signals Sourced Out  (Average = 10.92) ; Number of LABs  (Total = 248) ;
+; Number of Signals Sourced Out  (Average = 10.57) ; Number of LABs  (Total = 261) ;
 +--------------------------------------------------+-------------------------------+
 ; 0                                                ; 0                             ;
-; 1                                                ; 19                            ;
-; 2                                                ; 6                             ;
-; 3                                                ; 6                             ;
-; 4                                                ; 9                             ;
-; 5                                                ; 13                            ;
-; 6                                                ; 8                             ;
-; 7                                                ; 9                             ;
-; 8                                                ; 10                            ;
-; 9                                                ; 8                             ;
-; 10                                               ; 7                             ;
-; 11                                               ; 8                             ;
-; 12                                               ; 23                            ;
-; 13                                               ; 20                            ;
-; 14                                               ; 27                            ;
-; 15                                               ; 20                            ;
-; 16                                               ; 48                            ;
+; 1                                                ; 20                            ;
+; 2                                                ; 9                             ;
+; 3                                                ; 7                             ;
+; 4                                                ; 11                            ;
+; 5                                                ; 15                            ;
+; 6                                                ; 7                             ;
+; 7                                                ; 8                             ;
+; 8                                                ; 12                            ;
+; 9                                                ; 9                             ;
+; 10                                               ; 13                            ;
+; 11                                               ; 13                            ;
+; 12                                               ; 15                            ;
+; 13                                               ; 18                            ;
+; 14                                               ; 28                            ;
+; 15                                               ; 21                            ;
+; 16                                               ; 49                            ;
 ; 17                                               ; 0                             ;
-; 18                                               ; 0                             ;
+; 18                                               ; 1                             ;
 ; 19                                               ; 2                             ;
 ; 20                                               ; 0                             ;
 ; 21                                               ; 1                             ;
-; 22                                               ; 1                             ;
-; 23                                               ; 1                             ;
+; 22                                               ; 0                             ;
+; 23                                               ; 0                             ;
 ; 24                                               ; 1                             ;
 ; 25                                               ; 0                             ;
 ; 26                                               ; 0                             ;
@@ -1472,41 +1470,41 @@ Note: Fitter may spread logical memories into multiple blocks to improve timing.
 +------------------------------------------------------------------------------+
 ; LAB Distinct Inputs                                                          ;
 +----------------------------------------------+-------------------------------+
-; Number of Distinct Inputs  (Average = 18.05) ; Number of LABs  (Total = 248) ;
+; Number of Distinct Inputs  (Average = 17.34) ; Number of LABs  (Total = 261) ;
 +----------------------------------------------+-------------------------------+
 ; 0                                            ; 0                             ;
 ; 1                                            ; 0                             ;
-; 2                                            ; 11                            ;
-; 3                                            ; 4                             ;
-; 4                                            ; 11                            ;
-; 5                                            ; 0                             ;
-; 6                                            ; 6                             ;
-; 7                                            ; 4                             ;
-; 8                                            ; 3                             ;
-; 9                                            ; 6                             ;
-; 10                                           ; 8                             ;
-; 11                                           ; 7                             ;
-; 12                                           ; 6                             ;
-; 13                                           ; 4                             ;
-; 14                                           ; 9                             ;
-; 15                                           ; 6                             ;
-; 16                                           ; 12                            ;
-; 17                                           ; 12                            ;
-; 18                                           ; 10                            ;
-; 19                                           ; 11                            ;
+; 2                                            ; 6                             ;
+; 3                                            ; 7                             ;
+; 4                                            ; 15                            ;
+; 5                                            ; 3                             ;
+; 6                                            ; 1                             ;
+; 7                                            ; 7                             ;
+; 8                                            ; 6                             ;
+; 9                                            ; 3                             ;
+; 10                                           ; 10                            ;
+; 11                                           ; 6                             ;
+; 12                                           ; 12                            ;
+; 13                                           ; 8                             ;
+; 14                                           ; 11                            ;
+; 15                                           ; 9                             ;
+; 16                                           ; 15                            ;
+; 17                                           ; 11                            ;
+; 18                                           ; 7                             ;
+; 19                                           ; 10                            ;
 ; 20                                           ; 12                            ;
-; 21                                           ; 6                             ;
-; 22                                           ; 11                            ;
-; 23                                           ; 13                            ;
-; 24                                           ; 9                             ;
-; 25                                           ; 10                            ;
-; 26                                           ; 6                             ;
-; 27                                           ; 14                            ;
-; 28                                           ; 11                            ;
-; 29                                           ; 9                             ;
-; 30                                           ; 7                             ;
-; 31                                           ; 3                             ;
-; 32                                           ; 3                             ;
+; 21                                           ; 13                            ;
+; 22                                           ; 7                             ;
+; 23                                           ; 11                            ;
+; 24                                           ; 5                             ;
+; 25                                           ; 13                            ;
+; 26                                           ; 10                            ;
+; 27                                           ; 5                             ;
+; 28                                           ; 17                            ;
+; 29                                           ; 8                             ;
+; 30                                           ; 5                             ;
+; 31                                           ; 2                             ;
+; 32                                           ; 2                             ;
 ; 33                                           ; 3                             ;
 +----------------------------------------------+-------------------------------+
 
@@ -1673,44 +1671,49 @@ Note: Fitter may spread logical memories into multiple blocks to improve timing.
 ; Source Clock(s) ; Destination Clock(s)                                      ; Delay Added in ns ;
 +-----------------+-----------------------------------------------------------+-------------------+
 ; ADC_CLK_10      ; u1|adc_mega_0|ADC_CTRL|adc_pll|auto_generated|pll1|clk[0] ; 36.9              ;
+; ADC_CLK_10      ; ADC_CLK_10                                                ; 2.6               ;
 +-----------------+-----------------------------------------------------------+-------------------+
 Note: For more information on problematic transfers, consider running the Fitter again with the Optimize hold timing option (Settings Menu) turned off.
 This will disable optimization of problematic paths and expose them for further analysis using the Timing Analyzer.
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Estimated Delay Added for Hold Timing Details                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  ;
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------+
-; Source Register                                                                                                                                                                                                               ; Destination Register                                                                                                                                                                                                                                                                                                       ; Delay Added in ns ;
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------+
-; my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|soc         ; my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_control:control_internal|fiftyfivenm_adcblock_top_wrapper:adc_inst|fiftyfivenm_adcblock_primitive_wrapper:adcblock_instance|primitive_instance~SOC_DFF                         ; 3.825             ;
-; my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|chsel[1]    ; my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_control:control_internal|fiftyfivenm_adcblock_top_wrapper:adc_inst|fiftyfivenm_adcblock_primitive_wrapper:adcblock_instance|primitive_instance~CHSEL_3                         ; 3.761             ;
-; my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|chsel[2]    ; my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_control:control_internal|fiftyfivenm_adcblock_top_wrapper:adc_inst|fiftyfivenm_adcblock_primitive_wrapper:adcblock_instance|primitive_instance~CHSEL_3                         ; 3.701             ;
-; my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|chsel[0]    ; my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_control:control_internal|fiftyfivenm_adcblock_top_wrapper:adc_inst|fiftyfivenm_adcblock_primitive_wrapper:adcblock_instance|primitive_instance~CHSEL_3                         ; 3.591             ;
-; my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|chsel[3]    ; my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_control:control_internal|fiftyfivenm_adcblock_top_wrapper:adc_inst|fiftyfivenm_adcblock_primitive_wrapper:adcblock_instance|primitive_instance~CHSEL_3                         ; 3.503             ;
-; my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|cmd_eop_dly ; my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|rsp_eop                                                                                                  ; 0.103             ;
-; my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|channel[3]                                                                                                                                           ; my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|currState.doneConversionState                                                                                                                                                                                                                     ; 0.100             ;
-; my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_sample_store:sample_store_internal|slot_num[4]                                    ; my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_sample_store:sample_store_internal|altera_modular_adc_sample_store_ram:u_ss_ram|altsyncram:altsyncram_component|altsyncram_v5s1:auto_generated|ram_block1a3~porta_address_reg0 ; 0.084             ;
-; my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_sample_store:sample_store_internal|slot_num[3]                                    ; my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_sample_store:sample_store_internal|altera_modular_adc_sample_store_ram:u_ss_ram|altsyncram:altsyncram_component|altsyncram_v5s1:auto_generated|ram_block1a3~porta_address_reg0 ; 0.084             ;
-; my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_sample_store:sample_store_internal|slot_num[2]                                    ; my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_sample_store:sample_store_internal|altera_modular_adc_sample_store_ram:u_ss_ram|altsyncram:altsyncram_component|altsyncram_v5s1:auto_generated|ram_block1a3~porta_address_reg0 ; 0.082             ;
-; my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_sample_store:sample_store_internal|slot_num[1]                                    ; my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_sample_store:sample_store_internal|altera_modular_adc_sample_store_ram:u_ss_ram|altsyncram:altsyncram_component|altsyncram_v5s1:auto_generated|ram_block1a3~porta_address_reg0 ; 0.035             ;
-; my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_sample_store:sample_store_internal|slot_num[5]                                    ; my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_sample_store:sample_store_internal|altera_modular_adc_sample_store_ram:u_ss_ram|altsyncram:altsyncram_component|altsyncram_v5s1:auto_generated|ram_block1a3~porta_address_reg0 ; 0.035             ;
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------+
-Note: This table only shows the top 12 path(s) that have the largest delay added for hold.
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Estimated Delay Added for Hold Timing Details                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   ;
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------+
+; Source Register                                                                                                                                                                                                                ; Destination Register                                                                                                                                                                                                                                                                                                       ; Delay Added in ns ;
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------+
+; my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|soc          ; my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_control:control_internal|fiftyfivenm_adcblock_top_wrapper:adc_inst|fiftyfivenm_adcblock_primitive_wrapper:adcblock_instance|primitive_instance~SOC_DFF                         ; 3.825             ;
+; my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|chsel[1]     ; my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_control:control_internal|fiftyfivenm_adcblock_top_wrapper:adc_inst|fiftyfivenm_adcblock_primitive_wrapper:adcblock_instance|primitive_instance~CHSEL_3                         ; 3.761             ;
+; my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|chsel[2]     ; my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_control:control_internal|fiftyfivenm_adcblock_top_wrapper:adc_inst|fiftyfivenm_adcblock_primitive_wrapper:adcblock_instance|primitive_instance~CHSEL_3                         ; 3.701             ;
+; my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|chsel[0]     ; my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_control:control_internal|fiftyfivenm_adcblock_top_wrapper:adc_inst|fiftyfivenm_adcblock_primitive_wrapper:adcblock_instance|primitive_instance~CHSEL_3                         ; 3.591             ;
+; my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|chsel[3]     ; my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_control:control_internal|fiftyfivenm_adcblock_top_wrapper:adc_inst|fiftyfivenm_adcblock_primitive_wrapper:adcblock_instance|primitive_instance~CHSEL_3                         ; 3.503             ;
+; my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_sample_store:sample_store_internal|slot_num[2]                                     ; my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_sample_store:sample_store_internal|altera_modular_adc_sample_store_ram:u_ss_ram|altsyncram:altsyncram_component|altsyncram_v5s1:auto_generated|ram_block1a3~porta_address_reg0 ; 0.349             ;
+; my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_sample_store:sample_store_internal|slot_num[1]                                     ; my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_sample_store:sample_store_internal|altera_modular_adc_sample_store_ram:u_ss_ram|altsyncram:altsyncram_component|altsyncram_v5s1:auto_generated|ram_block1a3~porta_address_reg0 ; 0.349             ;
+; my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_sample_store:sample_store_internal|slot_num[4]                                     ; my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_sample_store:sample_store_internal|altera_modular_adc_sample_store_ram:u_ss_ram|altsyncram:altsyncram_component|altsyncram_v5s1:auto_generated|ram_block1a3~porta_address_reg0 ; 0.349             ;
+; my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_sample_store:sample_store_internal|slot_num[3]                                     ; my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_sample_store:sample_store_internal|altera_modular_adc_sample_store_ram:u_ss_ram|altsyncram:altsyncram_component|altsyncram_v5s1:auto_generated|ram_block1a3~porta_address_reg0 ; 0.349             ;
+; my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_sample_store:sample_store_internal|slot_num[0]                                     ; my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_sample_store:sample_store_internal|altera_modular_adc_sample_store_ram:u_ss_ram|altsyncram:altsyncram_component|altsyncram_v5s1:auto_generated|ram_block1a3~porta_address_reg0 ; 0.349             ;
+; my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_sample_store:sample_store_internal|slot_num[5]                                     ; my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_sample_store:sample_store_internal|altera_modular_adc_sample_store_ram:u_ss_ram|altsyncram:altsyncram_component|altsyncram_v5s1:auto_generated|ram_block1a3~porta_address_reg0 ; 0.349             ;
+; my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|channel[3]                                                                                                                                            ; my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|currState.doneConversionState                                                                                                                                                                                                                     ; 0.103             ;
+; my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|cmd_eop_dly  ; my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|rsp_eop                                                                                                  ; 0.103             ;
+; my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|int_timer[6] ; my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|chsel[3]                                                                                                 ; 0.101             ;
+; my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|dout_flp[4]  ; my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|rsp_data[4]                                                                                              ; 0.100             ;
+; my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|dout_flp[3]  ; my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|rsp_data[3]                                                                                              ; 0.100             ;
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------+
+Note: This table only shows the top 16 path(s) that have the largest delay added for hold.
 
 
 +-----------------+
 ; Fitter Messages ;
 +-----------------+
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
 Info (119006): Selected device 10M50DAF484C7G for design "brick_breaker"
 Info (21077): Low junction temperature is 0 degrees C
 Info (21077): High junction temperature is 85 degrees C
-Info (15535): Implemented PLL "myPLL:u2|altpll:altpll_component|myPLL_altpll:auto_generated|pll1" as MAX 10 PLL type File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/db/mypll_altpll.v Line: 44
-    Info (15099): Implementing clock multiplication of 74, clock division of 147, and phase shift of 0 degrees (0 ps) for myPLL:u2|altpll:altpll_component|myPLL_altpll:auto_generated|wire_pll1_clk[0] port File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/db/mypll_altpll.v Line: 44
-Info (15535): Implemented PLL "my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|altpll:adc_pll|MAX10_ADC_PLL_altpll:auto_generated|pll1" as MAX 10 PLL type File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/db/max10_adc_pll_altpll.v Line: 46
-    Info (15099): Implementing clock multiplication of 1, clock division of 2, and phase shift of 0 degrees (0 ps) for my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|altpll:adc_pll|MAX10_ADC_PLL_altpll:auto_generated|wire_pll1_clk[0] port File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/db/max10_adc_pll_altpll.v Line: 46
+Info (15535): Implemented PLL "myPLL:u2|altpll:altpll_component|myPLL_altpll:auto_generated|pll1" as MAX 10 PLL type File: C:/Users/Steve/Documents/cloned_git_repos/brick_breaker/vhdl/db/mypll_altpll.v Line: 44
+    Info (15099): Implementing clock multiplication of 74, clock division of 147, and phase shift of 0 degrees (0 ps) for myPLL:u2|altpll:altpll_component|myPLL_altpll:auto_generated|wire_pll1_clk[0] port File: C:/Users/Steve/Documents/cloned_git_repos/brick_breaker/vhdl/db/mypll_altpll.v Line: 44
+Info (15535): Implemented PLL "my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|altpll:adc_pll|MAX10_ADC_PLL_altpll:auto_generated|pll1" as MAX 10 PLL type File: C:/Users/Steve/Documents/cloned_git_repos/brick_breaker/vhdl/db/max10_adc_pll_altpll.v Line: 46
+    Info (15099): Implementing clock multiplication of 1, clock division of 2, and phase shift of 0 degrees (0 ps) for my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|altpll:adc_pll|MAX10_ADC_PLL_altpll:auto_generated|wire_pll1_clk[0] port File: C:/Users/Steve/Documents/cloned_git_repos/brick_breaker/vhdl/db/max10_adc_pll_altpll.v Line: 46
 Info (171003): Fitter is performing an Auto Fit compilation, which may decrease Fitter effort to reduce compilation time
 Warning (292013): Feature LogicLock is only available with a valid subscription license. You can purchase a software subscription to gain full access to this feature.
 Info (176444): Device migration not selected. If you intend to use device migration later, you may need to change the pin assignments as they may be incompatible with other devices
@@ -1786,22 +1789,22 @@ Info (332111): Found 5 clocks
     Info (332111):   20.000 MAX10_CLK2_50
     Info (332111):  200.000 u1|adc_mega_0|ADC_CTRL|adc_pll|auto_generated|pll1|clk[0]
     Info (332111):   39.729 u2|altpll_component|auto_generated|pll1|clk[0]
-Info (176353): Automatically promoted node ADC_CLK_10~input (placed in PIN N5 (CLK0p, DIFFIO_RX_L28p, DIFFOUT_L28p, High_Speed)) File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/brick_breaker.vhd Line: 7
+Info (176353): Automatically promoted node ADC_CLK_10~input (placed in PIN N5 (CLK0p, DIFFIO_RX_L28p, DIFFOUT_L28p, High_Speed)) File: C:/Users/Steve/Documents/cloned_git_repos/brick_breaker/vhdl/brick_breaker.vhd Line: 7
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock CLKCTRL_G4
-Info (176353): Automatically promoted node MAX10_CLK1_50~input (placed in PIN P11 (CLK7p, DIFFIO_TX_RX_B20p, DIFFOUT_B20p, High_Speed)) File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/brick_breaker.vhd Line: 8
+Info (176353): Automatically promoted node MAX10_CLK1_50~input (placed in PIN P11 (CLK7p, DIFFIO_TX_RX_B20p, DIFFOUT_B20p, High_Speed)) File: C:/Users/Steve/Documents/cloned_git_repos/brick_breaker/vhdl/brick_breaker.vhd Line: 8
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock CLKCTRL_G19
-Info (176353): Automatically promoted node myPLL:u2|altpll:altpll_component|myPLL_altpll:auto_generated|wire_pll1_clk[0] (placed in counter C0 of PLL_4) File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/db/mypll_altpll.v Line: 78
+Info (176353): Automatically promoted node myPLL:u2|altpll:altpll_component|myPLL_altpll:auto_generated|wire_pll1_clk[0] (placed in counter C0 of PLL_4) File: C:/Users/Steve/Documents/cloned_git_repos/brick_breaker/vhdl/db/mypll_altpll.v Line: 78
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock CLKCTRL_G8
-Info (176353): Automatically promoted node sync:u3|pixel_data[10]~31  File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/sync.vhd Line: 136
+Info (176353): Automatically promoted node sync:u3|pixel_data[10]~31  File: C:/Users/Steve/Documents/cloned_git_repos/brick_breaker/vhdl/sync.vhd Line: 136
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock
-Info (176353): Automatically promoted node sync:u3|pixel_data[11]~23  File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/sync.vhd Line: 136
+Info (176353): Automatically promoted node sync:u3|pixel_data[11]~23  File: C:/Users/Steve/Documents/cloned_git_repos/brick_breaker/vhdl/sync.vhd Line: 136
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock
     Info (176356): Following destination nodes may be non-global or may not use global or regional clocks
-        Info (176357): Destination node sync:u3|pixel_data[10]~31 File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/sync.vhd Line: 136
+        Info (176357): Destination node sync:u3|pixel_data[10]~31 File: C:/Users/Steve/Documents/cloned_git_repos/brick_breaker/vhdl/sync.vhd Line: 136
 Info (176233): Starting register packing
 Info (176235): Finished register packing
     Extra Info (176219): No registers were packed into other blocks
-Warning (15058): PLL "my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|altpll:adc_pll|MAX10_ADC_PLL_altpll:auto_generated|pll1" is in normal or source synchronous mode with output clock "compensate_clock" set to clk[0] that is not fully compensated because it feeds an output pin -- only PLLs in zero delay buffer mode can fully compensate output pins File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/db/max10_adc_pll_altpll.v Line: 46
+Warning (15058): PLL "my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|altpll:adc_pll|MAX10_ADC_PLL_altpll:auto_generated|pll1" is in normal or source synchronous mode with output clock "compensate_clock" set to clk[0] that is not fully compensated because it feeds an output pin -- only PLLs in zero delay buffer mode can fully compensate output pins File: C:/Users/Steve/Documents/cloned_git_repos/brick_breaker/vhdl/db/max10_adc_pll_altpll.v Line: 46
 Warning (15705): Ignored locations or region assignments to the following nodes
     Warning (15706): Node "HEX0[0]" is assigned to location or region, but does not exist in design
     Warning (15706): Node "HEX0[1]" is assigned to location or region, but does not exist in design
@@ -1851,59 +1854,59 @@ Warning (15705): Ignored locations or region assignments to the following nodes
     Warning (15706): Node "HEX5[5]" is assigned to location or region, but does not exist in design
     Warning (15706): Node "HEX5[6]" is assigned to location or region, but does not exist in design
     Warning (15706): Node "HEX5[7]" is assigned to location or region, but does not exist in design
-Info (171121): Fitter preparation operations ending: elapsed time is 00:00:02
+Info (171121): Fitter preparation operations ending: elapsed time is 00:00:04
 Info (14896): Fitter has disabled Advanced Physical Optimization because it is not supported for the current family.
 Info (170189): Fitter placement preparation operations beginning
-Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:00
+Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:01
 Info (170191): Fitter placement operations beginning
 Info (170137): Fitter placement was successful
-Info (170192): Fitter placement operations ending: elapsed time is 00:00:06
+Info (170192): Fitter placement operations ending: elapsed time is 00:00:20
 Info (170193): Fitter routing operations beginning
 Info (170195): Router estimated average interconnect usage is 1% of the available device resources
-    Info (170196): Router estimated peak interconnect usage is 15% of the available device resources in the region that extends from location X33_Y22 to location X44_Y32
+    Info (170196): Router estimated peak interconnect usage is 17% of the available device resources in the region that extends from location X33_Y11 to location X44_Y21
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
-Info (170194): Fitter routing operations ending: elapsed time is 00:00:05
-Info (11888): Total time spent on timing analysis during the Fitter is 1.30 seconds.
+Info (170194): Fitter routing operations ending: elapsed time is 00:00:11
+Info (11888): Total time spent on timing analysis during the Fitter is 2.99 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
-Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:03
+Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:09
 Warning (171167): Found invalid Fitter assignments. See the Ignored Assignments panel in the Fitter Compilation Report for more information.
 Warning (169177): 16 pins must meet Intel FPGA requirements for 3.3-, 3.0-, and 2.5-V interfaces. For more information, refer to AN 447: Interfacing MAX 10 Devices with 3.3/3.0/2.5-V LVTTL/LVCMOS I/O Systems.
-    Info (169178): Pin MAX10_CLK2_50 uses I/O standard 3.3-V LVTTL at N14 File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/brick_breaker.vhd Line: 9
-    Info (169178): Pin KEY[0] uses I/O standard 3.3 V Schmitt Trigger at B8 File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/brick_breaker.vhd Line: 10
-    Info (169178): Pin KEY[1] uses I/O standard 3.3 V Schmitt Trigger at A7 File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/brick_breaker.vhd Line: 10
-    Info (169178): Pin SW[3] uses I/O standard 3.3-V LVTTL at C12 File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/brick_breaker.vhd Line: 12
-    Info (169178): Pin SW[4] uses I/O standard 3.3-V LVTTL at A12 File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/brick_breaker.vhd Line: 12
-    Info (169178): Pin SW[5] uses I/O standard 3.3-V LVTTL at B12 File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/brick_breaker.vhd Line: 12
-    Info (169178): Pin SW[6] uses I/O standard 3.3-V LVTTL at A13 File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/brick_breaker.vhd Line: 12
-    Info (169178): Pin SW[7] uses I/O standard 3.3-V LVTTL at A14 File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/brick_breaker.vhd Line: 12
-    Info (169178): Pin SW[8] uses I/O standard 3.3-V LVTTL at B14 File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/brick_breaker.vhd Line: 12
-    Info (169178): Pin SW[9] uses I/O standard 3.3-V LVTTL at F15 File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/brick_breaker.vhd Line: 12
-    Info (169178): Pin ARDUINO_RESET_N uses I/O standard 3.3 V Schmitt Trigger at F16 File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/brick_breaker.vhd Line: 19
-    Info (169178): Pin ADC_CLK_10 uses I/O standard 3.3-V LVTTL at N5 File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/brick_breaker.vhd Line: 7
-    Info (169178): Pin MAX10_CLK1_50 uses I/O standard 3.3-V LVTTL at P11 File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/brick_breaker.vhd Line: 8
-    Info (169178): Pin SW[2] uses I/O standard 3.3-V LVTTL at D12 File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/brick_breaker.vhd Line: 12
-    Info (169178): Pin SW[1] uses I/O standard 3.3-V LVTTL at C11 File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/brick_breaker.vhd Line: 12
-    Info (169178): Pin SW[0] uses I/O standard 3.3-V LVTTL at C10 File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/brick_breaker.vhd Line: 12
-Critical Warning (16248): Pin VGA_HS is placed too close with ADC pins. I/O pins place too near to ADC pins will cause performance degradation on ADC sampling. Please reassign the pin assignment further away from ADC pins and re-run the compilation again. File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/brick_breaker.vhd Line: 16
-Critical Warning (16248): Pin VGA_VS is placed too close with ADC pins. I/O pins place too near to ADC pins will cause performance degradation on ADC sampling. Please reassign the pin assignment further away from ADC pins and re-run the compilation again. File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/brick_breaker.vhd Line: 17
-Critical Warning (16248): Pin ADC_CLK_10 is placed too close with ADC pins. I/O pins place too near to ADC pins will cause performance degradation on ADC sampling. Please reassign the pin assignment further away from ADC pins and re-run the compilation again. File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/brick_breaker.vhd Line: 7
+    Info (169178): Pin MAX10_CLK2_50 uses I/O standard 3.3-V LVTTL at N14 File: C:/Users/Steve/Documents/cloned_git_repos/brick_breaker/vhdl/brick_breaker.vhd Line: 9
+    Info (169178): Pin KEY[0] uses I/O standard 3.3 V Schmitt Trigger at B8 File: C:/Users/Steve/Documents/cloned_git_repos/brick_breaker/vhdl/brick_breaker.vhd Line: 10
+    Info (169178): Pin KEY[1] uses I/O standard 3.3 V Schmitt Trigger at A7 File: C:/Users/Steve/Documents/cloned_git_repos/brick_breaker/vhdl/brick_breaker.vhd Line: 10
+    Info (169178): Pin SW[3] uses I/O standard 3.3-V LVTTL at C12 File: C:/Users/Steve/Documents/cloned_git_repos/brick_breaker/vhdl/brick_breaker.vhd Line: 12
+    Info (169178): Pin SW[4] uses I/O standard 3.3-V LVTTL at A12 File: C:/Users/Steve/Documents/cloned_git_repos/brick_breaker/vhdl/brick_breaker.vhd Line: 12
+    Info (169178): Pin SW[5] uses I/O standard 3.3-V LVTTL at B12 File: C:/Users/Steve/Documents/cloned_git_repos/brick_breaker/vhdl/brick_breaker.vhd Line: 12
+    Info (169178): Pin SW[6] uses I/O standard 3.3-V LVTTL at A13 File: C:/Users/Steve/Documents/cloned_git_repos/brick_breaker/vhdl/brick_breaker.vhd Line: 12
+    Info (169178): Pin SW[7] uses I/O standard 3.3-V LVTTL at A14 File: C:/Users/Steve/Documents/cloned_git_repos/brick_breaker/vhdl/brick_breaker.vhd Line: 12
+    Info (169178): Pin SW[8] uses I/O standard 3.3-V LVTTL at B14 File: C:/Users/Steve/Documents/cloned_git_repos/brick_breaker/vhdl/brick_breaker.vhd Line: 12
+    Info (169178): Pin SW[9] uses I/O standard 3.3-V LVTTL at F15 File: C:/Users/Steve/Documents/cloned_git_repos/brick_breaker/vhdl/brick_breaker.vhd Line: 12
+    Info (169178): Pin ARDUINO_RESET_N uses I/O standard 3.3 V Schmitt Trigger at F16 File: C:/Users/Steve/Documents/cloned_git_repos/brick_breaker/vhdl/brick_breaker.vhd Line: 19
+    Info (169178): Pin ADC_CLK_10 uses I/O standard 3.3-V LVTTL at N5 File: C:/Users/Steve/Documents/cloned_git_repos/brick_breaker/vhdl/brick_breaker.vhd Line: 7
+    Info (169178): Pin MAX10_CLK1_50 uses I/O standard 3.3-V LVTTL at P11 File: C:/Users/Steve/Documents/cloned_git_repos/brick_breaker/vhdl/brick_breaker.vhd Line: 8
+    Info (169178): Pin SW[2] uses I/O standard 3.3-V LVTTL at D12 File: C:/Users/Steve/Documents/cloned_git_repos/brick_breaker/vhdl/brick_breaker.vhd Line: 12
+    Info (169178): Pin SW[1] uses I/O standard 3.3-V LVTTL at C11 File: C:/Users/Steve/Documents/cloned_git_repos/brick_breaker/vhdl/brick_breaker.vhd Line: 12
+    Info (169178): Pin SW[0] uses I/O standard 3.3-V LVTTL at C10 File: C:/Users/Steve/Documents/cloned_git_repos/brick_breaker/vhdl/brick_breaker.vhd Line: 12
+Critical Warning (16248): Pin VGA_HS is placed too close with ADC pins. I/O pins place too near to ADC pins will cause performance degradation on ADC sampling. Please reassign the pin assignment further away from ADC pins and re-run the compilation again. File: C:/Users/Steve/Documents/cloned_git_repos/brick_breaker/vhdl/brick_breaker.vhd Line: 16
+Critical Warning (16248): Pin VGA_VS is placed too close with ADC pins. I/O pins place too near to ADC pins will cause performance degradation on ADC sampling. Please reassign the pin assignment further away from ADC pins and re-run the compilation again. File: C:/Users/Steve/Documents/cloned_git_repos/brick_breaker/vhdl/brick_breaker.vhd Line: 17
+Critical Warning (16248): Pin ADC_CLK_10 is placed too close with ADC pins. I/O pins place too near to ADC pins will cause performance degradation on ADC sampling. Please reassign the pin assignment further away from ADC pins and re-run the compilation again. File: C:/Users/Steve/Documents/cloned_git_repos/brick_breaker/vhdl/brick_breaker.vhd Line: 7
 Warning (169064): Following 1 pins have no output enable or a GND or VCC output enable - later changes to this connectivity may change fitting results
-    Info (169065): Pin ARDUINO_RESET_N has a permanently disabled output enable File: E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/brick_breaker.vhd Line: 19
-Info (144001): Generated suppressed messages file E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/brick_breaker.fit.smsg
+    Info (169065): Pin ARDUINO_RESET_N has a permanently disabled output enable File: C:/Users/Steve/Documents/cloned_git_repos/brick_breaker/vhdl/brick_breaker.vhd Line: 19
+Info (144001): Generated suppressed messages file C:/Users/Steve/Documents/cloned_git_repos/brick_breaker/vhdl/brick_breaker.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 64 warnings
-    Info: Peak virtual memory: 5688 megabytes
-    Info: Processing ended: Tue Dec 01 10:49:28 2020
-    Info: Elapsed time: 00:00:22
-    Info: Total CPU time (on all processors): 00:00:40
+    Info: Peak virtual memory: 5412 megabytes
+    Info: Processing ended: Tue Dec 01 19:05:08 2020
+    Info: Elapsed time: 00:00:57
+    Info: Total CPU time (on all processors): 00:01:22
 
 
 +----------------------------+
 ; Fitter Suppressed Messages ;
 +----------------------------+
-The suppressed messages can be found in E:/Desktop/Reconfigurable Computing  Labs/brick_breaker/brick_breaker/vhdl/brick_breaker.fit.smsg.
+The suppressed messages can be found in C:/Users/Steve/Documents/cloned_git_repos/brick_breaker/vhdl/brick_breaker.fit.smsg.
 
 

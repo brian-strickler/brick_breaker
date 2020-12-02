@@ -199,8 +199,12 @@ begin
 					
 					
 					if (y_pos < 240) then
-						if brick(cur_brick) = '0' then
-							pixel_data <= black;
+						if x_pos >= ball_x and x_pos < ball_x + 10 then
+							if y_pos >= ball_y and y_pos < ball_y + 10 then
+								pixel_data <= grey; 
+							end if;
+						elsif brick(cur_brick) = '0' then
+								pixel_data <= black;
 						else
 							if (y_pos mod 8 = 0) then
 								pixel_data <= grey;
@@ -240,11 +244,11 @@ begin
 	
 	process(x_pos, layer) begin
 		if layer mod 2 = 1 then	-- even row numbers, staggered start
-			brick_x <= (x_pos+9)/16;
-			cur_brick <= (layer*40)+brick_x-1;
+			brick_x <= (x_pos+8)/16;
+			cur_brick <= (layer*40) + layer/2 + brick_x;
 		else
 			brick_x <= x_pos/16;
-			cur_brick <= (layer*40)+brick_x;
+			cur_brick <= (layer*40) + layer/2 + brick_x;
 		end if;
 	end process;
 	
@@ -264,9 +268,14 @@ begin
 			end if;
 	end process;
 	
+	brick(40) <= '0';
+	brick(120) <= '0';
+	brick(162) <= '0';
+	brick(81) <= '0';
 	brick(684) <= '0';
 	brick(273) <= '0';
 	brick(235) <= '0';
+	
 --	process(clk, ball_counter) begin
 --		if (rising_edge(clk)) then
 --			if ball_counter < 500000 then

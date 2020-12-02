@@ -2591,25 +2591,25 @@ pixel_data[11] <= pixel_data[11]$latch.DB_MAX_OUTPUT_PORT_TYPE
 pot[0] => LessThan22.IN64
 pot[1] => LessThan22.IN63
 pot[2] => LessThan22.IN62
-pot[2] => Add16.IN60
+pot[2] => Add17.IN60
 pot[3] => LessThan22.IN61
-pot[3] => Add16.IN59
+pot[3] => Add17.IN59
 pot[4] => LessThan22.IN60
-pot[4] => Add16.IN58
+pot[4] => Add17.IN58
 pot[5] => LessThan22.IN59
-pot[5] => Add16.IN57
+pot[5] => Add17.IN57
 pot[6] => LessThan22.IN58
-pot[6] => Add16.IN56
+pot[6] => Add17.IN56
 pot[7] => LessThan22.IN57
-pot[7] => Add16.IN55
+pot[7] => Add17.IN55
 pot[8] => LessThan22.IN56
-pot[8] => Add16.IN54
+pot[8] => Add17.IN54
 pot[9] => LessThan22.IN55
-pot[9] => Add16.IN53
+pot[9] => Add17.IN53
 pot[10] => LessThan22.IN54
-pot[10] => Add16.IN52
+pot[10] => Add17.IN52
 pot[11] => LessThan22.IN53
-pot[11] => Add16.IN51
+pot[11] => Add17.IN51
 
 
 |brick_breaker|adcPLL:u4
