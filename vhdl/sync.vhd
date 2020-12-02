@@ -38,9 +38,7 @@ architecture behavioral of sync is
 	signal current_hs_state, next_hs_state : hs_states;
 	
 	type my_horiz is range 0 to 799;
-	
-	signal row_counter : integer := 0; -- to keep track of brick rows
-	signal next_row_counter : integer := 0; 
+
 	signal x_pos : integer := 0;
 	signal y_pos : integer := 0;
 	signal layer : integer := 0;
@@ -54,7 +52,7 @@ architecture behavioral of sync is
 	signal pad_pos : integer := 0;
 	signal pot_sig : integer := 0;
 	signal ball_x : integer := 316;
-	signal ball_y : integer := 250;
+	signal ball_y : integer := 470;
 	signal brick_x : integer := 0;
 	signal ball_counter : integer := 0;
 	signal ball_move_enable : std_logic := '0';
@@ -72,11 +70,9 @@ begin
 				count2 <= 0;
 				x_pos <= 0;
 				y_pos <= 0;
-				row_counter <= 0;
 			else
 				x_pos <= next_x_pos;
 				y_pos <= next_y_pos;
-				row_counter <= next_row_counter;
 				if m = '0' then
 					count1 <= count1 + 1;
 					count2 <= count2 + 1;
@@ -133,7 +129,7 @@ begin
 		end case;	
 	end process;
 	
-	process(count2,count2_mod, x_pos, y_pos, current_hs_state, current_vs_state, row_counter, pad_pos)
+	process(count2,count2_mod, x_pos, y_pos, current_hs_state, current_vs_state, pad_pos)
 	begin
 		count2_mod <= count2 mod 800;
 		case current_hs_state is
@@ -142,7 +138,6 @@ begin
 				pixel_data <= black;
 				next_x_pos <= 0;
 				next_y_pos <= y_pos; 
-				next_row_counter <= row_counter;
 				if count2_mod < 16 then
 					next_hs_state <= H_FRONT_PORCH;
 				else	
@@ -154,7 +149,6 @@ begin
 				pixel_data <= black;
 				next_x_pos <= 0;
 				next_y_pos <= y_pos;
-				next_row_counter <= row_counter;
 				if count2_mod < 112 then 
 					next_hs_state <= H_SYNC;
 				else	
@@ -165,7 +159,6 @@ begin
 				hs_sig <= '1';
 				pixel_data <= black;
 				next_x_pos <= 0;
-				next_row_counter <= row_counter;
 				if count2_mod < 160 then 
 					next_hs_state <= H_BACK_PORCH;
 					next_y_pos <= y_pos;
@@ -180,18 +173,15 @@ begin
 					next_hs_state <= P_DATA;
 					next_y_pos <= y_pos;
 					next_x_pos <= x_pos + 1;
-					next_row_counter <= row_counter;
 				else	
 					next_hs_state <= H_FRONT_PORCH;
 					next_y_pos <= y_pos;
 					next_x_pos <= x_pos;
-					next_row_counter <= row_counter;
 				end if;
 				if current_vs_state = V_FRONT_PORCH or current_vs_state = V_SYNC or current_vs_state = V_BACK_PORCH then
 					pixel_data <= black;
 					next_x_pos <= 0;
 					next_y_pos <= 0;
-					next_row_counter <= 0;
 				else
 					next_y_pos <= y_pos;
 					next_x_pos <= x_pos + 1;
@@ -199,10 +189,8 @@ begin
 					
 					
 					if (y_pos < 240) then
-						if x_pos >= ball_x and x_pos < ball_x + 10 then
-							if y_pos >= ball_y and y_pos < ball_y + 10 then
+						if x_pos >= ball_x and x_pos < (ball_x + 10) and y_pos >= ball_y and y_pos < (ball_y + 10) then
 								pixel_data <= grey; 
-							end if;
 						elsif brick(cur_brick) = '0' then
 								pixel_data <= black;
 						else
@@ -226,12 +214,12 @@ begin
 						else
 							pixel_data <= black;
 						end if;	
-						next_row_counter <= 0;
 					end if;
 				
 					if y_pos < 481 and y_pos > 475 then  -- not sure the y_pos and x_pos perfectly match the displays x and y coordinates 
-						next_row_counter <= 0;
-						if x_pos >= pad_pos and x_pos < pad_pos + 40 then
+						if x_pos >= ball_x and x_pos < (ball_x + 10) and y_pos >= ball_y and y_pos < (ball_y + 10) then
+								pixel_data <= grey; 
+						elsif x_pos >= pad_pos and x_pos < pad_pos + 40 then
 							pixel_data <= brown;
 						else
 							pixel_data <= black;
@@ -264,7 +252,7 @@ begin
 			if pot_sig > 2400 then
 				pad_pos <= 600;
 			else
-				pad_pos <= 6+pot_sig/4;			
+				pad_pos <= pot_sig/4;			
 			end if;
 	end process;
 	
