@@ -6,6 +6,7 @@ entity sync is
 	port (
 		clk 				: in std_logic;
 		reset				: in std_logic;
+		new_ball			: in std_logic;
 		vs_sig 			: out std_logic;
 		hs_sig 			: out std_logic;
 		pixel_data 	: out std_logic_vector(11 downto 0);
@@ -58,7 +59,30 @@ architecture behavioral of sync is
 	signal difference : integer := 0; -- difference between pad_pos and ball_x
 	signal collision : std_logic_Vector(3 downto 0) := "1010"; -- 0000 PAD_C / 0001 PAD_R1 / 0010 PAD_R2 / 0011 PAD_L1 / 0100 PAD_L2 / 0101 RIG / 0110 LEF / 0111 TOP / 1000 DIE / 1001 BOT / 1010 NONE
 	
+	component ball_movement is
+		port (
+			count				: in integer; -- count1 from VGA timing
+			reset				: in std_logic; -- KEY(0)
+			new_ball			: in std_logic; -- KEY(1)
+			collision		: in std_logic_vector(3 downto 0); -- from detection process
+			ball_x			: out integer;
+			ball_y 			: out integer
+		);
+	end component ball_movement;
+	
 begin
+
+	u0 : component ball_movement
+		port map (
+			count => count1,
+			reset => reset,
+			new_ball => new_ball,
+			collision => collision,
+			ball_x => ball_x,
+			ball_y => ball_y
+		);
+
+
 	process(clk, reset, current_vs_state, count1, count2, current_hs_state, x_pos, y_pos) 
 	begin
 		if rising_edge(clk) then

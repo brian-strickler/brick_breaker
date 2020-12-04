@@ -100,7 +100,19 @@
 					"strict" : false
 				},
 				{
+					"name" : "ARDUINO_IO[7]",
+					"strict" : false
+				},
+				{
 					"name" : "ADC_CLK_10",
+					"strict" : false
+				},
+				{
+					"name" : "MAX10_CLK1_50",
+					"strict" : false
+				},
+				{
+					"name" : "KEY[1]",
 					"strict" : false
 				}
 			]
