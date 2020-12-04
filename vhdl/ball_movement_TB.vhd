@@ -56,14 +56,12 @@ begin
 		new_ball <= '0';
 		wait for clk_period * 10;
 		new_ball <= '1';
-		wait for clk_period * 10;
-		collision <= "0000";
-		wait for clk_period * 450000;
-		collision <= "1000";
-		wait for clk_period * 450000;
-		new_ball <= '0';
-		wait for clk_period * 10;
-		new_ball <= '1';
+		wait for clk_period * 10000000;
+		collision <= "0001";
+		wait for clk_period * 10000000;
+		collision <= "0101";
+		wait for clk_period * 10000000;
+
 		wait;
 	end process;
 	

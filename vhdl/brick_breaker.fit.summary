@@ -1,14 +1,14 @@
-Fitter Status : Successful - Fri Dec 04 13:29:24 2020
+Fitter Status : Successful - Fri Dec 04 14:15:06 2020
 Quartus Prime Version : 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 Revision Name : brick_breaker
 Top-level Entity Name : brick_breaker
 Family : MAX 10
 Device : 10M50DAF484C7G
 Timing Models : Final
-Total logic elements : 3,901 / 49,760 ( 8 % )
-    Total combinational functions : 3,820 / 49,760 ( 8 % )
-    Dedicated logic registers : 444 / 49,760 ( < 1 % )
-Total registers : 444
+Total logic elements : 4,050 / 49,760 ( 8 % )
+    Total combinational functions : 3,947 / 49,760 ( 8 % )
+    Dedicated logic registers : 500 / 49,760 ( 1 % )
+Total registers : 500
 Total pins : 56 / 360 ( 16 % )
 Total virtual pins : 0
 Total memory bits : 768 / 1,677,312 ( < 1 % )

@@ -115,8 +115,8 @@ begin
 				end if;
 				
 			when PAD_C =>
-				next_y_move <= -y_move;
-				next_x_move <= -x_move;
+				next_y_move <= -1;
+				next_x_move <= 0;
 				next_ball_y <= ball_y_holder + y_move;
 				next_ball_x <= ball_x_holder + x_move;
 				case collision is
@@ -143,8 +143,8 @@ begin
 				end case;
 				
 			when PAD_R1 =>
-				next_y_move <= -y_move;
-				next_x_move <= x_move;
+				next_y_move <= -1;
+				next_x_move <= 1;
 				next_ball_y <= ball_y_holder + y_move;
 				next_ball_x <= ball_x_holder + x_move;
 				case collision is
@@ -171,8 +171,8 @@ begin
 				end case;
 				
 			when PAD_R2 =>
-				next_y_move <= -y_move;
-				next_x_move <= x_move;
+				next_y_move <= -1;
+				next_x_move <= 2;
 				next_ball_y <= ball_y_holder + y_move;
 				next_ball_x <= ball_x_holder + x_move;
 				case collision is
@@ -199,8 +199,8 @@ begin
 				end case;
 				
 			when PAD_L1 =>
-				next_y_move <= -y_move;
-				next_x_move <= x_move;
+				next_y_move <= -1;
+				next_x_move <= -1;
 				next_ball_y <= ball_y_holder + y_move;
 				next_ball_x <= ball_x_holder + x_move;
 				case collision is
@@ -227,8 +227,8 @@ begin
 				end case;	
 			
 			when PAD_L2=>
-				next_y_move <= -y_move;
-				next_x_move <= x_move;
+				next_y_move <= -1;
+				next_x_move <= 2;
 				next_ball_y <= ball_y_holder + y_move;
 				next_ball_x <= ball_x_holder + x_move;
 				case collision is
@@ -255,8 +255,8 @@ begin
 				end case;
 				
 			when RIG =>
-				next_y_move <= y_move;
-				next_x_move <= -x_move;
+				next_y_move <= 1;
+				next_x_move <= -1;
 				next_ball_y <= ball_y_holder + y_move;
 				next_ball_x <= ball_x_holder + x_move;
 				case collision is
@@ -283,8 +283,8 @@ begin
 				end case;
 				
 			when LEF =>
-				next_y_move <= y_move;
-				next_x_move <= -x_move;
+				next_y_move <= 1;
+				next_x_move <= -2;
 				next_ball_y <= ball_y_holder + y_move;
 				next_ball_x <= ball_x_holder + x_move;
 				case collision is
@@ -311,8 +311,8 @@ begin
 				end case;
 			
 			when TOP => 
-				next_y_move <= -y_move;
-				next_x_move <= x_move;
+				next_y_move <= -1;
+				next_x_move <= 2;
 				next_ball_y <= ball_y_holder + y_move;
 				next_ball_x <= ball_x_holder + x_move;
 				case collision is
@@ -337,6 +337,7 @@ begin
 					when others => -- includes "no collision"
 						next_ball_state <= current_ball_state;
 				end case;
+				
 			when DIE =>
 				next_y_move <= y_move;
 				next_x_move <= x_move;
