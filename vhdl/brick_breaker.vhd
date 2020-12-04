@@ -63,7 +63,8 @@ signal adc_clk : std_logic := '0';
 			vs_sig 			: out std_logic;
 			hs_sig 			: out std_logic;
 			pixel_data 	: out std_logic_vector(11 downto 0);
-			pot : in std_logic_vector(11 downto 0)
+			pot : in std_logic_vector(11 downto 0);
+			sound_fx : out std_logic_Vector(2 downto 0)
 		);
 	end component sync;
 	
@@ -104,7 +105,8 @@ begin
 			vs_sig => VGA_VS,
 			hs_sig => VGA_HS,
 			pixel_data 	=> color,
-			pot => pot
+			pot => pot,
+			sound_fx => sound_fx
 		);	
 		
 	u4 : adcPLL
@@ -112,10 +114,6 @@ begin
 			inclk0 => ADC_CLK_10,
 			c0 => adc_clk
 		);	
-	
-	process(SW) begin
-		sound_fx <= SW(2 downto 0);
-	end process;
 	
 	VGA_R <= color(11 downto 8);
 	VGA_G <= color(7 downto 4);

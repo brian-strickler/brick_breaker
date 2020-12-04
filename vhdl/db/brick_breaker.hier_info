@@ -16,9 +16,9 @@ LEDR[6] << my_adc:u1.CH3[6]
 LEDR[7] << my_adc:u1.CH3[7]
 LEDR[8] << my_adc:u1.CH3[8]
 LEDR[9] << my_adc:u1.CH3[9]
-SW[0] => sound_board:u0.SOUND_EFFECT[0]
-SW[1] => sound_board:u0.SOUND_EFFECT[1]
-SW[2] => sound_board:u0.SOUND_EFFECT[2]
+SW[0] => ~NO_FANOUT~
+SW[1] => ~NO_FANOUT~
+SW[2] => ~NO_FANOUT~
 SW[3] => ~NO_FANOUT~
 SW[4] => ~NO_FANOUT~
 SW[5] => ~NO_FANOUT~
@@ -2610,6 +2610,9 @@ pot[10] => LessThan22.IN54
 pot[10] => Add17.IN52
 pot[11] => LessThan22.IN53
 pot[11] => Add17.IN51
+sound_fx[0] <= <GND>
+sound_fx[1] <= <GND>
+sound_fx[2] <= <GND>
 
 
 |brick_breaker|adcPLL:u4
