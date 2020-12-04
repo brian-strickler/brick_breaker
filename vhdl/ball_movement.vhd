@@ -4,10 +4,10 @@ use ieee.numeric_std.all;
 
 entity ball_movement is
 	port (
-		count				: in integer; -- count1 from VGA timing
+		clk				: in std_logic; 
 		reset				: in std_logic; -- KEY(0)
 		new_ball			: in std_logic; -- KEY(1)
-		collision		: in std_logic_vector(0 to 3); -- from detector process
+		collision		: in std_logic_vector(3 downto 0); -- from detector process
 		ball_x			: out integer;
 		ball_y 			: out integer
 	);
@@ -28,45 +28,51 @@ architecture behavioral of ball_movement is
 	signal next_x_move : integer := 0;
 	signal next_y_move : integer := 1;
 	
+	signal count : natural := 0;
+	
 	type ball_states is (IDLE, DIE, INITIAL, RIG, LEF, TOP, PAD_C, PAD_R1, PAD_R2, PAD_L1, PAD_L2);
 	signal current_ball_state, next_ball_state : ball_states;
 
 begin	
 	-- synchronous process
-	process(count, reset, new_ball) is
+	process(clk, reset, new_ball, ball_y_holder, ball_x_holder, next_ball_x, next_ball_y, next_ball_state) is
 	begin
-		ball_y <= ball_y_holder;
-		ball_x <= ball_x_holder;
-		if count = 419999 then
-			if reset = '0' then
-				current_ball_state <= IDLE;
-				ball_x_holder <= next_ball_x;
-				ball_y_holder <= next_ball_x;
-				x_move <= next_x_move;
-				y_move <= next_y_move;
-			elsif new_ball = '0' then
-				current_ball_state <= INITIAL;
-				ball_x_holder <= next_ball_x;
-				ball_y_holder <= next_ball_y;
-				x_move <= next_x_move;
-				y_move <= next_y_move;
+		if rising_edge(clk) then
+			ball_y <= ball_y_holder;
+			ball_x <= ball_x_holder;
+			if count = 419999 then
+				count <= 0;
+				if reset = '0' then
+					current_ball_state <= IDLE;
+					ball_x_holder <= next_ball_x;
+					ball_y_holder <= next_ball_x;
+					x_move <= next_x_move;
+					y_move <= next_y_move;
+				elsif new_ball = '0' then
+					current_ball_state <= INITIAL;
+					ball_x_holder <= next_ball_x;
+					ball_y_holder <= next_ball_y;
+					x_move <= next_x_move;
+					y_move <= next_y_move;
+				else 
+					current_ball_state <= next_ball_state;
+					ball_x_holder <= next_ball_x;
+					ball_y_holder <= next_ball_y;
+					x_move <= next_x_move;
+					y_move <= next_y_move;
+				end if;
 			else 
-				current_ball_state <= next_ball_state;
-				ball_x_holder <= next_ball_x;
-				ball_y_holder <= next_ball_y;
-				x_move <= next_x_move;
-				y_move <= next_y_move;
+				count <= count + 1;
 			end if;
 		end if;
-			
 	end process;
 
 	-- FSM (IDLE, INITIAL, TOP, RIG, LEF, DIE, PAD_C, PAD_L1, PAD_L2, PAD_R1, PAD_R2)
-	process(collision, ball_x_holder, ball_y_holder) is
+	process(collision, ball_x_holder, ball_y_holder, x_move, y_move, new_ball, reset, current_ball_state) is
 	begin
 		case current_ball_state is
 			when IDLE =>
-				if reset = '1' then
+				if reset = '0' then
 					next_ball_state <= current_ball_state;
 					next_y_move <= 0;
 					next_x_move <= 0;

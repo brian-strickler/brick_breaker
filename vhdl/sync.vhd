@@ -61,7 +61,7 @@ architecture behavioral of sync is
 	
 	component ball_movement is
 		port (
-			count				: in integer; -- count1 from VGA timing
+			clk				: in std_logic; 
 			reset				: in std_logic; -- KEY(0)
 			new_ball			: in std_logic; -- KEY(1)
 			collision		: in std_logic_vector(3 downto 0); -- from detection process
@@ -74,7 +74,7 @@ begin
 
 	u0 : component ball_movement
 		port map (
-			count => count1,
+			clk => clk,
 			reset => reset,
 			new_ball => new_ball,
 			collision => collision,
