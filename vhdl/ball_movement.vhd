@@ -40,29 +40,21 @@ begin
 		if rising_edge(clk) then
 			ball_y <= ball_y_holder;
 			ball_x <= ball_x_holder;
-			if count = 419999 then
-				count <= 0;
-				if reset = '0' then
-					current_ball_state <= IDLE;
-					ball_x_holder <= next_ball_x;
-					ball_y_holder <= next_ball_x;
-					x_move <= next_x_move;
-					y_move <= next_y_move;
-				elsif new_ball = '0' then
-					current_ball_state <= INITIAL;
+			if reset = '0' then
+				current_ball_state <= IDLE;
+			elsif new_ball = '0' then
+				current_ball_state <= INITIAL;
+			else
+				if count = 419999 then
+					count <= 0;
 					ball_x_holder <= next_ball_x;
 					ball_y_holder <= next_ball_y;
 					x_move <= next_x_move;
 					y_move <= next_y_move;
-				else 
 					current_ball_state <= next_ball_state;
-					ball_x_holder <= next_ball_x;
-					ball_y_holder <= next_ball_y;
-					x_move <= next_x_move;
-					y_move <= next_y_move;
+				else 
+					count <= count + 1;
 				end if;
-			else 
-				count <= count + 1;
 			end if;
 		end if;
 	end process;

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for brick_breaker
-Fri Dec 04 12:31:37 2020
+Fri Dec 04 13:27:59 2020
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -94,15 +94,15 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri Dec 04 12:31:37 2020       ;
+; Analysis & Synthesis Status        ; Successful - Fri Dec 04 13:27:58 2020       ;
 ; Quartus Prime Version              ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                      ; brick_breaker                               ;
 ; Top-level Entity Name              ; brick_breaker                               ;
 ; Family                             ; MAX 10                                      ;
-; Total logic elements               ; 3,906                                       ;
-;     Total combinational functions  ; 3,829                                       ;
-;     Dedicated logic registers      ; 445                                         ;
-; Total registers                    ; 445                                         ;
+; Total logic elements               ; 3,894                                       ;
+;     Total combinational functions  ; 3,817                                       ;
+;     Dedicated logic registers      ; 444                                         ;
+; Total registers                    ; 444                                         ;
 ; Total pins                         ; 56                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 768                                         ;
@@ -289,20 +289,20 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+-------------------------------------------------------------------------------+
 ; Resource                                    ; Usage                                                                         ;
 +---------------------------------------------+-------------------------------------------------------------------------------+
-; Estimated Total logic elements              ; 3,906                                                                         ;
+; Estimated Total logic elements              ; 3,894                                                                         ;
 ;                                             ;                                                                               ;
-; Total combinational functions               ; 3829                                                                          ;
+; Total combinational functions               ; 3817                                                                          ;
 ; Logic element usage by number of LUT inputs ;                                                                               ;
-;     -- 4 input functions                    ; 1219                                                                          ;
-;     -- 3 input functions                    ; 1075                                                                          ;
-;     -- <=2 input functions                  ; 1535                                                                          ;
+;     -- 4 input functions                    ; 1203                                                                          ;
+;     -- 3 input functions                    ; 1078                                                                          ;
+;     -- <=2 input functions                  ; 1536                                                                          ;
 ;                                             ;                                                                               ;
 ; Logic elements by mode                      ;                                                                               ;
-;     -- normal mode                          ; 2503                                                                          ;
-;     -- arithmetic mode                      ; 1326                                                                          ;
+;     -- normal mode                          ; 2522                                                                          ;
+;     -- arithmetic mode                      ; 1295                                                                          ;
 ;                                             ;                                                                               ;
-; Total registers                             ; 445                                                                           ;
-;     -- Dedicated logic registers            ; 445                                                                           ;
+; Total registers                             ; 444                                                                           ;
+;     -- Dedicated logic registers            ; 444                                                                           ;
 ;     -- I/O registers                        ; 0                                                                             ;
 ;                                             ;                                                                               ;
 ; I/O pins                                    ; 56                                                                            ;
@@ -314,8 +314,8 @@ https://fpgasoftware.intel.com/eula.
 ;     -- PLLs                                 ; 2                                                                             ;
 ;                                             ;                                                                               ;
 ; Maximum fan-out node                        ; myPLL:u2|altpll:altpll_component|myPLL_altpll:auto_generated|wire_pll1_clk[0] ;
-; Maximum fan-out                             ; 277                                                                           ;
-; Total fan-out                               ; 12587                                                                         ;
+; Maximum fan-out                             ; 276                                                                           ;
+; Total fan-out                               ; 12538                                                                         ;
 ; Average fan-out                             ; 2.86                                                                          ;
 +---------------------------------------------+-------------------------------------------------------------------------------+
 
@@ -325,7 +325,7 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------+--------------+
 ; Compilation Hierarchy Node                                                      ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                                                                                                                                                                                                                                                                       ; Entity Name                            ; Library Name ;
 +---------------------------------------------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------+--------------+
-; |brick_breaker                                                                  ; 3829 (1)            ; 445 (0)                   ; 768         ; 0          ; 0            ; 0       ; 0         ; 56   ; 0            ; 0          ; |brick_breaker                                                                                                                                                                                                                                                                                            ; brick_breaker                          ; work         ;
+; |brick_breaker                                                                  ; 3817 (1)            ; 444 (0)                   ; 768         ; 0          ; 0            ; 0       ; 0         ; 56   ; 0            ; 0          ; |brick_breaker                                                                                                                                                                                                                                                                                            ; brick_breaker                          ; work         ;
 ;    |myPLL:u2|                                                                   ; 0 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |brick_breaker|myPLL:u2                                                                                                                                                                                                                                                                                   ; myPLL                                  ; work         ;
 ;       |altpll:altpll_component|                                                 ; 0 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |brick_breaker|myPLL:u2|altpll:altpll_component                                                                                                                                                                                                                                                           ; altpll                                 ; work         ;
 ;          |myPLL_altpll:auto_generated|                                          ; 0 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |brick_breaker|myPLL:u2|altpll:altpll_component|myPLL_altpll:auto_generated                                                                                                                                                                                                                               ; myPLL_altpll                           ; work         ;
@@ -349,8 +349,8 @@ https://fpgasoftware.intel.com/eula.
 ;             |altpll:adc_pll|                                                    ; 0 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |brick_breaker|my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|altpll:adc_pll                                                                                                                                                                                                    ; altpll                                 ; work         ;
 ;                |MAX10_ADC_PLL_altpll:auto_generated|                            ; 0 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |brick_breaker|my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|altpll:adc_pll|MAX10_ADC_PLL_altpll:auto_generated                                                                                                                                                                ; MAX10_ADC_PLL_altpll                   ; work         ;
 ;    |sound_board:u0|                                                             ; 108 (108)           ; 36 (36)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |brick_breaker|sound_board:u0                                                                                                                                                                                                                                                                             ; sound_board                            ; work         ;
-;    |sync:u3|                                                                    ; 3623 (765)          ; 288 (148)                 ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |brick_breaker|sync:u3                                                                                                                                                                                                                                                                                    ; sync                                   ; work         ;
-;       |ball_movement:u0|                                                        ; 202 (202)           ; 140 (140)                 ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |brick_breaker|sync:u3|ball_movement:u0                                                                                                                                                                                                                                                                   ; ball_movement                          ; work         ;
+;    |sync:u3|                                                                    ; 3611 (765)          ; 287 (148)                 ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |brick_breaker|sync:u3                                                                                                                                                                                                                                                                                    ; sync                                   ; work         ;
+;       |ball_movement:u0|                                                        ; 190 (190)           ; 139 (139)                 ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |brick_breaker|sync:u3|ball_movement:u0                                                                                                                                                                                                                                                                   ; ball_movement                          ; work         ;
 ;       |lpm_divide:Mod0|                                                         ; 1159 (0)            ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |brick_breaker|sync:u3|lpm_divide:Mod0                                                                                                                                                                                                                                                                    ; lpm_divide                             ; work         ;
 ;          |lpm_divide_25o:auto_generated|                                        ; 1159 (0)            ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |brick_breaker|sync:u3|lpm_divide:Mod0|lpm_divide_25o:auto_generated                                                                                                                                                                                                                                      ; lpm_divide_25o                         ; work         ;
 ;             |abs_divider_4dg:divider|                                           ; 1159 (58)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |brick_breaker|sync:u3|lpm_divide:Mod0|lpm_divide_25o:auto_generated|abs_divider_4dg:divider                                                                                                                                                                                                              ; abs_divider_4dg                        ; work         ;
@@ -652,7 +652,8 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; sync:u3|ball_movement:u0|ball_x[4]                                                                                                                                                                                                                                                                                                                                                                             ; Merged with sync:u3|ball_movement:u0|ball_x[5]                                                                                                                                                                                                    ;
 ; sync:u3|ball_movement:u0|ball_x[5]                                                                                                                                                                                                                                                                                                                                                                             ; Merged with sync:u3|ball_movement:u0|ball_x[6]                                                                                                                                                                                                    ;
 ; sync:u3|ball_movement:u0|ball_x[6]                                                                                                                                                                                                                                                                                                                                                                             ; Merged with sync:u3|ball_movement:u0|ball_x[7]                                                                                                                                                                                                    ;
-; Total Number of Removed Registers = 203                                                                                                                                                                                                                                                                                                                                                                        ;                                                                                                                                                                                                                                                   ;
+; sync:u3|ball_movement:u0|y_move[0]                                                                                                                                                                                                                                                                                                                                                                             ; Stuck at VCC due to stuck port data_in                                                                                                                                                                                                            ;
+; Total Number of Removed Registers = 204                                                                                                                                                                                                                                                                                                                                                                        ;                                                                                                                                                                                                                                                   ;
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
@@ -755,12 +756,12 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 445   ;
-; Number of registers using Synchronous Clear  ; 174   ;
+; Total registers                              ; 444   ;
+; Number of registers using Synchronous Clear  ; 183   ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 196   ;
+; Number of registers using Clock Enable       ; 223   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -779,8 +780,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; sync:u3|ball_movement:u0|ball_y_holder[3] ; 2       ;
 ; sync:u3|ball_movement:u0|ball_y_holder[2] ; 2       ;
 ; sound_board:u0|ready                      ; 2       ;
-; sync:u3|ball_movement:u0|y_move[0]        ; 3       ;
-; Total number of inverted registers = 10   ;         ;
+; Total number of inverted registers = 9    ;         ;
 +-------------------------------------------+---------+
 
 
@@ -2723,29 +2723,29 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 56                          ;
-; cycloneiii_ff         ; 445                         ;
-;     ENA               ; 124                         ;
-;     ENA SCLR          ; 72                          ;
-;     SCLR              ; 102                         ;
-;     plain             ; 147                         ;
+; cycloneiii_ff         ; 444                         ;
+;     ENA               ; 143                         ;
+;     ENA SCLR          ; 80                          ;
+;     SCLR              ; 103                         ;
+;     plain             ; 118                         ;
 ; cycloneiii_io_obuf    ; 1                           ;
-; cycloneiii_lcell_comb ; 3831                        ;
-;     arith             ; 1326                        ;
+; cycloneiii_lcell_comb ; 3819                        ;
+;     arith             ; 1295                        ;
 ;         1 data inputs ; 1                           ;
-;         2 data inputs ; 408                         ;
-;         3 data inputs ; 917                         ;
-;     normal            ; 2505                        ;
+;         2 data inputs ; 378                         ;
+;         3 data inputs ; 916                         ;
+;     normal            ; 2524                        ;
 ;         0 data inputs ; 41                          ;
-;         1 data inputs ; 34                          ;
-;         2 data inputs ; 1053                        ;
-;         3 data inputs ; 158                         ;
-;         4 data inputs ; 1219                        ;
+;         1 data inputs ; 64                          ;
+;         2 data inputs ; 1054                        ;
+;         3 data inputs ; 162                         ;
+;         4 data inputs ; 1203                        ;
 ; cycloneiii_pll        ; 2                           ;
 ; cycloneiii_ram_block  ; 12                          ;
 ; fiftyfivenm_adcblock  ; 1                           ;
 ;                       ;                             ;
 ; Max LUT depth         ; 105.90                      ;
-; Average LUT depth     ; 63.57                       ;
+; Average LUT depth     ; 64.02                       ;
 +-----------------------+-----------------------------+
 
 
@@ -2754,7 +2754,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:06     ;
+; Top            ; 00:00:12     ;
 +----------------+--------------+
 
 
@@ -2764,7 +2764,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Fri Dec 04 12:31:13 2020
+    Info: Processing started: Fri Dec 04 13:27:25 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off brick_breaker -c brick_breaker
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
@@ -3276,6 +3276,38 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "ARDUINO_IO[15]" is stuck at GND File: C:/Users/Steve/Documents/cloned_git_repos/brick_breaker/vhdl/brick_breaker.vhd Line: 18
 Info (286030): Timing-Driven Synthesis is running
 Info (17049): 13 registers lost all their fanouts during netlist optimizations.
+Info (17016): Found the following redundant logic cells in design
+    Info (17048): Logic cell "sync:u3|ball_movement:u0|Add3~0" File: C:/Users/Steve/Documents/cloned_git_repos/brick_breaker/vhdl/ball_movement.vhd Line: 118
+    Info (17048): Logic cell "sync:u3|ball_movement:u0|Add3~2" File: C:/Users/Steve/Documents/cloned_git_repos/brick_breaker/vhdl/ball_movement.vhd Line: 118
+    Info (17048): Logic cell "sync:u3|ball_movement:u0|Add3~4" File: C:/Users/Steve/Documents/cloned_git_repos/brick_breaker/vhdl/ball_movement.vhd Line: 118
+    Info (17048): Logic cell "sync:u3|ball_movement:u0|Add3~6" File: C:/Users/Steve/Documents/cloned_git_repos/brick_breaker/vhdl/ball_movement.vhd Line: 118
+    Info (17048): Logic cell "sync:u3|ball_movement:u0|Add3~8" File: C:/Users/Steve/Documents/cloned_git_repos/brick_breaker/vhdl/ball_movement.vhd Line: 118
+    Info (17048): Logic cell "sync:u3|ball_movement:u0|Add3~10" File: C:/Users/Steve/Documents/cloned_git_repos/brick_breaker/vhdl/ball_movement.vhd Line: 118
+    Info (17048): Logic cell "sync:u3|ball_movement:u0|Add3~12" File: C:/Users/Steve/Documents/cloned_git_repos/brick_breaker/vhdl/ball_movement.vhd Line: 118
+    Info (17048): Logic cell "sync:u3|ball_movement:u0|Add3~14" File: C:/Users/Steve/Documents/cloned_git_repos/brick_breaker/vhdl/ball_movement.vhd Line: 118
+    Info (17048): Logic cell "sync:u3|ball_movement:u0|Add3~16" File: C:/Users/Steve/Documents/cloned_git_repos/brick_breaker/vhdl/ball_movement.vhd Line: 118
+    Info (17048): Logic cell "sync:u3|ball_movement:u0|Add3~18" File: C:/Users/Steve/Documents/cloned_git_repos/brick_breaker/vhdl/ball_movement.vhd Line: 118
+    Info (17048): Logic cell "sync:u3|ball_movement:u0|Add3~20" File: C:/Users/Steve/Documents/cloned_git_repos/brick_breaker/vhdl/ball_movement.vhd Line: 118
+    Info (17048): Logic cell "sync:u3|ball_movement:u0|Add3~22" File: C:/Users/Steve/Documents/cloned_git_repos/brick_breaker/vhdl/ball_movement.vhd Line: 118
+    Info (17048): Logic cell "sync:u3|ball_movement:u0|Add3~24" File: C:/Users/Steve/Documents/cloned_git_repos/brick_breaker/vhdl/ball_movement.vhd Line: 118
+    Info (17048): Logic cell "sync:u3|ball_movement:u0|Add3~26" File: C:/Users/Steve/Documents/cloned_git_repos/brick_breaker/vhdl/ball_movement.vhd Line: 118
+    Info (17048): Logic cell "sync:u3|ball_movement:u0|Add3~28" File: C:/Users/Steve/Documents/cloned_git_repos/brick_breaker/vhdl/ball_movement.vhd Line: 118
+    Info (17048): Logic cell "sync:u3|ball_movement:u0|Add3~30" File: C:/Users/Steve/Documents/cloned_git_repos/brick_breaker/vhdl/ball_movement.vhd Line: 118
+    Info (17048): Logic cell "sync:u3|ball_movement:u0|Add3~32" File: C:/Users/Steve/Documents/cloned_git_repos/brick_breaker/vhdl/ball_movement.vhd Line: 118
+    Info (17048): Logic cell "sync:u3|ball_movement:u0|Add3~34" File: C:/Users/Steve/Documents/cloned_git_repos/brick_breaker/vhdl/ball_movement.vhd Line: 118
+    Info (17048): Logic cell "sync:u3|ball_movement:u0|Add3~36" File: C:/Users/Steve/Documents/cloned_git_repos/brick_breaker/vhdl/ball_movement.vhd Line: 118
+    Info (17048): Logic cell "sync:u3|ball_movement:u0|Add3~38" File: C:/Users/Steve/Documents/cloned_git_repos/brick_breaker/vhdl/ball_movement.vhd Line: 118
+    Info (17048): Logic cell "sync:u3|ball_movement:u0|Add3~40" File: C:/Users/Steve/Documents/cloned_git_repos/brick_breaker/vhdl/ball_movement.vhd Line: 118
+    Info (17048): Logic cell "sync:u3|ball_movement:u0|Add3~42" File: C:/Users/Steve/Documents/cloned_git_repos/brick_breaker/vhdl/ball_movement.vhd Line: 118
+    Info (17048): Logic cell "sync:u3|ball_movement:u0|Add3~44" File: C:/Users/Steve/Documents/cloned_git_repos/brick_breaker/vhdl/ball_movement.vhd Line: 118
+    Info (17048): Logic cell "sync:u3|ball_movement:u0|Add3~46" File: C:/Users/Steve/Documents/cloned_git_repos/brick_breaker/vhdl/ball_movement.vhd Line: 118
+    Info (17048): Logic cell "sync:u3|ball_movement:u0|Add3~48" File: C:/Users/Steve/Documents/cloned_git_repos/brick_breaker/vhdl/ball_movement.vhd Line: 118
+    Info (17048): Logic cell "sync:u3|ball_movement:u0|Add3~50" File: C:/Users/Steve/Documents/cloned_git_repos/brick_breaker/vhdl/ball_movement.vhd Line: 118
+    Info (17048): Logic cell "sync:u3|ball_movement:u0|Add3~52" File: C:/Users/Steve/Documents/cloned_git_repos/brick_breaker/vhdl/ball_movement.vhd Line: 118
+    Info (17048): Logic cell "sync:u3|ball_movement:u0|Add3~54" File: C:/Users/Steve/Documents/cloned_git_repos/brick_breaker/vhdl/ball_movement.vhd Line: 118
+    Info (17048): Logic cell "sync:u3|ball_movement:u0|Add3~56" File: C:/Users/Steve/Documents/cloned_git_repos/brick_breaker/vhdl/ball_movement.vhd Line: 118
+    Info (17048): Logic cell "sync:u3|ball_movement:u0|Add3~58" File: C:/Users/Steve/Documents/cloned_git_repos/brick_breaker/vhdl/ball_movement.vhd Line: 118
+    Info (17048): Logic cell "sync:u3|ball_movement:u0|Add3~60" File: C:/Users/Steve/Documents/cloned_git_repos/brick_breaker/vhdl/ball_movement.vhd Line: 118
 Info (144001): Generated suppressed messages file C:/Users/Steve/Documents/cloned_git_repos/brick_breaker/vhdl/brick_breaker.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 2 node(s), including 0 DDIO, 2 PLL, 0 transceiver and 0 LCELL
@@ -3292,18 +3324,18 @@ Warning (21074): Design contains 12 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "SW[7]" File: C:/Users/Steve/Documents/cloned_git_repos/brick_breaker/vhdl/brick_breaker.vhd Line: 12
     Warning (15610): No output dependent on input pin "SW[8]" File: C:/Users/Steve/Documents/cloned_git_repos/brick_breaker/vhdl/brick_breaker.vhd Line: 12
     Warning (15610): No output dependent on input pin "SW[9]" File: C:/Users/Steve/Documents/cloned_git_repos/brick_breaker/vhdl/brick_breaker.vhd Line: 12
-Info (21057): Implemented 3989 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 3977 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 15 input pins
     Info (21059): Implemented 40 output pins
     Info (21060): Implemented 1 bidirectional pins
-    Info (21061): Implemented 3918 logic cells
+    Info (21061): Implemented 3906 logic cells
     Info (21064): Implemented 12 RAM segments
     Info (21065): Implemented 2 PLLs
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 148 warnings
-    Info: Peak virtual memory: 4869 megabytes
-    Info: Processing ended: Fri Dec 04 12:31:37 2020
-    Info: Elapsed time: 00:00:24
-    Info: Total CPU time (on all processors): 00:00:40
+    Info: Peak virtual memory: 4871 megabytes
+    Info: Processing ended: Fri Dec 04 13:27:59 2020
+    Info: Elapsed time: 00:00:34
+    Info: Total CPU time (on all processors): 00:00:48
 
 
 +------------------------------------------+
