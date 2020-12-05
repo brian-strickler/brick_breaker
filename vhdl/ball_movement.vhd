@@ -16,13 +16,12 @@ end entity ball_movement;
 architecture behavioral of ball_movement is
 
 -- signals for ball movement
-	signal next_ball_y : integer := 316;
-	signal next_ball_x : integer := 250;
-	signal ball_y_holder : integer := 316;
-	signal ball_x_holder : integer := 250;
+	signal next_ball_y : integer := 250;
+	signal next_ball_x : integer := 316;
+	signal ball_y_holder : integer := 250;
+	signal ball_x_holder : integer := 316;
 	signal ball_counter : integer := 0;
 	signal next_ball_counter : integer := 0;
-	signal ball_exists : std_logic := '0';
 	signal x_move : integer := 0;
 	signal y_move : integer := 1;
 	signal next_x_move : integer := 0;
@@ -30,7 +29,7 @@ architecture behavioral of ball_movement is
 	
 	signal count : natural := 0;
 	
-	type ball_states is (IDLE, DIE, INITIAL, RIG, LEF, TOP, PAD_C, PAD_R1, PAD_R2, PAD_L1, PAD_L2);
+	type ball_states is (IDLE, DIE, INITIAL, NO_COLLISION, RIG, LEF, TOP, PAD_C, PAD_R1, PAD_R2, PAD_L1, PAD_L2);
 	signal current_ball_state, next_ball_state : ball_states;
 
 begin	
@@ -40,19 +39,20 @@ begin
 		if rising_edge(clk) then
 			ball_y <= ball_y_holder;
 			ball_x <= ball_x_holder;
+			ball_counter <= next_ball_counter;
 			if reset = '0' then
 				current_ball_state <= IDLE;
 			elsif new_ball = '0' then
 				current_ball_state <= INITIAL;
 			else
-				if count = 419999 then
+				if count >= 419999 then
 					count <= 0;
 					ball_x_holder <= next_ball_x;
 					ball_y_holder <= next_ball_y;
 					x_move <= next_x_move;
 					y_move <= next_y_move;
 					current_ball_state <= next_ball_state;
-				else 
+				else
 					count <= count + 1;
 				end if;
 			end if;
@@ -64,48 +64,27 @@ begin
 	begin
 		case current_ball_state is
 			when IDLE =>
-				if reset = '0' then
+				if reset = '1' then
 					next_ball_state <= current_ball_state;
 					next_y_move <= 0;
 					next_x_move <= 0;
-					next_ball_y <= 316;
-					next_ball_x <= 250;
+					next_ball_y <= 250;
+					next_ball_x <= 316;
 				else
 					next_ball_state <= IDLE;
 					next_y_move <= y_move;
 					next_x_move <= x_move;
-					next_ball_y <= ball_y_holder;
-					next_ball_x <= ball_x_holder;
+					next_ball_y <= 250;
+					next_ball_x <= 316;
 				end if;
 				
 			when INITIAL =>
 				if new_ball = '1' then
-					next_y_move <= 1;
-					next_x_move <= 0;
+					next_y_move <= 0;
+					next_x_move <= 1;
 					next_ball_y <= ball_y_holder + y_move;
 					next_ball_x <= ball_x_holder + x_move;
-					case collision is
-						when "0000" => -- PAD_C
-							next_ball_state <= PAD_C;
-						when "0001" => -- PAD_R1
-							next_ball_state <= PAD_R1;
-						when "0010" => -- PAD_R2
-							next_ball_state <= PAD_R2;
-						when "0011" => -- PAD_L1
-							next_ball_state <= PAD_L1;
-						when "0100" => -- PAD_L2
-							next_ball_state <= PAD_L2;
-						when "0101" => -- RIG
-							next_ball_state <= RIG;
-						when "0110" => -- LEF
-							next_ball_state <= LEF;
-						when "0111" => -- TOP
-							next_ball_state <= TOP;
-						when "1000" => -- DIE
-							next_ball_state <= DIE;
-						when others => -- includes "no collision"
-							next_ball_state <= current_ball_state;
-					end case;
+					next_ball_state <= NO_COLLISION;
 				else
 					next_ball_state <= INITIAL;
 					next_y_move <= y_move;
@@ -114,236 +93,100 @@ begin
 					next_ball_x <= ball_x_holder;
 				end if;
 				
-			when PAD_C =>
-				next_y_move <= -1;
-				next_x_move <= 0;
-				next_ball_y <= ball_y_holder + y_move;
-				next_ball_x <= ball_x_holder + x_move;
-				case collision is
-					when "0000" => -- PAD_C
-						next_ball_state <= PAD_C;
-					when "0001" => -- PAD_R1
-						next_ball_state <= PAD_R1;
-					when "0010" => -- PAD_R2
-						next_ball_state <= PAD_R2;
-					when "0011" => -- PAD_L1
-						next_ball_state <= PAD_L1;
-					when "0100" => -- PAD_L2
-						next_ball_state <= PAD_L2;
-					when "0101" => -- RIG
-						next_ball_state <= RIG;
-					when "0110" => -- LEF
-						next_ball_state <= LEF;
-					when "0111" => -- TOP
-						next_ball_state <= TOP;
-					when "1000" => -- DIE
-						next_ball_state <= DIE;
-					when others => -- includes "no collision"
-						next_ball_state <= current_ball_state;
-				end case;
-				
-			when PAD_R1 =>
-				next_y_move <= -1;
-				next_x_move <= 1;
-				next_ball_y <= ball_y_holder + y_move;
-				next_ball_x <= ball_x_holder + x_move;
-				case collision is
-					when "0000" => -- PAD_C
-						next_ball_state <= PAD_C;
-					when "0001" => -- PAD_R1
-						next_ball_state <= PAD_R1;
-					when "0010" => -- PAD_R2
-						next_ball_state <= PAD_R2;
-					when "0011" => -- PAD_L1
-						next_ball_state <= PAD_L1;
-					when "0100" => -- PAD_L2
-						next_ball_state <= PAD_L2;
-					when "0101" => -- RIG
-						next_ball_state <= RIG;
-					when "0110" => -- LEF
-						next_ball_state <= LEF;
-					when "0111" => -- TOP
-						next_ball_state <= TOP;
-					when "1000" => -- DIE
-						next_ball_state <= DIE;
-					when others => -- includes "no collision"
-						next_ball_state <= current_ball_state;
-				end case;
-				
-			when PAD_R2 =>
-				next_y_move <= -1;
-				next_x_move <= 2;
-				next_ball_y <= ball_y_holder + y_move;
-				next_ball_x <= ball_x_holder + x_move;
-				case collision is
-					when "0000" => -- PAD_C
-						next_ball_state <= PAD_C;
-					when "0001" => -- PAD_R1
-						next_ball_state <= PAD_R1;
-					when "0010" => -- PAD_R2
-						next_ball_state <= PAD_R2;
-					when "0011" => -- PAD_L1
-						next_ball_state <= PAD_L1;
-					when "0100" => -- PAD_L2
-						next_ball_state <= PAD_L2;
-					when "0101" => -- RIG
-						next_ball_state <= RIG;
-					when "0110" => -- LEF
-						next_ball_state <= LEF;
-					when "0111" => -- TOP
-						next_ball_state <= TOP;
-					when "1000" => -- DIE
-						next_ball_state <= DIE;
-					when others => -- includes "no collision"
-						next_ball_state <= current_ball_state;
-				end case;
-				
-			when PAD_L1 =>
-				next_y_move <= -1;
-				next_x_move <= -1;
-				next_ball_y <= ball_y_holder + y_move;
-				next_ball_x <= ball_x_holder + x_move;
-				case collision is
-					when "0000" => -- PAD_C
-						next_ball_state <= PAD_C;
-					when "0001" => -- PAD_R1
-						next_ball_state <= PAD_R1;
-					when "0010" => -- PAD_R2
-						next_ball_state <= PAD_R2;
-					when "0011" => -- PAD_L1
-						next_ball_state <= PAD_L1;
-					when "0100" => -- PAD_L2
-						next_ball_state <= PAD_L2;
-					when "0101" => -- RIG
-						next_ball_state <= RIG;
-					when "0110" => -- LEF
-						next_ball_state <= LEF;
-					when "0111" => -- TOP
-						next_ball_state <= TOP;
-					when "1000" => -- DIE
-						next_ball_state <= DIE;
-					when others => -- includes "no collision"
-						next_ball_state <= current_ball_state;
-				end case;	
-			
-			when PAD_L2=>
-				next_y_move <= -1;
-				next_x_move <= 2;
-				next_ball_y <= ball_y_holder + y_move;
-				next_ball_x <= ball_x_holder + x_move;
-				case collision is
-					when "0000" => -- PAD_C
-						next_ball_state <= PAD_C;
-					when "0001" => -- PAD_R1
-						next_ball_state <= PAD_R1;
-					when "0010" => -- PAD_R2
-						next_ball_state <= PAD_R2;
-					when "0011" => -- PAD_L1
-						next_ball_state <= PAD_L1;
-					when "0100" => -- PAD_L2
-						next_ball_state <= PAD_L2;
-					when "0101" => -- RIG
-						next_ball_state <= RIG;
-					when "0110" => -- LEF
-						next_ball_state <= LEF;
-					when "0111" => -- TOP
-						next_ball_state <= TOP;
-					when "1000" => -- DIE
-						next_ball_state <= DIE;
-					when others => -- includes "no collision"
-						next_ball_state <= current_ball_state;
-				end case;
-				
-			when RIG =>
-				next_y_move <= 1;
-				next_x_move <= -1;
-				next_ball_y <= ball_y_holder + y_move;
-				next_ball_x <= ball_x_holder + x_move;
-				case collision is
-					when "0000" => -- PAD_C
-						next_ball_state <= PAD_C;
-					when "0001" => -- PAD_R1
-						next_ball_state <= PAD_R1;
-					when "0010" => -- PAD_R2
-						next_ball_state <= PAD_R2;
-					when "0011" => -- PAD_L1
-						next_ball_state <= PAD_L1;
-					when "0100" => -- PAD_L2
-						next_ball_state <= PAD_L2;
-					when "0101" => -- RIG
-						next_ball_state <= RIG;
-					when "0110" => -- LEF
-						next_ball_state <= LEF;
-					when "0111" => -- TOP
-						next_ball_state <= TOP;
-					when "1000" => -- DIE
-						next_ball_state <= DIE;
-					when others => -- includes "no collision"
-						next_ball_state <= current_ball_state;
-				end case;
-				
-			when LEF =>
-				next_y_move <= 1;
-				next_x_move <= -2;
-				next_ball_y <= ball_y_holder + y_move;
-				next_ball_x <= ball_x_holder + x_move;
-				case collision is
-					when "0000" => -- PAD_C
-						next_ball_state <= PAD_C;
-					when "0001" => -- PAD_R1
-						next_ball_state <= PAD_R1;
-					when "0010" => -- PAD_R2
-						next_ball_state <= PAD_R2;
-					when "0011" => -- PAD_L1
-						next_ball_state <= PAD_L1;
-					when "0100" => -- PAD_L2
-						next_ball_state <= PAD_L2;
-					when "0101" => -- RIG
-						next_ball_state <= RIG;
-					when "0110" => -- LEF
-						next_ball_state <= LEF;
-					when "0111" => -- TOP
-						next_ball_state <= TOP;
-					when "1000" => -- DIE
-						next_ball_state <= DIE;
-					when others => -- includes "no collision"
-						next_ball_state <= current_ball_state;
-				end case;
-			
-			when TOP => 
-				next_y_move <= -1;
-				next_x_move <= 2;
-				next_ball_y <= ball_y_holder + y_move;
-				next_ball_x <= ball_x_holder + x_move;
-				case collision is
-					when "0000" => -- PAD_C
-						next_ball_state <= PAD_C;
-					when "0001" => -- PAD_R1
-						next_ball_state <= PAD_R1;
-					when "0010" => -- PAD_R2
-						next_ball_state <= PAD_R2;
-					when "0011" => -- PAD_L1
-						next_ball_state <= PAD_L1;
-					when "0100" => -- PAD_L2
-						next_ball_state <= PAD_L2;
-					when "0101" => -- RIG
-						next_ball_state <= RIG;
-					when "0110" => -- LEF
-						next_ball_state <= LEF;
-					when "0111" => -- TOP
-						next_ball_state <= TOP;
-					when "1000" => -- DIE
-						next_ball_state <= DIE;
-					when others => -- includes "no collision"
-						next_ball_state <= current_ball_state;
-				end case;
-				
-			when DIE =>
+			when NO_COLLISION => 
 				next_y_move <= y_move;
 				next_x_move <= x_move;
 				next_ball_y <= ball_y_holder + y_move;
 				next_ball_x <= ball_x_holder + x_move;
-				next_ball_state <= IDLE;				
+				case collision is
+					when "0000" => -- PAD_C
+						next_ball_state <= PAD_C;
+					when "0001" => -- PAD_R1
+						next_ball_state <= PAD_R1;
+					when "0010" => -- PAD_R2
+						next_ball_state <= PAD_R2;
+					when "0011" => -- PAD_L1
+						next_ball_state <= PAD_L1;
+					when "0100" => -- PAD_L2
+						next_ball_state <= PAD_L2;
+					when "0101" => -- RIG
+						next_ball_state <= RIG;
+					when "0110" => -- LEF
+						next_ball_state <= LEF;
+					when "0111" => -- TOP
+						next_ball_state <= TOP;
+					when "1000" => -- DIE
+						next_ball_state <= DIE;
+					when "1010" => -- NO_COLLISION
+						next_ball_state <= NO_COLLISION;
+					when others => 
+						next_ball_state <= NO_COLLISION;
+				end case;
+				
+			when PAD_C =>
+				next_y_move <= -1;
+				next_x_move <= 0;
+				next_ball_y <= ball_y_holder - 1;
+				next_ball_x <= ball_x_holder;
+				next_ball_state <= NO_COLLISION;
+				
+			when PAD_R1 =>
+				next_y_move <= -1;
+				next_x_move <= 1;
+				next_ball_y <= ball_y_holder - 1;
+				next_ball_x <= ball_x_holder + 1;
+				next_ball_state <= NO_COLLISION;
+				
+			when PAD_R2 =>
+				next_y_move <= -1;
+				next_x_move <= 2;
+				next_ball_y <= ball_y_holder - 1;
+				next_ball_x <= ball_x_holder + 2;
+				next_ball_state <= NO_COLLISION;
+				
+			when PAD_L1 =>
+				next_y_move <= -1;
+				next_x_move <= -1;
+				next_ball_y <= ball_y_holder - 1;
+				next_ball_x <= ball_x_holder - 1;
+				next_ball_state <= NO_COLLISION;
+			
+			when PAD_L2=>
+				next_y_move <= -1;
+				next_x_move <= -2;
+				next_ball_y <= ball_y_holder - 1;
+				next_ball_x <= ball_x_holder - 2;
+				next_ball_state <= NO_COLLISION;
+				
+			when RIG =>
+				next_y_move <= y_move;
+				next_x_move <= -x_move;
+				next_ball_y <= ball_y_holder;
+				next_ball_x <= ball_x_holder - 1;
+				next_ball_state <= NO_COLLISION;
+				
+			when LEF =>
+				next_y_move <= y_move;
+				next_x_move <= -x_move;
+				next_ball_y <= ball_y_holder;
+				next_ball_x <= ball_x_holder + 1;
+				next_ball_state <= NO_COLLISION;
+			
+			when TOP => 
+				next_y_move <= -y_move;
+				next_x_move <= x_move;
+				next_ball_y <= ball_y_holder + y_move;
+				next_ball_x <= ball_x_holder + x_move;
+				next_ball_state <= NO_COLLISION;
+				
+			when DIE =>
+				next_y_move <= 0;
+				next_x_move <= 0;
+				next_ball_y <= ball_y_holder + y_move;
+				next_ball_x <= ball_x_holder + x_move;
+				next_ball_state <= IDLE;	
+				next_ball_counter <= ball_counter + 1;
+				
 		end case;
 	end process;
 end architecture behavioral;	

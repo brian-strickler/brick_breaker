@@ -152,7 +152,7 @@ begin
 		end case;	
 	end process;
 	
-	process(count2,count2_mod, x_pos, y_pos, current_hs_state, current_vs_state, pad_pos)
+	process(count2,count2_mod, x_pos, y_pos, current_hs_state, current_vs_state, pad_pos, ball_x, ball_y, brick, cur_brick)
 	begin
 		count2_mod <= count2 mod 800;
 		case current_hs_state is
@@ -251,7 +251,7 @@ begin
 		end case;
 	end process;
 	
-	CURRENT_BRICK : process(x_pos, layer) begin
+	CURRENT_BRICK : process(x_pos, layer, brick_x) begin
 		if layer mod 2 = 1 then	
 			brick_x <= (x_pos+8)/16;
 			cur_brick <= (layer*40) + layer/2 + brick_x;
@@ -269,22 +269,23 @@ begin
 		end if;
 	end process;
 	
-	PADDLE_POSITION : process(pot_sig) begin
-		if pot_sig > 2400 then
-			pad_pos <= 600;
-		else
-			pad_pos <= pot_sig/4;			
+	PADDLE_POSITION : process(m, pot_sig) begin
+		if m = '1' then
+			if pot_sig > 2400 then
+				pad_pos <= 600;
+			else
+				pad_pos <= pot_sig/4;			
+			end if;
 		end if;
 	end process;
 	
 	-- 0000 PAD_C / 0001 PAD_R1 / 0010 PAD_R2 / 0011 PAD_L1 / 0100 PAD_L2 / 0101 RIG / 0110 LEF / 0111 TOP / 1000 DIE / 1001 BOT / 1010 NONE
 	-- b"000"/no sound, b"001"/ball paddle, b"010"/walls+ceiling, b"011"/dead ball, b"100"/brick break
-	COLLISION_DETECTION : process(ball_x, ball_y, pad_pos, brick, current_vs_state) begin
-		if current_vs_state = V_FRONT_PORCH then
+	COLLISION_DETECTION : process(ball_x, ball_y, pad_pos, brick, current_vs_state, difference) begin
 			if ball_x <= 0 then
 				collision <= "0110"; --hit left wall
 				sound_fx <= "010"; 
-			elsif ball_x >= 600 then
+			elsif ball_x >= 630 then
 				collision <= "0101"; -- hit right wall
 				sound_fx <= "010";
 			elsif ball_y <= 1 then
@@ -309,18 +310,18 @@ begin
 				elsif difference <= -31 and difference >= -39 then
 					collision <= "0010"; -- PAD_R2
 					sound_fx <= "001";
+				else
+					collision <= "1010";
+					sound_fx <= "000";
 				end if;
+			else
+				collision <= "1010"; --no collision
+				sound_fx <= "000";
 			end if;		
-		else
-			collision <= "1010"; --no collision
-			sound_fx <= "000";
-		end if;
 	end process;
 	
-	DIFFERENCE_PAD_BALL : process(m) begin
-		if m = '1' then
+	DIFFERENCE_PAD_BALL : process(m, ball_x, pad_pos) begin
 			difference <= pad_pos - ball_x;
-		end if;
 	end process;
 	
 	brick(40) <= '0';
