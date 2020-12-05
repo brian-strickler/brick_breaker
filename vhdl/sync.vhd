@@ -6,6 +6,7 @@ entity sync is
 	port (
 		clk 				: in std_logic;
 		reset				: in std_logic;
+		reset_l			: in std_logic;
 		new_ball			: in std_logic;
 		vs_sig 			: out std_logic;
 		hs_sig 			: out std_logic;
@@ -95,7 +96,7 @@ begin
 	u0 : component ball_movement
 		port map (
 			clk => clk,
-			reset => reset,
+			reset => reset_l,
 			new_ball => new_ball,
 			collision => collision,
 			ball_x => ball_x,
@@ -406,14 +407,6 @@ begin
 			end if;
 		end if;	
 	end process;	
-	
-	brick(40) <= '0';
-	brick(120) <= '0';
-	brick(162) <= '0';
-	brick(81) <= '0';
-	brick(684) <= '0';
-	brick(273) <= '0';
-	brick(235) <= '0';
 		
 	pot_sig <= to_integer(unsigned(pot));
 end architecture behavioral;

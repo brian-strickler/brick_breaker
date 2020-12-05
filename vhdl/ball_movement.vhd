@@ -9,7 +9,8 @@ entity ball_movement is
 		new_ball			: in std_logic; -- KEY(1)
 		collision		: in std_logic_vector(3 downto 0); -- from detector process
 		ball_x			: out integer;
-		ball_y 			: out integer
+		ball_y 			: out integer;
+		brick_reset		: out std_logic
 	);
 end entity ball_movement;
 
@@ -60,10 +61,11 @@ begin
 	end process;
 
 	-- FSM (IDLE, INITIAL, TOP, RIG, LEF, DIE, PAD_C, PAD_L1, PAD_L2, PAD_R1, PAD_R2)
-	process(collision, ball_x_holder, ball_y_holder, x_move, y_move, new_ball, reset, current_ball_state) is
+	process(collision, ball_x_holder, ball_y_holder, x_move, y_move, new_ball, reset, current_ball_state, ball_counter) is
 	begin
 		case current_ball_state is
 			when IDLE =>
+				next_ball_counter <= ball_counter;
 				if reset = '1' then
 					next_ball_state <= current_ball_state;
 					next_y_move <= 0;
@@ -79,6 +81,7 @@ begin
 				end if;
 				
 			when INITIAL =>
+				next_ball_counter <= ball_counter;
 				if new_ball = '1' then
 					next_y_move <= 1;
 					next_x_move <= 0;
@@ -93,11 +96,12 @@ begin
 					next_ball_x <= ball_x_holder;
 				end if;
 				
-			when NO_COLLISION => 
+			when NO_COLLISION =>
 				next_y_move <= y_move;
 				next_x_move <= x_move;
 				next_ball_y <= ball_y_holder + y_move;
 				next_ball_x <= ball_x_holder + x_move;
+				next_ball_counter <= ball_counter;
 				case collision is
 					when "0000" => -- PAD_C
 						next_ball_state <= PAD_C;
@@ -124,60 +128,68 @@ begin
 				end case;
 				
 			when PAD_C =>
-				next_y_move <= -1;
-				next_x_move <= 0;
-				next_ball_y <= ball_y_holder - 2;
+				next_y_move <= -y_move;
+				next_x_move <= x_move;
+				next_ball_y <= ball_y_holder - 4;
 				next_ball_x <= ball_x_holder;
 				next_ball_state <= NO_COLLISION;
+				next_ball_counter <= ball_counter;
 				
 			when PAD_R1 =>
 				next_y_move <= -1;
 				next_x_move <= 1;
-				next_ball_y <= ball_y_holder - 2;
-				next_ball_x <= ball_x_holder + 2;
+				next_ball_y <= ball_y_holder - 4;
+				next_ball_x <= ball_x_holder + 4;
 				next_ball_state <= NO_COLLISION;
+				next_ball_counter <= ball_counter;
 				
 			when PAD_R2 =>
 				next_y_move <= -1;
 				next_x_move <= 2;
-				next_ball_y <= ball_y_holder - 2;
-				next_ball_x <= ball_x_holder + 2;
+				next_ball_y <= ball_y_holder - 4;
+				next_ball_x <= ball_x_holder + 4;
 				next_ball_state <= NO_COLLISION;
+				next_ball_counter <= ball_counter;
 				
 			when PAD_L1 =>
 				next_y_move <= -1;
 				next_x_move <= -1;
-				next_ball_y <= ball_y_holder - 2;
-				next_ball_x <= ball_x_holder - 2;
+				next_ball_y <= ball_y_holder - 4;
+				next_ball_x <= ball_x_holder - 4;
 				next_ball_state <= NO_COLLISION;
+				next_ball_counter <= ball_counter;
 			
 			when PAD_L2=>
 				next_y_move <= -1;
 				next_x_move <= -2;
-				next_ball_y <= ball_y_holder - 2;
-				next_ball_x <= ball_x_holder - 2;
+				next_ball_y <= ball_y_holder - 4;
+				next_ball_x <= ball_x_holder - 4;
 				next_ball_state <= NO_COLLISION;
+				next_ball_counter <= ball_counter;
 				
 			when RIG =>
 				next_y_move <= y_move;
 				next_x_move <= -x_move;
 				next_ball_y <= ball_y_holder;
-				next_ball_x <= ball_x_holder - 2;
+				next_ball_x <= ball_x_holder - 4;
 				next_ball_state <= NO_COLLISION;
+				next_ball_counter <= ball_counter;
 				
 			when LEF =>
 				next_y_move <= y_move;
 				next_x_move <= -x_move;
 				next_ball_y <= ball_y_holder;
-				next_ball_x <= ball_x_holder + 2;
+				next_ball_x <= ball_x_holder + 4;
 				next_ball_state <= NO_COLLISION;
+				next_ball_counter <= ball_counter;
 			
 			when TOP => 
 				next_y_move <= -y_move;
 				next_x_move <= x_move;
-				next_ball_y <= ball_y_holder + 2;
+				next_ball_y <= ball_y_holder + 4;
 				next_ball_x <= ball_x_holder;
 				next_ball_state <= NO_COLLISION;
+				next_ball_counter <= ball_counter;
 				
 			when DIE =>
 				next_y_move <= 0;
@@ -185,8 +197,11 @@ begin
 				next_ball_y <= ball_y_holder + y_move;
 				next_ball_x <= ball_x_holder + x_move;
 				next_ball_state <= IDLE;	
-				next_ball_counter <= ball_counter + 1;
-				
+				if ball_counter < 4 then
+					next_ball_counter <= ball_counter + 1;
+				else
+					next_ball_counter <= 0;
+				end if;
 		end case;
 	end process;
 end architecture behavioral;	

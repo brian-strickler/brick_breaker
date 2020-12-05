@@ -4,7 +4,7 @@ ADC_CLK_10 => adcPLL:u4.inclk0
 MAX10_CLK1_50 => sound_board:u0.CLK
 MAX10_CLK1_50 => myPLL:u2.inclk0
 MAX10_CLK2_50 => ~NO_FANOUT~
-KEY[0] => ~NO_FANOUT~
+KEY[0] => sync:u3.reset_l
 KEY[1] => sync:u3.new_ball
 LEDR[0] << my_adc:u1.CH3[0]
 LEDR[1] << my_adc:u1.CH3[1]
@@ -2439,7 +2439,6 @@ clk => count1[30].CLK
 clk => count1[31].CLK
 clk => current_hs_state~1.DATAIN
 clk => current_vs_state~1.DATAIN
-reset => ball_movement:u0.reset
 reset => current_vs_state.OUTPUTSELECT
 reset => current_vs_state.OUTPUTSELECT
 reset => current_vs_state.OUTPUTSELECT
@@ -2576,6 +2575,7 @@ reset => y_pos.OUTPUTSELECT
 reset => y_pos.OUTPUTSELECT
 reset => y_pos.OUTPUTSELECT
 reset => y_pos.OUTPUTSELECT
+reset_l => ball_movement:u0.reset
 new_ball => ball_movement:u0.new_ball
 vs_sig <= vs_sig.DB_MAX_OUTPUT_PORT_TYPE
 hs_sig <= hs_sig.DB_MAX_OUTPUT_PORT_TYPE
@@ -2591,31 +2591,31 @@ pixel_data[8] <= pixel_data[8]$latch.DB_MAX_OUTPUT_PORT_TYPE
 pixel_data[9] <= pixel_data[9]$latch.DB_MAX_OUTPUT_PORT_TYPE
 pixel_data[10] <= pixel_data[10]$latch.DB_MAX_OUTPUT_PORT_TYPE
 pixel_data[11] <= pixel_data[11]$latch.DB_MAX_OUTPUT_PORT_TYPE
-pot[0] => LessThan22.IN64
-pot[1] => LessThan22.IN63
-pot[2] => LessThan22.IN62
+pot[0] => LessThan21.IN64
+pot[1] => LessThan21.IN63
+pot[2] => LessThan21.IN62
 pot[2] => Add19.IN60
-pot[3] => LessThan22.IN61
+pot[3] => LessThan21.IN61
 pot[3] => Add19.IN59
-pot[4] => LessThan22.IN60
+pot[4] => LessThan21.IN60
 pot[4] => Add19.IN58
-pot[5] => LessThan22.IN59
+pot[5] => LessThan21.IN59
 pot[5] => Add19.IN57
-pot[6] => LessThan22.IN58
+pot[6] => LessThan21.IN58
 pot[6] => Add19.IN56
-pot[7] => LessThan22.IN57
+pot[7] => LessThan21.IN57
 pot[7] => Add19.IN55
-pot[8] => LessThan22.IN56
+pot[8] => LessThan21.IN56
 pot[8] => Add19.IN54
-pot[9] => LessThan22.IN55
+pot[9] => LessThan21.IN55
 pot[9] => Add19.IN53
-pot[10] => LessThan22.IN54
+pot[10] => LessThan21.IN54
 pot[10] => Add19.IN52
-pot[11] => LessThan22.IN53
+pot[11] => LessThan21.IN53
 pot[11] => Add19.IN51
 sound_fx[0] <= sound_fx.DB_MAX_OUTPUT_PORT_TYPE
 sound_fx[1] <= sound_fx.DB_MAX_OUTPUT_PORT_TYPE
-sound_fx[2] <= <GND>
+sound_fx[2] <= sound_fx.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |brick_breaker|sync:u3|ball_movement:u0
@@ -3483,6 +3483,7 @@ ball_y[28] <= ball_y[28]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 ball_y[29] <= ball_y[29]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 ball_y[30] <= ball_y[30]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 ball_y[31] <= ball_y[31]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+brick_reset <= comb.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |brick_breaker|adcPLL:u4

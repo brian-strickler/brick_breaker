@@ -60,6 +60,7 @@ signal adc_clk : std_logic := '0';
 		port (
 			clk 				: in std_logic;
 			reset				: in std_logic;
+			reset_l			: in std_logic;
 			new_ball			: in std_logic;
 			vs_sig 			: out std_logic;
 			hs_sig 			: out std_logic;
@@ -103,6 +104,7 @@ begin
 		port map(
 			clk 	=> vga_clk,
 			reset	=> vga_rst,
+			reset_l => KEY(0),
 			new_ball => KEY(1),
 			vs_sig => VGA_VS,
 			hs_sig => VGA_HS,
