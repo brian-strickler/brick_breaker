@@ -1,5 +1,5 @@
 Analysis & Synthesis report for brick_breaker
-Sat Dec 05 13:50:34 2020
+Sat Dec 05 14:18:32 2020
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -94,13 +94,13 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sat Dec 05 13:50:33 2020       ;
+; Analysis & Synthesis Status        ; Successful - Sat Dec 05 14:18:32 2020       ;
 ; Quartus Prime Version              ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                      ; brick_breaker                               ;
 ; Top-level Entity Name              ; brick_breaker                               ;
 ; Family                             ; MAX 10                                      ;
-; Total logic elements               ; 4,342                                       ;
-;     Total combinational functions  ; 4,243                                       ;
+; Total logic elements               ; 4,206                                       ;
+;     Total combinational functions  ; 4,107                                       ;
 ;     Dedicated logic registers      ; 496                                         ;
 ; Total registers                    ; 496                                         ;
 ; Total pins                         ; 56                                          ;
@@ -289,17 +289,17 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+-------------------------------------------------------------------------------+
 ; Resource                                    ; Usage                                                                         ;
 +---------------------------------------------+-------------------------------------------------------------------------------+
-; Estimated Total logic elements              ; 4,342                                                                         ;
+; Estimated Total logic elements              ; 4,206                                                                         ;
 ;                                             ;                                                                               ;
-; Total combinational functions               ; 4243                                                                          ;
+; Total combinational functions               ; 4107                                                                          ;
 ; Logic element usage by number of LUT inputs ;                                                                               ;
-;     -- 4 input functions                    ; 1381                                                                          ;
-;     -- 3 input functions                    ; 1119                                                                          ;
-;     -- <=2 input functions                  ; 1743                                                                          ;
+;     -- 4 input functions                    ; 1228                                                                          ;
+;     -- 3 input functions                    ; 1232                                                                          ;
+;     -- <=2 input functions                  ; 1647                                                                          ;
 ;                                             ;                                                                               ;
 ; Logic elements by mode                      ;                                                                               ;
-;     -- normal mode                          ; 2683                                                                          ;
-;     -- arithmetic mode                      ; 1560                                                                          ;
+;     -- normal mode                          ; 2579                                                                          ;
+;     -- arithmetic mode                      ; 1528                                                                          ;
 ;                                             ;                                                                               ;
 ; Total registers                             ; 496                                                                           ;
 ;     -- Dedicated logic registers            ; 496                                                                           ;
@@ -315,8 +315,8 @@ https://fpgasoftware.intel.com/eula.
 ;                                             ;                                                                               ;
 ; Maximum fan-out node                        ; myPLL:u2|altpll:altpll_component|myPLL_altpll:auto_generated|wire_pll1_clk[0] ;
 ; Maximum fan-out                             ; 340                                                                           ;
-; Total fan-out                               ; 13986                                                                         ;
-; Average fan-out                             ; 2.87                                                                          ;
+; Total fan-out                               ; 13549                                                                         ;
+; Average fan-out                             ; 2.86                                                                          ;
 +---------------------------------------------+-------------------------------------------------------------------------------+
 
 
@@ -325,7 +325,7 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------+--------------+
 ; Compilation Hierarchy Node                                                      ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                                                                                                                                                                                                                                                                       ; Entity Name                            ; Library Name ;
 +---------------------------------------------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------+--------------+
-; |brick_breaker                                                                  ; 4243 (1)            ; 496 (0)                   ; 768         ; 0          ; 0            ; 0       ; 0         ; 56   ; 0            ; 0          ; |brick_breaker                                                                                                                                                                                                                                                                                            ; brick_breaker                          ; work         ;
+; |brick_breaker                                                                  ; 4107 (1)            ; 496 (0)                   ; 768         ; 0          ; 0            ; 0       ; 0         ; 56   ; 0            ; 0          ; |brick_breaker                                                                                                                                                                                                                                                                                            ; brick_breaker                          ; work         ;
 ;    |myPLL:u2|                                                                   ; 0 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |brick_breaker|myPLL:u2                                                                                                                                                                                                                                                                                   ; myPLL                                  ; work         ;
 ;       |altpll:altpll_component|                                                 ; 0 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |brick_breaker|myPLL:u2|altpll:altpll_component                                                                                                                                                                                                                                                           ; altpll                                 ; work         ;
 ;          |myPLL_altpll:auto_generated|                                          ; 0 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |brick_breaker|myPLL:u2|altpll:altpll_component|myPLL_altpll:auto_generated                                                                                                                                                                                                                               ; myPLL_altpll                           ; work         ;
@@ -349,8 +349,8 @@ https://fpgasoftware.intel.com/eula.
 ;             |altpll:adc_pll|                                                    ; 0 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |brick_breaker|my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|altpll:adc_pll                                                                                                                                                                                                    ; altpll                                 ; work         ;
 ;                |MAX10_ADC_PLL_altpll:auto_generated|                            ; 0 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |brick_breaker|my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|altpll:adc_pll|MAX10_ADC_PLL_altpll:auto_generated                                                                                                                                                                ; MAX10_ADC_PLL_altpll                   ; work         ;
 ;    |sound_board:u0|                                                             ; 108 (108)           ; 36 (36)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |brick_breaker|sound_board:u0                                                                                                                                                                                                                                                                             ; sound_board                            ; work         ;
-;    |sync:u3|                                                                    ; 4037 (808)          ; 339 (104)                 ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |brick_breaker|sync:u3                                                                                                                                                                                                                                                                                    ; sync                                   ; work         ;
-;       |ball_movement:u0|                                                        ; 606 (606)           ; 235 (235)                 ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |brick_breaker|sync:u3|ball_movement:u0                                                                                                                                                                                                                                                                   ; ball_movement                          ; work         ;
+;    |sync:u3|                                                                    ; 3901 (808)          ; 339 (104)                 ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |brick_breaker|sync:u3                                                                                                                                                                                                                                                                                    ; sync                                   ; work         ;
+;       |ball_movement:u0|                                                        ; 470 (470)           ; 235 (235)                 ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |brick_breaker|sync:u3|ball_movement:u0                                                                                                                                                                                                                                                                   ; ball_movement                          ; work         ;
 ;       |lpm_divide:Mod0|                                                         ; 1122 (0)            ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |brick_breaker|sync:u3|lpm_divide:Mod0                                                                                                                                                                                                                                                                    ; lpm_divide                             ; work         ;
 ;          |lpm_divide_25o:auto_generated|                                        ; 1122 (0)            ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |brick_breaker|sync:u3|lpm_divide:Mod0|lpm_divide_25o:auto_generated                                                                                                                                                                                                                                      ; lpm_divide_25o                         ; work         ;
 ;             |abs_divider_4dg:divider|                                           ; 1122 (58)           ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |brick_breaker|sync:u3|lpm_divide:Mod0|lpm_divide_25o:auto_generated|abs_divider_4dg:divider                                                                                                                                                                                                              ; abs_divider_4dg                        ; work         ;
@@ -663,7 +663,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
 ; Total registers                              ; 496   ;
-; Number of registers using Synchronous Clear  ; 183   ;
+; Number of registers using Synchronous Clear  ; 209   ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
@@ -677,21 +677,21 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +-------------------------------------------+---------+
 ; Inverted Register                         ; Fan out ;
 +-------------------------------------------+---------+
-; sync:u3|ball_movement:u0|ball_x[31]       ; 8       ;
+; sync:u3|ball_movement:u0|ball_x[31]       ; 9       ;
 ; sync:u3|ball_movement:u0|ball_x[0]        ; 4       ;
 ; sync:u3|ball_movement:u0|ball_y[31]       ; 6       ;
 ; sync:u3|ball_movement:u0|ball_y[0]        ; 4       ;
-; sync:u3|ball_movement:u0|ball_x_holder[8] ; 6       ;
-; sync:u3|ball_movement:u0|ball_x_holder[5] ; 6       ;
-; sync:u3|ball_movement:u0|ball_x_holder[4] ; 6       ;
-; sync:u3|ball_movement:u0|ball_x_holder[3] ; 6       ;
-; sync:u3|ball_movement:u0|ball_x_holder[2] ; 6       ;
-; sync:u3|ball_movement:u0|ball_y_holder[7] ; 2       ;
-; sync:u3|ball_movement:u0|ball_y_holder[6] ; 2       ;
-; sync:u3|ball_movement:u0|ball_y_holder[5] ; 2       ;
-; sync:u3|ball_movement:u0|ball_y_holder[4] ; 2       ;
-; sync:u3|ball_movement:u0|ball_y_holder[3] ; 2       ;
-; sync:u3|ball_movement:u0|ball_y_holder[1] ; 2       ;
+; sync:u3|ball_movement:u0|ball_x_holder[8] ; 3       ;
+; sync:u3|ball_movement:u0|ball_x_holder[5] ; 3       ;
+; sync:u3|ball_movement:u0|ball_x_holder[4] ; 3       ;
+; sync:u3|ball_movement:u0|ball_x_holder[3] ; 3       ;
+; sync:u3|ball_movement:u0|ball_x_holder[2] ; 3       ;
+; sync:u3|ball_movement:u0|ball_y_holder[7] ; 4       ;
+; sync:u3|ball_movement:u0|ball_y_holder[6] ; 4       ;
+; sync:u3|ball_movement:u0|ball_y_holder[5] ; 4       ;
+; sync:u3|ball_movement:u0|ball_y_holder[4] ; 4       ;
+; sync:u3|ball_movement:u0|ball_y_holder[3] ; 4       ;
+; sync:u3|ball_movement:u0|ball_y_holder[1] ; 4       ;
 ; sound_board:u0|ready                      ; 2       ;
 ; sync:u3|ball_movement:u0|y_move[0]        ; 3       ;
 ; Total number of inverted registers = 17   ;         ;
@@ -703,24 +703,23 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                                                                                                                                                          ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |brick_breaker|my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|channel[0]                                                                                                                                                  ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |brick_breaker|my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|channel[3]                                                                                                                                                  ;
 ; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |brick_breaker|my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|int_timer[0]       ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |brick_breaker|sync:u3|x_pos[0]                                                                                                                                                                                                                     ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |brick_breaker|my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|chsel[2]           ;
-; 7:1                ; 3 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; Yes        ; |brick_breaker|my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_sequencer:sequencer_internal|altera_modular_adc_sequencer_ctrl:u_seq_ctrl|cmd_channel[2] ;
-; 5:1                ; 32 bits   ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; Yes        ; |brick_breaker|sound_board:u0|sound_count[4]                                                                                                                                                                                                        ;
-; 5:1                ; 32 bits   ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; Yes        ; |brick_breaker|sync:u3|y_pos[3]                                                                                                                                                                                                                     ;
-; 7:1                ; 31 bits   ; 124 LEs       ; 62 LEs               ; 62 LEs                 ; Yes        ; |brick_breaker|sync:u3|ball_movement:u0|y_move[31]                                                                                                                                                                                                  ;
-; 8:1                ; 30 bits   ; 150 LEs       ; 60 LEs               ; 90 LEs                 ; Yes        ; |brick_breaker|sync:u3|ball_movement:u0|x_move[11]                                                                                                                                                                                                  ;
-; 12:1               ; 26 bits   ; 208 LEs       ; 26 LEs               ; 182 LEs                ; Yes        ; |brick_breaker|sync:u3|ball_movement:u0|ball_y_holder[23]                                                                                                                                                                                           ;
-; 13:1               ; 26 bits   ; 208 LEs       ; 104 LEs              ; 104 LEs                ; Yes        ; |brick_breaker|sync:u3|ball_movement:u0|ball_x_holder[10]                                                                                                                                                                                           ;
-; 12:1               ; 6 bits    ; 48 LEs        ; 6 LEs                ; 42 LEs                 ; Yes        ; |brick_breaker|sync:u3|ball_movement:u0|ball_y_holder[6]                                                                                                                                                                                            ;
-; 13:1               ; 5 bits    ; 40 LEs        ; 20 LEs               ; 20 LEs                 ; Yes        ; |brick_breaker|sync:u3|ball_movement:u0|ball_x_holder[2]                                                                                                                                                                                            ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |brick_breaker|sync:u3|x_pos[10]                                                                                                                                                                                                                    ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |brick_breaker|my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_control:control_internal|altera_modular_adc_control_fsm:u_control_fsm|chsel[1]           ;
+; 7:1                ; 3 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; Yes        ; |brick_breaker|my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_sequencer:sequencer_internal|altera_modular_adc_sequencer_ctrl:u_seq_ctrl|cmd_channel[1] ;
+; 5:1                ; 32 bits   ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; Yes        ; |brick_breaker|sound_board:u0|sound_count[3]                                                                                                                                                                                                        ;
+; 5:1                ; 32 bits   ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; Yes        ; |brick_breaker|sync:u3|y_pos[18]                                                                                                                                                                                                                    ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 2 LEs                ; 6 LEs                  ; Yes        ; |brick_breaker|sync:u3|ball_movement:u0|ball_x_holder[0]                                                                                                                                                                                            ;
+; 7:1                ; 31 bits   ; 124 LEs       ; 62 LEs               ; 62 LEs                 ; Yes        ; |brick_breaker|sync:u3|ball_movement:u0|y_move[23]                                                                                                                                                                                                  ;
+; 8:1                ; 30 bits   ; 150 LEs       ; 60 LEs               ; 90 LEs                 ; Yes        ; |brick_breaker|sync:u3|ball_movement:u0|x_move[16]                                                                                                                                                                                                  ;
+; 12:1               ; 26 bits   ; 208 LEs       ; 52 LEs               ; 156 LEs                ; Yes        ; |brick_breaker|sync:u3|ball_movement:u0|ball_x_holder[7]                                                                                                                                                                                            ;
+; 12:1               ; 25 bits   ; 200 LEs       ; 50 LEs               ; 150 LEs                ; Yes        ; |brick_breaker|sync:u3|ball_movement:u0|ball_y_holder[8]                                                                                                                                                                                            ;
+; 12:1               ; 5 bits    ; 40 LEs        ; 10 LEs               ; 30 LEs                 ; Yes        ; |brick_breaker|sync:u3|ball_movement:u0|ball_x_holder[8]                                                                                                                                                                                            ;
+; 12:1               ; 6 bits    ; 48 LEs        ; 12 LEs               ; 36 LEs                 ; Yes        ; |brick_breaker|sync:u3|ball_movement:u0|ball_y_holder[7]                                                                                                                                                                                            ;
 ; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |brick_breaker|my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_sequencer:sequencer_internal|altera_modular_adc_sequencer_ctrl:u_seq_ctrl|slot_sel_nxt   ;
 ; 4:1                ; 9 bits    ; 18 LEs        ; 18 LEs               ; 0 LEs                  ; No         ; |brick_breaker|sync:u3|ball_movement:u0|current_ball_state                                                                                                                                                                                          ;
 ; 9:1                ; 2 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |brick_breaker|sync:u3|collision[0]                                                                                                                                                                                                                 ;
-; 11:1               ; 32 bits   ; 224 LEs       ; 160 LEs              ; 64 LEs                 ; No         ; |brick_breaker|sync:u3|ball_movement:u0|Add1                                                                                                                                                                                                        ;
-; 11:1               ; 32 bits   ; 224 LEs       ; 32 LEs               ; 192 LEs                ; No         ; |brick_breaker|sync:u3|ball_movement:u0|Add1                                                                                                                                                                                                        ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
@@ -2642,27 +2641,27 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; boundary_port         ; 56                          ;
 ; cycloneiii_ff         ; 496                         ;
-;     ENA               ; 178                         ;
-;     ENA SCLR          ; 113                         ;
+;     ENA               ; 152                         ;
+;     ENA SCLR          ; 139                         ;
 ;     SCLR              ; 70                          ;
 ;     plain             ; 135                         ;
 ; cycloneiii_io_obuf    ; 1                           ;
-; cycloneiii_lcell_comb ; 4245                        ;
-;     arith             ; 1560                        ;
-;         2 data inputs ; 577                         ;
-;         3 data inputs ; 983                         ;
-;     normal            ; 2685                        ;
+; cycloneiii_lcell_comb ; 4109                        ;
+;     arith             ; 1528                        ;
+;         2 data inputs ; 516                         ;
+;         3 data inputs ; 1012                        ;
+;     normal            ; 2581                        ;
 ;         0 data inputs ; 40                          ;
-;         1 data inputs ; 43                          ;
-;         2 data inputs ; 1085                        ;
-;         3 data inputs ; 136                         ;
-;         4 data inputs ; 1381                        ;
+;         1 data inputs ; 41                          ;
+;         2 data inputs ; 1052                        ;
+;         3 data inputs ; 220                         ;
+;         4 data inputs ; 1228                        ;
 ; cycloneiii_pll        ; 2                           ;
 ; cycloneiii_ram_block  ; 12                          ;
 ; fiftyfivenm_adcblock  ; 1                           ;
 ;                       ;                             ;
 ; Max LUT depth         ; 105.00                      ;
-; Average LUT depth     ; 55.45                       ;
+; Average LUT depth     ; 56.79                       ;
 +-----------------------+-----------------------------+
 
 
@@ -2671,7 +2670,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:13     ;
+; Top            ; 00:00:07     ;
 +----------------+--------------+
 
 
@@ -2681,7 +2680,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Sat Dec 05 13:49:51 2020
+    Info: Processing started: Sat Dec 05 14:18:11 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off brick_breaker -c brick_breaker
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
@@ -3180,18 +3179,18 @@ Warning (21074): Design contains 12 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "SW[7]" File: C:/Users/Steve/Documents/cloned_git_repos/brick_breaker/vhdl/brick_breaker.vhd Line: 12
     Warning (15610): No output dependent on input pin "SW[8]" File: C:/Users/Steve/Documents/cloned_git_repos/brick_breaker/vhdl/brick_breaker.vhd Line: 12
     Warning (15610): No output dependent on input pin "SW[9]" File: C:/Users/Steve/Documents/cloned_git_repos/brick_breaker/vhdl/brick_breaker.vhd Line: 12
-Info (21057): Implemented 4423 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 4287 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 15 input pins
     Info (21059): Implemented 40 output pins
     Info (21060): Implemented 1 bidirectional pins
-    Info (21061): Implemented 4352 logic cells
+    Info (21061): Implemented 4216 logic cells
     Info (21064): Implemented 12 RAM segments
     Info (21065): Implemented 2 PLLs
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 94 warnings
-    Info: Peak virtual memory: 4882 megabytes
-    Info: Processing ended: Sat Dec 05 13:50:34 2020
-    Info: Elapsed time: 00:00:43
-    Info: Total CPU time (on all processors): 00:00:59
+    Info: Peak virtual memory: 4870 megabytes
+    Info: Processing ended: Sat Dec 05 14:18:32 2020
+    Info: Elapsed time: 00:00:21
+    Info: Total CPU time (on all processors): 00:00:35
 
 
 +------------------------------------------+

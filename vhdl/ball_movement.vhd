@@ -80,8 +80,8 @@ begin
 				
 			when INITIAL =>
 				if new_ball = '1' then
-					next_y_move <= 0;
-					next_x_move <= 1;
+					next_y_move <= 1;
+					next_x_move <= 0;
 					next_ball_y <= ball_y_holder + y_move;
 					next_ball_x <= ball_x_holder + x_move;
 					next_ball_state <= NO_COLLISION;
@@ -126,35 +126,35 @@ begin
 			when PAD_C =>
 				next_y_move <= -1;
 				next_x_move <= 0;
-				next_ball_y <= ball_y_holder - 1;
+				next_ball_y <= ball_y_holder - 2;
 				next_ball_x <= ball_x_holder;
 				next_ball_state <= NO_COLLISION;
 				
 			when PAD_R1 =>
 				next_y_move <= -1;
 				next_x_move <= 1;
-				next_ball_y <= ball_y_holder - 1;
-				next_ball_x <= ball_x_holder + 1;
+				next_ball_y <= ball_y_holder - 2;
+				next_ball_x <= ball_x_holder + 2;
 				next_ball_state <= NO_COLLISION;
 				
 			when PAD_R2 =>
 				next_y_move <= -1;
 				next_x_move <= 2;
-				next_ball_y <= ball_y_holder - 1;
+				next_ball_y <= ball_y_holder - 2;
 				next_ball_x <= ball_x_holder + 2;
 				next_ball_state <= NO_COLLISION;
 				
 			when PAD_L1 =>
 				next_y_move <= -1;
 				next_x_move <= -1;
-				next_ball_y <= ball_y_holder - 1;
-				next_ball_x <= ball_x_holder - 1;
+				next_ball_y <= ball_y_holder - 2;
+				next_ball_x <= ball_x_holder - 2;
 				next_ball_state <= NO_COLLISION;
 			
 			when PAD_L2=>
 				next_y_move <= -1;
 				next_x_move <= -2;
-				next_ball_y <= ball_y_holder - 1;
+				next_ball_y <= ball_y_holder - 2;
 				next_ball_x <= ball_x_holder - 2;
 				next_ball_state <= NO_COLLISION;
 				
@@ -162,21 +162,21 @@ begin
 				next_y_move <= y_move;
 				next_x_move <= -x_move;
 				next_ball_y <= ball_y_holder;
-				next_ball_x <= ball_x_holder - 1;
+				next_ball_x <= ball_x_holder - 2;
 				next_ball_state <= NO_COLLISION;
 				
 			when LEF =>
 				next_y_move <= y_move;
 				next_x_move <= -x_move;
 				next_ball_y <= ball_y_holder;
-				next_ball_x <= ball_x_holder + 1;
+				next_ball_x <= ball_x_holder + 2;
 				next_ball_state <= NO_COLLISION;
 			
 			when TOP => 
 				next_y_move <= -y_move;
 				next_x_move <= x_move;
-				next_ball_y <= ball_y_holder + y_move;
-				next_ball_x <= ball_x_holder + x_move;
+				next_ball_y <= ball_y_holder + 2;
+				next_ball_x <= ball_x_holder;
 				next_ball_state <= NO_COLLISION;
 				
 			when DIE =>
