@@ -57,7 +57,27 @@ architecture behavioral of sync is
 	signal ball_y : integer := 250;
 	signal brick_x : integer := 0;
 	signal difference : integer := 0; -- difference between pad_pos and ball_x
-	signal collision : std_logic_Vector(3 downto 0) := "1010"; -- 0000 PAD_C / 0001 PAD_R1 / 0010 PAD_R2 / 0011 PAD_L1 / 0100 PAD_L2 / 0101 RIG / 0110 LEF / 0111 TOP / 1000 DIE / 1001 BOT / 1010 NONE
+	signal collision : std_logic_Vector(3 downto 0) := "1010"; -- 0000 PAD_C / 0001 PAD_R1 / 0010 PAD_R2 / 0011 PAD_L1 / 0100 PAD_L2 / 0101 RIG / 0110 LEF / 0111 TOP / 1000 DIE / 1001 BRICK_BELOW / 1010 NONE
+	
+	signal brick_above : std_logic := '0';
+	signal brick_left : std_logic := '0';
+	signal brick_right : std_logic := '0';
+	signal brick_below : std_logic := '0';
+	
+	signal layer_above : integer := 0;
+	signal layer_left : integer := 0;
+	signal layer_right : integer := 0;
+	signal layer_below : integer := 0;
+	
+	signal cur_brick_above : integer := 0;
+	signal cur_brick_left : integer := 0;
+	signal cur_brick_right : integer := 0;
+	signal cur_brick_below : integer := 0;
+	
+	signal brick_above_x : integer := 0;
+	signal brick_left_x : integer := 0;
+	signal brick_right_x : integer := 0;
+	signal brick_below_x : integer := 0;	
 	
 	component ball_movement is
 		port (
@@ -310,6 +330,23 @@ begin
 				elsif difference <= -31 and difference >= -39 then
 					collision <= "0010"; -- PAD_R2
 					sound_fx <= "001";
+				elsif brick_above = '1' then
+					collision <= "0111"; -- ball hit bottom of brick
+					sound_fx <= "100";
+					if(cur_brick_above <= 1214) and (cur_brick_above >= 0) then
+						brick(cur_brick_above) <= '0';
+					end if;	
+				elsif brick_right = '1' then
+					collision <= "0110";	-- ball hit right side of brick
+					sound_fx <= "100";
+					--brick(cur_brick_right) <= '0';
+				elsif brick_left = '1' then
+					collision <= "0101"; -- ball hit left side of brick
+					sound_fx <= "100";
+					--brick(cur_brick_left) <= '0';
+				elsif brick_below = '1' then
+					collision <= "1001";	-- ball hit top of brick
+					sound_fx <= "100";						
 				else
 					collision <= "1010";
 					sound_fx <= "000";
@@ -323,6 +360,52 @@ begin
 	DIFFERENCE_PAD_BALL : process(m, ball_x, pad_pos) begin
 			difference <= pad_pos - ball_x;
 	end process;
+	
+	BRICK_ABOVE_DETECTION : process(ball_x, ball_y, cur_brick_above, layer_above, brick, m) begin
+		if m = '1' then
+			layer_above <= (ball_y-1)/8;
+			if layer_above mod 2 = 1 then	
+				brick_above_x <= (ball_x+12)/16;
+				cur_brick_above <= (layer_above*40) + layer_above/2 + brick_above_x;
+			else
+				brick_above_x <= (ball_x +4)/16;
+				cur_brick_above <= (layer_above*40) + layer_above/2 + brick_above_x;
+			end if;
+			
+			if brick(cur_brick_above) = '1' then
+				brick_above <= '1';
+			else
+				brick_above <= '0';
+			end if;	
+		end if;	
+	end process;
+	
+	BRICK_LEFT_DETECTION : process(ball_x, ball_y) begin
+	
+	end process;
+	
+	BRICK_RIGHT_DETECTION : process(ball_x, ball_y) begin
+	
+	end process;
+	
+	BRICK_BELOW_DETECTION : process(ball_x, ball_y) begin
+		if ball_y <= 241 then
+			layer_below <= (ball_y+10)/8;
+			if layer_below mod 2 = 1 then
+				brick_below_x <= (ball_x+12)/16;
+				cur_brick_below <= (layer_below*40) + layer_below/2 + brick_below_x;
+			else
+				brick_below_x <= (ball_x+4)/16;
+				cur_brick_below <= (layer_below*40) + layer_below/2 + brick_below_x;
+			end if;
+			
+			if brick(cur_brick_below) = '1' then
+				brick_below <= '1';
+			else
+				brick_below <= '0';
+			end if;
+		end if;	
+	end process;	
 	
 	brick(40) <= '0';
 	brick(120) <= '0';
