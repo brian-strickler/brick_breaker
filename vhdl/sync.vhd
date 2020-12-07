@@ -61,9 +61,11 @@ architecture behavioral of sync is
 	signal collision : std_logic_Vector(3 downto 0) := "1010"; -- 0000 PAD_C / 0001 PAD_R1 / 0010 PAD_R2 / 0011 PAD_L1 / 0100 PAD_L2 / 0101 RIG / 0110 LEF / 0111 TOP / 1000 DIE / 1001 BRICK_BELOW / 1010 NONE
 	
 	signal brick_above : std_logic := '0';
+	signal brick_above1 : std_logic := '0';	
 	signal brick_left : std_logic := '0';
 	signal brick_right : std_logic := '0';
 	signal brick_below : std_logic := '0';
+	signal brick_below1 : std_logic := '0';
 	
 	signal layer_above : integer := 0;
 	signal layer_left : integer := 0;
@@ -71,14 +73,18 @@ architecture behavioral of sync is
 	signal layer_below : integer := 0;
 	
 	signal cur_brick_above : integer := 0;
+	signal cur_brick_above1 : integer := 0;
 	signal cur_brick_left : integer := 0;
 	signal cur_brick_right : integer := 0;
 	signal cur_brick_below : integer := 0;
+	signal cur_brick_below1 : integer := 0;
 	
 	signal brick_above_x : integer := 0;
+	signal brick_above_x1 : integer := 0;	
 	signal brick_left_x : integer := 0;
 	signal brick_right_x : integer := 0;
 	signal brick_below_x : integer := 0;
+	signal brick_below_x1 : integer := 0;
 	signal direction : integer := 0;
 	signal LED : std_logic_vector(9 downto 0);
 	
@@ -363,15 +369,19 @@ begin
 			difference <= pad_pos - ball_x;
 	end process;
 	
-	BRICK_ABOVE_DETECTION : process(ball_x, ball_y, cur_brick_above, layer_above, brick, brick_above_x, brick_above) begin
+	BRICK_ABOVE_DETECTION : process(ball_x, ball_y, cur_brick_above, cur_brick_above1, layer_above, brick, brick_above_x, brick_above_x1, brick_above, brick_above1) begin
 		if ball_y < 241 then
 			layer_above <= (ball_y-1)/8;
 			if layer_above mod 2 = 1 then	
 				brick_above_x <= (ball_x+8)/16;
+				brick_above_x1 <= (ball_x+18)/16;
 				cur_brick_above <= (layer_above*40) + layer_above/2 + brick_above_x;
+				cur_brick_above1 <= (layer_above*40) + layer_above/2 + brick_above_x1;
 			else
 				brick_above_x <= (ball_x)/16;
+				brick_above_x1 <= (ball_x+10)/16;
 				cur_brick_above <= (layer_above*40) + layer_above/2 + brick_above_x;
+				cur_brick_above1 <= (layer_above*40) + layer_above/2 + brick_above_x1;
 			end if;
 			
 			if brick(cur_brick_above) = '1' then
@@ -379,11 +389,19 @@ begin
 			else
 				brick_above <= '0';
 			end if;
+			if brick(cur_brick_above1) = '1' then
+				brick_above1 <= '1';
+			else
+				brick_above1 <= '0';
+			end if;
 		else	
-			brick_above_x <= 0;
 			layer_above <= 0;
+			brick_above_x <= 0;
 			brick_above <= '0';
 			cur_brick_above <= 0;
+			brick_above_x1 <= 0;
+			brick_above1 <= '0';
+			cur_brick_above1 <= 0;
 		end if;
 	end process;
 	
@@ -435,27 +453,40 @@ begin
 		end if;	
 	end process;
 	
-	BRICK_BELOW_DETECTION : process(ball_x, ball_y, cur_brick_below, layer_below, brick, brick_below_x) begin
+	BRICK_BELOW_DETECTION : process(ball_x, ball_y, cur_brick_below, cur_brick_below1, layer_below, brick, brick_below_x, brick_below_x1, brick_below, brick_below1) begin
 		if ball_y < 241 then
 			layer_below <= (ball_y+10)/8;
 			if layer_below mod 2 = 1 then
 				brick_below_x <= (ball_x+18)/16;
+				brick_below_x1 <= (ball_x + 8)/16;
 				cur_brick_below <= (layer_below*40) + layer_below/2 + brick_below_x;
+				cur_brick_below1 <= (layer_below*40) + layer_below/2 + brick_below_x1;
 			else
 				brick_below_x <= (ball_x+10)/16;
+				brick_below_x1 <= (ball_x)/16;
 				cur_brick_below <= (layer_below*40) + layer_below/2 + brick_below_x;
+				cur_brick_below1 <= (layer_below*40) + layer_below/2 + brick_below_x1;
 			end if;
 			
 			if brick(cur_brick_below) = '1' then
 				brick_below <= '1';
 			else
 				brick_below <= '0';
-			end if;	
+			end if;
+			
+			if brick(cur_brick_below1) = '1' then
+				brick_below1 <= '1';
+			else
+				brick_below1 <= '0';
+			end if;
 		else
-			brick_below_x <= 0;
 			layer_below <= 0;
+			brick_below_x <= 0;
 			brick_below <= '0';
 			cur_brick_below <= 0;
+			brick_below_x1 <= 0;
+			brick_below1 <= '0';
+			cur_brick_below1 <= 0;
 		end if;	
 	end process;
 
@@ -464,10 +495,12 @@ begin
 			if reset_l <= '0' then
 				brick <= (others => '1');
 			else	
-				if (brick_above = '1' and collision = "0111" and direction = 1) then
+				if ((brick_above = '1' or brick_above1 = '1') and collision = "0111" and direction = 1) then
 					brick(cur_brick_above) <= brick(cur_brick_above) and '0';
-				elsif (brick_below = '1' and collision = "1001" and direction = 2) then
+					brick(cur_brick_above1) <= brick(cur_brick_above1) and '0';
+				elsif ((brick_below = '1' or brick_below1 = '1') and collision = "1001" and direction = 2) then
 					brick(cur_brick_below) <= brick(cur_brick_below) and '0';
+					brick(cur_brick_below1) <= brick(cur_brick_below1) and '0';
 				elsif (brick_left = '1' and collision = "0101" and direction = 3) then
 					brick(cur_brick_left) <= brick(cur_brick_left) and '0';
 				elsif (brick_right = '1' and collision = "0110" and direction = 4) then

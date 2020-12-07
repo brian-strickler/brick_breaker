@@ -10,9 +10,8 @@ entity ball_movement is
 		collision		: in std_logic_vector(3 downto 0); -- from detector process
 		ball_x			: out integer;
 		ball_y 			: out integer;
-		direction			: out integer;
-		LED				: out std_logic_vector(9 downto 0);
-		brick_reset		: out std_logic
+		direction		: out integer;
+		LED				: out std_logic_vector(9 downto 0)
 	);
 end entity ball_movement;
 
@@ -45,15 +44,12 @@ begin
 			ball_x <= ball_x_holder;
 			if reset = '0' then
 				ball_counter <= 0;
-			else
-				ball_counter <= next_ball_counter;
-			end if;	
-			if reset = '0' then
 				current_ball_state <= IDLE;
 			elsif new_ball = '0' then
 				current_ball_state <= INITIAL;
 			else
 				if count >= 419999 then
+					ball_counter <= next_ball_counter;
 					count <= 0;
 					ball_x_holder <= next_ball_x;
 					ball_y_holder <= next_ball_y;
@@ -81,7 +77,7 @@ begin
 					next_x_move <= 0;
 					next_ball_y <= 250;
 					next_ball_x <= 316;
-				elsif ball_counter = 5 then
+				elsif next_ball_counter = 5 then
 					next_ball_state <= IDLE;
 					next_y_move <= 0;
 					next_x_move <= 0;
