@@ -64,7 +64,7 @@ begin
 	end process;
 
 	-- FSM (IDLE, INITIAL, TOP, RIG, LEF, DIE, PAD_C, PAD_L1, PAD_L2, PAD_R1, PAD_R2, BRICK_BELOW)
-	process(clk,collision, ball_x_holder, ball_y_holder, x_move, y_move, new_ball, reset, current_ball_state, ball_counter, reset) is
+	process(clk,collision, ball_x_holder, ball_y_holder, x_move, y_move, new_ball, reset, current_ball_state, ball_counter, reset, next_ball_counter) is
 	begin
 		if rising_edge(clk) then
 		case current_ball_state is
@@ -229,8 +229,14 @@ begin
 				next_x_move <= 0;
 				next_ball_y <= ball_y_holder + y_move;
 				next_ball_x <= ball_x_holder + x_move;
-				next_ball_state <= IDLE;	
-				next_ball_counter <= ball_counter + 1;
+				next_ball_state <= IDLE;
+				if next_ball_counter <= 4 then
+					next_ball_counter <= ball_counter + 1;
+					next_ball_state <= IDLE;
+				else
+					next_ball_counter <= 5;
+					next_ball_state <= DIE;
+				end if;	
 		end case;
 		end if;
 	end process;
@@ -238,19 +244,19 @@ begin
 	process(ball_counter) begin
 		case(ball_counter) is
 			when 0 =>
-				LED <= "0000000000";
-			when 1 =>
-				LED <= "0000000001";
-			when 2 =>
-				LED <= "0000000010";
-			when 3 =>
-				LED <= "0000000100";
-			when 4 =>
-				LED <= "0000001000";
-			when 5 =>
-				LED <= "0000010000";
-			when others =>
 				LED <= "1111111111";
+			when 1 =>
+				LED <= "0011111111";
+			when 2 =>
+				LED <= "0000111111";
+			when 3 =>
+				LED <= "0000001111";
+			when 4 =>
+				LED <= "0000000011";
+			when 5 =>
+				LED <= "0000000000";
+			when others =>
+				LED <= "1010101010";
 		end case;
 	end process;	
 	
