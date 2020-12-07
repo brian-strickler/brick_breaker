@@ -66,6 +66,7 @@ signal adc_clk : std_logic := '0';
 			hs_sig 			: out std_logic;
 			pixel_data 	: out std_logic_vector(11 downto 0);
 			pot : in std_logic_vector(11 downto 0);
+			LEDR : out std_logic_Vector(9 downto 0);
 			sound_fx : out std_logic_Vector(2 downto 0)
 		);
 	end component sync;
@@ -110,6 +111,7 @@ begin
 			hs_sig => VGA_HS,
 			pixel_data 	=> color,
 			pot => pot,
+			LEDR => LEDR,
 			sound_fx => sound_fx
 		);	
 		
@@ -122,6 +124,5 @@ begin
 	VGA_R <= color(11 downto 8);
 	VGA_G <= color(7 downto 4);
 	VGA_B <= color(3 downto 0);
-	LEDR <= pot(9 downto 0);
 	
 end architecture behavioral;

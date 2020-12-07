@@ -10,6 +10,8 @@ entity ball_movement is
 		collision		: in std_logic_vector(3 downto 0); -- from detector process
 		ball_x			: out integer;
 		ball_y 			: out integer;
+		direction			: out integer;
+		LED				: out std_logic_vector(9 downto 0);
 		brick_reset		: out std_logic
 	);
 end entity ball_movement;
@@ -27,10 +29,11 @@ architecture behavioral of ball_movement is
 	signal y_move : integer := 1;
 	signal next_x_move : integer := 0;
 	signal next_y_move : integer := 1;
+	signal dirc : integer := 0;
 	
 	signal count : natural := 0;
 	
-	type ball_states is (IDLE, DIE, INITIAL, NO_COLLISION, RIG, LEF, TOP, PAD_C, PAD_R1, PAD_R2, PAD_L1, PAD_L2);
+	type ball_states is (IDLE, DIE, INITIAL, NO_COLLISION, RIG, LEF, TOP, PAD_C, PAD_R1, PAD_R2, PAD_L1, PAD_L2, BRICK_BELOW);
 	signal current_ball_state, next_ball_state : ball_states;
 
 begin	
@@ -40,7 +43,11 @@ begin
 		if rising_edge(clk) then
 			ball_y <= ball_y_holder;
 			ball_x <= ball_x_holder;
-			ball_counter <= next_ball_counter;
+			if reset = '0' then
+				ball_counter <= 0;
+			else
+				ball_counter <= next_ball_counter;
+			end if;	
 			if reset = '0' then
 				current_ball_state <= IDLE;
 			elsif new_ball = '0' then
@@ -60,17 +67,25 @@ begin
 		end if;
 	end process;
 
-	-- FSM (IDLE, INITIAL, TOP, RIG, LEF, DIE, PAD_C, PAD_L1, PAD_L2, PAD_R1, PAD_R2)
-	process(collision, ball_x_holder, ball_y_holder, x_move, y_move, new_ball, reset, current_ball_state, ball_counter) is
+	-- FSM (IDLE, INITIAL, TOP, RIG, LEF, DIE, PAD_C, PAD_L1, PAD_L2, PAD_R1, PAD_R2, BRICK_BELOW)
+	process(clk,collision, ball_x_holder, ball_y_holder, x_move, y_move, new_ball, reset, current_ball_state, ball_counter, reset) is
 	begin
+		if rising_edge(clk) then
 		case current_ball_state is
 			when IDLE =>
+				dirc <= 0;
 				next_ball_counter <= ball_counter;
 				if reset = '1' then
 					next_ball_state <= current_ball_state;
 					next_y_move <= 0;
 					next_x_move <= 0;
 					next_ball_y <= 250;
+					next_ball_x <= 316;
+				elsif ball_counter = 5 then
+					next_ball_state <= IDLE;
+					next_y_move <= 0;
+					next_x_move <= 0;
+					next_ball_y <= 500;
 					next_ball_x <= 316;
 				else
 					next_ball_state <= IDLE;
@@ -81,9 +96,10 @@ begin
 				end if;
 				
 			when INITIAL =>
+				dirc <= 0;
 				next_ball_counter <= ball_counter;
 				if new_ball = '1' then
-					next_y_move <= 1;
+					next_y_move <= 2;
 					next_x_move <= 0;
 					next_ball_y <= ball_y_holder + y_move;
 					next_ball_x <= ball_x_holder + x_move;
@@ -97,6 +113,7 @@ begin
 				end if;
 				
 			when NO_COLLISION =>
+				dirc <= 0;
 				next_y_move <= y_move;
 				next_x_move <= x_move;
 				next_ball_y <= ball_y_holder + y_move;
@@ -121,6 +138,8 @@ begin
 						next_ball_state <= TOP;
 					when "1000" => -- DIE
 						next_ball_state <= DIE;
+					when "1001" => -- BRICK_BELOW
+						next_ball_state <= BRICK_BELOW;
 					when "1010" => -- NO_COLLISION
 						next_ball_state <= NO_COLLISION;
 					when others => 
@@ -128,6 +147,7 @@ begin
 				end case;
 				
 			when PAD_C =>
+				dirc <= 0;
 				next_y_move <= -y_move;
 				next_x_move <= x_move;
 				next_ball_y <= ball_y_holder - 4;
@@ -136,14 +156,16 @@ begin
 				next_ball_counter <= ball_counter;
 				
 			when PAD_R1 =>
-				next_y_move <= -1;
-				next_x_move <= 1;
+				dirc <= 0;
+				next_y_move <= -2;
+				next_x_move <= 2;
 				next_ball_y <= ball_y_holder - 4;
 				next_ball_x <= ball_x_holder + 4;
 				next_ball_state <= NO_COLLISION;
 				next_ball_counter <= ball_counter;
 				
 			when PAD_R2 =>
+				dirc <= 0;
 				next_y_move <= -1;
 				next_x_move <= 2;
 				next_ball_y <= ball_y_holder - 4;
@@ -152,14 +174,16 @@ begin
 				next_ball_counter <= ball_counter;
 				
 			when PAD_L1 =>
-				next_y_move <= -1;
-				next_x_move <= -1;
+				dirc <= 0;
+				next_y_move <= -2;
+				next_x_move <= -2;
 				next_ball_y <= ball_y_holder - 4;
 				next_ball_x <= ball_x_holder - 4;
 				next_ball_state <= NO_COLLISION;
 				next_ball_counter <= ball_counter;
 			
 			when PAD_L2=>
+				dirc <= 0;
 				next_y_move <= -1;
 				next_x_move <= -2;
 				next_ball_y <= ball_y_holder - 4;
@@ -168,6 +192,7 @@ begin
 				next_ball_counter <= ball_counter;
 				
 			when RIG =>
+				dirc <= 3;
 				next_y_move <= y_move;
 				next_x_move <= -x_move;
 				next_ball_y <= ball_y_holder;
@@ -176,6 +201,7 @@ begin
 				next_ball_counter <= ball_counter;
 				
 			when LEF =>
+				dirc <= 4;
 				next_y_move <= y_move;
 				next_x_move <= -x_move;
 				next_ball_y <= ball_y_holder;
@@ -184,6 +210,7 @@ begin
 				next_ball_counter <= ball_counter;
 			
 			when TOP => 
+				dirc <= 1;
 				next_y_move <= -y_move;
 				next_x_move <= x_move;
 				next_ball_y <= ball_y_holder + 4;
@@ -191,17 +218,45 @@ begin
 				next_ball_state <= NO_COLLISION;
 				next_ball_counter <= ball_counter;
 				
+			when BRICK_BELOW =>
+				dirc <= 2;
+				next_y_move <= -y_move;
+				next_x_move <= x_move;
+				next_ball_y <= ball_y_holder - 4;
+				next_ball_x <= ball_x_holder;
+				next_ball_state <= NO_COLLISION;
+				next_ball_counter <= ball_counter;
+				
 			when DIE =>
+				dirc <= 0;
 				next_y_move <= 0;
 				next_x_move <= 0;
 				next_ball_y <= ball_y_holder + y_move;
 				next_ball_x <= ball_x_holder + x_move;
 				next_ball_state <= IDLE;	
-				if ball_counter < 4 then
-					next_ball_counter <= ball_counter + 1;
-				else
-					next_ball_counter <= 0;
-				end if;
+				next_ball_counter <= ball_counter + 1;
 		end case;
+		end if;
 	end process;
+	
+	process(ball_counter) begin
+		case(ball_counter) is
+			when 0 =>
+				LED <= "0000000000";
+			when 1 =>
+				LED <= "0000000001";
+			when 2 =>
+				LED <= "0000000010";
+			when 3 =>
+				LED <= "0000000100";
+			when 4 =>
+				LED <= "0000001000";
+			when 5 =>
+				LED <= "0000010000";
+			when others =>
+				LED <= "1111111111";
+		end case;
+	end process;	
+	
+	direction <= dirc;
 end architecture behavioral;	

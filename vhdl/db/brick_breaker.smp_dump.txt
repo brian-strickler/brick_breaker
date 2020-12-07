@@ -13,20 +13,37 @@ current_vs_state.V_SYNC 0 0 1 1
 current_vs_state.V_BACK_PORCH 0 1 0 1 
 current_vs_state.DATA 1 0 0 1 
 
+State Machine - |brick_breaker|sync:u3|ball_movement:u0|next_ball_state
+Name next_ball_state.BRICK_BELOW next_ball_state.PAD_L2 next_ball_state.PAD_L1 next_ball_state.PAD_R2 next_ball_state.PAD_R1 next_ball_state.PAD_C next_ball_state.TOP next_ball_state.LEF next_ball_state.RIG next_ball_state.NO_COLLISION next_ball_state.INITIAL next_ball_state.DIE next_ball_state.IDLE 
+next_ball_state.IDLE 0 0 0 0 0 0 0 0 0 0 0 0 0 
+next_ball_state.DIE 0 0 0 0 0 0 0 0 0 0 0 1 1 
+next_ball_state.INITIAL 0 0 0 0 0 0 0 0 0 0 1 0 1 
+next_ball_state.NO_COLLISION 0 0 0 0 0 0 0 0 0 1 0 0 1 
+next_ball_state.RIG 0 0 0 0 0 0 0 0 1 0 0 0 1 
+next_ball_state.LEF 0 0 0 0 0 0 0 1 0 0 0 0 1 
+next_ball_state.TOP 0 0 0 0 0 0 1 0 0 0 0 0 1 
+next_ball_state.PAD_C 0 0 0 0 0 1 0 0 0 0 0 0 1 
+next_ball_state.PAD_R1 0 0 0 0 1 0 0 0 0 0 0 0 1 
+next_ball_state.PAD_R2 0 0 0 1 0 0 0 0 0 0 0 0 1 
+next_ball_state.PAD_L1 0 0 1 0 0 0 0 0 0 0 0 0 1 
+next_ball_state.PAD_L2 0 1 0 0 0 0 0 0 0 0 0 0 1 
+next_ball_state.BRICK_BELOW 1 0 0 0 0 0 0 0 0 0 0 0 1 
+
 State Machine - |brick_breaker|sync:u3|ball_movement:u0|current_ball_state
-Name current_ball_state.PAD_L2 current_ball_state.PAD_L1 current_ball_state.PAD_R2 current_ball_state.PAD_R1 current_ball_state.PAD_C current_ball_state.TOP current_ball_state.LEF current_ball_state.RIG current_ball_state.NO_COLLISION current_ball_state.INITIAL current_ball_state.DIE current_ball_state.IDLE 
-current_ball_state.IDLE 0 0 0 0 0 0 0 0 0 0 0 0 
-current_ball_state.DIE 0 0 0 0 0 0 0 0 0 0 1 1 
-current_ball_state.INITIAL 0 0 0 0 0 0 0 0 0 1 0 1 
-current_ball_state.NO_COLLISION 0 0 0 0 0 0 0 0 1 0 0 1 
-current_ball_state.RIG 0 0 0 0 0 0 0 1 0 0 0 1 
-current_ball_state.LEF 0 0 0 0 0 0 1 0 0 0 0 1 
-current_ball_state.TOP 0 0 0 0 0 1 0 0 0 0 0 1 
-current_ball_state.PAD_C 0 0 0 0 1 0 0 0 0 0 0 1 
-current_ball_state.PAD_R1 0 0 0 1 0 0 0 0 0 0 0 1 
-current_ball_state.PAD_R2 0 0 1 0 0 0 0 0 0 0 0 1 
-current_ball_state.PAD_L1 0 1 0 0 0 0 0 0 0 0 0 1 
-current_ball_state.PAD_L2 1 0 0 0 0 0 0 0 0 0 0 1 
+Name current_ball_state.BRICK_BELOW current_ball_state.PAD_L2 current_ball_state.PAD_L1 current_ball_state.PAD_R2 current_ball_state.PAD_R1 current_ball_state.PAD_C current_ball_state.TOP current_ball_state.LEF current_ball_state.RIG current_ball_state.NO_COLLISION current_ball_state.INITIAL current_ball_state.DIE current_ball_state.IDLE 
+current_ball_state.IDLE 0 0 0 0 0 0 0 0 0 0 0 0 0 
+current_ball_state.DIE 0 0 0 0 0 0 0 0 0 0 0 1 1 
+current_ball_state.INITIAL 0 0 0 0 0 0 0 0 0 0 1 0 1 
+current_ball_state.NO_COLLISION 0 0 0 0 0 0 0 0 0 1 0 0 1 
+current_ball_state.RIG 0 0 0 0 0 0 0 0 1 0 0 0 1 
+current_ball_state.LEF 0 0 0 0 0 0 0 1 0 0 0 0 1 
+current_ball_state.TOP 0 0 0 0 0 0 1 0 0 0 0 0 1 
+current_ball_state.PAD_C 0 0 0 0 0 1 0 0 0 0 0 0 1 
+current_ball_state.PAD_R1 0 0 0 0 1 0 0 0 0 0 0 0 1 
+current_ball_state.PAD_R2 0 0 0 1 0 0 0 0 0 0 0 0 1 
+current_ball_state.PAD_L1 0 0 1 0 0 0 0 0 0 0 0 0 1 
+current_ball_state.PAD_L2 0 1 0 0 0 0 0 0 0 0 0 0 1 
+current_ball_state.BRICK_BELOW 1 0 0 0 0 0 0 0 0 0 0 0 1 
 
 State Machine - |brick_breaker|my_adc:u1|my_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|currState
 Name currState.doneConversionState currState.readConversionState currState.pendingConversionState currState.turnOnSequencerState currState.idleState currState.resetState 

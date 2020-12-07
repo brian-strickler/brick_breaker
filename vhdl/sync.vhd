@@ -12,6 +12,7 @@ entity sync is
 		hs_sig 			: out std_logic;
 		pixel_data 	: out std_logic_vector(11 downto 0);
 		pot : in std_logic_vector(11 downto 0);
+		LEDR : out std_logic_vector(9 downto 0);
 		sound_fx : out std_logic_vector(2 downto 0)
 	);
 end entity sync;
@@ -23,12 +24,11 @@ architecture behavioral of sync is
 	constant black : std_logic_vector(11 downto 0) := X"000";
 	constant brown : std_logic_vector(11 downto 0) := X"722";
 	constant grey : std_logic_vector(11 downto 0) := X"FFF";
-	constant blue : std_logic_vector(11 downto 0) := X"00A";
 	
-	type BRICK_STATE is array (0 to 1199) of std_logic;
+	type BRICK_STATE is array (0 to 1214) of std_logic;
 	signal brick : BRICK_STATE	:= (others => '1');
 	
-	signal cur_brick : integer range 0 to 1199 := 0;
+	signal cur_brick : integer range 0 to 1214 := 0;
 	
 	type MY_MEM is array (0 to 639) of std_logic_vector(11 downto 0);
 	constant full_bricks : MY_MEM := (red, red, red, red, red, red, red, red, red, red, red, red, red, red, red, grey, red, red, red, red, red, red, red, red, red, red, red, red, red, red, red, grey, red, red, red, red, red, red, red, red, red, red, red, red, red, red, red, grey, red, red, red, red, red, red, red, red, red, red, red, red, red, red, red, grey, red, red, red, red, red, red, red, red, red, red, red, red, red, red, red, grey, red, red, red, red, red, red, red, red, red, red, red, red, red, red, red, grey, red, red, red, red, red, red, red, red, red, red, red, red, red, red, red, grey, red, red, red, red, red, red, red, red, red, red, red, red, red, red, red, grey, red, red, red, red, red, red, red, red, red, red, red, red, red, red, red, grey, red, red, red, red, red, red, red, red, red, red, red, red, red, red, red, grey, red, red, red, red, red, red, red, red, red, red, red, red, red, red, red, grey, red, red, red, red, red, red, red, red, red, red, red, red, red, red, red, grey, red, red, red, red, red, red, red, red, red, red, red, red, red, red, red, grey, red, red, red, red, red, red, red, red, red, red, red, red, red, red, red, grey, red, red, red, red, red, red, red, red, red, red, red, red, red, red, red, grey, red, red, red, red, red, red, red, red, red, red, red, red, red, red, red, grey, red, red, red, red, red, red, red, red, red, red, red, red, red, red, red, grey, red, red, red, red, red, red, red, red, red, red, red, red, red, red, red, grey, red, red, red, red, red, red, red, red, red, red, red, red, red, red, red, grey, red, red, red, red, red, red, red, red, red, red, red, red, red, red, red, grey, red, red, red, red, red, red, red, red, red, red, red, red, red, red, red, grey, red, red, red, red, red, red, red, red, red, red, red, red, red, red, red, grey, red, red, red, red, red, red, red, red, red, red, red, red, red, red, red, grey, red, red, red, red, red, red, red, red, red, red, red, red, red, red, red, grey, red, red, red, red, red, red, red, red, red, red, red, red, red, red, red, grey, red, red, red, red, red, red, red, red, red, red, red, red, red, red, red, grey, red, red, red, red, red, red, red, red, red, red, red, red, red, red, red, grey, red, red, red, red, red, red, red, red, red, red, red, red, red, red, red, grey, red, red, red, red, red, red, red, red, red, red, red, red, red, red, red, grey, red, red, red, red, red, red, red, red, red, red, red, red, red, red, red, grey, red, red, red, red, red, red, red, red, red, red, red, red, red, red, red, grey, red, red, red, red, red, red, red, red, red, red, red, red, red, red, red, grey, red, red, red, red, red, red, red, red, red, red, red, red, red, red, red, grey, red, red, red, red, red, red, red, red, red, red, red, red, red, red, red, grey, red, red, red, red, red, red, red, red, red, red, red, red, red, red, red, grey, red, red, red, red, red, red, red, red, red, red, red, red, red, red, red, grey, red, red, red, red, red, red, red, red, red, red, red, red, red, red, red, grey, red, red, red, red, red, red, red, red, red, red, red, red, red, red, red, grey, red, red, red, red, red, red, red, red, red, red, red, red, red, red, red, grey, red, red, red, red, red, red, red, red, red, red, red, red, red, red, red, grey);
@@ -78,7 +78,9 @@ architecture behavioral of sync is
 	signal brick_above_x : integer := 0;
 	signal brick_left_x : integer := 0;
 	signal brick_right_x : integer := 0;
-	signal brick_below_x : integer := 0;	
+	signal brick_below_x : integer := 0;
+	signal direction : integer := 0;
+	signal LED : std_logic_vector(9 downto 0);
 	
 	component ball_movement is
 		port (
@@ -87,6 +89,8 @@ architecture behavioral of sync is
 			new_ball			: in std_logic; -- KEY(1)
 			collision		: in std_logic_vector(3 downto 0); -- from detection process
 			ball_x			: out integer;
+			direction			: out integer;
+			LED				: out std_logic_vector(9 downto 0);
 			ball_y 			: out integer
 		);
 	end component ball_movement;
@@ -99,7 +103,9 @@ begin
 			reset => reset_l,
 			new_ball => new_ball,
 			collision => collision,
+			direction => direction,
 			ball_x => ball_x,
+			LED => LED,
 			ball_y => ball_y
 		);
 
@@ -173,7 +179,7 @@ begin
 		end case;	
 	end process;
 	
-	process(count2,count2_mod, x_pos, y_pos, current_hs_state, current_vs_state, pad_pos, ball_x, ball_y, brick, cur_brick)
+	process(layer, count2,count2_mod, x_pos, y_pos, current_hs_state, current_vs_state, pad_pos, ball_x, ball_y, brick, cur_brick, brick_above)
 	begin
 		count2_mod <= count2 mod 800;
 		case current_hs_state is
@@ -290,19 +296,18 @@ begin
 		end if;
 	end process;
 	
-	PADDLE_POSITION : process(m, pot_sig) begin
-		if m = '1' then
+	PADDLE_POSITION : process(pot_sig) begin
 			if pot_sig > 2400 then
 				pad_pos <= 600;
 			else
 				pad_pos <= pot_sig/4;			
 			end if;
-		end if;
 	end process;
 	
 	-- 0000 PAD_C / 0001 PAD_R1 / 0010 PAD_R2 / 0011 PAD_L1 / 0100 PAD_L2 / 0101 RIG / 0110 LEF / 0111 TOP / 1000 DIE / 1001 BOT / 1010 NONE
 	-- b"000"/no sound, b"001"/ball paddle, b"010"/walls+ceiling, b"011"/dead ball, b"100"/brick break
-	COLLISION_DETECTION : process(ball_x, ball_y, pad_pos, brick, current_vs_state, difference) begin
+	COLLISION_DETECTION : process(clk, ball_x, ball_y, pad_pos, brick, current_vs_state, difference) begin
+		if(rising_edge(clk)) then
 			if ball_x <= 0 then
 				collision <= "0110"; --hit left wall
 				sound_fx <= "010"; 
@@ -315,6 +320,18 @@ begin
 			elsif ball_y >= 479 then
 				collision <= "1000"; -- ball dead
 				sound_fx <= "011";
+			elsif brick_above = '1' then
+				collision <= "0111"; -- ball hit bottom of brick
+				sound_fx <= "100";
+			elsif brick_below = '1' then
+				collision <= "1001";	-- ball hit top of brick
+				sound_fx <= "100";
+			elsif brick_left = '1' then
+				collision <= "0101"; -- ball hit left side of brick
+				sound_fx <= "100";	
+			elsif brick_right = '1' then
+				collision <= "0110";	-- ball hit right side of brick
+				sound_fx <= "100";				
 			elsif ball_y >= 465 and ball_y <= 467 then
 				if difference <= 9 and difference >= 0 then
 					collision <= "0100";	-- PAD_L2
@@ -331,45 +348,29 @@ begin
 				elsif difference <= -31 and difference >= -39 then
 					collision <= "0010"; -- PAD_R2
 					sound_fx <= "001";
-				elsif brick_above = '1' then
-					collision <= "0111"; -- ball hit bottom of brick
-					sound_fx <= "100";
-					if(cur_brick_above <= 1214) and (cur_brick_above >= 0) then
-						brick(cur_brick_above) <= '0';
-					end if;	
-				elsif brick_right = '1' then
-					collision <= "0110";	-- ball hit right side of brick
-					sound_fx <= "100";
-					--brick(cur_brick_right) <= '0';
-				elsif brick_left = '1' then
-					collision <= "0101"; -- ball hit left side of brick
-					sound_fx <= "100";
-					--brick(cur_brick_left) <= '0';
-				elsif brick_below = '1' then
-					collision <= "1001";	-- ball hit top of brick
-					sound_fx <= "100";						
 				else
-					collision <= "1010";
+					collision <= "1010"; --no collision
 					sound_fx <= "000";
-				end if;
+				end if;	
 			else
-				collision <= "1010"; --no collision
+				collision <= "1010";
 				sound_fx <= "000";
-			end if;		
+			end if;
+		end if;	
 	end process;
 	
 	DIFFERENCE_PAD_BALL : process(m, ball_x, pad_pos) begin
 			difference <= pad_pos - ball_x;
 	end process;
 	
-	BRICK_ABOVE_DETECTION : process(ball_x, ball_y, cur_brick_above, layer_above, brick, m) begin
-		if m = '1' then
+	BRICK_ABOVE_DETECTION : process(ball_x, ball_y, cur_brick_above, layer_above, brick, brick_above_x, brick_above) begin
+		if ball_y < 241 then
 			layer_above <= (ball_y-1)/8;
 			if layer_above mod 2 = 1 then	
-				brick_above_x <= (ball_x+12)/16;
+				brick_above_x <= (ball_x+8)/16;
 				cur_brick_above <= (layer_above*40) + layer_above/2 + brick_above_x;
 			else
-				brick_above_x <= (ball_x +4)/16;
+				brick_above_x <= (ball_x)/16;
 				cur_brick_above <= (layer_above*40) + layer_above/2 + brick_above_x;
 			end if;
 			
@@ -377,26 +378,71 @@ begin
 				brick_above <= '1';
 			else
 				brick_above <= '0';
-			end if;	
+			end if;
+		else	
+			brick_above_x <= 0;
+			layer_above <= 0;
+			brick_above <= '0';
+			cur_brick_above <= 0;
+		end if;
+	end process;
+	
+	BRICK_LEFT_DETECTION : process(ball_x, ball_y, layer_left, brick_left_x, brick, cur_brick_left) begin
+		if ball_y < 241 then
+			layer_left <= (ball_y)/8;
+			if layer_left mod 2 = 1 then
+				brick_left_x <= (ball_x+18)/16;
+				cur_brick_left <= (layer_left*40) + layer_left/2 + brick_left_x;
+			else
+				brick_left_x <= (ball_x+10)/16;
+				cur_brick_left <= (layer_left*40) + layer_left/2 + brick_left_x;
+			end if;
+		
+			if brick(cur_brick_left) = '1' then
+				brick_left <= '1';
+			else
+				brick_left <= '0';
+			end if;
+		else
+			brick_left_x <= 0;
+			layer_left <= 0;
+			brick_left <= '0';
+			cur_brick_left <= 0;
+		end if;	
+	end process;
+
+	BRICK_RIGHT_DETECTION : process(ball_x, ball_y, layer_right, brick_right_x, brick, cur_brick_right) begin
+		if ball_y < 241 then
+			layer_right <= (ball_y+10)/8;
+			if layer_right mod 2 = 1 then
+				brick_right_x <= (ball_x+8)/16;
+				cur_brick_right <= (layer_right*40) + layer_right/2 + brick_right_x;
+			else
+				brick_right_x <= (ball_x)/16;
+				cur_brick_right <= (layer_right*40) + layer_right/2 + brick_right_x;
+			end if;
+			
+			if brick(cur_brick_right) = '1' then
+				brick_right <= '1';
+			else
+				brick_right <= '0';
+			end if;
+		else 
+			brick_right_x <= 0;
+			layer_right <= 0;
+			brick_right <= '0';
+			cur_brick_right <= 0;
 		end if;	
 	end process;
 	
-	BRICK_LEFT_DETECTION : process(ball_x, ball_y) begin
-	
-	end process;
-	
-	BRICK_RIGHT_DETECTION : process(ball_x, ball_y) begin
-	
-	end process;
-	
-	BRICK_BELOW_DETECTION : process(ball_x, ball_y) begin
-		if ball_y <= 241 then
+	BRICK_BELOW_DETECTION : process(ball_x, ball_y, cur_brick_below, layer_below, brick, brick_below_x) begin
+		if ball_y < 241 then
 			layer_below <= (ball_y+10)/8;
 			if layer_below mod 2 = 1 then
-				brick_below_x <= (ball_x+12)/16;
+				brick_below_x <= (ball_x+18)/16;
 				cur_brick_below <= (layer_below*40) + layer_below/2 + brick_below_x;
 			else
-				brick_below_x <= (ball_x+4)/16;
+				brick_below_x <= (ball_x+10)/16;
 				cur_brick_below <= (layer_below*40) + layer_below/2 + brick_below_x;
 			end if;
 			
@@ -404,9 +450,38 @@ begin
 				brick_below <= '1';
 			else
 				brick_below <= '0';
-			end if;
+			end if;	
+		else
+			brick_below_x <= 0;
+			layer_below <= 0;
+			brick_below <= '0';
+			cur_brick_below <= 0;
 		end if;	
-	end process;	
+	end process;
+
+	process(clk, count1_mod, brick_above, collision, brick) begin
+		if rising_edge(clk) then
+			if reset_l <= '0' then
+				brick <= (others => '1');
+			else	
+				if (brick_above = '1' and collision = "0111" and direction = 1) then
+					brick(cur_brick_above) <= brick(cur_brick_above) and '0';
+				elsif (brick_below = '1' and collision = "1001" and direction = 2) then
+					brick(cur_brick_below) <= brick(cur_brick_below) and '0';
+				elsif (brick_left = '1' and collision = "0101" and direction = 3) then
+					brick(cur_brick_left) <= brick(cur_brick_left) and '0';
+				elsif (brick_right = '1' and collision = "0110" and direction = 4) then
+					brick(cur_brick_right) <= brick(cur_brick_right) and '0';
+				else
+					brick(cur_brick_above) <= brick(cur_brick_above) and '1';
+					brick(cur_brick_below) <= brick(cur_brick_below) and '1';
+					brick(cur_brick_left) <= brick(cur_brick_left) and '1';
+					brick(cur_brick_right) <= brick(cur_brick_right) and '1';
+				end if;	
+			end if;		
+		end if;
+	end process;
 		
+	LEDR <= LED;	
 	pot_sig <= to_integer(unsigned(pot));
 end architecture behavioral;
